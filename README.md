@@ -1,41 +1,73 @@
 # LoEvent AI Skills
 
-一套面向**活动策划**的 AI Agent Skill 工具包。每个 skill 解决活动筹办里的一个具体环节——从把一段活动描述整理成结构化档案，到受众画像、预算、时间线、嘉宾简介、海报、社媒与发布文案。
+一套帮你**从零策划一场活动**的 AI 技能包，跑在 [Claude Code](https://claude.com/claude-code) 里。
 
-在你自己的电脑上运行，使用你自己的 API Key，数据留在本地。
+把活动想法一句话丢给 Claude，它就能帮你整理活动档案、分析目标受众、估预算、排筹备时间线、写嘉宾简介、出社媒文案、生成海报，直到一份完整策划方案——全程在你自己电脑上运行，用你自己的 API Key，数据不出本地。
 
-## 包含的 Skills
+## 你可以让它做什么
 
-| Skill | 作用 |
+在 Claude Code 里直接用大白话说需求，它会自动挑对应的技能：
+
+| 你说 | 它帮你 |
 |---|---|
-| `skill-init` | 入口：把活动描述抽成结构化档案，供其它 skill 消费 |
-| `skill-audience` | 目标受众画像 |
-| `skill-trends` | 行业趋势 / 话题热点 / 受众痛点调研 |
-| `skill-company` | 主办方背景调研与活动策略方向 |
-| `skill-guests` | 嘉宾简介（联网调研 + 事实核查） |
-| `skill-host-bio` | 主办方公司简介 |
-| `skill-budget` | 分项预算估算 |
-| `skill-timeline` | 筹备时间线 |
-| `skill-social` | 社交媒体文案（小红书 / X / 社群） |
-| `skill-luma` | Luma 风格活动发布文案 |
-| `skill-poster` | 活动宣传海报 |
-| `skill-eventplanner` | 完整活动策划方案 |
+| "我9月要办一场 AI 开发者大会，帮我整理一下" | 把活动描述整理成结构化档案（后续所有技能的起点） |
+| "这场活动该面向谁？" | 目标受众画像（主要 / 次要人群 + 痛点） |
+| "现在这行业有什么趋势能蹭？" | 行业趋势 / 话题热点 / 受众痛点调研 |
+| "研究下主办方，给几套活动策略方向" | 主办方调研 + 竞品对标 + 差异化策略 |
+| "这场活动大概要花多少钱？" | 分项预算估算（低估 / 高估 + 类别汇总） |
+| "帮我排个筹备计划" | 倒排期时间线（任务 + 起止日期 + 优先级） |
+| "介绍下这位嘉宾 / 这家主办方" | 联网调研 + 核查后的嘉宾简介 / 公司简介 |
+| "写条小红书 / X / 社群推文" | 对应平台的社媒文案 |
+| "出一段活动发布文案" | Luma 风格的长短文案 + 标题 |
+| "做张活动海报" | 按选定风格生成宣传海报 |
+| "把这场活动落成一份完整方案" | 6 章节完整活动策划方案 |
 
-所有 skill 共享一个内核 `engine/`，并通过工作目录里的本地文件互相传递上下文。
+## 准备
 
-## 快速开始
+1. **Claude Code** —— 安装见 [官方文档](https://claude.com/claude-code)。
+2. **Python 3.11+**。
+3. **一个 Gemini API Key** —— 在 [Google AI Studio](https://aistudio.google.com/apikey) 申请。不同技能对档位要求不同：
+   - **纯文本技能**（活动整理、受众、时间线、社媒/发布文案、策划方案）：**免费档即可**。
+   - **联网调研技能**（趋势、主办方调研、嘉宾、预算、主办方简介）：用 Google 搜索，免费档每月有额度（Gemini 3.x 约 5,000 次），**超出需开通计费**；重度调研容易触及上限。
+   - **海报生成**：**免费档不支持，需计费档的 Key**。
+
+## 安装
 
 ```bash
-python -m venv .venv && source .venv/bin/activate
-pip install -r requirements.txt
-cp .env.example .env            # 填入你的 API Key
-python engine/doctor.py         # 环境自检
+git clone https://github.com/loevent2025/loevent-ai-skill.git
+cd loevent-ai-skill
 
-# 从活动描述起步，生成结构化档案
-python skill-init/scripts/init_event.py --text "9月20日在上海办一场面向AI开发者的发布会…"
+python -m venv .venv && source .venv/bin/activate   # Windows: .venv\Scripts\activate
+pip install -r requirements.txt
+
+cp .env.example .env        # 然后编辑 .env，填入你的 GEMINI_API_KEY
 ```
 
-详见各 skill 目录下的 `SKILL.md`，以及 [`references/SETUP.md`](references/SETUP.md)。
+## 使用
+
+在这个项目文件夹里打开 Claude Code，然后**像跟人说话一样**告诉它你的活动：
+
+```
+我打算 9 月 20 日在上海办一场面向 AI 开发者的产品发布会，
+主办方是 XX 公司，预计 300 人，帮我整理一下。
+```
+
+Claude 会先把它整理成活动档案，之后你想做什么就接着说：
+
+```
+帮我做个受众画像
+出个预算
+排一下筹备时间线
+写一段小红书预热文案
+```
+
+不用记技能名字、不用敲命令——Claude 会自动选用合适的技能，并把结果整理成好读的中文呈现。
+
+## 说明
+
+- **数据留在本地**：活动信息、调研结果等都只写在你电脑的工作目录，不上传任何服务器。
+- **用你自己的 Key**：所有 AI 调用走你自己的 Gemini API Key，用量和费用由你掌控。
+- 想了解每个技能的细节，看对应 `skill-*/SKILL.md`。
 
 ## License
 

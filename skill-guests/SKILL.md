@@ -35,10 +35,7 @@ required_environment_variables:
 脚本自己弹不出窗,frontmatter 的 `required_environment_variables` 只在 Hermes/claude.ai 运行时生效,
 在 Claude Code 里不触发,所以这里靠 AskUserQuestion 兜底。
 
-- **缺 `GEMINI_API_KEY`**(环境没设、或脚本返回缺 key 报错):**先别把报错甩给用户**。调用 AskUserQuestion:
-  - header `API Key`;question:`还没配置 Gemini API Key,请贴入你的 Key`;
-  - 选项给「我去申请(https://aistudio.google.com/apikey)」+ 让用户在 **Other** 里直接粘贴 Key。
-  - 拿到后写进工作目录的 `.env`(`GEMINI_API_KEY=AIza...`),`load_dotenv` 下次跑会自动读;再继续。
+- **缺 `GEMINI_API_KEY`**:处理见 [`references/API-KEY.md`](../references/API-KEY.md)——先检测、已配置别再弹;缺了才弹,给「自己改 .env / 直接粘贴」两条路,key 写进**项目根** `.env`(不是沙箱),别甩报错。
 - **缺必填业务信息**(嘉宾 name/company/position):也用 AskUserQuestion 问,**一次问清三项**,别零散追问、别自己编。
 
 ## 步骤(Procedure)

@@ -31,7 +31,7 @@ required_environment_variables:
 
 ## 缺东西先弹窗问,别报错也别瞎填(AskUserQuestion)
 在 Claude Code 里,frontmatter 的 `required_environment_variables` **不会**触发原生填 key 弹窗(那是 Hermes/claude.ai 运行时的能力),脚本也弹不出窗。需要时由你(Claude)调用 `AskUserQuestion`:
-- **缺 `GEMINI_API_KEY`**:header `API Key`、让用户在 **Other** 里粘贴 Key → 写进工作目录 `.env`(`GEMINI_API_KEY=AIza...`,下次跑自动读)再继续,**别甩报错**。
+- **缺 `GEMINI_API_KEY`**:处理见 [`references/API-KEY.md`](../references/API-KEY.md)——先检测、已配置别再弹;缺了才弹,给「自己改 .env / 直接粘贴」两条路,key 写进**项目根** `.env`(不是沙箱),别甩报错。
 - **缺主办方官网 `website`**(本工具必填、无默认、上游档案里也没有):调 AskUserQuestion 让用户贴官网链接(用 Other 自由填),**别瞎编一个 URL**。`org` / `industry` / `self_description` 是可选消歧项,不必弹窗硬问。
 
 ## 步骤(Procedure)

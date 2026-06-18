@@ -39,7 +39,7 @@ required_environment_variables:
 两种都缺时走缺省。`scene_type` 决定读哪个知识库;`event_scale`(small/medium/large)决定基准筹备天数。
 
 ## 缺东西先弹窗问,别报错也别瞎填(AskUserQuestion)
-在 Claude Code 里,frontmatter 的 `required_environment_variables` **不会**触发原生填 key 弹窗(那是 Hermes/claude.ai 运行时的能力),脚本也弹不出窗。所以**缺 `GEMINI_API_KEY` 时,由你(Claude)调用 `AskUserQuestion`**:header `API Key`、让用户在 **Other** 里粘贴 Key;拿到后写进工作目录 `.env`(`GEMINI_API_KEY=AIza...`,`load_dotenv` 下次跑自动读),再继续。**别把缺 key 的报错直接甩给用户。**
+**缺 `GEMINI_API_KEY` 的处理见 [`references/API-KEY.md`](../references/API-KEY.md)**:先检测、已配置就别再弹;确实缺才弹一次,给「自己改 .env / 直接粘贴」两条路,key 写进**项目根** `.env`(不是沙箱),别甩报错。
 (`preparation_start_date` 有默认、`prompt` 可选,均不必弹窗硬问;活动日期 `time_start` 缺失属上游 `event.json` 问题,走"先跑 loevent-init"的串接。)
 
 ## 步骤(Procedure)
@@ -66,25 +66,26 @@ required_environment_variables:
 4. 产物:`timeline.json` 写入工作目录,并 merge 进 `plan.json`(供下游复用);结构化结果打印到 stdout。
 
 ## 结果呈现(Presenting Results)— 必读
-**不要把脚本输出的原始 JSON 直接甩给用户。** 你(Claude)要把它整理成清晰、可执行的排期视图。建议:
+**不要把脚本输出的原始 JSON 直接甩给用户。** 你(Claude)要把它整理成清晰、可执行的排期视图。
+
+**用一张整体表呈现全部任务,不要按 P0/P1/P2/P3 拆成多个小表。** 优先级是表里的一列,不是分表的依据。整张表**按起始日期从早到晚排序**(同一天的任务按优先级 P0→P3 次序),让用户从上到下就是一条完整的倒排期。
 
 > **🗓️ 筹备时间线（〈event_name〉)**
 > 筹备期:**〈start_date〉 → 〈event_date 前一天〉**(场景 〈scene_type〉 · 规模 〈event_scale〉,共 N 个任务)
 >
-> **🔴 P0 关键里程碑(不可省)**
-> - `〈startDate〉–〈endDate〉` **〈task_name〉** · 〈tag〉
-> - …
->
-> **🟠 P1 核心 / 🟡 P2 重要 / ⚪ P3 增值**
-> - 按优先级或按周分组,逐条列「日期 + 任务名 + 标签」
+> | 日期 | 任务 | 类别 | 优先级 |
+> |---|---|---|---|
+> | 〈startDate〉–〈endDate〉 | 〈task_name〉 | 〈tag〉 | 🔴 P0 |
+> | 〈startDate〉–〈endDate〉 | 〈task_name〉 | 〈tag〉 | 🟠 P1 |
+> | …(全部任务按日期排在同一张表里) | | | |
 >
 > **小结**:开局两周先抓 〈最早的 P0 群〉;志愿者/排班/彩排集中在活动前一周;关键路径上注意 〈某依赖〉。
 
 要点:
-- **按优先级(P0→P3)或按周/阶段分组**,每条给「起止日期 + 任务名 + 标签」,日期对齐好读;
-- 用 emoji/加粗区分优先级,P0 醒目;**用户自定义任务(user_tasks)要标注出来**,提示它们被保留;
+- **一张表装下所有任务**,列固定为「日期 / 任务 / 类别 / 优先级」,按起始日期排序;优先级用 emoji 在列里区分(🔴 P0 / 🟠 P1 / 🟡 P2 / ⚪ P3),P0 醒目即可,**不要为每个优先级单独开表**;
+- **用户自定义任务(user_tasks)要标注出来**(如任务名后加「(自定义·保留)」),提示它们被保留;
 - 末尾给一句**可执行小结**:点出最早要启动的事、活动前一周的硬约束(志愿者/彩排)、和潜在风险;
-- 字段为空(如某些 tag/优先级没有任务)就**省略**,不显示 `null` / 空段;
+- 整张表为空段才省略;不显示 `null`;
 - **别贴整段 JSON、别贴 multipliers/meta 这类内部字段**;
 - 跑完可顺势问:"要不要据此出预算 / 写招募文案 / 排嘉宾邀约?"
 

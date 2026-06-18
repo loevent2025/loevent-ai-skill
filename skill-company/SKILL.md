@@ -35,7 +35,7 @@ required_environment_variables:
    单个搜索维度失败会**自动降级跳过**（不让整条管线崩），所以即使个别趋势卡搜空了，主结果照样产出。
 
 ## 缺东西先弹窗问,别报错也别瞎填(AskUserQuestion)
-在 Claude Code 里,frontmatter 的 `required_environment_variables` **不会**触发原生填 key 弹窗(那是 Hermes/claude.ai 运行时的能力),脚本也弹不出窗。所以**缺 `GEMINI_API_KEY` 时,由你(Claude)调用 `AskUserQuestion`**:header `API Key`、让用户在 **Other** 里粘贴 Key;拿到后写进工作目录 `.env`(`GEMINI_API_KEY=AIza...`,`load_dotenv` 下次跑自动读),再继续。**别把缺 key 的报错直接甩给用户。**
+**缺 `GEMINI_API_KEY` 的处理见 [`references/API-KEY.md`](../references/API-KEY.md)**:先检测、已配置就别再弹;确实缺才弹一次,给「自己改 .env / 直接粘贴」两条路,key 写进**项目根** `.env`(不是沙箱),别甩报错。
 (`max_competitors` / `event_goal` 等均有默认或仅留档,不必弹窗硬问;受众画像缺失走"先跑 loevent-audience"的串接,不在此弹窗。)
 
 ## 步骤(Procedure)

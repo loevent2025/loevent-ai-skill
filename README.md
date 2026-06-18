@@ -39,4 +39,4 @@ python skill-init/scripts/init_event.py --text "9月20日在上海办一场面�
 
 ## License
 
-[MIT](./LICENSE) © 2026 LoEvent
+[MIT](./LICENSE) © 2026 Gencosmo

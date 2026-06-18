@@ -1,0 +1,1097 @@
+{
+  "web3": {
+    "medium": [
+      {"task_name_cn": "活动策划方案制定", "task_name_en": "Web3 Event Proposal", "category": "Commercial", "priority": "P0", "duration_days": 10, "dependencies": "-"},
+      {"task_name_cn": "活动预算制定", "task_name_en": "Event Budget Planing", "category": "Commercial", "priority": "P0", "duration_days": 6, "dependencies": "活动策划方案制 定"},
+      {"task_name_cn": "嘉宾名单梳理", "task_name_en": "Guest List Compilation", "category": "Commercial", "priority": "P0", "duration_days": 6, "dependencies": "活动策划方案制定"},
+      {"task_name_cn": "活动品牌视觉设计", "task_name_en": "Event Key Visual Design", "category": "Marketing", "priority": "P0", "duration_days": 12, "dependencies": "活动策划方案制 定"},
+      {"task_name_cn": "场地初步筛选", "task_name_en": "Venue Sourcing", "category": "Venue", "priority": "P0", "duration_days": 6, "dependencies": "活动策划方案制定"},
+      {"task_name_cn": "主持人邀请确认", "task_name_en": "Host Invitation and Confirmation", "category": "General", "priority": "P1", "duration_days": 8, "dependencies": "活动策划方案制定"},
+      {"task_name_cn": "活动流程手册编写", "task_name_en": "Event Rundown Playbook", "category": "General", "priority": "P2", "duration_days": 5, "dependencies": "活动 策划方案制定"},
+      {"task_name_cn": "项目进度管理", "task_name_en": "Project Progress Management", "category": "General", "priority": "P2", "duration_days": 4, "dependencies": "活动预算制定"},
+      {"task_name_cn": "风险预案制定", "task_name_en": "Risk Management Plan", "category": "General", "priority": "P3", "duration_days": 4, "dependencies": "活动预算制定"},
+      {"task_name_cn": "赞助方案设计", "task_name_en": "Sponsorship Package", "category": "Commercial", "priority": "P1", "duration_days": 6, "dependencies": "活动预算制定"},
+      {"task_name_cn": "重点项目方邀请", "task_name_en": "Key Project Invitation", "category": "Commercial", "priority": "P0", "duration_days": 16, "dependencies": "嘉宾名单梳理"},
+      {"task_name_cn": "投资机构邀请", "task_name_en": "Investment Institution Invitation", "category": "Commercial", "priority": "P1", "duration_days": 14, "dependencies": "嘉宾名单梳 理"},
+      {"task_name_cn": "活动落地页搭建", "task_name_en": "Event Landing Page Setup", "category": "Marketing", "priority": "P2", "duration_days": 15, "dependencies": "活动品牌视觉设 计"},
+      {"task_name_cn": "NFT门票/纪念品设计", "task_name_en": "NFT Ticket/Collectible Design", "category": "Marketing", "priority": "P2", "duration_days": 8, "dependencies": "活动品牌视觉设 计"},
+      {"task_name_cn": "CT宣发与社群推广", "task_name_en": "CT Promotion and Community Marketing", "category": "Marketing", "priority": "P1", "duration_days": 50, "dependencies": "活动 品牌视觉设计"},
+      {"task_name_cn": "Discord/TG社群运营", "task_name_en": "Discord/TG Community Operation", "category": "Marketing", "priority": "P1", "duration_days": 45, "dependencies": "活动 品牌视觉设计"},
+      {"task_name_cn": "KOL合作邀请", "task_name_en": "KOL Cooperation Invitation", "category": "Marketing", "priority": "P2", "duration_days": 15, "dependencies": "活动品牌视觉设 计"},
+      {"task_name_cn": "公链/L2生态合作", "task_name_en": "Public Chain/L2 Ecosystem Cooperation", "category": "Commercial", "priority": "P1", "duration_days": 12, "dependencies": "嘉宾名单梳理"},
+      {"task_name_cn": "宣传物料制作", "task_name_en": "Promotional Materials Production", "category": "Marketing", "priority": "P2", "duration_days": 10, "dependencies": "活动品牌视觉设 计"},
+      {"task_name_cn": "嘉宾伴手礼准备", "task_name_en": "Guest Gift Preparation", "category": "Marketing", "priority": "P3", "duration_days": 8, "dependencies": "活动品牌视觉设计"},
+      {"task_name_cn": "场地实地考察", "task_name_en": "Venue Site Visit", "category": "Venue", "priority": "P1", "duration_days": 5, "dependencies": "场地初步筛选"},
+      {"task_name_cn": "活动场地确认", "task_name_en": "Venue Confirmation", "category": "Venue", "priority": "P1", "duration_days": 3, "dependencies": "场地实地考察"},
+      {"task_name_cn": "赞助商招募", "task_name_en": "Sponsorship Outreach & Acquistion", "category": "Commercial", "priority": "P1", "duration_days": 25, "dependencies": "赞助方案设计"},
+      {"task_name_cn": "Twitter Space预热", "task_name_en": "Twitter Space Pre-event", "category": "Marketing", "priority": "P2", "duration_days": 12, "dependencies": "CT宣发与社群推 广"},
+      {"task_name_cn": "媒体通稿撰写", "task_name_en": "Press Article Confirmation", "category": "Marketing", "priority": "P3", "duration_days": 4, "dependencies": "公链/L2生态合作"},
+      {"task_name_cn": "场地合同签订", "task_name_en": "Venue Contract Signing", "category": "Venue", "priority": "P1", "duration_days": 4, "dependencies": "嘉宾伴手礼准备, 活动预算制定"},
+      {"task_name_cn": "参会名单确认", "task_name_en": "Attendee List Confirmation", "category": "Commercial", "priority": "P2", "duration_days": 8, "dependencies": "重点项目方邀请, 投资机构邀 请"},
+      {"task_name_cn": "场地布局设计", "task_name_en": "Venue Layout Design", "category": "Venue", "priority": "P2", "duration_days": 6, "dependencies": "场地合同签订, 活动品牌视觉设计"},
+      {"task_name_cn": "餐饮茶歇安排", "task_name_en": "Catering and Refreshment Arrangement", "category": "Venue", "priority": "P3", "duration_days": 4, "dependencies": "场地合 同签订"},
+      {"task_name_cn": "网络带宽保障", "task_name_en": "Internet Bandwidth Provisioning", "category": "Venue", "priority": "P3", "duration_days": 3, "dependencies": "场地合同签订"},
+      {"task_name_cn": "投融资对接安排", "task_name_en": "Funding Matchmaking", "category": "Commercial", "priority": "P2", "duration_days": 7, "dependencies": "参会名单确认"},
+      {"task_name_cn": "商务对接名录制作", "task_name_en": "Business Matching Directory", "category": "Commercial", "priority": "P3", "duration_days": 4, "dependencies": "参 会名单确认"},
+      {"task_name_cn": "场地搭建布置", "task_name_en": "Venue Construction and Setup", "category": "Venue", "priority": "P2", "duration_days": 7, "dependencies": "场地布局设计"},
+      {"task_name_cn": "现场工作人员安排", "task_name_en": "On-site Staff Management", "category": "General", "priority": "P2", "duration_days": 4, "dependencies": "场地搭建布置"},
+      {"task_name_cn": "工作人员证件制作", "task_name_en": "Staff Badge", "category": "General", "priority": "P3", "duration_days": 3, "dependencies": "场地搭建布置"},
+      {"task_name_cn": "链上签到部署", "task_name_en": "On-chain Check-in Deployment", "category": "Venue", "priority": "P2", "duration_days": 4, "dependencies": "场地布局设计"},
+      {"task_name_cn": "签到区与指引布置", "task_name_en": "Check-in Area and Signage Setup", "category": "Venue", "priority": "P3", "duration_days": 3, "dependencies": "场地布局设计, 公链/L2 生态合作"},
+      {"task_name_cn": "音视频设备租赁", "task_name_en": "Audio-Visual Equipment Rental", "category": "Venue", "priority": "P2", "duration_days": 5, "dependencies": "场地搭建布置"},
+      {"task_name_cn": "嘉宾行程确认", "task_name_en": "Guest Itinerary Confirmation", "category": "Commercial", "priority": "P2", "duration_days": 6, "dependencies": "参会名单确认, 场地搭建布置"},
+      {"task_name_cn": "演讲内容对接", "task_name_en": "Speech Content Coordination", "category": "Commercial", "priority": "P2", "duration_days": 8, "dependencies": "嘉宾行程确认"},
+      {"task_name_cn": "参会确认函发送", "task_name_en": "Guest Confirmation", "category": "Commercial", "priority": "P3", "duration_days": 3, "dependencies": "嘉宾 行程确认"},
+      {"task_name_cn": "现场彩排", "task_name_en": "On-site Rehearsal", "category": "Venue", "priority": "P3", "duration_days": 2, "dependencies": "音视频设备租赁, 签到区与指引布置, 演讲内 容对接"}
+    ],
+    "large": [
+      {"task_name_cn": "活动策划方案制定", "task_name_en": "Web3 Event Proposal", "category": "Commercial", "priority": "P0", "duration_days": 20, "dependencies": "-"},
+      {"task_name_cn": "活动预算制定", "task_name_en": "Event Budget Planing", "category": "Commercial", "priority": "P0", "duration_days": 10, "dependencies": "活动策划方案制定"},
+      {"task_name_cn": "Web3行业热点议题策划", "task_name_en": "Web3 Trending Topics Sourcing", "category": "Commercial", "priority": "P0", "duration_days": 12, "dependencies": "活 动策划方案制定"},
+      {"task_name_cn": "重点嘉宾名单筛选", "task_name_en": "Guest Listing", "category": "Commercial", "priority": "P0", "duration_days": 10, "dependencies": "活动策划方案制定"},
+      {"task_name_cn": "活动品牌视觉设计", "task_name_en": "Conference Key Visual Design", "category": "Marketing", "priority": "P0", "duration_days": 18, "dependencies": "活动策划方案制 定"},
+      {"task_name_cn": "场地初步筛选", "task_name_en": "Venue Sourcing", "category": "Venue", "priority": "P0", "duration_days": 10, "dependencies": "活动策划方案制定"},
+      {"task_name_cn": "主持人邀请与确认", "task_name_en": "Host Invitation and Confirmation", "category": "General", "priority": "P1", "duration_days": 12, "dependencies": "活动策划方案制 定"},
+      {"task_name_cn": "活动流程手册编写", "task_name_en": "Event Rundown Playbook", "category": "General", "priority": "P2", "duration_days": 8, "dependencies": "Web3行业热点议题 策划"},
+      {"task_name_cn": "风险预案制定", "task_name_en": "Risk Management Plan", "category": "General", "priority": "P3", "duration_days": 6, "dependencies": "活动预算制定"},
+      {"task_name_cn": "赞助方案设计", "task_name_en": "Sponsorship Package", "category": "Commercial", "priority": "P1", "duration_days": 10, "dependencies": "活动预算制定"},
+      {"task_name_cn": "头部项目方邀请", "task_name_en": "Top-tier Brands Outreach", "category": "Commercial", "priority": "P0", "duration_days": 25, "dependencies": "重点嘉宾名单 筛选"},
+      {"task_name_cn": "知名VC机构邀请", "task_name_en": "VC Outreach", "category": "Commercial", "priority": "P0", "duration_days": 20, "dependencies": "重点嘉宾名单筛选"},
+      {"task_name_cn": "POAP/NFT纪念品设计", "task_name_en": "Digital Collectible (POAP & NFT) Design", "category": "Marketing", "priority": "P1", "duration_days": 12, "dependencies": "活动品 牌视觉设计"},
+      {"task_name_cn": "Crypto X 宣发策略", "task_name_en": "Crypto X Promotion", "category": "Marketing", "priority": "P0", "duration_days": 90, "dependencies": "活动品牌视觉设计"},
+      {"task_name_cn": "活动落地页搭建", "task_name_en": "Event Landing Page Setup", "category": "Marketing", "priority": "P2", "duration_days": 30, "dependencies": "活动品牌视觉设 计"},
+      {"task_name_cn": "Discord/TG社群预热运营", "task_name_en": "Discord/TG Community Setup & Event Countdown promotion", "category": "Marketing", "priority": "P1", "duration_days": 80, "dependencies": "活动品牌视觉设计"},
+      {"task_name_cn": "公链生态合作洽谈", "task_name_en": "L1/L2 Ecosystem Partnership Outreach", "category": "Commercial", "priority": "P1", "duration_days": 22, "dependencies": "重 点嘉宾名单筛选"},
+      {"task_name_cn": "Web3 KOL合作邀请", "task_name_en": "Web3 KOL Invitation", "category": "Marketing", "priority": "P1", "duration_days": 30, "dependencies": "活动品牌视觉设计"},
+      {"task_name_cn": "行业媒体合作", "task_name_en": "Media Outreach", "category": "Marketing", "priority": "P2", "duration_days": 18, "dependencies": "活动品牌视觉设计"},
+      {"task_name_cn": "交易所合作洽谈", "task_name_en": "Crypto Exchange Partner Outreach", "category": "Commercial", "priority": "P1", "duration_days": 25, "dependencies": "知名VC机构邀 请"},
+      {"task_name_cn": "宣传视频拍摄制作", "task_name_en": "Event Promotional Video", "category": "Marketing", "priority": "P2", "duration_days": 16, "dependencies": "活动品牌视觉设 计"},
+      {"task_name_cn": "宣传物料设计制作", "task_name_en": "Visual Marketing Assets", "category": "Marketing", "priority": "P2", "duration_days": 14, "dependencies": "活动品牌视觉设 计"},
+      {"task_name_cn": "嘉宾伴手礼定制", "task_name_en": "Guest Gift Customization", "category": "Marketing", "priority": "P2", "duration_days": 12, "dependencies": "活动品牌视觉设 计"},
+      {"task_name_cn": "场地实地考察", "task_name_en": "Venue Site Visit", "category": "Venue", "priority": "P0", "duration_days": 6, "dependencies": "场地初步筛选"},
+      {"task_name_cn": "活动场地确认", "task_name_en": "Venue Confirmation", "category": "Venue", "priority": "P0", "duration_days": 5, "dependencies": "场地实地考察"},
+      {"task_name_cn": "赞助商招募", "task_name_en": "Sponsorship Outreach & Acquistion", "category": "Commercial", "priority": "P1", "duration_days": 45, "dependencies": "头部项目方邀 请"},
+      {"task_name_cn": "Token项目路演组织", "task_name_en": "Token Project Roadshow", "category": "Commercial", "priority": "P2", "duration_days": 18, "dependencies": "知名VC机构邀 请, POAP/NFT纪念品设计"},
+      {"task_name_cn": "Twitter Space预热活动", "task_name_en": "Twitter Space Countdown Session", "category": "Marketing", "priority": "P2", "duration_days": 20, "dependencies": "Discord/TG社群预热运营"},
+      {"task_name_cn": "媒体通稿撰写", "task_name_en": "Press Article Confirmation", "category": "Marketing", "priority": "P1", "duration_days": 6, "dependencies": "行业媒体合作"},
+      {"task_name_cn": "倒计时海报发布", "task_name_en": "Countdown Poster", "category": "Marketing", "priority": "P3", "duration_days": 7, "dependencies": "宣传视频拍摄制作"},
+      {"task_name_cn": "场地合同签订", "task_name_en": "Venue Contract Signing", "category": "Venue", "priority": "P1", "duration_days": 6, "dependencies": "嘉宾伴手礼定制, 活动预算制定"},
+      {"task_name_cn": "应急预案演练", "task_name_en": "On-site Emergency Drill", "category": "General", "priority": "P3", "duration_days": 2, "dependencies": "赞助方案设计, 场地实地考察"},
+      {"task_name_cn": "志愿者招募与培训", "task_name_en": "Volunteer Recruitment & Training", "category": "General", "priority": "P2", "duration_days": 14, "dependencies": "活动预算制定"},
+      {"task_name_cn": "参会嘉宾名单确认", "task_name_en": "Guest List Confirmation", "category": "Commercial", "priority": "P1", "duration_days": 14, "dependencies": "头部项目方邀 请, 知名VC机构邀请"},
+      {"task_name_cn": "场地平面布局规划", "task_name_en": "Venue Floor Plan", "category": "Venue", "priority": "P1", "duration_days": 10, "dependencies": "场地合同签订"},
+      {"task_name_cn": "餐饮茶歇服务安排", "task_name_en": "Catering Vendor Sourcing", "category": "Venue", "priority": "P3", "duration_days": 8, "dependencies": "场地合同签订"},
+      {"task_name_cn": "网络带宽保障", "task_name_en": "Internet Bandwidth Provisioning", "category": "Venue", "priority": "P2", "duration_days": 5, "dependencies": "场地合同签订"},
+      {"task_name_cn": "嘉宾通讯录整理", "task_name_en": "Guest Contact List", "category": "General", "priority": "P3", "duration_days": 4, "dependencies": "参会嘉宾名单确认"},
+      {"task_name_cn": "投融资对接安排", "task_name_en": "Funding Matchmaking", "category": "Commercial", "priority": "P2", "duration_days": 10, "dependencies": "参会嘉宾名单确认"},
+      {"task_name_cn": "商务对接名录制作", "task_name_en": "Business Matching Directory", "category": "Commercial", "priority": "P3", "duration_days": 6, "dependencies": "参会嘉宾名单确 认"},
+      {"task_name_cn": "场地搭建与布置", "task_name_en": "Venue Setup", "category": "Venue", "priority": "P1", "duration_days": 12, "dependencies": "场地平面布局规划, 活动品牌视觉设计"},
+      {"task_name_cn": "现场工作人员安排", "task_name_en": "On-site Staff Management", "category": "General", "priority": "P2", "duration_days": 6, "dependencies": "场地搭建与布置"},
+      {"task_name_cn": "工作人员证件制作", "task_name_en": "Staff Badge", "category": "General", "priority": "P3", "duration_days": 5, "dependencies": "场地搭建与布置"},
+      {"task_name_cn": "链上签到系统部署", "task_name_en": "On-chain Check-in Setup", "category": "Venue", "priority": "P2", "duration_days": 6, "dependencies": "场地平面布局规划"},
+      {"task_name_cn": "签到区与指引系统", "task_name_en": "Check-in Area & Wayfinding Setup", "category": "Venue", "priority": "P2", "duration_days": 5, "dependencies": "场地平面布局规划, 宣 传视频拍摄制作"},
+      {"task_name_cn": "VIP休息区布置", "task_name_en": "VIP Lounge Setup", "category": "Venue", "priority": "P3", "duration_days": 4, "dependencies": "场地平面布局规划"},
+      {"task_name_cn": "音响灯光设备租赁", "task_name_en": "AV & Lightening Equipment Rental", "category": "Venue", "priority": "P2", "duration_days": 8, "dependencies": "场地搭建与布置"},
+      {"task_name_cn": "嘉宾行程与接待确认", "task_name_en": "Guest Schedule Confirmation", "category": "Commercial", "priority": "P2", "duration_days": 10, "dependencies": "参会嘉宾名单 确认, 场地搭建与布置"},
+      {"task_name_cn": "演讲嘉宾内容对接", "task_name_en": "Guest Speach Final", "category": "Commercial", "priority": "P2", "duration_days": 14, "dependencies": "嘉宾行程与接待确认"},
+      {"task_name_cn": "参会确认函发送", "task_name_en": "Guest Confirmation", "category": "Commercial", "priority": "P3", "duration_days": 5, "dependencies": "嘉宾行程与接待确认"},
+      {"task_name_cn": "VIP嘉宾专属服务安排", "task_name_en": "VIP Service", "category": "Commercial", "priority": "P3", "duration_days": 6, "dependencies": "嘉宾行程与接待确认"},
+      {"task_name_cn": "全流程彩排", "task_name_en": "Full Rehearsal", "category": "Venue", "priority": "P3", "duration_days": 3, "dependencies": "签到区与指引系统, 演讲嘉宾内容对接"}
+    ],
+    "small": [
+      {
+        "task_name_cn": "活动策划方案制定",
+        "task_name_en": "Web3 Event Proposal",
+        "category": "Commercial",
+        "priority": "P0",
+        "duration_days": 5,
+        "dependencies": "-"
+      },
+      {
+        "task_name_cn": "活动预算制定",
+        "task_name_en": "Event Budget Planing",
+        "category": "Commercial",
+        "priority": "P0",
+        "duration_days": 2,
+        "dependencies": "活动策划方案制 定"
+      },
+      {
+        "task_name_cn": "核心嘉宾邀请",
+        "task_name_en": "Core Guest Invitation",
+        "category": "Commercial",
+        "priority": "P0",
+        "duration_days": 10,
+        "dependencies": "活动策划方案制定"
+      },
+      {
+        "task_name_cn": "简易视觉设计",
+        "task_name_en": "Simple Visual Design",
+        "category": "Marketing",
+        "priority": "P0",
+        "duration_days": 4,
+        "dependencies": "活动策划方案制定"
+      },
+      {
+        "task_name_cn": "投资人邀请",
+        "task_name_en": "Investor Invitation",
+        "category": "Commercial",
+        "priority": "P1",
+        "duration_days": 8,
+        "dependencies": "活动策划方案制定"
+      },
+      {
+        "task_name_cn": "项目方定向邀请",
+        "task_name_en": "Project Team Targeted Invitation",
+        "category": "Commercial",
+        "priority": "P1",
+        "duration_days": 7,
+        "dependencies": "活动策划方案制 定"
+      },
+      {
+        "task_name_cn": "主持人确认",
+        "task_name_en": "Host Confirmation",
+        "category": "General",
+        "priority": "P2",
+        "duration_days": 4,
+        "dependencies": "核心嘉宾邀请"
+      },
+      {
+        "task_name_cn": "活动流程梳理",
+        "task_name_en": "Event Process Arrangement",
+        "category": "General",
+        "priority": "P3",
+        "duration_days": 2,
+        "dependencies": "核心嘉宾邀请"
+      },
+      {
+        "task_name_cn": "小型赞助洽谈",
+        "task_name_en": "Small Sponsorship Negotiation",
+        "category": "Commercial",
+        "priority": "P1",
+        "duration_days": 6,
+        "dependencies": "活动预算制定"
+      },
+      {
+        "task_name_cn": "场地选定签约",
+        "task_name_en": "Venue Selection and Contract",
+        "category": "Venue",
+        "priority": "P0",
+        "duration_days": 4,
+        "dependencies": "活动策划方案制定, 活 动预算制定"
+      },
+      {
+        "task_name_cn": "活动落地页搭建",
+        "task_name_en": "Event Landing Page Setup",
+        "category": "Marketing",
+        "priority": "P1",
+        "duration_days": 13,
+        "dependencies": "简易视觉设计"
+      },
+      {
+        "task_name_cn": "POAP设计与部署",
+        "task_name_en": "POAP Design and Deployment",
+        "category": "Marketing",
+        "priority": "P1",
+        "duration_days": 5,
+        "dependencies": "简易视觉设计"
+      },
+      {
+        "task_name_cn": "CT定向宣发",
+        "task_name_en": "CT Targeted Promotion",
+        "category": "Marketing",
+        "priority": "P1",
+        "duration_days": 14,
+        "dependencies": "简易视觉设计"
+      },
+      {
+        "task_name_cn": "Discord/TG社群推广",
+        "task_name_en": "Discord/TG Community Promotion",
+        "category": "Marketing",
+        "priority": "P2",
+        "duration_days": 12,
+        "dependencies": "简 易视觉设计"
+      },
+      {
+        "task_name_cn": "邀请函制作",
+        "task_name_en": "Invitation Card Production",
+        "category": "Marketing",
+        "priority": "P2",
+        "duration_days": 3,
+        "dependencies": "简易视觉设计"
+      },
+      {
+        "task_name_cn": "嘉宾小礼品准备",
+        "task_name_en": "Guest Gift Preparation",
+        "category": "Marketing",
+        "priority": "P3",
+        "duration_days": 3,
+        "dependencies": "简易视觉设计"
+      },
+      {
+        "task_name_cn": "参会名单确认",
+        "task_name_en": "Attendee List Confirmation",
+        "category": "Commercial",
+        "priority": "P2",
+        "duration_days": 3,
+        "dependencies": "核心嘉宾邀请, 投资人邀请, 项目方定向邀请"
+      },
+      {
+        "task_name_cn": "场地布置",
+        "task_name_en": "Venue Setup",
+        "category": "Venue",
+        "priority": "P1",
+        "duration_days": 2,
+        "dependencies": "场地选定签约, 简易视觉设计"
+      },
+      {
+        "task_name_cn": "现场人员安排",
+        "task_name_en": "On-site Staff Arrangement",
+        "category": "General",
+        "priority": "P2",
+        "duration_days": 2,
+        "dependencies": "场地布置"
+      },
+      {
+        "task_name_cn": "工作人员证件制作",
+        "task_name_en": "Staff Badge",
+        "category": "General",
+        "priority": "P3",
+        "duration_days": 2,
+        "dependencies": "场地布置"
+      },
+      {
+        "task_name_cn": "设备检查与租赁",
+        "task_name_en": "Equipment Check and Rental",
+        "category": "Venue",
+        "priority": "P2",
+        "duration_days": 2,
+        "dependencies": "场地选定签约"
+      },
+      {
+        "task_name_cn": "网络设备检查",
+        "task_name_en": "Network Equipment Check",
+        "category": "Venue",
+        "priority": "P2",
+        "duration_days": 1,
+        "dependencies": "场地选定签约"
+      },
+      {
+        "task_name_cn": "茶歇餐饮确认",
+        "task_name_en": "Refreshment and Catering Confirmation",
+        "category": "Venue",
+        "priority": "P3",
+        "duration_days": 2,
+        "dependencies": "场地选 定签约"
+      },
+      {
+        "task_name_cn": "Twitter Space预热",
+        "task_name_en": "Twitter Space Pre-event",
+        "category": "Marketing",
+        "priority": "P2",
+        "duration_days": 5,
+        "dependencies": "CT定向宣发"
+      },
+      {
+        "task_name_cn": "活动预告发布",
+        "task_name_en": "Event Preview Release",
+        "category": "Marketing",
+        "priority": "P3",
+        "duration_days": 3,
+        "dependencies": "CT定向宣发"
+      },
+      {
+        "task_name_cn": "商务对接名录制作",
+        "task_name_en": "Business Matching Directory",
+        "category": "Commercial",
+        "priority": "P3",
+        "duration_days": 2,
+        "dependencies": "参 会名单确认"
+      },
+      {
+        "task_name_cn": "嘉宾行程确认",
+        "task_name_en": "Guest Itinerary Confirmation",
+        "category": "Commercial",
+        "priority": "P2",
+        "duration_days": 3,
+        "dependencies": "参会名单确认, 场地布置"
+      },
+      {
+        "task_name_cn": "链上签到准备",
+        "task_name_en": "On-chain Check-in Preparation",
+        "category": "Venue",
+        "priority": "P3",
+        "duration_days": 2,
+        "dependencies": "场地布置, POAP设计与 部署"
+      },
+      {
+        "task_name_cn": "签到与指引布置",
+        "task_name_en": "Check-in and Signage Setup",
+        "category": "Venue",
+        "priority": "P2",
+        "duration_days": 1,
+        "dependencies": "场地布置"
+      },
+      {
+        "task_name_cn": "演讲内容对接",
+        "task_name_en": "Speech Content Coordination",
+        "category": "Commercial",
+        "priority": "P2",
+        "duration_days": 4,
+        "dependencies": "嘉宾行程确认, 核心嘉宾邀请"
+      },
+      {
+        "task_name_cn": "参会确认函发送",
+        "task_name_en": "Guest Confirmation",
+        "category": "Commercial",
+        "priority": "P3",
+        "duration_days": 2,
+        "dependencies": "嘉宾 行程确认"
+      },
+      {
+        "task_name_cn": "现场快速彩排",
+        "task_name_en": "Quick On-site Rehearsal",
+        "category": "Venue",
+        "priority": "P3",
+        "duration_days": 1,
+        "dependencies": "设备检查与租赁, 签到与指引布置, 演讲内容对接"
+      }
+    ]
+  },
+  "ai_commercial": {
+    "large": [
+      {"task_name_cn": "会议策划方案制定", "task_name_en": "Conference Proposal", "category": "Commercial", "priority": "P0", "duration_days": 20, "dependencies": "-"},
+      {"task_name_cn": "会议预算制定", "task_name_en": "Conference Budget Plan", "category": "Commercial", "priority": "P0", "duration_days": 10, "dependencies": "会议策划方案制定"},
+      {"task_name_cn": "AI行业热点议题策划", "task_name_en": "AI Trending Topics Sourcing", "category": "General", "priority": "P0", "duration_days": 12, "dependencies": "会议策划方案制 定"},
+      {"task_name_cn": "重点嘉宾名单筛选", "task_name_en": "Guest Listing", "category": "Commercial", "priority": "P0", "duration_days": 10, "dependencies": "会议策划方案制定"},
+      {"task_name_cn": "会议品牌视觉设计", "task_name_en": "Conference Key Visual Design", "category": "Marketing", "priority": "P0", "duration_days": 18, "dependencies": "会议策划方案制 定"},
+      {"task_name_cn": "场地初步筛选", "task_name_en": "Venue Sourcing", "category": "Venue", "priority": "P0", "duration_days": 10, "dependencies": "会议策划方案制定"},
+      {"task_name_cn": "主持人邀请与确认", "task_name_en": "Host Invitation and Confirmation", "category": "General", "priority": "P1", "duration_days": 12, "dependencies": "会议策划方案制 定"},
+      {"task_name_cn": "会议流程手册编写", "task_name_en": "Conference Rundown Playbook", "category": "General", "priority": "P2", "duration_days": 8, "dependencies": "AI行业热点议题策 划"},
+      {"task_name_cn": "风险预案制定", "task_name_en": "Risk Management Plan", "category": "General", "priority": "P3", "duration_days": 6, "dependencies": "会议预算制定"},
+      {"task_name_cn": "赞助方案设计", "task_name_en": "Sponsorship Package", "category": "Commercial", "priority": "P1", "duration_days": 10, "dependencies": "会议预算制定"},
+      {"task_name_cn": "头部大模型厂商邀请", "task_name_en": "Leading LLM Vendor Outreach", "category": "Commercial", "priority": "P0", "duration_days": 25, "dependencies": "重点嘉宾名单 筛选"},
+      {"task_name_cn": "知名AI投资机构邀请", "task_name_en": "VC Outreach", "category": "Commercial", "priority": "P0", "duration_days": 20, "dependencies": "重点嘉宾名单筛选"},
+      {"task_name_cn": "学术机构/研究院邀请", "task_name_en": "Academic & Research Institution Outreach", "category": "Commercial", "priority": "P1", "duration_days": 15, "dependencies": "重 点嘉宾名单筛选"},
+      {"task_name_cn": "技术白皮书准备", "task_name_en": "Technical Whitepaper", "category": "Marketing", "priority": "P1", "duration_days": 15, "dependencies": "AI行业热点议题策划"},
+      {"task_name_cn": "技术案例研究整理", "task_name_en": "Technical Case Study", "category": "Marketing", "priority": "P2", "duration_days": 10, "dependencies": "AI行业热点议题策划"},
+      {"task_name_cn": "会议落地页搭建", "task_name_en": "Conference Landing Page Setup", "category": "Marketing", "priority": "P2", "duration_days": 30, "dependencies": "会议品牌视觉设 计"},
+      {"task_name_cn": "技术社区宣发策略", "task_name_en": "Tech Community Promotion Strategy", "category": "Marketing", "priority": "P0", "duration_days": 60, "dependencies": "会议品 牌视觉设计"},
+      {"task_name_cn": "AI开发者社区运营", "task_name_en": "AI Developer Community Promotion", "category": "Marketing", "priority": "P1", "duration_days": 50, "dependencies": "会 议品牌视觉设计"},
+      {"task_name_cn": "技术KOL合作邀请", "task_name_en": "AI KOL Invitation", "category": "Marketing", "priority": "P1", "duration_days": 25, "dependencies": "会议品牌视觉设计"},
+      {"task_name_cn": "行业媒体合作", "task_name_en": "Media Outreach", "category": "Marketing", "priority": "P2", "duration_days": 18, "dependencies": "会议品牌视觉设计"},
+      {"task_name_cn": "云厂商/算力合作洽谈", "task_name_en": "Cloud & Computing Provider Partnership Outreach", "category": "Commercial", "priority": "P1", "duration_days": 22, "dependencies": "重点嘉宾名单筛选"},
+      {"task_name_cn": "AI创业公司邀请", "task_name_en": "AI Startup Outreach", "category": "Commercial", "priority": "P1", "duration_days": 18, "dependencies": "重点嘉宾名单筛选"},
+      {"task_name_cn": "宣传视频拍摄制作", "task_name_en": "Conference Promotional Video", "category": "Marketing", "priority": "P2", "duration_days": 16, "dependencies": "会议品牌视觉设 计"},
+      {"task_name_cn": "宣传物料设计制作", "task_name_en": "Visual Marketing Assets", "category": "Marketing", "priority": "P2", "duration_days": 14, "dependencies": "会议品牌视觉设 计"},
+      {"task_name_cn": "嘉宾伴手礼定制", "task_name_en": "Guest Gift Customization", "category": "Marketing", "priority": "P2", "duration_days": 12, "dependencies": "会议品牌视觉设 计"},
+      {"task_name_cn": "场地实地考察", "task_name_en": "Venue Site Visit", "category": "Venue", "priority": "P0", "duration_days": 6, "dependencies": "场地初步筛选"},
+      {"task_name_cn": "活动场地确认", "task_name_en": "Venue Confirmation", "category": "Venue", "priority": "P0", "duration_days": 5, "dependencies": "场地实地考察"},
+      {"task_name_cn": "赞助商招募", "task_name_en": "Sponsorship Outreach", "category": "Commercial", "priority": "P1", "duration_days": 45, "dependencies": "赞助方案设计"},
+      {"task_name_cn": "AI产品路演组织", "task_name_en": "AI Product Roadshow", "category": "Commercial", "priority": "P2", "duration_days": 18, "dependencies": "头部大模型厂商邀请, AI创 业公司邀请"},
+      {"task_name_cn": "技术论坛预热活动", "task_name_en": "AI Forum Countdown Promotion", "category": "Marketing", "priority": "P2", "duration_days": 20, "dependencies": "技术社区宣发策 略"},
+      {"task_name_cn": "媒体通稿撰写", "task_name_en": "Press Article Confirmation", "category": "Marketing", "priority": "P1", "duration_days": 6, "dependencies": "行业媒体合作"},
+      {"task_name_cn": "场地合同签订", "task_name_en": "Venue Contract Signing", "category": "Venue", "priority": "P1", "duration_days": 6, "dependencies": "场地实地考察, 会议预算制定"},
+      {"task_name_cn": "应急预案演练", "task_name_en": "On-site Emergency Drill", "category": "General", "priority": "P3", "duration_days": 2, "dependencies": "风险预案制定, 场地实地考察"},
+      {"task_name_cn": "志愿者招募与培训", "task_name_en": "Volunteer Recruitment and Training", "category": "General", "priority": "P2", "duration_days": 14, "dependencies": "会议预算 制定"},
+      {"task_name_cn": "参会嘉宾名单确认", "task_name_en": "Guest List Confirmation", "category": "Commercial", "priority": "P1", "duration_days": 14, "dependencies": "头部大模型厂 商邀请, 知名AI投资机构邀请"},
+      {"task_name_cn": "场地平面布局规划", "task_name_en": "Venue Floor Plan", "category": "Venue", "priority": "P1", "duration_days": 10, "dependencies": "场地合同签订"},
+      {"task_name_cn": "演示环境准备", "task_name_en": "Tech Demonstration Environment Setup", "category": "Venue", "priority": "P0", "duration_days": 8, "dependencies": "场地合同签 订"},
+      {"task_name_cn": "AI模型部署与调试", "task_name_en": "AI Model Deployment and Testing", "category": "Venue", "priority": "P1", "duration_days": 6, "dependencies": "演示环境准备"},
+      {"task_name_cn": "演示脚本设计", "task_name_en": "Demo Tech Slide", "category": "Marketing", "priority": "P1", "duration_days": 5, "dependencies": "AI模型部署与调试"},
+      {"task_name_cn": "技术彩排", "task_name_en": "Demo Tech Rehearsal", "category": "Venue", "priority": "P1", "duration_days": 2, "dependencies": "演示脚本设计"},
+      {"task_name_cn": "高速网络部署", "task_name_en": "Internet Bandwidth Provisioning", "category": "Venue", "priority": "P1", "duration_days": 5, "dependencies": "场地合同签订"},
+      {"task_name_cn": "算力资源保障", "task_name_en": "Computing Provisioning", "category": "Venue", "priority": "P1", "duration_days": 5, "dependencies": "场地合同签订"},
+      {"task_name_cn": "餐饮茶歇服务安排", "task_name_en": "Catering Vendor Sourcing", "category": "Venue", "priority": "P3", "duration_days": 8, "dependencies": "场地合同签订"},
+      {"task_name_cn": "私密洽谈室安排", "task_name_en": "Private Lounge", "category": "Venue", "priority": "P2", "duration_days": 4, "dependencies": "场地平面布局规划"},
+      {"task_name_cn": "AI工具体验区布置", "task_name_en": "AI Tool Experience Session", "category": "Venue", "priority": "P2", "duration_days": 5, "dependencies": "场地平面布局规划"},
+      {"task_name_cn": "嘉宾通讯录整理", "task_name_en": "Guest Contact List", "category": "General", "priority": "P3", "duration_days": 4, "dependencies": "参会嘉宾名单确认"},
+      {"task_name_cn": "投融资对接安排", "task_name_en": "Funding Matchmaking", "category": "Commercial", "priority": "P2", "duration_days": 10, "dependencies": "参会嘉宾名单确认"},
+      {"task_name_cn": "商务对接名录制作", "task_name_en": "Business Matching Directory", "category": "Commercial", "priority": "P3", "duration_days": 6, "dependencies": "参会嘉宾名单确 认"},
+      {"task_name_cn": "场地搭建与布置", "task_name_en": "Venue Setup", "category": "Venue", "priority": "P1", "duration_days": 12, "dependencies": "场地平面布局规划, 会议品牌视觉设计"},
+      {"task_name_cn": "现场工作人员安排", "task_name_en": "On-site Staff Management", "category": "General", "priority": "P2", "duration_days": 6, "dependencies": "场地搭建与布置"},
+      {"task_name_cn": "工作人员证件制作", "task_name_en": "Staff Badge", "category": "General", "priority": "P3", "duration_days": 5, "dependencies": "场地搭建与布置"},
+      {"task_name_cn": "签到系统部署", "task_name_en": "Check-in System Setup", "category": "Venue", "priority": "P2", "duration_days": 4, "dependencies": "高速网络部署"},
+      {"task_name_cn": "签到区与指引系统", "task_name_en": "Check-in Area & Wayfinding Setup", "category": "Venue", "priority": "P2", "duration_days": 5, "dependencies": "场地平面布局规划"},
+      {"task_name_cn": "VIP休息区布置", "task_name_en": "VIP Lounge Setup", "category": "Venue", "priority": "P3", "duration_days": 4, "dependencies": "场地平面布局规划"},
+      {"task_name_cn": "音响灯光设备租赁", "task_name_en": "AV & Lighting Equipment Rental", "category": "Venue", "priority": "P2", "duration_days": 8, "dependencies": "场地搭建与布置"},
+      {"task_name_cn": "备份方案准备", "task_name_en": "Backup Plan", "category": "Venue", "priority": "P2", "duration_days": 3, "dependencies": "AI模型部署与调试"},
+      {"task_name_cn": "嘉宾行程与接待确认", "task_name_en": "Guest Schedule Confirmation", "category": "Commercial", "priority": "P2", "duration_days": 10, "dependencies": "参会嘉宾名单 确认, 场地搭建与布置"},
+      {"task_name_cn": "演讲嘉宾内容对接", "task_name_en": "Guest Speach Final", "category": "Commercial", "priority": "P2", "duration_days": 14, "dependencies": "嘉宾行程与接待确认"},
+      {"task_name_cn": "参会确认函发送", "task_name_en": "Guest Confirmation", "category": "Commercial", "priority": "P3", "duration_days": 5, "dependencies": "嘉宾行程与接待确认"},
+      {"task_name_cn": "VIP嘉宾专属服务安排", "task_name_en": "VIP Service", "category": "Commercial", "priority": "P3", "duration_days": 6, "dependencies": "嘉宾行程与接待确认"},
+      {"task_name_cn": "会议直播系统部署", "task_name_en": "Conference Live Streaming", "category": "Venue", "priority": "P2", "duration_days": 5, "dependencies": "高速网络部署"},
+      {"task_name_cn": "全流程彩排", "task_name_en": "Full Rehearsal", "category": "Venue", "priority": "P1", "duration_days": 2, "dependencies": "技术彩排, 签到区与指引系统, 演讲嘉宾内容 对接"}
+    ],
+    "medium": [
+      {"task_name_cn": "会议策划方案制定", "task_name_en": "Conference Proposal", "category": "Commercial", "priority": "P0", "duration_days": 12, "dependencies": "-"},
+      {"task_name_cn": "会议预算制定", "task_name_en": "Conference Budget Plan", "category": "Commercial", "priority": "P0", "duration_days": 6, "dependencies": "会议策划方案制 定"},
+      {"task_name_cn": "AI议题策划", "task_name_en": "AI Topics Planning", "category": "Commercial", "priority": "P0", "duration_days": 6, "dependencies": "会议策划方案制定"},
+      {"task_name_cn": "嘉宾名单梳理", "task_name_en": "Guest List Compilation", "category": "Commercial", "priority": "P0", "duration_days": 6, "dependencies": "会议策划方案制定"},
+      {"task_name_cn": "会议品牌视觉设计", "task_name_en": "Conference Key Visual Design", "category": "Marketing", "priority": "P0", "duration_days": 12, "dependencies": "会议策划方案制 定"},
+      {"task_name_cn": "场地初步筛选", "task_name_en": "Venue Sourcing", "category": "Venue", "priority": "P0", "duration_days": 6, "dependencies": "会议策划方案制定"},
+      {"task_name_cn": "主持人邀请确认", "task_name_en": "Host Invitation and Confirmation", "category": "General", "priority": "P1", "duration_days": 8, "dependencies": "会议策划方案制定"},
+      {"task_name_cn": "会议流程手册编写", "task_name_en": "Conference Rundown Playbook", "category": "General", "priority": "P2", "duration_days": 5, "dependencies": "AI议 题策划"},
+      {"task_name_cn": "风险预案制定", "task_name_en": "Risk Management Plan", "category": "General", "priority": "P3", "duration_days": 4, "dependencies": "会议预算制定"},
+      {"task_name_cn": "赞助方案设计", "task_name_en": "Sponsorship Package", "category": "Commercial", "priority": "P1", "duration_days": 6, "dependencies": "会议预算制定"},
+      {"task_name_cn": "AI大模型厂商邀请", "task_name_en": "LLM Company Invitation", "category": "Commercial", "priority": "P0", "duration_days": 16, "dependencies": "嘉宾名单梳 理"},
+      {"task_name_cn": "AI投资机构邀请", "task_name_en": "AI VC Institution Invitation", "category": "Commercial", "priority": "P1", "duration_days": 14, "dependencies": "嘉宾名单梳 理"},
+      {"task_name_cn": "AI创业公司邀请", "task_name_en": "AI Startup Outreach", "category": "Commercial", "priority": "P1", "duration_days": 12, "dependencies": "嘉宾名单梳理"},
+      {"task_name_cn": "会议落地页搭建", "task_name_en": "Conference Landing Page Setup", "category": "Marketing", "priority": "P2", "duration_days": 19, "dependencies": "会议品牌视觉设 计"},
+      {"task_name_cn": "技术社区宣发", "task_name_en": "Tech Community Promotion", "category": "Marketing", "priority": "P1", "duration_days": 40, "dependencies": "会议品牌视觉设 计"},
+      {"task_name_cn": "AI开发者社区运营", "task_name_en": "AI Developer Community Promotion", "category": "Marketing", "priority": "P1", "duration_days": 35, "dependencies": "会议 品牌视觉设计"},
+      {"task_name_cn": "技术KOL合作邀请", "task_name_en": "AI KOL Invitation", "category": "Marketing", "priority": "P2", "duration_days": 15, "dependencies": "会议品牌视觉设 计"},
+      {"task_name_cn": "云厂商合作洽谈", "task_name_en": "Cloud Partnership Negotiation", "category": "Commercial", "priority": "P1", "duration_days": 12, "dependencies": "嘉宾名单梳 理"},
+      {"task_name_cn": "宣传物料制作", "task_name_en": "Promotional Materials Production", "category": "Marketing", "priority": "P2", "duration_days": 10, "dependencies": "会议品牌视觉设 计"},
+      {"task_name_cn": "嘉宾伴手礼准备", "task_name_en": "Guest Gift Preparation", "category": "Marketing", "priority": "P3", "duration_days": 8, "dependencies": "会议品牌视觉设计"},
+      {"task_name_cn": "场地实地考察", "task_name_en": "Venue Site Visit", "category": "Venue", "priority": "P1", "duration_days": 5, "dependencies": "场地初步筛选"},
+      {"task_name_cn": "活动场地确认", "task_name_en": "Venue Confirmation", "category": "Venue", "priority": "P1", "duration_days": 3, "dependencies": "场地实地考察"},
+      {"task_name_cn": "赞助商招募", "task_name_en": "Sponsorship Outreach", "category": "Commercial", "priority": "P1", "duration_days": 25, "dependencies": "赞助方案设计"},
+      {"task_name_cn": "技术论坛预热", "task_name_en": "Tech Forum Pre-event", "category": "Marketing", "priority": "P2", "duration_days": 12, "dependencies": "技术社区宣发"},
+      {"task_name_cn": "媒体通稿撰写", "task_name_en": "Press Article Confirmation", "category": "Marketing", "priority": "P3", "duration_days": 4, "dependencies": "AI议题策划"},
+      {"task_name_cn": "场地合同签订", "task_name_en": "Venue Contract Signing", "category": "Venue", "priority": "P1", "duration_days": 4, "dependencies": "场地实地考察, 会议预算制定"},
+      {"task_name_cn": "参会名单确认", "task_name_en": "Attendee List Confirmation", "category": "Commercial", "priority": "P2", "duration_days": 8, "dependencies": "AI大模型厂商邀请, AI投资机 构邀请, AI创业公司邀请"},
+      {"task_name_cn": "场地布局设计", "task_name_en": "Venue Layout Design", "category": "Venue", "priority": "P2", "duration_days": 6, "dependencies": "场地合同签订, 会议品牌视觉设计"},
+      {"task_name_cn": "演示环境准备", "task_name_en": "Tech Demonstration Environment Setup", "category": "Venue", "priority": "P0", "duration_days": 5, "dependencies": "场地合同签订"},
+      {"task_name_cn": "AI模型部署", "task_name_en": "AI Model Deployment", "category": "Venue", "priority": "P1", "duration_days": 4, "dependencies": "演示环境准备"},
+      {"task_name_cn": "演示脚本设计", "task_name_en": "Demo Tech Slide", "category": "Marketing", "priority": "P1", "duration_days": 3, "dependencies": "AI模型部署"},
+      {"task_name_cn": "高速网络部署", "task_name_en": "Internet Bandwidth Provisioning", "category": "Venue", "priority": "P1", "duration_days": 3, "dependencies": "场地合同签订"},
+      {"task_name_cn": "餐饮茶歇安排", "task_name_en": "Catering and Refreshment Arrangement", "category": "Venue", "priority": "P3", "duration_days": 4, "dependencies": "场地合 同签订"},
+      {"task_name_cn": "私密洽谈室安排", "task_name_en": "Private Lounge", "category": "Venue", "priority": "P2", "duration_days": 3, "dependencies": "场地布局设计"},
+      {"task_name_cn": "投融资对接安排", "task_name_en": "Funding Matchmaking", "category": "Commercial", "priority": "P2", "duration_days": 7, "dependencies": "参会名单确认"},
+      {"task_name_cn": "商务对接名录制作", "task_name_en": "Business Matching Directory", "category": "Commercial", "priority": "P3", "duration_days": 4, "dependencies": "参 会名单确认"},
+      {"task_name_cn": "场地搭建布置", "task_name_en": "Venue Construction and Setup", "category": "Venue", "priority": "P2", "duration_days": 7, "dependencies": "场地布局设计"},
+      {"task_name_cn": "现场工作人员安排", "task_name_en": "On-site Staff Management", "category": "General", "priority": "P2", "duration_days": 4, "dependencies": "场地搭建布置"},
+      {"task_name_cn": "工作人员证件制作", "task_name_en": "Staff Badge", "category": "General", "priority": "P3", "duration_days": 3, "dependencies": "场地搭建布置"},
+      {"task_name_cn": "签到系统部署", "task_name_en": "Check-in System Setup", "category": "Venue", "priority": "P2", "duration_days": 3, "dependencies": "高速网络部署"},
+      {"task_name_cn": "签到区与指引布置", "task_name_en": "Check-in Area and Signage Setup", "category": "Venue", "priority": "P3", "duration_days": 3, "dependencies": "场地布局设计"},
+      {"task_name_cn": "备份方案准备", "task_name_en": "Backup Plan", "category": "Venue", "priority": "P2", "duration_days": 2, "dependencies": "AI模型部署"},
+      {"task_name_cn": "音视频设备租赁", "task_name_en": "Audio-Visual Equipment Rental", "category": "Venue", "priority": "P2", "duration_days": 5, "dependencies": "场地搭建布置"},
+      {"task_name_cn": "嘉宾行程确认", "task_name_en": "Guest Itinerary Confirmation", "category": "Commercial", "priority": "P2", "duration_days": 6, "dependencies": "参会名单确认, 场地搭建布置"},
+      {"task_name_cn": "演讲内容对接", "task_name_en": "Speech Content Coordination", "category": "Commercial", "priority": "P2", "duration_days": 8, "dependencies": "嘉宾行程确认"},
+      {"task_name_cn": "参会确认函发送", "task_name_en": "Guest Confirmation", "category": "Commercial", "priority": "P3", "duration_days": 3, "dependencies": "嘉宾 行程确认"},
+      {"task_name_cn": "技术彩排", "task_name_en": "Demo Tech Rehearsal", "category": "Venue", "priority": "P1", "duration_days": 1, "dependencies": "演示脚本设计"},
+      {"task_name_cn": "现场彩排", "task_name_en": "On-site Rehearsal", "category": "Venue", "priority": "P2", "duration_days": 2, "dependencies": "音视频设备租赁, 签到区与指引布置, 演讲内 容对接, 技术彩排"}
+    ],
+    "small": [
+      {
+        "task_name_cn": "会议策划方案制定",
+        "task_name_en": "Conference Proposal",
+        "category": "Commercial",
+        "priority": "P0",
+        "duration_days": 6,
+        "dependencies": "-"
+      },
+      {
+        "task_name_cn": "会议预算制定",
+        "task_name_en": "Conference Budget Plan",
+        "category": "Commercial",
+        "priority": "P0",
+        "duration_days": 2,
+        "dependencies": "会议策划方案制 定"
+      },
+      {
+        "task_name_cn": "核心议题确定",
+        "task_name_en": "Core Topics Confirmation",
+        "category": "Commercial",
+        "priority": "P0",
+        "duration_days": 2,
+        "dependencies": "会议策划方案制定"
+      },
+      {
+        "task_name_cn": "核心嘉宾邀请",
+        "task_name_en": "Core Guest Invitation",
+        "category": "Commercial",
+        "priority": "P0",
+        "duration_days": 10,
+        "dependencies": "会议策划方案制定"
+      },
+      {
+        "task_name_cn": "简易视觉设计",
+        "task_name_en": "Simple Visual Design",
+        "category": "Marketing",
+        "priority": "P0",
+        "duration_days": 4,
+        "dependencies": "会议策划方案制定"
+      },
+      {
+        "task_name_cn": "AI投资人邀请",
+        "task_name_en": "AI Investor Invitation",
+        "category": "Commercial",
+        "priority": "P1",
+        "duration_days": 8,
+        "dependencies": "会议策划方案制定"
+      },
+      {
+        "task_name_cn": "AI创业公司定向邀请",
+        "task_name_en": "AI Startup Targeted Invitation",
+        "category": "Commercial",
+        "priority": "P1",
+        "duration_days": 7,
+        "dependencies": "会议策划方案制 定"
+      },
+      {
+        "task_name_cn": "主持人确认",
+        "task_name_en": "Host Confirmation",
+        "category": "General",
+        "priority": "P2",
+        "duration_days": 4,
+        "dependencies": "核心议题确定"
+      },
+      {
+        "task_name_cn": "会议流程梳理",
+        "task_name_en": "Meeting Process Arrangement",
+        "category": "General",
+        "priority": "P3",
+        "duration_days": 2,
+        "dependencies": "核心议题确定"
+      },
+      {
+        "task_name_cn": "小型赞助洽谈",
+        "task_name_en": "Small Sponsorship Negotiation",
+        "category": "Commercial",
+        "priority": "P1",
+        "duration_days": 6,
+        "dependencies": "会议预算制定"
+      },
+      {
+        "task_name_cn": "场地选定签约",
+        "task_name_en": "Venue Selection and Contract",
+        "category": "Venue",
+        "priority": "P0",
+        "duration_days": 4,
+        "dependencies": "会议策划方案制定, 会 议预算制定"
+      },
+      {
+        "task_name_cn": "会议落地页搭建",
+        "task_name_en": "Conference Landing Page Setup",
+        "category": "Marketing",
+        "priority": "P1",
+        "duration_days": 10,
+        "dependencies": "简易视觉设计"
+      },
+      {
+        "task_name_cn": "技术社区定向宣发",
+        "task_name_en": "Tech Community Targeted Promotion",
+        "category": "Marketing",
+        "priority": "P1",
+        "duration_days": 14,
+        "dependencies": "简 易视觉设计"
+      },
+      {
+        "task_name_cn": "AI开发者社群推广",
+        "task_name_en": "AI Developer Community Promotion",
+        "category": "Marketing",
+        "priority": "P2",
+        "duration_days": 12,
+        "dependencies": "简 易视觉设计"
+      },
+      {
+        "task_name_cn": "邀请函制作",
+        "task_name_en": "Invitation Card Production",
+        "category": "Marketing",
+        "priority": "P2",
+        "duration_days": 3,
+        "dependencies": "简易视觉设计"
+      },
+      {
+        "task_name_cn": "嘉宾小礼品准备",
+        "task_name_en": "Guest Gift Preparation",
+        "category": "Marketing",
+        "priority": "P3",
+        "duration_days": 3,
+        "dependencies": "简易视觉设计"
+      },
+      {
+        "task_name_cn": "参会名单确认",
+        "task_name_en": "Attendee List Confirmation",
+        "category": "Commercial",
+        "priority": "P2",
+        "duration_days": 3,
+        "dependencies": "核心嘉宾邀请, AI投资人邀 请, AI创业公司定向邀请"
+      },
+      {
+        "task_name_cn": "场地布置",
+        "task_name_en": "Venue Setup",
+        "category": "Venue",
+        "priority": "P1",
+        "duration_days": 2,
+        "dependencies": "场地选定签约, 简易视觉设计"
+      },
+      {
+        "task_name_cn": "现场人员安排",
+        "task_name_en": "On-site Staff Arrangement",
+        "category": "General",
+        "priority": "P2",
+        "duration_days": 2,
+        "dependencies": "场地布置"
+      },
+      {
+        "task_name_cn": "工作人员证件制作",
+        "task_name_en": "Staff Badge",
+        "category": "General",
+        "priority": "P3",
+        "duration_days": 2,
+        "dependencies": "场地布置"
+      },
+      {
+        "task_name_cn": "简化演示环境准备",
+        "task_name_en": "Simplified Demo Environment Setup",
+        "category": "Venue",
+        "priority": "P1",
+        "duration_days": 3,
+        "dependencies": "场地选定签 约"
+      },
+      {
+        "task_name_cn": "核心AI演示准备",
+        "task_name_en": "Core AI Demo Preparation",
+        "category": "Venue",
+        "priority": "P1",
+        "duration_days": 2,
+        "dependencies": "简化演示环境准备"
+      },
+      {
+        "task_name_cn": "网络设备检查",
+        "task_name_en": "Network Equipment Check",
+        "category": "Venue",
+        "priority": "P1",
+        "duration_days": 1,
+        "dependencies": "场地选定签约"
+      },
+      {
+        "task_name_cn": "茶歇餐饮确认",
+        "task_name_en": "Refreshment and Catering Confirmation",
+        "category": "Venue",
+        "priority": "P3",
+        "duration_days": 2,
+        "dependencies": "场地选 定签约"
+      },
+      {
+        "task_name_cn": "技术论坛预热",
+        "task_name_en": "Tech Forum Pre-event",
+        "category": "Marketing",
+        "priority": "P2",
+        "duration_days": 5,
+        "dependencies": "技术社区定向宣发"
+      },
+      {
+        "task_name_cn": "商务对接名录制作",
+        "task_name_en": "Business Matching Directory",
+        "category": "Commercial",
+        "priority": "P3",
+        "duration_days": 2,
+        "dependencies": "参 会名单确认"
+      },
+      {
+        "task_name_cn": "嘉宾行程确认",
+        "task_name_en": "Guest Itinerary Confirmation",
+        "category": "Commercial",
+        "priority": "P2",
+        "duration_days": 3,
+        "dependencies": "参会名单确认, 场地布置"
+      },
+      {
+        "task_name_cn": "签到与指引布置",
+        "task_name_en": "Check-in and Signage Setup",
+        "category": "Venue",
+        "priority": "P2",
+        "duration_days": 1,
+        "dependencies": "场地布置"
+      },
+      {
+        "task_name_cn": "快速商务配对",
+        "task_name_en": "Quick Business Matching",
+        "category": "Commercial",
+        "priority": "P2",
+        "duration_days": 2,
+        "dependencies": "参会名单确认"
+      },
+      {
+        "task_name_cn": "演讲内容对接",
+        "task_name_en": "Speech Content Coordination",
+        "category": "Commercial",
+        "priority": "P2",
+        "duration_days": 4,
+        "dependencies": "嘉宾行程确认, 核心议题确定"
+      },
+      {
+        "task_name_cn": "参会确认函发送",
+        "task_name_en": "Guest Confirmation",
+        "category": "Commercial",
+        "priority": "P3",
+        "duration_days": 2,
+        "dependencies": "嘉宾 行程确认"
+      },
+      {
+        "task_name_cn": "现场快速彩排",
+        "task_name_en": "Quick On-site Rehearsal",
+        "category": "Venue",
+        "priority": "P3",
+        "duration_days": 1,
+        "dependencies": "核心AI演示准备, 签到与指引布置, 演讲内容对接"
+      }
+    ]
+  },
+  "other": {
+    "large": [
+      {"task_name_cn": "活动策划方案制定", "task_name_en": "Event Proposal", "category": "Commercial", "priority": "P0", "duration_days": 20, "dependencies": "-"},
+      {"task_name_cn": "活动预算制定", "task_name_en": "Event Budget Plan", "category": "Commercial", "priority": "P0", "duration_days": 10, "dependencies": "活动策划方案制定"},
+      {"task_name_cn": "行业热点议题策划", "task_name_en": "Trending Topics Sourcing", "category": "General", "priority": "P0", "duration_days": 12, "dependencies": "活动策划方案制 定"},
+      {"task_name_cn": "重点嘉宾名单筛选", "task_name_en": "Guest List", "category": "Commercial", "priority": "P0", "duration_days": 10, "dependencies": "活动策划方案制定"},
+      {"task_name_cn": "活动品牌视觉设计", "task_name_en": "Conference Key Visual Design", "category": "Marketing", "priority": "P0", "duration_days": 18, "dependencies": "活动策划方案制 定"},
+      {"task_name_cn": "场地初步筛选", "task_name_en": "Venue Sourcing", "category": "Venue", "priority": "P0", "duration_days": 10, "dependencies": "活动策划方案制定"},
+      {"task_name_cn": "主持人邀请与确认", "task_name_en": "Host Invitation and Confirmation", "category": "General", "priority": "P1", "duration_days": 12, "dependencies": "活动策划方案制 定"},
+      {"task_name_cn": "活动流程手册编写", "task_name_en": "Event Rundown Playbook", "category": "General", "priority": "P2", "duration_days": 8, "dependencies": "行业热点议题策划"},
+      {"task_name_cn": "风险预案制定", "task_name_en": "Risk Management Plan", "category": "General", "priority": "P3", "duration_days": 6, "dependencies": "活动预算制定"},
+      {"task_name_cn": "赞助方案设计", "task_name_en": "Sponsorship Package", "category": "Commercial", "priority": "P1", "duration_days": 10, "dependencies": "活动预算制定"},
+      {"task_name_cn": "头部企业/机构邀请", "task_name_en": "Leading Enterprise/Institution Outreach", "category": "Commercial", "priority": "P0", "duration_days": 25, "dependencies": "重 点嘉宾名单筛选"},
+      {"task_name_cn": "知名投资机构邀请", "task_name_en": "VC Outreach", "category": "Commercial", "priority": "P0", "duration_days": 20, "dependencies": "重点嘉宾名单筛选"},
+      {"task_name_cn": "学术/研究机构邀请", "task_name_en": "Academic & Research Institution Outreach", "category": "Commercial", "priority": "P1", "duration_days": 15, "dependencies": "重 点嘉宾名单筛选"},
+      {"task_name_cn": "专业资料准备", "task_name_en": "Event Documentation", "category": "Marketing", "priority": "P1", "duration_days": 15, "dependencies": "行业热点议题策划"},
+      {"task_name_cn": "案例研究整理", "task_name_en": "Case Study", "category": "Marketing", "priority": "P2", "duration_days": 10, "dependencies": "行业热点议题策划"},
+      {"task_name_cn": "活动落地页搭建", "task_name_en": "Event Landing Page Setup", "category": "Marketing", "priority": "P2", "duration_days": 30, "dependencies": "活动品牌视觉设 计"},
+      {"task_name_cn": "社交媒体宣发策略", "task_name_en": "Social Media Promotion", "category": "Marketing", "priority": "P0", "duration_days": 60, "dependencies": "活动品牌视觉设 计"},
+      {"task_name_cn": "行业社群运营", "task_name_en": "Community Promotion", "category": "Marketing", "priority": "P1", "duration_days": 50, "dependencies": "活动品牌视觉设计"},
+      {"task_name_cn": "行业KOL合作邀请", "task_name_en": "KOL Outreach", "category": "Marketing", "priority": "P1", "duration_days": 25, "dependencies": "活动品牌视觉设计"},
+      {"task_name_cn": "行业媒体合作", "task_name_en": "Media Outreach", "category": "Marketing", "priority": "P2", "duration_days": 18, "dependencies": "活动品牌视觉设计"},
+      {"task_name_cn": "战略合作伙伴洽谈", "task_name_en": "Partnership Outreach", "category": "Commercial", "priority": "P1", "duration_days": 22, "dependencies": "重点嘉宾名单筛选"},
+      {"task_name_cn": "创业公司邀请", "task_name_en": "Startup Outreach", "category": "Commercial", "priority": "P1", "duration_days": 18, "dependencies": "重点嘉宾名单筛选"},
+      {"task_name_cn": "宣传视频拍摄制作", "task_name_en": "Event Promotional Video", "category": "Marketing", "priority": "P2", "duration_days": 16, "dependencies": "活动品牌视觉设 计"},
+      {"task_name_cn": "宣传物料设计制作", "task_name_en": "Visual Marketing Assets", "category": "Marketing", "priority": "P2", "duration_days": 14, "dependencies": "活动品牌视觉设 计"},
+      {"task_name_cn": "嘉宾伴手礼定制", "task_name_en": "Guest Gift Customization", "category": "Marketing", "priority": "P2", "duration_days": 12, "dependencies": "活动品牌视觉设 计"},
+      {"task_name_cn": "纪念品设计", "task_name_en": "Event Merch Design", "category": "Marketing", "priority": "P2", "duration_days": 12, "dependencies": "活动品牌视觉设计"},
+      {"task_name_cn": "场地实地考察", "task_name_en": "Venue Site Visit", "category": "Venue", "priority": "P0", "duration_days": 6, "dependencies": "场地初步筛选"},
+      {"task_name_cn": "活动场地确认", "task_name_en": "Venue Confirmation", "category": "Venue", "priority": "P0", "duration_days": 5, "dependencies": "场地实地考察"},
+      {"task_name_cn": "赞助商招募", "task_name_en": "Sponsorship Outreach", "category": "Commercial", "priority": "P1", "duration_days": 45, "dependencies": "赞助方案设计"},
+      {"task_name_cn": "项目路演组织", "task_name_en": "Event Roadshow Plan", "category": "Commercial", "priority": "P2", "duration_days": 18, "dependencies": "头部企业/机构邀请, 创业公 司邀请"},
+      {"task_name_cn": "线上预热活动", "task_name_en": "Online Event Countdown Promotion", "category": "Marketing", "priority": "P2", "duration_days": 20, "dependencies": "社交媒体宣发策 略"},
+      {"task_name_cn": "媒体通稿撰写", "task_name_en": "Press Article Confirmation", "category": "Marketing", "priority": "P1", "duration_days": 6, "dependencies": "行业媒体合作"},
+      {"task_name_cn": "倒计时海报发布", "task_name_en": "Countdown Poster", "category": "Marketing", "priority": "P3", "duration_days": 7, "dependencies": "宣传视频拍摄制作"},
+      {"task_name_cn": "场地合同签订", "task_name_en": "Venue Contract Signing", "category": "Venue", "priority": "P1", "duration_days": 6, "dependencies": "场地实地考察, 活动预算制定"},
+      {"task_name_cn": "应急预案演练", "task_name_en": "On-site Emergency Drill", "category": "General", "priority": "P3", "duration_days": 2, "dependencies": "风险预案制定, 场地实地考察"},
+      {"task_name_cn": "志愿者招募与培训", "task_name_en": "Volunteer Recruitment and Training", "category": "General", "priority": "P2", "duration_days": 14, "dependencies": "活动预算 制定"},
+      {"task_name_cn": "参会嘉宾名单确认", "task_name_en": "Guest List Confirmation", "category": "Commercial", "priority": "P1", "duration_days": 14, "dependencies": "头部企业/机构 邀请, 知名投资机构邀请"},
+      {"task_name_cn": "场地平面布局规划", "task_name_en": "Venue Floor Plan", "category": "Venue", "priority": "P1", "duration_days": 10, "dependencies": "场地合同签订"},
+      {"task_name_cn": "网络带宽保障", "task_name_en": "Internet Bandwidth Provisioning", "category": "Venue", "priority": "P2", "duration_days": 5, "dependencies": "场地合同签订"},
+      {"task_name_cn": "餐饮茶歇服务安排", "task_name_en": "Catering Vendor Sourcing", "category": "Venue", "priority": "P3", "duration_days": 8, "dependencies": "场地合同签订"},
+      {"task_name_cn": "嘉宾通讯录整理", "task_name_en": "Guest Contact List", "category": "General", "priority": "P3", "duration_days": 4, "dependencies": "参会嘉宾名单确认"},
+      {"task_name_cn": "投融资对接安排", "task_name_en": "Funding Matchmaking", "category": "Commercial", "priority": "P2", "duration_days": 10, "dependencies": "参会嘉宾名单确认"},
+      {"task_name_cn": "商务对接名录制作", "task_name_en": "Business Matching Directory", "category": "Commercial", "priority": "P3", "duration_days": 6, "dependencies": "参会嘉宾名单确 认"},
+      {"task_name_cn": "场地搭建与布置", "task_name_en": "Venue Setup", "category": "Venue", "priority": "P1", "duration_days": 12, "dependencies": "场地平面布局规划, 活动品牌视觉设计"},
+      {"task_name_cn": "现场工作人员安排", "task_name_en": "On-site Staff Management", "category": "General", "priority": "P2", "duration_days": 6, "dependencies": "场地搭建与布置"},
+      {"task_name_cn": "工作人员证件制作", "task_name_en": "Staff Badge", "category": "General", "priority": "P3", "duration_days": 5, "dependencies": "场地搭建与布置"},
+      {"task_name_cn": "签到系统部署", "task_name_en": "Check-in System Setup", "category": "Venue", "priority": "P2", "duration_days": 6, "dependencies": "场地平面布局规划"},
+      {"task_name_cn": "签到区与指引系统", "task_name_en": "Check-in Area & Wayfinding Setup", "category": "Venue", "priority": "P2", "duration_days": 5, "dependencies": "场地平面布局规划, 宣 传视频拍摄制作"},
+      {"task_name_cn": "VIP休息区布置", "task_name_en": "VIP Lounge Setup", "category": "Venue", "priority": "P3", "duration_days": 4, "dependencies": "场地平面布局规划"},
+      {"task_name_cn": "互动体验区布置", "task_name_en": "Interactive Experience Session Setup", "category": "Venue", "priority": "P2", "duration_days": 5, "dependencies": "场地平面布局 规划"},
+      {"task_name_cn": "音响灯光设备租赁", "task_name_en": "AV & Lighting Equipment Rental", "category": "Venue", "priority": "P2", "duration_days": 8, "dependencies": "场地搭建与布置"},
+      {"task_name_cn": "直播系统部署", "task_name_en": "Live Streaming System Setup", "category": "Venue", "priority": "P2", "duration_days": 5, "dependencies": "网络带宽保障"},
+      {"task_name_cn": "嘉宾行程与接待确认", "task_name_en": "Guest Schedule Confirmation", "category": "Commercial", "priority": "P2", "duration_days": 10, "dependencies": "参会嘉宾名单 确认, 场地搭建与布置"},
+      {"task_name_cn": "演讲嘉宾内容对接", "task_name_en": "Guest Speach Final", "category": "Commercial", "priority": "P2", "duration_days": 14, "dependencies": "嘉宾行程与接待确认"},
+      {"task_name_cn": "参会确认函发送", "task_name_en": "Guest Confirmation", "category": "Commercial", "priority": "P3", "duration_days": 5, "dependencies": "嘉宾行程与接待确认"},
+      {"task_name_cn": "VIP嘉宾专属服务安排", "task_name_en": "VIP Guest Service", "category": "Commercial", "priority": "P3", "duration_days": 6, "dependencies": "嘉宾行程与接待确认"},
+      {"task_name_cn": "全流程彩排", "task_name_en": "Full Rehearsal", "category": "Venue", "priority": "P1", "duration_days": 3, "dependencies": "签到区与指引系统, 演讲嘉宾内容对接"}
+    ],
+    "medium": [
+      {"task_name_cn": "活动策划方案制定", "task_name_en": "Event Proposal", "category": "Commercial", "priority": "P0", "duration_days": 10, "dependencies": "-"},
+      {"task_name_cn": "活动预算制定", "task_name_en": "Event Budget Plan", "category": "Commercial", "priority": "P0", "duration_days": 6, "dependencies": "活动策划方案制 定"},
+      {"task_name_cn": "嘉宾名单梳理", "task_name_en": "Guest List Compilation", "category": "Commercial", "priority": "P0", "duration_days": 6, "dependencies": "活动策划方案制定"},
+      {"task_name_cn": "活动品牌视觉设计", "task_name_en": "Conference Key Visual Design", "category": "Marketing", "priority": "P0", "duration_days": 12, "dependencies": "活动策划方案制 定"},
+      {"task_name_cn": "场地初步筛选", "task_name_en": "Venue Sourcing", "category": "Venue", "priority": "P0", "duration_days": 6, "dependencies": "活动策划方案制定"},
+      {"task_name_cn": "主持人邀请确认", "task_name_en": "Host Invitation and Confirmation", "category": "General", "priority": "P1", "duration_days": 8, "dependencies": "活动策划方案制定"},
+      {"task_name_cn": "活动流程手册编写", "task_name_en": "Event Rundown Playbook", "category": "General", "priority": "P2", "duration_days": 5, "dependencies": "活动 策划方案制定"},
+      {"task_name_cn": "项目进度管理", "task_name_en": "Project Progress Management", "category": "General", "priority": "P2", "duration_days": 4, "dependencies": "活动预算制定"},
+      {"task_name_cn": "风险预案制定", "task_name_en": "Risk Management Plan", "category": "General", "priority": "P3", "duration_days": 4, "dependencies": "活动预算制定"},
+      {"task_name_cn": "赞助方案设计", "task_name_en": "Sponsorship Package", "category": "Commercial", "priority": "P1", "duration_days": 6, "dependencies": "活动预算制定"},
+      {"task_name_cn": "重点企业/机构邀请", "task_name_en": "Key Enterprise/Institution Invitation", "category": "Commercial", "priority": "P0", "duration_days": 16, "dependencies": "嘉 宾名单梳理"},
+      {"task_name_cn": "投资机构邀请", "task_name_en": "Investment Institution Invitation", "category": "Commercial", "priority": "P1", "duration_days": 14, "dependencies": "嘉宾名单梳 理"},
+      {"task_name_cn": "活动落地页搭建", "task_name_en": "Event Landing Page Setup", "category": "Marketing", "priority": "P2", "duration_days": 15, "dependencies": "活动品牌视觉设 计"},
+      {"task_name_cn": "纪念品设计", "task_name_en": "Event Merch Design", "category": "Marketing", "priority": "P2", "duration_days": 8, "dependencies": "活动品牌视觉设计"},
+      {"task_name_cn": "社交媒体宣发", "task_name_en": "Social Media Promotion", "category": "Marketing", "priority": "P1", "duration_days": 50, "dependencies": "活动品牌视觉设计"},
+      {"task_name_cn": "行业社群运营", "task_name_en": "Community Promotion", "category": "Marketing", "priority": "P1", "duration_days": 45, "dependencies": "活动品牌视觉设 计"},
+      {"task_name_cn": "行业KOL合作邀请", "task_name_en": "KOL Outreach", "category": "Marketing", "priority": "P2", "duration_days": 15, "dependencies": "活动 品牌视觉设计"},
+      {"task_name_cn": "战略合作伙伴洽谈", "task_name_en": "Partnership Outreach", "category": "Commercial", "priority": "P1", "duration_days": 12, "dependencies": "嘉宾名单梳 理"},
+      {"task_name_cn": "宣传物料制作", "task_name_en": "Promotional Materials Production", "category": "Marketing", "priority": "P2", "duration_days": 10, "dependencies": "活动品牌视觉设 计"},
+      {"task_name_cn": "嘉宾伴手礼准备", "task_name_en": "Guest Gift Preparation", "category": "Marketing", "priority": "P3", "duration_days": 8, "dependencies": "活动品牌视觉设计"},
+      {"task_name_cn": "场地实地考察", "task_name_en": "Venue Site Visit", "category": "Venue", "priority": "P1", "duration_days": 5, "dependencies": "场地初步筛选"},
+      {"task_name_cn": "活动场地确认", "task_name_en": "Venue Confirmation", "category": "Venue", "priority": "P1", "duration_days": 3, "dependencies": "场地实地考察"},
+      {"task_name_cn": "赞助商招募", "task_name_en": "Sponsorship Outreach", "category": "Commercial", "priority": "P1", "duration_days": 25, "dependencies": "赞助方案设计"},
+      {"task_name_cn": "线上预热活动", "task_name_en": "Online Event Countdown Promotion", "category": "Marketing", "priority": "P2", "duration_days": 12, "dependencies": "社交媒体宣发"},
+      {"task_name_cn": "媒体通稿撰写", "task_name_en": "Press Article Confirmation", "category": "Marketing", "priority": "P3", "duration_days": 4, "dependencies": "战略合作伙伴洽谈"},
+      {"task_name_cn": "场地合同签订", "task_name_en": "Venue Contract Signing", "category": "Venue", "priority": "P1", "duration_days": 4, "dependencies": "嘉宾伴手礼准备, 活动预算制定"},
+      {"task_name_cn": "参会名单确认", "task_name_en": "Attendee List Confirmation", "category": "Commercial", "priority": "P2", "duration_days": 8, "dependencies": "重点企业/机构邀请, 投资机 构邀请"},
+      {"task_name_cn": "场地布局设计", "task_name_en": "Venue Layout Design", "category": "Venue", "priority": "P2", "duration_days": 6, "dependencies": "场地合同签订, 活动品牌视觉设计"},
+      {"task_name_cn": "餐饮茶歇安排", "task_name_en": "Catering and Refreshment Arrangement", "category": "Venue", "priority": "P3", "duration_days": 4, "dependencies": "场地合 同签订"},
+      {"task_name_cn": "网络带宽保障", "task_name_en": "Internet Bandwidth Provisioning", "category": "Venue", "priority": "P3", "duration_days": 3, "dependencies": "场地合同签订"},
+      {"task_name_cn": "投融资对接安排", "task_name_en": "Funding Matchmaking", "category": "Commercial", "priority": "P2", "duration_days": 7, "dependencies": "参会名单确认"},
+      {"task_name_cn": "商务对接名录制作", "task_name_en": "Business Matching Directory", "category": "Commercial", "priority": "P3", "duration_days": 4, "dependencies": "参 会名单确认"},
+      {"task_name_cn": "场地搭建布置", "task_name_en": "Venue Construction and Setup", "category": "Venue", "priority": "P2", "duration_days": 7, "dependencies": "场地布局设计"},
+      {"task_name_cn": "现场工作人员安排", "task_name_en": "On-site Staff Management", "category": "General", "priority": "P2", "duration_days": 4, "dependencies": "场地搭建布置"},
+      {"task_name_cn": "工作人员证件制作", "task_name_en": "Staff Badge", "category": "General", "priority": "P3", "duration_days": 3, "dependencies": "场地搭建布置"},
+      {"task_name_cn": "签到系统部署", "task_name_en": "Check-in System Setup", "category": "Venue", "priority": "P2", "duration_days": 4, "dependencies": "场地布局设计"},
+      {"task_name_cn": "签到区与指引布置", "task_name_en": "Check-in Area and Signage Setup", "category": "Venue", "priority": "P3", "duration_days": 3, "dependencies": "场地布局设计, 战略合 作伙伴洽谈"},
+      {"task_name_cn": "音视频设备租赁", "task_name_en": "Audio-Visual Equipment Rental", "category": "Venue", "priority": "P2", "duration_days": 5, "dependencies": "场地搭建布置"},
+      {"task_name_cn": "嘉宾行程确认", "task_name_en": "Guest Itinerary Confirmation", "category": "Commercial", "priority": "P2", "duration_days": 6, "dependencies": "参会名单确认, 场地搭建布置"},
+      {"task_name_cn": "演讲内容对接", "task_name_en": "Speech Content Coordination", "category": "Commercial", "priority": "P2", "duration_days": 8, "dependencies": "嘉宾行程确认"},
+      {"task_name_cn": "参会确认函发送", "task_name_en": "Guest Confirmation", "category": "Commercial", "priority": "P3", "duration_days": 3, "dependencies": "嘉宾 行程确认"},
+      {"task_name_cn": "现场彩排", "task_name_en": "On-site Rehearsal", "category": "Venue", "priority": "P3", "duration_days": 2, "dependencies": "音视频设备租赁, 签到区与指引布置, 演讲内 容对接"}
+    ],
+    "small": [
+      {
+        "task_name_cn": "活动策划方案制定",
+        "task_name_en": "Event Proposal",
+        "category": "Commercial",
+        "priority": "P0",
+        "duration_days": 5,
+        "dependencies": "-"
+      },
+      {
+        "task_name_cn": "活动预算制定",
+        "task_name_en": "Event Budget Plan",
+        "category": "Commercial",
+        "priority": "P0",
+        "duration_days": 2,
+        "dependencies": "活动策划方案制 定"
+      },
+      {
+        "task_name_cn": "核心嘉宾邀请",
+        "task_name_en": "Core Guest Invitation",
+        "category": "Commercial",
+        "priority": "P0",
+        "duration_days": 10,
+        "dependencies": "活动策划方案制定"
+      },
+      {
+        "task_name_cn": "简易视觉设计",
+        "task_name_en": "Simple Visual Design",
+        "category": "Marketing",
+        "priority": "P0",
+        "duration_days": 4,
+        "dependencies": "活动策划方案制定"
+      },
+      {
+        "task_name_cn": "投资人邀请",
+        "task_name_en": "Investor Invitation",
+        "category": "Commercial",
+        "priority": "P1",
+        "duration_days": 8,
+        "dependencies": "活动策划方案制定"
+      },
+      {
+        "task_name_cn": "企业定向邀请",
+        "task_name_en": "Enterprise Targeted Invitation",
+        "category": "Commercial",
+        "priority": "P1",
+        "duration_days": 7,
+        "dependencies": "活动策划方案制 定"
+      },
+      {
+        "task_name_cn": "主持人确认",
+        "task_name_en": "Host Confirmation",
+        "category": "General",
+        "priority": "P2",
+        "duration_days": 4,
+        "dependencies": "核心嘉宾邀请"
+      },
+      {
+        "task_name_cn": "活动流程梳理",
+        "task_name_en": "Event Process Arrangement",
+        "category": "General",
+        "priority": "P3",
+        "duration_days": 2,
+        "dependencies": "核心嘉宾邀请"
+      },
+      {
+        "task_name_cn": "小型赞助洽谈",
+        "task_name_en": "Small Sponsorship Negotiation",
+        "category": "Commercial",
+        "priority": "P1",
+        "duration_days": 6,
+        "dependencies": "活动预算制定"
+      },
+      {
+        "task_name_cn": "场地选定签约",
+        "task_name_en": "Venue Selection and Contract",
+        "category": "Venue",
+        "priority": "P0",
+        "duration_days": 4,
+        "dependencies": "活动策划方案制定, 活 动预算制定"
+      },
+      {
+        "task_name_cn": "活动落地页搭建",
+        "task_name_en": "Event Landing Page Setup",
+        "category": "Marketing",
+        "priority": "P1",
+        "duration_days": 13,
+        "dependencies": "简易视觉设计"
+      },
+      {
+        "task_name_cn": "纪念品设计与制作",
+        "task_name_en": "Collectible Design and Production",
+        "category": "Marketing",
+        "priority": "P1",
+        "duration_days": 5,
+        "dependencies": "简易视觉设计"
+      },
+      {
+        "task_name_cn": "社交媒体定向宣发",
+        "task_name_en": "Social Media Targeted Promotion",
+        "category": "Marketing",
+        "priority": "P1",
+        "duration_days": 14,
+        "dependencies": "简易视觉设计"
+      },
+      {
+        "task_name_cn": "行业社群推广",
+        "task_name_en": "Industry Community Promotion",
+        "category": "Marketing",
+        "priority": "P2",
+        "duration_days": 12,
+        "dependencies": "简易视觉设计"
+      },
+      {
+        "task_name_cn": "邀请函制作",
+        "task_name_en": "Invitation Card Production",
+        "category": "Marketing",
+        "priority": "P2",
+        "duration_days": 3,
+        "dependencies": "简易视觉设计"
+      },
+      {
+        "task_name_cn": "嘉宾小礼品准备",
+        "task_name_en": "Guest Gift Preparation",
+        "category": "Marketing",
+        "priority": "P3",
+        "duration_days": 3,
+        "dependencies": "简易视觉设计"
+      },
+      {
+        "task_name_cn": "参会名单确认",
+        "task_name_en": "Attendee List Confirmation",
+        "category": "Commercial",
+        "priority": "P2",
+        "duration_days": 3,
+        "dependencies": "核心嘉宾邀请, 投资人邀请, 企业定向邀请"
+      },
+      {
+        "task_name_cn": "场地布置",
+        "task_name_en": "Venue Setup",
+        "category": "Venue",
+        "priority": "P1",
+        "duration_days": 2,
+        "dependencies": "场地选定签约, 简易视觉设计"
+      },
+      {
+        "task_name_cn": "现场人员安排",
+        "task_name_en": "On-site Staff Arrangement",
+        "category": "General",
+        "priority": "P2",
+        "duration_days": 2,
+        "dependencies": "场地布置"
+      },
+      {
+        "task_name_cn": "工作人员证件制作",
+        "task_name_en": "Staff Badge",
+        "category": "General",
+        "priority": "P3",
+        "duration_days": 2,
+        "dependencies": "场地布置"
+      },
+      {
+        "task_name_cn": "设备检查与租赁",
+        "task_name_en": "Equipment Check and Rental",
+        "category": "Venue",
+        "priority": "P2",
+        "duration_days": 2,
+        "dependencies": "场地选定签约"
+      },
+      {
+        "task_name_cn": "网络设备检查",
+        "task_name_en": "Network Equipment Check",
+        "category": "Venue",
+        "priority": "P2",
+        "duration_days": 1,
+        "dependencies": "场地选定签约"
+      },
+      {
+        "task_name_cn": "茶歇餐饮确认",
+        "task_name_en": "Refreshment and Catering Confirmation",
+        "category": "Venue",
+        "priority": "P3",
+        "duration_days": 2,
+        "dependencies": "场地选 定签约"
+      },
+      {
+        "task_name_cn": "线上预热活动",
+        "task_name_en": "Online Event Countdown Promotion",
+        "category": "Marketing",
+        "priority": "P2",
+        "duration_days": 5,
+        "dependencies": "社交媒体定向宣发"
+      },
+      {
+        "task_name_cn": "活动预告发布",
+        "task_name_en": "Event Preview Release",
+        "category": "Marketing",
+        "priority": "P3",
+        "duration_days": 3,
+        "dependencies": "社交媒体定向宣发"
+      },
+      {
+        "task_name_cn": "商务对接名录制作",
+        "task_name_en": "Business Matching Directory",
+        "category": "Commercial",
+        "priority": "P3",
+        "duration_days": 2,
+        "dependencies": "参 会名单确认"
+      },
+      {
+        "task_name_cn": "嘉宾行程确认",
+        "task_name_en": "Guest Itinerary Confirmation",
+        "category": "Commercial",
+        "priority": "P2",
+        "duration_days": 3,
+        "dependencies": "参会名单确认, 场地布置"
+      },
+      {
+        "task_name_cn": "签到系统准备",
+        "task_name_en": "Check-in System Preparation",
+        "category": "Venue",
+        "priority": "P3",
+        "duration_days": 2,
+        "dependencies": "场地布置, 纪念品设计 与制作"
+      },
+      {
+        "task_name_cn": "签到与指引布置",
+        "task_name_en": "Check-in and Signage Setup",
+        "category": "Venue",
+        "priority": "P2",
+        "duration_days": 1,
+        "dependencies": "场地布置"
+      },
+      {
+        "task_name_cn": "演讲内容对接",
+        "task_name_en": "Speech Content Coordination",
+        "category": "Commercial",
+        "priority": "P2",
+        "duration_days": 4,
+        "dependencies": "嘉宾行程确认, 核心嘉宾邀请"
+      },
+      {
+        "task_name_cn": "参会确认函发送",
+        "task_name_en": "Guest Confirmation",
+        "category": "Commercial",
+        "priority": "P3",
+        "duration_days": 2,
+        "dependencies": "嘉宾 行程确认"
+      },
+      {
+        "task_name_cn": "现场快速彩排",
+        "task_name_en": "Quick On-site Rehearsal",
+        "category": "Venue",
+        "priority": "P3",
+        "duration_days": 1,
+        "dependencies": "设备检查与租赁, 签到与指引布置, 演讲内容对接"
+      }
+    ]
+  }
+}

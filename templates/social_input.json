@@ -1,0 +1,17 @@
+{
+  "platform": "xiaohongshu",
+  "length": "medium",
+  "tone": "professional_tone",
+  "stage": "active",
+  "prompt": "突出开发者社区氛围,语气真诚一点",
+  "content_focus": "guest_profile",
+  "content": ["event_agenda", "event_purpose"],
+  "inspiration_source": ["industry_trend", "painpoint"],
+  "ticket": false,
+  "ticket_price": "",
+  "registration_method": ["官网报名", "扫码进群"],
+  "detail_location_country": "中国",
+  "detail_location_city": "上海",
+  "detail_location_street": "徐汇西岸",
+  "detail_location_room_floor": "西岸艺术中心 N1 馆"
+}

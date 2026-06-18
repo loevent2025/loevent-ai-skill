@@ -1,0 +1,13 @@
+{
+  "preparation_start_date": "2026-01-21",
+  "user_tasks": [
+    {
+      "task_name": "CEO 主题演讲彩排",
+      "tag": "General",
+      "startDate": "2026-03-10",
+      "endDate": "2026-03-11",
+      "priority": "P0"
+    }
+  ],
+  "prompt": "嘉宾以一线 VC 与 AI 创始人为主,场地需尽早锁定;主推开发者社区氛围"
+}

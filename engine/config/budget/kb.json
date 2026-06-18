@@ -1,0 +1,1471 @@
+{
+  "items": [
+    {
+      "name_cn": "外部嘉宾-行业专家出场费",
+      "name_en": "Guest Speaker - Industry Expert",
+      "main_cat": "event_operations",
+      "sub_cat": "personnel",
+      "industry": "general",
+      "low": 2000,
+      "high": 5000
+    },
+    {
+      "name_cn": "外部嘉宾-知名KOL出场费",
+      "name_en": "Guest Speaker - Notable KOL",
+      "main_cat": "event_operations",
+      "sub_cat": "personnel",
+      "industry": "general",
+      "low": 5000,
+      "high": 15000
+    },
+    {
+      "name_cn": "外部嘉宾-头部大咖出场费",
+      "name_en": "Guest Speaker - Top Tier",
+      "main_cat": "event_operations",
+      "sub_cat": "personnel",
+      "industry": "general",
+      "low": 15000,
+      "high": 50000
+    },
+    {
+      "name_cn": "主持人-专业司仪",
+      "name_en": "MC - Professional Host",
+      "main_cat": "event_operations",
+      "sub_cat": "personnel",
+      "industry": "general",
+      "low": 3000,
+      "high": 8000
+    },
+    {
+      "name_cn": "主持人-科技媒体人",
+      "name_en": "MC - Tech Media Person",
+      "main_cat": "event_operations",
+      "sub_cat": "personnel",
+      "industry": "tech",
+      "low": 5000,
+      "high": 15000
+    },
+    {
+      "name_cn": "主持人-知名主持人",
+      "name_en": "MC - Celebrity Host",
+      "main_cat": "event_operations",
+      "sub_cat": "personnel",
+      "industry": "general",
+      "low": 15000,
+      "high": 50000
+    },
+    {
+      "name_cn": "摄影师",
+      "name_en": "Photographer",
+      "main_cat": "event_operations",
+      "sub_cat": "personnel",
+      "industry": "general",
+      "low": 1500,
+      "high": 3500
+    },
+    {
+      "name_cn": "摄像师",
+      "name_en": "Videographer",
+      "main_cat": "event_operations",
+      "sub_cat": "personnel",
+      "industry": "general",
+      "low": 1500,
+      "high": 5000
+    },
+    {
+      "name_cn": "摄影摄像套餐",
+      "name_en": "Photo+Video Package",
+      "main_cat": "event_operations",
+      "sub_cat": "personnel",
+      "industry": "general",
+      "low": 3500,
+      "high": 8000
+    },
+    {
+      "name_cn": "技术助教-外部兼职",
+      "name_en": "Tech Assistant - Freelance",
+      "main_cat": "event_operations",
+      "sub_cat": "personnel",
+      "industry": "tech",
+      "low": 800,
+      "high": 2000
+    },
+    {
+      "name_cn": "技术助教-社区志愿者",
+      "name_en": "Tech Assistant - Volunteer",
+      "main_cat": "event_operations",
+      "sub_cat": "personnel",
+      "industry": "tech",
+      "low": 300,
+      "high": 800
+    },
+    {
+      "name_cn": "现场执行人员",
+      "name_en": "On-site Staff",
+      "main_cat": "event_operations",
+      "sub_cat": "personnel",
+      "industry": "general",
+      "low": 500,
+      "high": 1200
+    },
+    {
+      "name_cn": "礼仪人员",
+      "name_en": "Protocol/Hostess Staff",
+      "main_cat": "event_operations",
+      "sub_cat": "personnel",
+      "industry": "general",
+      "low": 800,
+      "high": 2000
+    },
+    {
+      "name_cn": "签到咖啡-标准",
+      "name_en": "Welcome Coffee - Standard",
+      "main_cat": "event_operations",
+      "sub_cat": "catering",
+      "industry": "general",
+      "low": 20,
+      "high": 35
+    },
+    {
+      "name_cn": "签到咖啡-含特色体验",
+      "name_en": "Welcome Coffee - Special Experience",
+      "main_cat": "event_operations",
+      "sub_cat": "catering",
+      "industry": "general",
+      "low": 30,
+      "high": 80
+    },
+    {
+      "name_cn": "茶歇-标准",
+      "name_en": "Tea Break - Standard",
+      "main_cat": "event_operations",
+      "sub_cat": "catering",
+      "industry": "general",
+      "low": 25,
+      "high": 50
+    },
+    {
+      "name_cn": "全天茶歇-不含正餐",
+      "name_en": "Full Day Tea Break (no meal)",
+      "main_cat": "event_operations",
+      "sub_cat": "catering",
+      "industry": "general",
+      "low": 40,
+      "high": 80
+    },
+    {
+      "name_cn": "工作午餐-盒饭",
+      "name_en": "Working Lunch - Box Meal",
+      "main_cat": "event_operations",
+      "sub_cat": "catering",
+      "industry": "general",
+      "low": 40,
+      "high": 80
+    },
+    {
+      "name_cn": "工作午餐-围餐",
+      "name_en": "Working Lunch - Table Service",
+      "main_cat": "event_operations",
+      "sub_cat": "catering",
+      "industry": "general",
+      "low": 80,
+      "high": 150
+    },
+    {
+      "name_cn": "自助午餐-标准",
+      "name_en": "Buffet Lunch - Standard",
+      "main_cat": "event_operations",
+      "sub_cat": "catering",
+      "industry": "general",
+      "low": 100,
+      "high": 180
+    },
+    {
+      "name_cn": "自助午餐-高端",
+      "name_en": "Buffet Lunch - Premium",
+      "main_cat": "event_operations",
+      "sub_cat": "catering",
+      "industry": "general",
+      "low": 180,
+      "high": 350
+    },
+    {
+      "name_cn": "鸡尾酒会",
+      "name_en": "Cocktail Reception",
+      "main_cat": "event_operations",
+      "sub_cat": "catering",
+      "industry": "general",
+      "low": 120,
+      "high": 280
+    },
+    {
+      "name_cn": "社交晚宴-围桌",
+      "name_en": "Social Dinner - Seated",
+      "main_cat": "event_operations",
+      "sub_cat": "catering",
+      "industry": "general",
+      "low": 200,
+      "high": 500
+    },
+    {
+      "name_cn": "瓶装水/基础饮品",
+      "name_en": "Bottled Water / Basic Beverages",
+      "main_cat": "event_operations",
+      "sub_cat": "catering",
+      "industry": "general",
+      "low": 5,
+      "high": 15
+    },
+    {
+      "name_cn": "外部餐饮配送",
+      "name_en": "External Catering Delivery",
+      "main_cat": "event_operations",
+      "sub_cat": "catering",
+      "industry": "general",
+      "low": 60,
+      "high": 120
+    },
+    {
+      "name_cn": "KV主视觉设计",
+      "name_en": "Key Visual Design",
+      "main_cat": "event_operations",
+      "sub_cat": "materials_digital",
+      "industry": "general",
+      "low": 1500,
+      "high": 5000
+    },
+    {
+      "name_cn": "宣传视频-30秒以内",
+      "name_en": "Promo Video - Under 30s",
+      "main_cat": "event_operations",
+      "sub_cat": "materials_digital",
+      "industry": "general",
+      "low": 2000,
+      "high": 5000
+    },
+    {
+      "name_cn": "宣传视频-1至3分钟",
+      "name_en": "Promo Video - 1-3 min",
+      "main_cat": "event_operations",
+      "sub_cat": "materials_digital",
+      "industry": "general",
+      "low": 5000,
+      "high": 15000
+    },
+    {
+      "name_cn": "邀请函-数字版",
+      "name_en": "Digital Invitation",
+      "main_cat": "event_operations",
+      "sub_cat": "materials_digital",
+      "industry": "general",
+      "low": 300,
+      "high": 1000
+    },
+    {
+      "name_cn": "活动回顾视频-快剪",
+      "name_en": "Event Recap Video - Quick Cut",
+      "main_cat": "event_operations",
+      "sub_cat": "materials_digital",
+      "industry": "general",
+      "low": 1000,
+      "high": 3000
+    },
+    {
+      "name_cn": "活动回顾视频-精剪",
+      "name_en": "Event Recap Video - Full Edit",
+      "main_cat": "event_operations",
+      "sub_cat": "materials_digital",
+      "industry": "general",
+      "low": 3000,
+      "high": 8000
+    },
+    {
+      "name_cn": "签到系统-电子",
+      "name_en": "Digital Check-in System",
+      "main_cat": "event_operations",
+      "sub_cat": "materials_digital",
+      "industry": "general",
+      "low": 300,
+      "high": 1500
+    },
+    {
+      "name_cn": "互动大屏-弹幕墙",
+      "name_en": "Interactive Screen - Bullet Wall",
+      "main_cat": "event_operations",
+      "sub_cat": "materials_digital",
+      "industry": "general",
+      "low": 500,
+      "high": 2000
+    },
+    {
+      "name_cn": "活动直播-技术支持",
+      "name_en": "Live Streaming - Tech Support",
+      "main_cat": "event_operations",
+      "sub_cat": "tech_infra",
+      "industry": "general",
+      "low": 2000,
+      "high": 6000
+    },
+    {
+      "name_cn": "邀请函-纸质",
+      "name_en": "Printed Invitation",
+      "main_cat": "event_operations",
+      "sub_cat": "materials_print",
+      "industry": "general",
+      "low": 15,
+      "high": 40
+    },
+    {
+      "name_cn": "名牌Badge-标准",
+      "name_en": "Name Badge - Standard",
+      "main_cat": "event_operations",
+      "sub_cat": "materials_print",
+      "industry": "general",
+      "low": 5,
+      "high": 15
+    },
+    {
+      "name_cn": "名牌Badge-创意定制",
+      "name_en": "Name Badge - Custom Creative",
+      "main_cat": "event_operations",
+      "sub_cat": "materials_print",
+      "industry": "general",
+      "low": 20,
+      "high": 50
+    },
+    {
+      "name_cn": "易拉宝",
+      "name_en": "Roll-up Banner",
+      "main_cat": "event_operations",
+      "sub_cat": "materials_print",
+      "industry": "general",
+      "low": 150,
+      "high": 350
+    },
+    {
+      "name_cn": "背景板-喷绘",
+      "name_en": "Backdrop - Print",
+      "main_cat": "event_operations",
+      "sub_cat": "materials_print",
+      "industry": "general",
+      "low": 1000,
+      "high": 3000
+    },
+    {
+      "name_cn": "背景板-桁架搭建",
+      "name_en": "Backdrop - Truss Setup",
+      "main_cat": "event_operations",
+      "sub_cat": "materials_print",
+      "industry": "general",
+      "low": 2000,
+      "high": 6000
+    },
+    {
+      "name_cn": "手提袋-纸质",
+      "name_en": "Paper Bag - Branded",
+      "main_cat": "event_operations",
+      "sub_cat": "materials_print",
+      "industry": "general",
+      "low": 5,
+      "high": 15
+    },
+    {
+      "name_cn": "宣传册/画册",
+      "name_en": "Brochure / Booklet",
+      "main_cat": "event_operations",
+      "sub_cat": "materials_print",
+      "industry": "general",
+      "low": 10,
+      "high": 30
+    },
+    {
+      "name_cn": "指引标识牌",
+      "name_en": "Wayfinding Signage",
+      "main_cat": "event_operations",
+      "sub_cat": "materials_print",
+      "industry": "general",
+      "low": 50,
+      "high": 200
+    },
+    {
+      "name_cn": "横幅/条幅",
+      "name_en": "Banner / Streamer",
+      "main_cat": "event_operations",
+      "sub_cat": "materials_print",
+      "industry": "general",
+      "low": 200,
+      "high": 600
+    },
+    {
+      "name_cn": "桌签/桌牌",
+      "name_en": "Table Name Card",
+      "main_cat": "event_operations",
+      "sub_cat": "materials_print",
+      "industry": "general",
+      "low": 5,
+      "high": 20
+    },
+    {
+      "name_cn": "证书/奖状",
+      "name_en": "Certificate / Award",
+      "main_cat": "event_operations",
+      "sub_cat": "materials_print",
+      "industry": "general",
+      "low": 10,
+      "high": 30
+    },
+    {
+      "name_cn": "定制T恤",
+      "name_en": "Custom T-shirt",
+      "main_cat": "event_operations",
+      "sub_cat": "merchandise",
+      "industry": "general",
+      "low": 30,
+      "high": 60
+    },
+    {
+      "name_cn": "定制卫衣",
+      "name_en": "Custom Hoodie",
+      "main_cat": "event_operations",
+      "sub_cat": "merchandise",
+      "industry": "general",
+      "low": 80,
+      "high": 180
+    },
+    {
+      "name_cn": "定制帆布袋",
+      "name_en": "Custom Tote Bag",
+      "main_cat": "event_operations",
+      "sub_cat": "merchandise",
+      "industry": "general",
+      "low": 10,
+      "high": 30
+    },
+    {
+      "name_cn": "定制马克杯",
+      "name_en": "Custom Mug",
+      "main_cat": "event_operations",
+      "sub_cat": "merchandise",
+      "industry": "general",
+      "low": 15,
+      "high": 40
+    },
+    {
+      "name_cn": "定制贴纸套装",
+      "name_en": "Custom Sticker Set",
+      "main_cat": "event_operations",
+      "sub_cat": "merchandise",
+      "industry": "general",
+      "low": 3,
+      "high": 10
+    },
+    {
+      "name_cn": "定制笔记本",
+      "name_en": "Custom Notebook",
+      "main_cat": "event_operations",
+      "sub_cat": "merchandise",
+      "industry": "general",
+      "low": 15,
+      "high": 40
+    },
+    {
+      "name_cn": "定制咖啡豆/挂耳包",
+      "name_en": "Custom Coffee Beans / Drip Bag",
+      "main_cat": "event_operations",
+      "sub_cat": "merchandise",
+      "industry": "general",
+      "low": 10,
+      "high": 25
+    },
+    {
+      "name_cn": "定制零食礼盒",
+      "name_en": "Custom Snack Gift Box",
+      "main_cat": "event_operations",
+      "sub_cat": "merchandise",
+      "industry": "general",
+      "low": 30,
+      "high": 80
+    },
+    {
+      "name_cn": "数码小礼品",
+      "name_en": "Digital Giveaway",
+      "main_cat": "event_operations",
+      "sub_cat": "merchandise",
+      "industry": "general",
+      "low": 15,
+      "high": 50
+    },
+    {
+      "name_cn": "LED拼接屏/视频墙-P3以内",
+      "name_en": "LED Video Wall - P3",
+      "main_cat": "event_operations",
+      "sub_cat": "av_equipment",
+      "industry": "general",
+      "low": 1500,
+      "high": 5000
+    },
+    {
+      "name_cn": "电视机/显示器租赁-65寸以内",
+      "name_en": "TV Monitor Rental - Under 65\"",
+      "main_cat": "event_operations",
+      "sub_cat": "av_equipment",
+      "industry": "general",
+      "low": 500,
+      "high": 1800
+    },
+    {
+      "name_cn": "电视机/显示器租赁-75至85寸",
+      "name_en": "TV Monitor Rental - 75-85\"",
+      "main_cat": "event_operations",
+      "sub_cat": "av_equipment",
+      "industry": "general",
+      "low": 1000,
+      "high": 3000
+    },
+    {
+      "name_cn": "笔记本电脑租赁",
+      "name_en": "Laptop Rental",
+      "main_cat": "event_operations",
+      "sub_cat": "av_equipment",
+      "industry": "general",
+      "low": 100,
+      "high": 350
+    },
+    {
+      "name_cn": "投影仪-高清",
+      "name_en": "Projector - HD",
+      "main_cat": "event_operations",
+      "sub_cat": "av_equipment",
+      "industry": "general",
+      "low": 800,
+      "high": 2500
+    },
+    {
+      "name_cn": "音响系统-小型",
+      "name_en": "Sound System - Small",
+      "main_cat": "event_operations",
+      "sub_cat": "av_equipment",
+      "industry": "general",
+      "low": 1500,
+      "high": 3500
+    },
+    {
+      "name_cn": "音响系统-中型",
+      "name_en": "Sound System - Medium",
+      "main_cat": "event_operations",
+      "sub_cat": "av_equipment",
+      "industry": "general",
+      "low": 2000,
+      "high": 5000
+    },
+    {
+      "name_cn": "音响系统-大型",
+      "name_en": "Sound System - Large",
+      "main_cat": "event_operations",
+      "sub_cat": "av_equipment",
+      "industry": "general",
+      "low": 5000,
+      "high": 15000
+    },
+    {
+      "name_cn": "无线麦克风",
+      "name_en": "Wireless Microphone",
+      "main_cat": "event_operations",
+      "sub_cat": "av_equipment",
+      "industry": "general",
+      "low": 200,
+      "high": 500
+    },
+    {
+      "name_cn": "舞台搭建-小型",
+      "name_en": "Stage Setup - Small",
+      "main_cat": "event_operations",
+      "sub_cat": "av_equipment",
+      "industry": "general",
+      "low": 2000,
+      "high": 5000
+    },
+    {
+      "name_cn": "舞台搭建-中型",
+      "name_en": "Stage Setup - Medium",
+      "main_cat": "event_operations",
+      "sub_cat": "av_equipment",
+      "industry": "general",
+      "low": 5000,
+      "high": 15000
+    },
+    {
+      "name_cn": "灯光系统-基础",
+      "name_en": "Lighting - Basic",
+      "main_cat": "event_operations",
+      "sub_cat": "av_equipment",
+      "industry": "general",
+      "low": 1500,
+      "high": 4000
+    },
+    {
+      "name_cn": "灯光系统-专业",
+      "name_en": "Lighting - Professional",
+      "main_cat": "event_operations",
+      "sub_cat": "av_equipment",
+      "industry": "general",
+      "low": 5000,
+      "high": 15000
+    },
+    {
+      "name_cn": "直播设备-全套",
+      "name_en": "Live Streaming Equipment - Full",
+      "main_cat": "event_operations",
+      "sub_cat": "av_equipment",
+      "industry": "general",
+      "low": 3000,
+      "high": 8000
+    },
+    {
+      "name_cn": "翻页笔/演示遥控器",
+      "name_en": "Presentation Remote",
+      "main_cat": "event_operations",
+      "sub_cat": "av_equipment",
+      "industry": "general",
+      "low": 50,
+      "high": 200
+    },
+    {
+      "name_cn": "电源排插布线",
+      "name_en": "Power Strip Wiring",
+      "main_cat": "event_operations",
+      "sub_cat": "tech_infra",
+      "industry": "general",
+      "low": 500,
+      "high": 2000
+    },
+    {
+      "name_cn": "进场搭建-基础",
+      "name_en": "Setup - Basic",
+      "main_cat": "event_operations",
+      "sub_cat": "logistics",
+      "industry": "general",
+      "low": 2000,
+      "high": 5000
+    },
+    {
+      "name_cn": "进场搭建-含展位",
+      "name_en": "Setup - With Booths",
+      "main_cat": "event_operations",
+      "sub_cat": "logistics",
+      "industry": "general",
+      "low": 3000,
+      "high": 10000
+    },
+    {
+      "name_cn": "物料运输",
+      "name_en": "Material Transport",
+      "main_cat": "event_operations",
+      "sub_cat": "logistics",
+      "industry": "general",
+      "low": 500,
+      "high": 2000
+    },
+    {
+      "name_cn": "场地布置-花艺绿植",
+      "name_en": "Venue Decor - Floral",
+      "main_cat": "event_operations",
+      "sub_cat": "logistics",
+      "industry": "general",
+      "low": 800,
+      "high": 3000
+    },
+    {
+      "name_cn": "场地清洁-活动后",
+      "name_en": "Post-event Cleaning",
+      "main_cat": "event_operations",
+      "sub_cat": "logistics",
+      "industry": "general",
+      "low": 500,
+      "high": 1500
+    },
+    {
+      "name_cn": "嘉宾机票-国内",
+      "name_en": "Speaker Flight - Domestic",
+      "main_cat": "event_operations",
+      "sub_cat": "travel",
+      "industry": "general",
+      "low": 1000,
+      "high": 4000
+    },
+    {
+      "name_cn": "嘉宾机票-国际",
+      "name_en": "Speaker Flight - International",
+      "main_cat": "event_operations",
+      "sub_cat": "travel",
+      "industry": "general",
+      "low": 3000,
+      "high": 10000
+    },
+    {
+      "name_cn": "嘉宾住宿-标准",
+      "name_en": "Speaker Hotel - Standard",
+      "main_cat": "event_operations",
+      "sub_cat": "travel",
+      "industry": "general",
+      "low": 500,
+      "high": 1200
+    },
+    {
+      "name_cn": "嘉宾住宿-高端",
+      "name_en": "Speaker Hotel - Premium",
+      "main_cat": "event_operations",
+      "sub_cat": "travel",
+      "industry": "general",
+      "low": 1000,
+      "high": 2500
+    },
+    {
+      "name_cn": "商务用车-接送",
+      "name_en": "VIP Car Service",
+      "main_cat": "event_operations",
+      "sub_cat": "travel",
+      "industry": "general",
+      "low": 300,
+      "high": 1000
+    },
+    {
+      "name_cn": "咖啡设备-专业咖啡机",
+      "name_en": "Coffee Equipment - Pro Machine",
+      "main_cat": "event_operations",
+      "sub_cat": "special_equipment",
+      "industry": "general",
+      "low": 1500,
+      "high": 4000
+    },
+    {
+      "name_cn": "AI拉花机-租赁",
+      "name_en": "AI Latte Art Machine - Rental",
+      "main_cat": "event_operations",
+      "sub_cat": "special_equipment",
+      "industry": "tech",
+      "low": 2000,
+      "high": 6000
+    },
+    {
+      "name_cn": "3D打印机-展示用",
+      "name_en": "3D Printer - Display",
+      "main_cat": "event_operations",
+      "sub_cat": "special_equipment",
+      "industry": "tech",
+      "low": 800,
+      "high": 2500
+    },
+    {
+      "name_cn": "VR设备-体验区",
+      "name_en": "VR Equipment - Experience Zone",
+      "main_cat": "event_operations",
+      "sub_cat": "special_equipment",
+      "industry": "tech",
+      "low": 1000,
+      "high": 5000
+    },
+    {
+      "name_cn": "签到屏-触控大屏",
+      "name_en": "Check-in Touchscreen",
+      "main_cat": "event_operations",
+      "sub_cat": "special_equipment",
+      "industry": "general",
+      "low": 1000,
+      "high": 3000
+    },
+    {
+      "name_cn": "静音耳机-分组讨论",
+      "name_en": "Silent Headphones",
+      "main_cat": "event_operations",
+      "sub_cat": "special_equipment",
+      "industry": "general",
+      "low": 15,
+      "high": 30
+    },
+    {
+      "name_cn": "联合办公空间-半天",
+      "name_en": "Co-working Space - Half Day",
+      "main_cat": "venue",
+      "sub_cat": "rental",
+      "industry": "general",
+      "low": 2000,
+      "high": 6000
+    },
+    {
+      "name_cn": "联合办公空间-全天",
+      "name_en": "Co-working Space - Full Day",
+      "main_cat": "venue",
+      "sub_cat": "rental",
+      "industry": "general",
+      "low": 5000,
+      "high": 12000
+    },
+    {
+      "name_cn": "科技园区活动厅-全天",
+      "name_en": "Tech Park Event Hall - Full Day",
+      "main_cat": "venue",
+      "sub_cat": "rental",
+      "industry": "tech",
+      "low": 5000,
+      "high": 15000
+    },
+    {
+      "name_cn": "创意园区Loft空间-全天",
+      "name_en": "Creative Park Loft - Full Day",
+      "main_cat": "venue",
+      "sub_cat": "rental",
+      "industry": "general",
+      "low": 6000,
+      "high": 18000
+    },
+    {
+      "name_cn": "酒店会议室-小型",
+      "name_en": "Hotel Meeting Room - Small",
+      "main_cat": "venue",
+      "sub_cat": "rental",
+      "industry": "general",
+      "low": 3000,
+      "high": 8000
+    },
+    {
+      "name_cn": "酒店会议室-中型",
+      "name_en": "Hotel Meeting Room - Medium",
+      "main_cat": "venue",
+      "sub_cat": "rental",
+      "industry": "general",
+      "low": 8000,
+      "high": 20000
+    },
+    {
+      "name_cn": "酒店宴会厅-大型",
+      "name_en": "Hotel Ballroom - Large",
+      "main_cat": "venue",
+      "sub_cat": "rental",
+      "industry": "general",
+      "low": 20000,
+      "high": 80000
+    },
+    {
+      "name_cn": "五星酒店大型宴会厅",
+      "name_en": "5-Star Hotel Grand Ballroom",
+      "main_cat": "venue",
+      "sub_cat": "rental",
+      "industry": "general",
+      "low": 30000,
+      "high": 100000
+    },
+    {
+      "name_cn": "会展中心标准展厅",
+      "name_en": "Convention Center - Standard Hall",
+      "main_cat": "venue",
+      "sub_cat": "rental",
+      "industry": "general",
+      "low": 25000,
+      "high": 80000
+    },
+    {
+      "name_cn": "艺术场馆/美术馆",
+      "name_en": "Art Gallery / Museum",
+      "main_cat": "venue",
+      "sub_cat": "rental",
+      "industry": "general",
+      "low": 10000,
+      "high": 50000
+    },
+    {
+      "name_cn": "户外场地-草坪",
+      "name_en": "Outdoor Venue - Lawn",
+      "main_cat": "venue",
+      "sub_cat": "rental",
+      "industry": "general",
+      "low": 3000,
+      "high": 15000
+    },
+    {
+      "name_cn": "剧院/小剧场",
+      "name_en": "Theater / Small Auditorium",
+      "main_cat": "venue",
+      "sub_cat": "rental",
+      "industry": "general",
+      "low": 5000,
+      "high": 20000
+    },
+    {
+      "name_cn": "商场中庭-快闪",
+      "name_en": "Mall Atrium - Pop-up",
+      "main_cat": "venue",
+      "sub_cat": "rental",
+      "industry": "general",
+      "low": 10000,
+      "high": 50000
+    },
+    {
+      "name_cn": "场地空调-延时",
+      "name_en": "Venue AC - Extended Hours",
+      "main_cat": "venue",
+      "sub_cat": "venue_facilities",
+      "industry": "general",
+      "low": 500,
+      "high": 1500
+    },
+    {
+      "name_cn": "停车场-预留车位",
+      "name_en": "Parking - Reserved Spots",
+      "main_cat": "venue",
+      "sub_cat": "venue_facilities",
+      "industry": "general",
+      "low": 30,
+      "high": 80
+    },
+    {
+      "name_cn": "货梯使用-搭建搬运",
+      "name_en": "Freight Elevator Usage",
+      "main_cat": "venue",
+      "sub_cat": "venue_facilities",
+      "industry": "general",
+      "low": 300,
+      "high": 800
+    },
+    {
+      "name_cn": "超时使用费",
+      "name_en": "Overtime Fee",
+      "main_cat": "venue",
+      "sub_cat": "venue_facilities",
+      "industry": "general",
+      "low": 500,
+      "high": 2000
+    },
+    {
+      "name_cn": "小红书-科技-素人1千至5千粉",
+      "name_en": "Xiaohongshu Tech KOL - 1K-5K",
+      "main_cat": "marketing",
+      "sub_cat": "xiaohongshu",
+      "industry": "tech",
+      "low": 100,
+      "high": 400
+    },
+    {
+      "name_cn": "小红书-科技-尾部5千至1万粉",
+      "name_en": "Xiaohongshu Tech KOL - 5K-10K",
+      "main_cat": "marketing",
+      "sub_cat": "xiaohongshu",
+      "industry": "tech",
+      "low": 400,
+      "high": 1000
+    },
+    {
+      "name_cn": "小红书-科技-腰部1万至5万粉",
+      "name_en": "Xiaohongshu Tech KOL - 10K-50K",
+      "main_cat": "marketing",
+      "sub_cat": "xiaohongshu",
+      "industry": "tech",
+      "low": 1000,
+      "high": 4000
+    },
+    {
+      "name_cn": "小红书-科技-中腰部5万至10万粉",
+      "name_en": "Xiaohongshu Tech KOL - 50K-100K",
+      "main_cat": "marketing",
+      "sub_cat": "xiaohongshu",
+      "industry": "tech",
+      "low": 4000,
+      "high": 10000
+    },
+    {
+      "name_cn": "小红书-科技-头部10万至50万粉",
+      "name_en": "Xiaohongshu Tech KOL - 100K-500K",
+      "main_cat": "marketing",
+      "sub_cat": "xiaohongshu",
+      "industry": "tech",
+      "low": 10000,
+      "high": 40000
+    },
+    {
+      "name_cn": "小红书-科技-顶部50万粉以上",
+      "name_en": "Xiaohongshu Tech KOL - 500K+",
+      "main_cat": "marketing",
+      "sub_cat": "xiaohongshu",
+      "industry": "tech",
+      "low": 40000,
+      "high": 120000
+    },
+    {
+      "name_cn": "小红书-Web3-素人1千至5千粉",
+      "name_en": "Xiaohongshu Web3 KOL - 1K-5K",
+      "main_cat": "marketing",
+      "sub_cat": "xiaohongshu",
+      "industry": "web3",
+      "low": 80,
+      "high": 300
+    },
+    {
+      "name_cn": "小红书-Web3-尾部5千至1万粉",
+      "name_en": "Xiaohongshu Web3 KOL - 5K-10K",
+      "main_cat": "marketing",
+      "sub_cat": "xiaohongshu",
+      "industry": "web3",
+      "low": 300,
+      "high": 800
+    },
+    {
+      "name_cn": "小红书-Web3-腰部1万至5万粉",
+      "name_en": "Xiaohongshu Web3 KOL - 10K-50K",
+      "main_cat": "marketing",
+      "sub_cat": "xiaohongshu",
+      "industry": "web3",
+      "low": 800,
+      "high": 3000
+    },
+    {
+      "name_cn": "小红书-Web3-中腰部5万至10万粉",
+      "name_en": "Xiaohongshu Web3 KOL - 50K-100K",
+      "main_cat": "marketing",
+      "sub_cat": "xiaohongshu",
+      "industry": "web3",
+      "low": 3000,
+      "high": 8000
+    },
+    {
+      "name_cn": "小红书-Web3-头部10万粉以上",
+      "name_en": "Xiaohongshu Web3 KOL - 100K+",
+      "main_cat": "marketing",
+      "sub_cat": "xiaohongshu",
+      "industry": "web3",
+      "low": 8000,
+      "high": 30000
+    },
+    {
+      "name_cn": "推特-科技-微型KOL 1千至1万粉",
+      "name_en": "X Tech KOL - 1K-10K",
+      "main_cat": "marketing",
+      "sub_cat": "twitter",
+      "industry": "tech",
+      "low": 200,
+      "high": 800
+    },
+    {
+      "name_cn": "推特-科技-小型KOL 1万至5万粉",
+      "name_en": "X Tech KOL - 10K-50K",
+      "main_cat": "marketing",
+      "sub_cat": "twitter",
+      "industry": "tech",
+      "low": 800,
+      "high": 3000
+    },
+    {
+      "name_cn": "推特-科技-中型KOL 5万至20万粉",
+      "name_en": "X Tech KOL - 50K-200K",
+      "main_cat": "marketing",
+      "sub_cat": "twitter",
+      "industry": "tech",
+      "low": 3000,
+      "high": 10000
+    },
+    {
+      "name_cn": "推特-科技-大型KOL 20万粉以上",
+      "name_en": "X Tech KOL - 200K+",
+      "main_cat": "marketing",
+      "sub_cat": "twitter",
+      "industry": "tech",
+      "low": 10000,
+      "high": 35000
+    },
+    {
+      "name_cn": "推特-科技-Space语音直播嘉宾",
+      "name_en": "X Tech Space - Guest",
+      "main_cat": "marketing",
+      "sub_cat": "twitter",
+      "industry": "tech",
+      "low": 2000,
+      "high": 8000
+    },
+    {
+      "name_cn": "推特-Web3中文-微型KOL 1千至1万粉",
+      "name_en": "X Web3 CN KOL - 1K-10K",
+      "main_cat": "marketing",
+      "sub_cat": "twitter",
+      "industry": "web3",
+      "low": 500,
+      "high": 1500
+    },
+    {
+      "name_cn": "推特-Web3中文-小型KOL 1万至5万粉",
+      "name_en": "X Web3 CN KOL - 10K-50K",
+      "main_cat": "marketing",
+      "sub_cat": "twitter",
+      "industry": "web3",
+      "low": 1500,
+      "high": 5000
+    },
+    {
+      "name_cn": "推特-Web3中文-中型KOL 5万至20万粉",
+      "name_en": "X Web3 CN KOL - 50K-200K",
+      "main_cat": "marketing",
+      "sub_cat": "twitter",
+      "industry": "web3",
+      "low": 5000,
+      "high": 20000
+    },
+    {
+      "name_cn": "推特-Web3中文-大型KOL 20万粉以上",
+      "name_en": "X Web3 CN KOL - 200K+",
+      "main_cat": "marketing",
+      "sub_cat": "twitter",
+      "industry": "web3",
+      "low": 20000,
+      "high": 70000
+    },
+    {
+      "name_cn": "推特-Web3英文-中型KOL 5万至20万粉",
+      "name_en": "X Web3 EN KOL - 50K-200K",
+      "main_cat": "marketing",
+      "sub_cat": "twitter",
+      "industry": "web3",
+      "low": 15000,
+      "high": 50000
+    },
+    {
+      "name_cn": "推特-Web3英文-大型KOL 20万粉以上",
+      "name_en": "X Web3 EN KOL - 200K+",
+      "main_cat": "marketing",
+      "sub_cat": "twitter",
+      "industry": "web3",
+      "low": 50000,
+      "high": 200000
+    },
+    {
+      "name_cn": "推特-Web3-Space AMA活动",
+      "name_en": "X Web3 Space - AMA",
+      "main_cat": "marketing",
+      "sub_cat": "twitter",
+      "industry": "web3",
+      "low": 3000,
+      "high": 15000
+    },
+    {
+      "name_cn": "推特-Web3-Space联合主办",
+      "name_en": "X Web3 Space - Co-host",
+      "main_cat": "marketing",
+      "sub_cat": "twitter",
+      "industry": "web3",
+      "low": 8000,
+      "high": 30000
+    },
+    {
+      "name_cn": "微信群-科技-单群推送",
+      "name_en": "WeChat Group Tech - Single Push",
+      "main_cat": "marketing",
+      "sub_cat": "wechat_community",
+      "industry": "tech",
+      "low": 300,
+      "high": 800
+    },
+    {
+      "name_cn": "微信群-科技-批量推送5至10群",
+      "name_en": "WeChat Group Tech - Batch Push",
+      "main_cat": "marketing",
+      "sub_cat": "wechat_community",
+      "industry": "tech",
+      "low": 1500,
+      "high": 4000
+    },
+    {
+      "name_cn": "微信群-科技-社群主万人矩阵",
+      "name_en": "WeChat Group Tech - Matrix Push",
+      "main_cat": "marketing",
+      "sub_cat": "wechat_community",
+      "industry": "tech",
+      "low": 3000,
+      "high": 10000
+    },
+    {
+      "name_cn": "微信群-科技-专题分享嘉宾",
+      "name_en": "WeChat Group Tech - Guest Talk",
+      "main_cat": "marketing",
+      "sub_cat": "wechat_community",
+      "industry": "tech",
+      "low": 2000,
+      "high": 8000
+    },
+    {
+      "name_cn": "微信群-科技-长期月度合作",
+      "name_en": "WeChat Group Tech - Monthly",
+      "main_cat": "marketing",
+      "sub_cat": "wechat_community",
+      "industry": "tech",
+      "low": 5000,
+      "high": 15000
+    },
+    {
+      "name_cn": "微信群-Web3-单群推送",
+      "name_en": "WeChat Group Web3 - Single Push",
+      "main_cat": "marketing",
+      "sub_cat": "wechat_community",
+      "industry": "web3",
+      "low": 500,
+      "high": 1500
+    },
+    {
+      "name_cn": "微信群-Web3-批量推送5至10群",
+      "name_en": "WeChat Group Web3 - Batch Push",
+      "main_cat": "marketing",
+      "sub_cat": "wechat_community",
+      "industry": "web3",
+      "low": 2500,
+      "high": 8000
+    },
+    {
+      "name_cn": "微信群-Web3-社群主万人矩阵",
+      "name_en": "WeChat Group Web3 - Matrix Push",
+      "main_cat": "marketing",
+      "sub_cat": "wechat_community",
+      "industry": "web3",
+      "low": 5000,
+      "high": 20000
+    },
+    {
+      "name_cn": "微信群-Web3-AMA分享嘉宾",
+      "name_en": "WeChat Group Web3 - AMA Guest",
+      "main_cat": "marketing",
+      "sub_cat": "wechat_community",
+      "industry": "web3",
+      "low": 3000,
+      "high": 12000
+    },
+    {
+      "name_cn": "微信群-Web3-长期月度合作",
+      "name_en": "WeChat Group Web3 - Monthly",
+      "main_cat": "marketing",
+      "sub_cat": "wechat_community",
+      "industry": "web3",
+      "low": 8000,
+      "high": 25000
+    },
+    {
+      "name_cn": "微信群-Web3-付费社群入驻",
+      "name_en": "WeChat Group Web3 - Paid Community",
+      "main_cat": "marketing",
+      "sub_cat": "wechat_community",
+      "industry": "web3",
+      "low": 2000,
+      "high": 5000
+    },
+    {
+      "name_cn": "社媒推广文案-系列",
+      "name_en": "Social Media Copywriting - Series",
+      "main_cat": "marketing",
+      "sub_cat": "content_production",
+      "industry": "general",
+      "low": 1000,
+      "high": 3000
+    },
+    {
+      "name_cn": "社媒海报-系列",
+      "name_en": "Social Media Poster - Series",
+      "main_cat": "marketing",
+      "sub_cat": "content_production",
+      "industry": "general",
+      "low": 1000,
+      "high": 3000
+    },
+    {
+      "name_cn": "预热短视频-15秒",
+      "name_en": "Teaser Video - 15s",
+      "main_cat": "marketing",
+      "sub_cat": "content_production",
+      "industry": "general",
+      "low": 800,
+      "high": 2500
+    },
+    {
+      "name_cn": "活动Recap文章",
+      "name_en": "Event Recap Article",
+      "main_cat": "marketing",
+      "sub_cat": "content_production",
+      "industry": "general",
+      "low": 1000,
+      "high": 3000
+    },
+    {
+      "name_cn": "活动Recap视频-营销向",
+      "name_en": "Event Recap Video - Marketing",
+      "main_cat": "marketing",
+      "sub_cat": "content_production",
+      "industry": "general",
+      "low": 3000,
+      "high": 10000
+    },
+    {
+      "name_cn": "新闻稿撰写",
+      "name_en": "Press Release - Chinese",
+      "main_cat": "marketing",
+      "sub_cat": "content_production",
+      "industry": "general",
+      "low": 1000,
+      "high": 3000
+    },
+    {
+      "name_cn": "新闻稿撰写-中英双语",
+      "name_en": "Press Release - Bilingual",
+      "main_cat": "marketing",
+      "sub_cat": "content_production",
+      "industry": "general",
+      "low": 2000,
+      "high": 5000
+    },
+    {
+      "name_cn": "邮件营销EDM设计",
+      "name_en": "EDM Design",
+      "main_cat": "marketing",
+      "sub_cat": "content_production",
+      "industry": "general",
+      "low": 500,
+      "high": 1500
+    },
+    {
+      "name_cn": "小红书信息流广告",
+      "name_en": "Xiaohongshu Feed Ad",
+      "main_cat": "marketing",
+      "sub_cat": "paid_promotion",
+      "industry": "general",
+      "low": 2000,
+      "high": 6000
+    },
+    {
+      "name_cn": "行业媒体软文-科技",
+      "name_en": "Tech Media Sponsored Article",
+      "main_cat": "marketing",
+      "sub_cat": "paid_promotion",
+      "industry": "tech",
+      "low": 2000,
+      "high": 8000
+    },
+    {
+      "name_cn": "行业媒体软文-Web3",
+      "name_en": "Web3 Media Sponsored Article",
+      "main_cat": "marketing",
+      "sub_cat": "paid_promotion",
+      "industry": "web3",
+      "low": 3000,
+      "high": 12000
+    },
+    {
+      "name_cn": "活动平台发布",
+      "name_en": "Event Platform Listing",
+      "main_cat": "marketing",
+      "sub_cat": "paid_promotion",
+      "industry": "general",
+      "low": 0,
+      "high": 500
+    },
+    {
+      "name_cn": "媒体签到礼/伴手礼",
+      "name_en": "Media Welcome Gift",
+      "main_cat": "marketing",
+      "sub_cat": "pr_media",
+      "industry": "general",
+      "low": 50,
+      "high": 200
+    },
+    {
+      "name_cn": "媒体招待-专属茶歇",
+      "name_en": "Media Hospitality - VIP Tea",
+      "main_cat": "marketing",
+      "sub_cat": "pr_media",
+      "industry": "general",
+      "low": 50,
+      "high": 150
+    },
+    {
+      "name_cn": "新闻发布会-媒体邀约",
+      "name_en": "Press Conference - Media Invite",
+      "main_cat": "marketing",
+      "sub_cat": "pr_media",
+      "industry": "general",
+      "low": 2000,
+      "high": 6000
+    },
+    {
+      "name_cn": "抖音-科技KOL-1万至10万粉",
+      "name_en": "Douyin Tech KOL - 10K-100K",
+      "main_cat": "marketing",
+      "sub_cat": "douyin",
+      "industry": "tech",
+      "low": 2000,
+      "high": 8000
+    },
+    {
+      "name_cn": "抖音-科技KOL-10万至50万粉",
+      "name_en": "Douyin Tech KOL - 100K-500K",
+      "main_cat": "marketing",
+      "sub_cat": "douyin",
+      "industry": "tech",
+      "low": 8000,
+      "high": 30000
+    },
+    {
+      "name_cn": "B站-科技UP主-1万至10万粉",
+      "name_en": "Bilibili Tech UP - 10K-100K",
+      "main_cat": "marketing",
+      "sub_cat": "bilibili",
+      "industry": "tech",
+      "low": 1500,
+      "high": 6000
+    },
+    {
+      "name_cn": "B站-科技UP主-10万至50万粉",
+      "name_en": "Bilibili Tech UP - 100K-500K",
+      "main_cat": "marketing",
+      "sub_cat": "bilibili",
+      "industry": "tech",
+      "low": 6000,
+      "high": 25000
+    },
+    {
+      "name_cn": "微信公众号-科技-投放",
+      "name_en": "WeChat OA Tech - Sponsored",
+      "main_cat": "marketing",
+      "sub_cat": "wechat_oa",
+      "industry": "tech",
+      "low": 2000,
+      "high": 10000
+    },
+    {
+      "name_cn": "LinkedIn推广-信息流广告",
+      "name_en": "LinkedIn Feed Ad",
+      "main_cat": "marketing",
+      "sub_cat": "linkedin",
+      "industry": "general",
+      "low": 2000,
+      "high": 6000
+    },
+    {
+      "name_cn": "Telegram-Web3社群推广",
+      "name_en": "Telegram Web3 Community",
+      "main_cat": "marketing",
+      "sub_cat": "telegram",
+      "industry": "web3",
+      "low": 1000,
+      "high": 5000
+    },
+    {
+      "name_cn": "Discord-Web3服务器合作",
+      "name_en": "Discord Web3 Server Collab",
+      "main_cat": "marketing",
+      "sub_cat": "discord",
+      "industry": "web3",
+      "low": 2000,
+      "high": 8000
+    },
+    {
+      "name_cn": "Farcaster-Web3发帖推广",
+      "name_en": "Farcaster Web3 Post",
+      "main_cat": "marketing",
+      "sub_cat": "farcaster",
+      "industry": "web3",
+      "low": 500,
+      "high": 3000
+    }
+  ]
+}

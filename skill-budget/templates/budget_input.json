@@ -1,0 +1,14 @@
+{
+  "source": "ai_extracted",
+  "ai_extracted": {
+    "content": "Day 1 上午主论坛(3 位嘉宾主题演讲),下午 2 场 workshop;Day 2 黑客松 + 颁奖晚宴。",
+    "marketing": "活动前 3 周做社媒预热(X / 小红书 / 微信),投放 KOL 1 位,制作宣传短视频 1 支。",
+    "venues": {
+      "confirmed": null,
+      "recommended": "市中心联合办公空间,可容纳 200 人,含基础 AV 设备"
+    },
+    "partners": "1 家云厂商赞助算力,1 家媒体做内容分发。"
+  },
+  "html_content": "",
+  "regeneration_prompt": null
+}

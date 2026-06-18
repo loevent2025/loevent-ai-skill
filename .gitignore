@@ -1,0 +1,32 @@
+# 密钥(绝不入库)—— 即使 bundle 被单独抽出发布也自带防护
+.env
+.env.*
+!.env.example
+
+# 运行产物(含真实活动/主办方/受众等私密业务数据,默认落工作目录)
+event.json
+host.json
+plan.json
+eventplan.json
+inspiration.json
+audience.json
+budget.json
+poster.json
+host_bio.json
+luma.json
+company.json
+guests.json
+poster_*.png
+work/
+.loevent/
+
+# Python / 虚拟环境
+__pycache__/
+*.pyc
+.DS_Store
+.venv/
+venv/
+
+# templates/ 是输入示例(文档),即使文件名撞上上面的产物 pattern 也要保留入库
+!templates/
+!templates/**

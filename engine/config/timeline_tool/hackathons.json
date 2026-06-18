@@ -1,0 +1,1092 @@
+{
+  "web3": {
+    "large": [
+      {"task_name_cn": "黑客松策划方案制定", "task_name_en": "Web3 Hackathon Proposal", "category": "Commercial", "priority": "P0", "duration_days": 23, "dependencies": "-"},
+      {"task_name_cn": "活动预算制定", "task_name_en": "Event Budget Plan", "category": "Commercial", "priority": "P0", "duration_days": 8, "dependencies": "黑客松策划方案制定"},
+      {"task_name_cn": "赛道主题设计", "task_name_en": "Theme Design", "category": "Commercial", "priority": "P0", "duration_days": 10, "dependencies": "黑客松策划方案制定"},
+      {"task_name_cn": "评审标准制定", "task_name_en": "Quality Standard Setup", "category": "Commercial", "priority": "P0", "duration_days": 6, "dependencies": "赛道主题设计"},
+      {"task_name_cn": "评委团队邀请", "task_name_en": "Expert Judge Invitation", "category": "Commercial", "priority": "P0", "duration_days": 18, "dependencies": "评审标准制定"},
+      {"task_name_cn": "评审流程确认", "task_name_en": "Judging Process Setup", "category": "Commercial", "priority": "P1", "duration_days": 4, "dependencies": "评委团队邀请"},
+      {"task_name_cn": "活动品牌视觉设计", "task_name_en": "Hackathon Key Visual Design", "category": "Marketing", "priority": "P0", "duration_days": 14, "dependencies": "黑客松策划方案制定"},
+      {"task_name_cn": "场地初步筛选", "task_name_en": "Venue Sourcing", "category": "Venue", "priority": "P0", "duration_days": 8, "dependencies": "黑客松策划方案制定"},
+      {"task_name_cn": "参赛者招募", "task_name_en": "Participant Recruitment", "category": "Marketing", "priority": "P0", "duration_days": 25, "dependencies": "黑客松策划方案制定"},
+      {"task_name_cn": "参赛者筛选", "task_name_en": "Participant List", "category": "Commercial", "priority": "P1", "duration_days": 10, "dependencies": "参赛者招募"},
+      {"task_name_cn": "组队配对系统", "task_name_en": "Team Matchmaking", "category": "Marketing", "priority": "P2", "duration_days": 8, "dependencies": "参赛者筛选"},
+      {"task_name_cn": "参赛确认", "task_name_en": "Participant List Confirmation", "category": "Commercial", "priority": "P1", "duration_days": 5, "dependencies": "组队配对系统"},
+      {"task_name_cn": "技术文档整理", "task_name_en": "Technical Documentation", "category": "Marketing", "priority": "P1", "duration_days": 10, "dependencies": "赛道主题设计"},
+      {"task_name_cn": "技术导师团队组建", "task_name_en": "Team Mentor Recruitment", "category": "Commercial", "priority": "P0", "duration_days": 14, "dependencies": "赛道主题设计"},
+      {"task_name_cn": "答疑机制部署", "task_name_en": "Q&A Setup", "category": "General", "priority": "P2", "duration_days": 4, "dependencies": "技术导师团队组建"},
+      {"task_name_cn": "活动落地页搭建", "task_name_en": "Hackathon Landing Page Setup", "category": "Marketing", "priority": "P1", "duration_days": 35, "dependencies": "活动品牌视觉设计"},
+      {"task_name_cn": "CT宣发与社群推广", "task_name_en": "CT Promotion and Community Marketing", "category": "Marketing", "priority": "P0", "duration_days": 60, "dependencies": "活动落地页搭建"},
+      {"task_name_cn": "Discord/TG社群运营", "task_name_en": "Discord/TG Community Promotion", "category": "Marketing", "priority": "P1", "duration_days": 55, "dependencies": "活动落地页搭建"},
+      {"task_name_cn": "Web3 KOL合作邀请", "task_name_en": "Web3 KOL Outreach", "category": "Marketing", "priority": "P1", "duration_days": 20, "dependencies": "活动落地页搭建"},
+      {"task_name_cn": "生态合作伙伴洽谈", "task_name_en": "L1/L2 Ecosystem Partnership Outreach", "category": "Commercial", "priority": "P0", "duration_days": 20, "dependencies": "活动落地页搭建"},
+      {"task_name_cn": "技术赞助商招募", "task_name_en": "Technical Sponsor Outreach", "category": "Commercial", "priority": "P1", "duration_days": 25, "dependencies": "活动落地页搭建"},
+      {"task_name_cn": "云服务赞助洽谈", "task_name_en": "Cloud Service Sponsor Outreach", "category": "Commercial", "priority": "P1", "duration_days": 15, "dependencies": "活动落地页搭建"},
+      {"task_name_cn": "NFT成就徽章设计", "task_name_en": "Event Souvenir (NFT) Design", "category": "Marketing", "priority": "P2", "duration_days": 8, "dependencies": "活动落地页搭建"},
+      {"task_name_cn": "技术工作坊组织", "task_name_en": "Mentor Team Training", "category": "Marketing", "priority": "P2", "duration_days": 14, "dependencies": "技术导师团队组建"},
+      {"task_name_cn": "场地实地考察", "task_name_en": "Venue Site Visit", "category": "Venue", "priority": "P0", "duration_days": 5, "dependencies": "场地初步筛选"},
+      {"task_name_cn": "活动场地确认", "task_name_en": "Venue Confirmation", "category": "Venue", "priority": "P0", "duration_days": 5, "dependencies": "场地实地考察"},
+      {"task_name_cn": "场地合同签订", "task_name_en": "Venue Contract Signing", "category": "Venue", "priority": "P1", "duration_days": 5, "dependencies": "场地实地考察, 活动预算制定"},
+      {"task_name_cn": "开发者工位规划", "task_name_en": "Developer Seating Plan", "category": "Venue", "priority": "P1", "duration_days": 6, "dependencies": "场地合同签订"},
+      {"task_name_cn": "高速网络部署", "task_name_en": "Internet Setup", "category": "Venue", "priority": "P0", "duration_days": 6, "dependencies": "场地合同签订"},
+      {"task_name_cn": "技术支持区搭建", "task_name_en": "Technical Support Session Setup", "category": "Venue", "priority": "P1", "duration_days": 5, "dependencies": "开发者工位规划"},
+      {"task_name_cn": "演示舞台搭建", "task_name_en": "Demonstration Environment Setup", "category": "Venue", "priority": "P1", "duration_days": 8, "dependencies": "开发者工位规划"},
+      {"task_name_cn": "休息区布置", "task_name_en": "Developer Lounge Setup", "category": "Venue", "priority": "P2", "duration_days": 4, "dependencies": "开发者工位规划"},
+      {"task_name_cn": "餐饮服务安排", "task_name_en": "Catering Vendor Sourcing", "category": "Venue", "priority": "P2", "duration_days": 6, "dependencies": "场地合同签订"},
+      {"task_name_cn": "现场工作人员安排", "task_name_en": "On-site Staff Management", "category": "General", "priority": "P2", "duration_days": 6, "dependencies": "开发者工位规划"},
+      {"task_name_cn": "志愿者招募与培训", "task_name_en": "Volunteer Recruitment and Training", "category": "General", "priority": "P2", "duration_days": 12, "dependencies": "现场工作人员安排"},
+      {"task_name_cn": "工作人员证件制作", "task_name_en": "Staff Badge Production", "category": "General", "priority": "P3", "duration_days": 4, "dependencies": "志愿者招募与培训"},
+      {"task_name_cn": "评审流程培训", "task_name_en": "Judge Training", "category": "General", "priority": "P2", "duration_days": 3, "dependencies": "评审流程确认"},
+      {"task_name_cn": "风险预案制定", "task_name_en": "Risk Management Plan", "category": "General", "priority": "P2", "duration_days": 5, "dependencies": "活动预算制定"},
+      {"task_name_cn": "开发环境准备", "task_name_en": "Development Environment Setup", "category": "Venue", "priority": "P0", "duration_days": 12, "dependencies": "场地合同签订, 赛道主题设计"},
+      {"task_name_cn": "项目提交系统部署", "task_name_en": "Project Submission System Deployment", "category": "Venue", "priority": "P1", "duration_days": 5, "dependencies": "开发环境准备"},
+      {"task_name_cn": "在线协作平台部署", "task_name_en": "Online Collaboration Platform Setup", "category": "Venue", "priority": "P2", "duration_days": 8, "dependencies": "开发环境准备"},
+      {"task_name_cn": "直播系统部署", "task_name_en": "Live Streaming Setup", "category": "Venue", "priority": "P2", "duration_days": 8, "dependencies": "高速网络部署"},
+      {"task_name_cn": "Twitter Space预热活动", "task_name_en": "Twitter Space Countdown Promotion", "category": "Marketing", "priority": "P2", "duration_days": 14, "dependencies": "Discord/TG社群运营"},
+      {"task_name_cn": "媒体通稿撰写", "task_name_en": "Press Article Confirmation", "category": "Marketing", "priority": "P2", "duration_days": 5, "dependencies": "生态合作伙伴洽谈"},
+      {"task_name_cn": "音视频设备租赁", "task_name_en": "AV Equipment Rental", "category": "Venue", "priority": "P2", "duration_days": 6, "dependencies": "演示舞台搭建"},
+      {"task_name_cn": "签到区与指引布置", "task_name_en": "Check-in Area & Wayfinding Setup", "category": "Venue", "priority": "P2", "duration_days": 4, "dependencies": "开发者工位规划"},
+      {"task_name_cn": "项目孵化对接准备", "task_name_en": "Product Incubation Matchmaking", "category": "Commercial", "priority": "P2", "duration_days": 10, "dependencies": "生态合作伙伴洽谈"},
+      {"task_name_cn": "现场彩排", "task_name_en": "Full Rehearsal", "category": "Venue", "priority": "P2", "duration_days": 2, "dependencies": "音视频设备租赁, 签到区与指引布置, 评审流程培训, 项目提交系统部署"}
+    ],
+    "medium": [
+      {"task_name_cn": "黑客松策划方案制定", "task_name_en": "Web3 Hackathon Proposal", "category": "Commercial", "priority": "P0", "duration_days": 13, "dependencies": "-"},
+      {"task_name_cn": "活动预算制定", "task_name_en": "Event Budget Plan", "category": "Commercial", "priority": "P0", "duration_days": 5, "dependencies": "黑客松策划方案制定"},
+      {"task_name_cn": "赛道主题设计", "task_name_en": "Theme Design", "category": "Commercial", "priority": "P0", "duration_days": 6, "dependencies": "黑客松策划方案制定"},
+      {"task_name_cn": "评审标准制定", "task_name_en": "Quality Standard Setup", "category": "Commercial", "priority": "P0", "duration_days": 4, "dependencies": "赛道主题设计"},
+      {"task_name_cn": "评委团队邀请", "task_name_en": "Expert Judge Invitation", "category": "Commercial", "priority": "P0", "duration_days": 12, "dependencies": "评审标准制定"},
+      {"task_name_cn": "评审流程确认", "task_name_en": "Judging Process Setup", "category": "Commercial", "priority": "P1", "duration_days": 2, "dependencies": "评委团队邀请"},
+      {"task_name_cn": "活动品牌视觉设计", "task_name_en": "Hackathon Key Visual Design", "category": "Marketing", "priority": "P0", "duration_days": 10, "dependencies": "黑客松策划方案制定"},
+      {"task_name_cn": "场地初步筛选", "task_name_en": "Venue Sourcing", "category": "Venue", "priority": "P0", "duration_days": 5, "dependencies": "黑客松策划方案制定"},
+      {"task_name_cn": "参赛者招募", "task_name_en": "Participant Recruitment", "category": "Marketing", "priority": "P0", "duration_days": 16, "dependencies": "黑客松策划方案制定"},
+      {"task_name_cn": "参赛者筛选", "task_name_en": "Participant List", "category": "Commercial", "priority": "P1", "duration_days": 6, "dependencies": "参赛者招募"},
+      {"task_name_cn": "组队配对", "task_name_en": "Team Matchmaking", "category": "Marketing", "priority": "P2", "duration_days": 4, "dependencies": "参赛者筛选"},
+      {"task_name_cn": "参赛确认", "task_name_en": "Participant List Confirmation", "category": "Commercial", "priority": "P1", "duration_days": 3, "dependencies": "组队配对"},
+      {"task_name_cn": "技术文档整理", "task_name_en": "Technical Documentation", "category": "Marketing", "priority": "P1", "duration_days": 7, "dependencies": "赛道主题设计"},
+      {"task_name_cn": "技术导师团队组建", "task_name_en": "Team Mentor Recruitment", "category": "Commercial", "priority": "P0", "duration_days": 10, "dependencies": "赛道主题设计"},
+      {"task_name_cn": "答疑机制部署", "task_name_en": "Q&A Setup", "category": "General", "priority": "P2", "duration_days": 2, "dependencies": "技术导师团队组建"},
+      {"task_name_cn": "活动落地页搭建", "task_name_en": "Hackathon Landing Page Setup", "category": "Marketing", "priority": "P1", "duration_days": 20, "dependencies": "活动品牌视觉设计"},
+      {"task_name_cn": "CT宣发与社群推广", "task_name_en": "CT Promotion and Community Marketing", "category": "Marketing", "priority": "P0", "duration_days": 40, "dependencies": "活动落地页搭建"},
+      {"task_name_cn": "Discord/TG社群运营", "task_name_en": "Discord/TG Community Promotion", "category": "Marketing", "priority": "P1", "duration_days": 35, "dependencies": "活动落地页搭建"},
+      {"task_name_cn": "KOL合作邀请", "task_name_en": "Web3 KOL Outreach", "category": "Marketing", "priority": "P2", "duration_days": 12, "dependencies": "活动落地页搭建"},
+      {"task_name_cn": "生态合作伙伴洽谈", "task_name_en": "L1/L2 Ecosystem Partnership Outreach", "category": "Commercial", "priority": "P1", "duration_days": 14, "dependencies": "活动落地页搭建"},
+      {"task_name_cn": "技术赞助商招募", "task_name_en": "Technical Sponsor Outreach", "category": "Commercial", "priority": "P1", "duration_days": 18, "dependencies": "活动落地页搭建"},
+      {"task_name_cn": "链上积分系统", "task_name_en": "On-chain Points System Development", "category": "Marketing", "priority": "P2", "duration_days": 8, "dependencies": "活动品牌视觉设计"},
+      {"task_name_cn": "场地实地考察", "task_name_en": "Venue Site Visit", "category": "Venue", "priority": "P1", "duration_days": 3, "dependencies": "场地初步筛选"},
+      {"task_name_cn": "活动场地确认", "task_name_en": "Venue Confirmation", "category": "Venue", "priority": "P1", "duration_days": 3, "dependencies": "场地实地考察"},
+      {"task_name_cn": "场地合同签订", "task_name_en": "Venue Contract Signing", "category": "Venue", "priority": "P1", "duration_days": 3, "dependencies": "场地实地考察, 活动预算制定"},
+      {"task_name_cn": "开发者工位规划", "task_name_en": "Developer Seating Plan", "category": "Venue", "priority": "P1", "duration_days": 4, "dependencies": "场地合同签订"},
+      {"task_name_cn": "网络基础设施部署", "task_name_en": "Network Infrastructure Deployment", "category": "Venue", "priority": "P0", "duration_days": 4, "dependencies": "场地合同签订"},
+      {"task_name_cn": "技术支持区搭建", "task_name_en": "Technical Support Session Setup", "category": "Venue", "priority": "P2", "duration_days": 3, "dependencies": "开发者工位规划"},
+      {"task_name_cn": "演示舞台搭建", "task_name_en": "Demonstration Environment Setup", "category": "Venue", "priority": "P1", "duration_days": 5, "dependencies": "开发者工位规划"},
+      {"task_name_cn": "休息区布置", "task_name_en": "Developer Lounge Setup", "category": "Venue", "priority": "P3", "duration_days": 2, "dependencies": "开发者工位规划"},
+      {"task_name_cn": "餐饮茶歇安排", "task_name_en": "Catering and Refreshment Arrangement", "category": "Venue", "priority": "P2", "duration_days": 4, "dependencies": "场地合同签订"},
+      {"task_name_cn": "现场工作人员安排", "task_name_en": "On-site Staff Management", "category": "General", "priority": "P2", "duration_days": 4, "dependencies": "开发者工位规划"},
+      {"task_name_cn": "工作人员证件制作", "task_name_en": "Staff Badge Production", "category": "General", "priority": "P3", "duration_days": 3, "dependencies": "现场工作人员安排"},
+      {"task_name_cn": "评审流程培训", "task_name_en": "Judge Training", "category": "General", "priority": "P2", "duration_days": 2, "dependencies": "评审流程确认"},
+      {"task_name_cn": "风险预案制定", "task_name_en": "Risk Management Plan", "category": "General", "priority": "P3", "duration_days": 3, "dependencies": "活动预算制定"},
+      {"task_name_cn": "开发环境准备", "task_name_en": "Development Environment Setup", "category": "Venue", "priority": "P0", "duration_days": 8, "dependencies": "场地合同签订, 赛道主题设计"},
+      {"task_name_cn": "项目提交系统", "task_name_en": "Project Submission System Deployment", "category": "Venue", "priority": "P1", "duration_days": 4, "dependencies": "开发环境准备"},
+      {"task_name_cn": "直播系统部署", "task_name_en": "Live Streaming Setup", "category": "Venue", "priority": "P2", "duration_days": 5, "dependencies": "网络基础设施部署"},
+      {"task_name_cn": "Twitter Space预热", "task_name_en": "Twitter Space Countdown Promotion", "category": "Marketing", "priority": "P2", "duration_days": 8, "dependencies": "Discord/TG社群运营"},
+      {"task_name_cn": "音视频设备租赁", "task_name_en": "AV Equipment Rental", "category": "Venue", "priority": "P2", "duration_days": 4, "dependencies": "演示舞台搭建"},
+      {"task_name_cn": "签到区与指引布置", "task_name_en": "Check-in Area & Wayfinding Setup", "category": "Venue", "priority": "P2", "duration_days": 3, "dependencies": "开发者工位规划"},
+      {"task_name_cn": "现场彩排", "task_name_en": "Full Rehearsal", "category": "Venue", "priority": "P2", "duration_days": 2, "dependencies": "音视频设备租赁, 签到区与指引布置, 评审流程培训, 项目提交系统"}
+    ],
+    "small": [
+      {
+        "task_name_cn": "黑客松策划方案制定",
+        "task_name_en": "Web3 Hackathon Proposal",
+        "category": "Commercial",
+        "priority": "P0",
+        "duration_days": 5,
+        "dependencies": "-"
+      },
+      {
+        "task_name_cn": "活动预算制定",
+        "task_name_en": "Event Budget Plan",
+        "category": "Commercial",
+        "priority": "P0",
+        "duration_days": 2,
+        "dependencies": "黑客松策划方案制定"
+      },
+      {
+        "task_name_cn": "赛道主题设计",
+        "task_name_en": "Theme Design",
+        "category": "Commercial",
+        "priority": "P0",
+        "duration_days": 3,
+        "dependencies": "黑客松策划方案制定"
+      },
+      {
+        "task_name_cn": "评审标准制定",
+        "task_name_en": "Quality Standard Setup",
+        "category": "Commercial",
+        "priority": "P0",
+        "duration_days": 2,
+        "dependencies": "赛道主题设计"
+      },
+      {
+        "task_name_cn": "评委邀请",
+        "task_name_en": "Expert Judge Invitation",
+        "category": "Commercial",
+        "priority": "P0",
+        "duration_days": 7,
+        "dependencies": "评审标准制定"
+      },
+      {
+        "task_name_cn": "评审流程确认",
+        "task_name_en": "Judging Process Setup",
+        "category": "Commercial",
+        "priority": "P1",
+        "duration_days": 1,
+        "dependencies": "评委邀请"
+      },
+      {
+        "task_name_cn": "简易视觉设计",
+        "task_name_en": "Simple Visual Design",
+        "category": "Marketing",
+        "priority": "P0",
+        "duration_days": 4,
+        "dependencies": "黑客松策划方案制定"
+      },
+      {
+        "task_name_cn": "场地选定签约",
+        "task_name_en": "Venue Selection and Contract",
+        "category": "Venue",
+        "priority": "P0",
+        "duration_days": 3,
+        "dependencies": "黑客松策划方案制定, 活动预算制定"
+      },
+      {
+        "task_name_cn": "活动落地页",
+        "task_name_en": "Hackathon Landing Page Setup",
+        "category": "Marketing",
+        "priority": "P1",
+        "duration_days": 3,
+        "dependencies": "简易视觉设计"
+      },
+      {
+        "task_name_cn": "定向开发者邀请",
+        "task_name_en": "Targeted Developer Invitation",
+        "category": "Marketing",
+        "priority": "P0",
+        "duration_days": 10,
+        "dependencies": "活动落地页"
+      },
+      {
+        "task_name_cn": "参赛者筛选确认",
+        "task_name_en": "Participant Screening and Confirmation",
+        "category": "Commercial",
+        "priority": "P1",
+        "duration_days": 14,
+        "dependencies": "定向开发者邀请"
+      },
+      {
+        "task_name_cn": "组队配对",
+        "task_name_en": "Team Matchmaking",
+        "category": "Marketing",
+        "priority": "P2",
+        "duration_days": 2,
+        "dependencies": "参赛者筛选确认"
+      },
+      {
+        "task_name_cn": "技术文档整理",
+        "task_name_en": "Technical Documentation",
+        "category": "Marketing",
+        "priority": "P1",
+        "duration_days": 4,
+        "dependencies": "赛道主题设计"
+      },
+      {
+        "task_name_cn": "技术导师确认",
+        "task_name_en": "Technical Mentor Confirmation",
+        "category": "Commercial",
+        "priority": "P1",
+        "duration_days": 6,
+        "dependencies": "赛道主题设计"
+      },
+      {
+        "task_name_cn": "答疑机制部署",
+        "task_name_en": "Q&A Setup",
+        "category": "General",
+        "priority": "P2",
+        "duration_days": 1,
+        "dependencies": "技术导师确认"
+      },
+      {
+        "task_name_cn": "CT定向宣发",
+        "task_name_en": "CT Targeted Promotion",
+        "category": "Marketing",
+        "priority": "P1",
+        "duration_days": 12,
+        "dependencies": "活动落地页"
+      },
+      {
+        "task_name_cn": "Discord/TG社群推广",
+        "task_name_en": "Discord/TG Community Promotion",
+        "category": "Marketing",
+        "priority": "P2",
+        "duration_days": 10,
+        "dependencies": "活动落地页"
+      },
+      {
+        "task_name_cn": "小型赞助洽谈",
+        "task_name_en": "Small Sponsorship Negotiation",
+        "category": "Commercial",
+        "priority": "P1",
+        "duration_days": 6,
+        "dependencies": "活动落地页"
+      },
+      {
+        "task_name_cn": "POAP/NFT设计部署",
+        "task_name_en": "POAP/NFT Design and Deployment",
+        "category": "Marketing",
+        "priority": "P2",
+        "duration_days": 4,
+        "dependencies": "简易视觉设计"
+      },
+      {
+        "task_name_cn": "开发者工位规划",
+        "task_name_en": "Developer Seating Plan",
+        "category": "Venue",
+        "priority": "P1",
+        "duration_days": 2,
+        "dependencies": "场地选定签约"
+      },
+      {
+        "task_name_cn": "网络设备检查",
+        "task_name_en": "Network Equipment Check",
+        "category": "Venue",
+        "priority": "P1",
+        "duration_days": 1,
+        "dependencies": "场地选定签约"
+      },
+      {
+        "task_name_cn": "演示舞台简易搭建",
+        "task_name_en": "Simple Demo Stage Setup",
+        "category": "Venue",
+        "priority": "P1",
+        "duration_days": 2,
+        "dependencies": "开发者工位规划"
+      },
+      {
+        "task_name_cn": "茶歇餐饮确认",
+        "task_name_en": "Refreshment Confirmation",
+        "category": "Venue",
+        "priority": "P3",
+        "duration_days": 2,
+        "dependencies": "场地选定签约"
+      },
+      {
+        "task_name_cn": "现场人员安排",
+        "task_name_en": "On-site Staff Management",
+        "category": "General",
+        "priority": "P2",
+        "duration_days": 2,
+        "dependencies": "开发者工位规划"
+      },
+      {
+        "task_name_cn": "工作人员证件制作",
+        "task_name_en": "Staff Badge Production",
+        "category": "General",
+        "priority": "P3",
+        "duration_days": 2,
+        "dependencies": "现场人员安排"
+      },
+      {
+        "task_name_cn": "开发环境准备",
+        "task_name_en": "Development Environment Setup",
+        "category": "Venue",
+        "priority": "P0",
+        "duration_days": 4,
+        "dependencies": "场地选定签约, 赛道主题设计"
+      },
+      {
+        "task_name_cn": "项目提交系统",
+        "task_name_en": "Project Submission System Deployment",
+        "category": "Venue",
+        "priority": "P1",
+        "duration_days": 2,
+        "dependencies": "开发环境准备"
+      },
+      {
+        "task_name_cn": "Twitter Space预热",
+        "task_name_en": "Twitter Space Countdown Promotion",
+        "category": "Marketing",
+        "priority": "P2",
+        "duration_days": 4,
+        "dependencies": "Discord/TG社群推广"
+      },
+      {
+        "task_name_cn": "签到与指引布置",
+        "task_name_en": "Check-in Area & Wayfinding Setup",
+        "category": "Venue",
+        "priority": "P2",
+        "duration_days": 1,
+        "dependencies": "开发者工位规划"
+      },
+      {
+        "task_name_cn": "快速彩排",
+        "task_name_en": "Quick Rehearsal",
+        "category": "Venue",
+        "priority": "P3",
+        "duration_days": 1,
+        "dependencies": "演示舞台简易搭建, 签到与指引布置, 评审流程确认, 项目提交系统"
+      }
+    ]
+  },
+  "ai_commercial": {
+    "large": [
+      {"task_name_cn": "黑客松策划方案制定", "task_name_en": "AI Hackathon Proposal", "category": "Commercial", "priority": "P0", "duration_days": 20, "dependencies": "-"},
+      {"task_name_cn": "活动预算制定", "task_name_en": "Event Budget Plan", "category": "Commercial", "priority": "P0", "duration_days": 8, "dependencies": "黑客松策划方案制定"},
+      {"task_name_cn": "赛道主题设计", "task_name_en": "Theme Design", "category": "Commercial", "priority": "P0", "duration_days": 10, "dependencies": "黑客松策划方案制定"},
+      {"task_name_cn": "评审标准制定", "task_name_en": "Quality Standard Setup", "category": "Commercial", "priority": "P0", "duration_days": 6, "dependencies": "赛道主题设计"},
+      {"task_name_cn": "评委团队邀请", "task_name_en": "Expert Judge Invitation", "category": "Commercial", "priority": "P0", "duration_days": 18, "dependencies": "评审标准制定"},
+      {"task_name_cn": "评审流程确认", "task_name_en": "Judging Process Setup", "category": "Commercial", "priority": "P1", "duration_days": 4, "dependencies": "评委团队邀请"},
+      {"task_name_cn": "活动品牌视觉设计", "task_name_en": "Hackathon Key Visual Design", "category": "Marketing", "priority": "P0", "duration_days": 14, "dependencies": "黑客松策划方案制定"},
+      {"task_name_cn": "场地初步筛选", "task_name_en": "Venue Sourcing", "category": "Venue", "priority": "P0", "duration_days": 8, "dependencies": "黑客松策划方案制定"},
+      {"task_name_cn": "参赛者招募", "task_name_en": "Participant Recruitment", "category": "Marketing", "priority": "P0", "duration_days": 25, "dependencies": "黑客松策划方案制定"},
+      {"task_name_cn": "参赛者筛选", "task_name_en": "Participant List", "category": "Commercial", "priority": "P1", "duration_days": 10, "dependencies": "参赛者招募"},
+      {"task_name_cn": "组队配对系统", "task_name_en": "Team Matchmaking", "category": "Marketing", "priority": "P2", "duration_days": 8, "dependencies": "参赛者筛选"},
+      {"task_name_cn": "参赛确认", "task_name_en": "Participation List Confirmation", "category": "Commercial", "priority": "P1", "duration_days": 5, "dependencies": "组队配对系统"},
+      {"task_name_cn": "开发文档整理", "task_name_en": "Development Documentation", "category": "Marketing", "priority": "P0", "duration_days": 12, "dependencies": "赛道主题设计"},
+      {"task_name_cn": "技术导师团队组建", "task_name_en": "Team Mentor Recruitment", "category": "Commercial", "priority": "P0", "duration_days": 14, "dependencies": "赛道主题设计"},
+      {"task_name_cn": "技术答疑部署", "task_name_en": "Q&A Setup", "category": "General", "priority": "P2", "duration_days": 4, "dependencies": "技术导师团队组建"},
+      {"task_name_cn": "活动落地页搭建", "task_name_en": "Hackathon Landing Page Setup", "category": "Marketing", "priority": "P1", "duration_days": 35, "dependencies": "活动品牌视觉设计"},
+      {"task_name_cn": "技术社区宣发策略", "task_name_en": "Tech Community Promotion", "category": "Marketing", "priority": "P0", "duration_days": 60, "dependencies": "活动落地页搭建"},
+      {"task_name_cn": "AI开发者社区运营", "task_name_en": "AI Developer Community Promotion", "category": "Marketing", "priority": "P1", "duration_days": 55, "dependencies": "活动落地页搭建"},
+      {"task_name_cn": "技术KOL合作邀请", "task_name_en": "AI Tech KOL Outreach", "category": "Marketing", "priority": "P1", "duration_days": 20, "dependencies": "活动落地页搭建"},
+      {"task_name_cn": "云服务赞助洽谈", "task_name_en": "Cloud Service Sponsor Outreach", "category": "Commercial", "priority": "P0", "duration_days": 20, "dependencies": "活动落地页搭建"},
+      {"task_name_cn": "模型API赞助", "task_name_en": "Model API Sponsor Outreach", "category": "Commercial", "priority": "P0", "duration_days": 18, "dependencies": "活动落地页搭建"},
+      {"task_name_cn": "技术合作伙伴洽谈", "task_name_en": "Technical Sponsor Outreach", "category": "Commercial", "priority": "P1", "duration_days": 16, "dependencies": "活动落地页搭建"},
+      {"task_name_cn": "技术工作坊组织", "task_name_en": "Mentor Team Training", "category": "Marketing", "priority": "P2", "duration_days": 14, "dependencies": "技术导师团队组建"},
+      {"task_name_cn": "场地实地考察", "task_name_en": "Venue Site Visit", "category": "Venue", "priority": "P0", "duration_days": 5, "dependencies": "场地初步筛选"},
+      {"task_name_cn": "活动场地确认", "task_name_en": "Venue Confirmation", "category": "Venue", "priority": "P0", "duration_days": 5, "dependencies": "场地实地考察"},
+      {"task_name_cn": "场地合同签订", "task_name_en": "Venue Contract Signing", "category": "Venue", "priority": "P1", "duration_days": 5, "dependencies": "场地实地考察, 活动预算制定"},
+      {"task_name_cn": "开发者工位规划", "task_name_en": "Developer Seating Plan", "category": "Venue", "priority": "P1", "duration_days": 6, "dependencies": "场地合同签订"},
+      {"task_name_cn": "高速网络部署", "task_name_en": "Internet Setup", "category": "Venue", "priority": "P0", "duration_days": 6, "dependencies": "场地合同签订"},
+      {"task_name_cn": "演示舞台搭建", "task_name_en": "Demonstration Stage Setup", "category": "Venue", "priority": "P1", "duration_days": 8, "dependencies": "开发者工位规划"},
+      {"task_name_cn": "餐饮服务安排", "task_name_en": "Catering Vendor Sourcing", "category": "Venue", "priority": "P2", "duration_days": 6, "dependencies": "场地合同签订"},
+      {"task_name_cn": "现场工作人员安排", "task_name_en": "On-site Staff Management", "category": "General", "priority": "P2", "duration_days": 6, "dependencies": "开发者工位规划"},
+      {"task_name_cn": "志愿者招募与培训", "task_name_en": "Volunteer Recruitment and Training", "category": "General", "priority": "P2", "duration_days": 12, "dependencies": "现场工作人员安排"},
+      {"task_name_cn": "工作人员证件制作", "task_name_en": "Staff Badge Production", "category": "General", "priority": "P3", "duration_days": 4, "dependencies": "志愿者招募与培训"},
+      {"task_name_cn": "评审流程培训", "task_name_en": "Judging Process Training", "category": "General", "priority": "P2", "duration_days": 3, "dependencies": "评审流程确认"},
+      {"task_name_cn": "风险预案制定", "task_name_en": "Risk Management Plan", "category": "General", "priority": "P2", "duration_days": 5, "dependencies": "活动预算制定"},
+      {"task_name_cn": "API/SDK环境准备", "task_name_en": "API/SDK Environment Setup", "category": "Venue", "priority": "P0", "duration_days": 12, "dependencies": "场地合同签订, 赛道主题设计"},
+      {"task_name_cn": "模型API配置", "task_name_en": "Model API Deployment", "category": "Venue", "priority": "P0", "duration_days": 10, "dependencies": "API/SDK环境准备"},
+      {"task_name_cn": "算力资源分配", "task_name_en": "Computing Power Allocation", "category": "Venue", "priority": "P0", "duration_days": 8, "dependencies": "模型API配置"},
+      {"task_name_cn": "调用限额设置", "task_name_en": "API Call Quota Setting", "category": "Venue", "priority": "P1", "duration_days": 3, "dependencies": "算力资源分配"},
+      {"task_name_cn": "监控系统部署", "task_name_en": "Sentry Deployment", "category": "Venue", "priority": "P1", "duration_days": 5, "dependencies": "调用限额设置"},
+      {"task_name_cn": "向量数据库配置", "task_name_en": "Vector Database Deployment", "category": "Venue", "priority": "P2", "duration_days": 6, "dependencies": "API/SDK环境准备"},
+      {"task_name_cn": "项目提交系统部署", "task_name_en": "Project Submission System Deployment", "category": "Venue", "priority": "P1", "duration_days": 5, "dependencies": "API/SDK环境准备"},
+      {"task_name_cn": "直播系统部署", "task_name_en": "Live Streaming Setup", "category": "Venue", "priority": "P2", "duration_days": 8, "dependencies": "高速网络部署"},
+      {"task_name_cn": "技术论坛预热活动", "task_name_en": "AI Tech Forum Countdown Promotion", "category": "Marketing", "priority": "P2", "duration_days": 14, "dependencies": "AI开发者社区运营"},
+      {"task_name_cn": "媒体通稿撰写", "task_name_en": "Press Article Confirmation", "category": "Marketing", "priority": "P2", "duration_days": 5, "dependencies": "技术合作伙伴洽谈"},
+      {"task_name_cn": "音视频设备租赁", "task_name_en": "AV Equipment Rental", "category": "Venue", "priority": "P2", "duration_days": 6, "dependencies": "演示舞台搭建"},
+      {"task_name_cn": "签到区与指引布置", "task_name_en": "Check-in Area & Wayfinding Setup", "category": "Venue", "priority": "P2", "duration_days": 4, "dependencies": "开发者工位规划"},
+      {"task_name_cn": "API备份方案准备", "task_name_en": "API Backup Plan", "category": "Venue", "priority": "P1", "duration_days": 4, "dependencies": "模型API配置"},
+      {"task_name_cn": "内容安全审核机制", "task_name_en": "Content Review", "category": "General", "priority": "P1", "duration_days": 5, "dependencies": "模型API配置"},
+      {"task_name_cn": "项目孵化对接准备", "task_name_en": "Project Incubation Matchmaking", "category": "Commercial", "priority": "P2", "duration_days": 10, "dependencies": "技术合作伙伴洽谈"},
+      {"task_name_cn": "现场彩排", "task_name_en": "On-site Rehearsal", "category": "Venue", "priority": "P2", "duration_days": 2, "dependencies": "音视频设备租赁, 签到区与指引布置, 评审流程培训, 项目提交系统部署"}
+    ],
+    "medium": [
+      {"task_name_cn": "黑客松策划方案制定", "task_name_en": "AI Hackathon Proposal", "category": "Commercial", "priority": "P0", "duration_days": 12, "dependencies": "-"},
+      {"task_name_cn": "活动预算制定", "task_name_en": "Event Budget Plan", "category": "Commercial", "priority": "P0", "duration_days": 5, "dependencies": "黑客松策划方案制定"},
+      {"task_name_cn": "赛道主题设计", "task_name_en": "Theme Design", "category": "Commercial", "priority": "P0", "duration_days": 6, "dependencies": "黑客松策划方案制定"},
+      {"task_name_cn": "评审标准制定", "task_name_en": "Quality Standard Setup", "category": "Commercial", "priority": "P0", "duration_days": 4, "dependencies": "赛道主题设计"},
+      {"task_name_cn": "评委团队邀请", "task_name_en": "Expert Judge Invitation", "category": "Commercial", "priority": "P0", "duration_days": 12, "dependencies": "评审标准制定"},
+      {"task_name_cn": "评审流程确认", "task_name_en": "Judging Process Setup", "category": "Commercial", "priority": "P1", "duration_days": 2, "dependencies": "评委团队邀请"},
+      {"task_name_cn": "活动品牌视觉设计", "task_name_en": "Hackathon Key Visual Design", "category": "Marketing", "priority": "P0", "duration_days": 10, "dependencies": "黑客松策划方案制定"},
+      {"task_name_cn": "场地初步筛选", "task_name_en": "Venue Sourcing", "category": "Venue", "priority": "P0", "duration_days": 5, "dependencies": "黑客松策划方案制定"},
+      {"task_name_cn": "参赛者招募", "task_name_en": "Participant Recruitment", "category": "Marketing", "priority": "P0", "duration_days": 16, "dependencies": "黑客松策划方案制定"},
+      {"task_name_cn": "参赛者筛选", "task_name_en": "Participant List", "category": "Commercial", "priority": "P1", "duration_days": 6, "dependencies": "参赛者招募"},
+      {"task_name_cn": "组队配对", "task_name_en": "Team Matchmaking", "category": "Marketing", "priority": "P2", "duration_days": 4, "dependencies": "参赛者筛选"},
+      {"task_name_cn": "参赛确认", "task_name_en": "Participation List Confirmation", "category": "Commercial", "priority": "P1", "duration_days": 3, "dependencies": "组队配对"},
+      {"task_name_cn": "开发文档整理", "task_name_en": "Development Documentation", "category": "Marketing", "priority": "P0", "duration_days": 8, "dependencies": "赛道主题设计"},
+      {"task_name_cn": "技术导师团队组建", "task_name_en": "Team Mentor Recruitment", "category": "Commercial", "priority": "P0", "duration_days": 10, "dependencies": "赛道主题设计"},
+      {"task_name_cn": "技术答疑部署", "task_name_en": "Q&A Setup", "category": "General", "priority": "P2", "duration_days": 2, "dependencies": "技术导师团队组建"},
+      {"task_name_cn": "活动落地页搭建", "task_name_en": "Hackathon Landing Page Setup", "category": "Marketing", "priority": "P1", "duration_days": 20, "dependencies": "活动品牌视觉设计"},
+      {"task_name_cn": "技术社区宣发", "task_name_en": "Tech Community Promotion", "category": "Marketing", "priority": "P0", "duration_days": 40, "dependencies": "活动落地页搭建"},
+      {"task_name_cn": "AI开发者社区运营", "task_name_en": "AI Developer Community Promotion", "category": "Marketing", "priority": "P1", "duration_days": 35, "dependencies": "活动落地页搭建"},
+      {"task_name_cn": "技术KOL合作邀请", "task_name_en": "AI Tech KOL Outreach", "category": "Marketing", "priority": "P2", "duration_days": 12, "dependencies": "活动落地页搭建"},
+      {"task_name_cn": "云服务赞助洽谈", "task_name_en": "Cloud Service Sponsor Outreach", "category": "Commercial", "priority": "P1", "duration_days": 14, "dependencies": "活动落地页搭建"},
+      {"task_name_cn": "模型API赞助", "task_name_en": "Model API Sponsor Outreach", "category": "Commercial", "priority": "P1", "duration_days": 12, "dependencies": "活动落地页搭建"},
+      {"task_name_cn": "场地实地考察", "task_name_en": "Venue Site Visit", "category": "Venue", "priority": "P1", "duration_days": 3, "dependencies": "场地初步筛选"},
+      {"task_name_cn": "活动场地确认", "task_name_en": "Venue Confirmation", "category": "Venue", "priority": "P1", "duration_days": 3, "dependencies": "场地实地考察"},
+      {"task_name_cn": "场地合同签订", "task_name_en": "Venue Contract Signing", "category": "Venue", "priority": "P1", "duration_days": 3, "dependencies": "场地实地考察, 活动预算制定"},
+      {"task_name_cn": "开发者工位规划", "task_name_en": "Developer Seating Plan", "category": "Venue", "priority": "P1", "duration_days": 4, "dependencies": "场地合同签订"},
+      {"task_name_cn": "高速网络部署", "task_name_en": "Internet Setup", "category": "Venue", "priority": "P0", "duration_days": 4, "dependencies": "场地合同签订"},
+      {"task_name_cn": "演示舞台搭建", "task_name_en": "Demonstration Stage Setup", "category": "Venue", "priority": "P1", "duration_days": 5, "dependencies": "开发者工位规划"},
+      {"task_name_cn": "餐饮茶歇安排", "task_name_en": "Catering Vendor Sourcing", "category": "Venue", "priority": "P2", "duration_days": 4, "dependencies": "场地合同签订"},
+      {"task_name_cn": "现场工作人员安排", "task_name_en": "On-site Staff Management", "category": "General", "priority": "P2", "duration_days": 4, "dependencies": "开发者工位规划"},
+      {"task_name_cn": "工作人员证件制作", "task_name_en": "Staff Badge Production", "category": "General", "priority": "P3", "duration_days": 3, "dependencies": "现场工作人员安排"},
+      {"task_name_cn": "评审流程培训", "task_name_en": "Judging Process Training", "category": "General", "priority": "P2", "duration_days": 2, "dependencies": "评审流程确认"},
+      {"task_name_cn": "API/SDK环境准备", "task_name_en": "API/SDK Environment Setup", "category": "Venue", "priority": "P0", "duration_days": 8, "dependencies": "场地合同签订, 赛道主题设计"},
+      {"task_name_cn": "模型API配置", "task_name_en": "Model API Deployment", "category": "Venue", "priority": "P0", "duration_days": 6, "dependencies": "API/SDK环境准备"},
+      {"task_name_cn": "算力资源分配", "task_name_en": "Computing Power Allocation", "category": "Venue", "priority": "P0", "duration_days": 5, "dependencies": "模型API配置"},
+      {"task_name_cn": "调用限额设置", "task_name_en": "API Call Quota Setting", "category": "Venue", "priority": "P1", "duration_days": 2, "dependencies": "算力资源分配"},
+      {"task_name_cn": "监控系统部署", "task_name_en": "Sentry Deployment", "category": "Venue", "priority": "P1", "duration_days": 3, "dependencies": "调用限额设置"},
+      {"task_name_cn": "项目提交系统", "task_name_en": "Project Submission System Deployment", "category": "Venue", "priority": "P1", "duration_days": 4, "dependencies": "API/SDK环境准备"},
+      {"task_name_cn": "技术论坛预热", "task_name_en": "AI Tech Forum Countdown Promotion", "category": "Marketing", "priority": "P2", "duration_days": 8, "dependencies": "AI开发者社区运营"},
+      {"task_name_cn": "音视频设备租赁", "task_name_en": "AV Equipment Rental", "category": "Venue", "priority": "P2", "duration_days": 4, "dependencies": "演示舞台搭建"},
+      {"task_name_cn": "签到区与指引布置", "task_name_en": "Check-in Area & Wayfinding Setup", "category": "Venue", "priority": "P2", "duration_days": 3, "dependencies": "开发者工位规划"},
+      {"task_name_cn": "API备份方案", "task_name_en": "API Backup Plan", "category": "Venue", "priority": "P2", "duration_days": 2, "dependencies": "模型API配置"},
+      {"task_name_cn": "内容安全审核", "task_name_en": "Content Review", "category": "General", "priority": "P1", "duration_days": 3, "dependencies": "模型API配置"},
+      {"task_name_cn": "项目孵化对接", "task_name_en": "Project Incubation Matchmaking", "category": "Commercial", "priority": "P2", "duration_days": 6, "dependencies": "云服务赞助洽谈"},
+      {"task_name_cn": "现场彩排", "task_name_en": "On-site Rehearsal", "category": "Venue", "priority": "P2", "duration_days": 2, "dependencies": "音视频设备租赁, 签到区与指引布置, 评审流程培训, 项目提交系统"}
+    ],
+    "small": [
+      {
+        "task_name_cn": "黑客松策划方案制定",
+        "task_name_en": "AI Hackathon Proposal",
+        "category": "Commercial",
+        "priority": "P0",
+        "duration_days": 6,
+        "dependencies": "-"
+      },
+      {
+        "task_name_cn": "活动预算制定",
+        "task_name_en": "Event Budget Plan",
+        "category": "Commercial",
+        "priority": "P0",
+        "duration_days": 2,
+        "dependencies": "黑客松策划方案制定"
+      },
+      {
+        "task_name_cn": "赛道主题设计",
+        "task_name_en": "Theme Design",
+        "category": "Commercial",
+        "priority": "P0",
+        "duration_days": 3,
+        "dependencies": "黑客松策划方案制定"
+      },
+      {
+        "task_name_cn": "评审标准制定",
+        "task_name_en": "Quality Standard Setup",
+        "category": "Commercial",
+        "priority": "P0",
+        "duration_days": 2,
+        "dependencies": "赛道主题设计"
+      },
+      {
+        "task_name_cn": "评委邀请",
+        "task_name_en": "Expert Judge Invitation",
+        "category": "Commercial",
+        "priority": "P0",
+        "duration_days": 7,
+        "dependencies": "评审标准制定"
+      },
+      {
+        "task_name_cn": "评审流程确认",
+        "task_name_en": "Judging Process Setup",
+        "category": "Commercial",
+        "priority": "P1",
+        "duration_days": 1,
+        "dependencies": "评委邀请"
+      },
+      {
+        "task_name_cn": "简易视觉设计",
+        "task_name_en": "Simple Visual Design",
+        "category": "Marketing",
+        "priority": "P0",
+        "duration_days": 4,
+        "dependencies": "黑客松策划方案制定"
+      },
+      {
+        "task_name_cn": "场地选定签约",
+        "task_name_en": "Venue Selection and Contract",
+        "category": "Venue",
+        "priority": "P0",
+        "duration_days": 3,
+        "dependencies": "黑客松策划方案制定, 活动预算制定"
+      },
+      {
+        "task_name_cn": "活动落地页",
+        "task_name_en": "Hackathon Landing Page Setup",
+        "category": "Marketing",
+        "priority": "P1",
+        "duration_days": 13,
+        "dependencies": "简易视觉设计"
+      },
+      {
+        "task_name_cn": "定向开发者邀请",
+        "task_name_en": "Targeted Developer Invitation",
+        "category": "Marketing",
+        "priority": "P0",
+        "duration_days": 10,
+        "dependencies": "活动落地页"
+      },
+      {
+        "task_name_cn": "参赛者筛选确认",
+        "task_name_en": "Participant List",
+        "category": "Commercial",
+        "priority": "P1",
+        "duration_days": 4,
+        "dependencies": "定向开发者邀请"
+      },
+      {
+        "task_name_cn": "组队配对",
+        "task_name_en": "Team Matchmaking",
+        "category": "Marketing",
+        "priority": "P2",
+        "duration_days": 2,
+        "dependencies": "参赛者筛选确认"
+      },
+      {
+        "task_name_cn": "开发文档整理",
+        "task_name_en": "Development Documentation",
+        "category": "Marketing",
+        "priority": "P1",
+        "duration_days": 4,
+        "dependencies": "赛道主题设计"
+      },
+      {
+        "task_name_cn": "技术导师确认",
+        "task_name_en": "Team Mentor Recruitment",
+        "category": "Commercial",
+        "priority": "P1",
+        "duration_days": 6,
+        "dependencies": "赛道主题设计"
+      },
+      {
+        "task_name_cn": "技术答疑部署",
+        "task_name_en": "Q&A Setup",
+        "category": "General",
+        "priority": "P2",
+        "duration_days": 1,
+        "dependencies": "技术导师确认"
+      },
+      {
+        "task_name_cn": "技术社区定向宣发",
+        "task_name_en": "Tech Community Promotion",
+        "category": "Marketing",
+        "priority": "P1",
+        "duration_days": 12,
+        "dependencies": "活动落地页"
+      },
+      {
+        "task_name_cn": "AI开发者社群推广",
+        "task_name_en": "AI Developer Community Promotion",
+        "category": "Marketing",
+        "priority": "P2",
+        "duration_days": 10,
+        "dependencies": "活动落地页"
+      },
+      {
+        "task_name_cn": "小型赞助洽谈",
+        "task_name_en": "Cloud Service Sponsor Outreach",
+        "category": "Commercial",
+        "priority": "P1",
+        "duration_days": 6,
+        "dependencies": "活动落地页"
+      },
+      {
+        "task_name_cn": "开发者工位规划",
+        "task_name_en": "Developer Seating Plan",
+        "category": "Venue",
+        "priority": "P1",
+        "duration_days": 2,
+        "dependencies": "场地选定签约"
+      },
+      {
+        "task_name_cn": "网络设备检查",
+        "task_name_en": "Internet Setup",
+        "category": "Venue",
+        "priority": "P1",
+        "duration_days": 1,
+        "dependencies": "场地选定签约"
+      },
+      {
+        "task_name_cn": "演示舞台简易搭建",
+        "task_name_en": "Demonstration Stage Setup",
+        "category": "Venue",
+        "priority": "P1",
+        "duration_days": 2,
+        "dependencies": "开发者工位规划"
+      },
+      {
+        "task_name_cn": "茶歇餐饮确认",
+        "task_name_en": "Catering Vendor Sourcing",
+        "category": "Venue",
+        "priority": "P3",
+        "duration_days": 2,
+        "dependencies": "场地选定签约"
+      },
+      {
+        "task_name_cn": "现场人员安排",
+        "task_name_en": "On-site Staff Management",
+        "category": "General",
+        "priority": "P2",
+        "duration_days": 2,
+        "dependencies": "开发者工位规划"
+      },
+      {
+        "task_name_cn": "工作人员证件制作",
+        "task_name_en": "Staff Badge Production",
+        "category": "General",
+        "priority": "P3",
+        "duration_days": 2,
+        "dependencies": "现场人员安排"
+      },
+      {
+        "task_name_cn": "API/SDK环境准备",
+        "task_name_en": "API/SDK Environment Setup",
+        "category": "Venue",
+        "priority": "P0",
+        "duration_days": 4,
+        "dependencies": "场地选定签约, 赛道主题设计"
+      },
+      {
+        "task_name_cn": "模型API配置",
+        "task_name_en": "Model API Deployment",
+        "category": "Venue",
+        "priority": "P0",
+        "duration_days": 3,
+        "dependencies": "API/SDK环境准备"
+      },
+      {
+        "task_name_cn": "调用限额设置",
+        "task_name_en": "API Call Quota Setting",
+        "category": "Venue",
+        "priority": "P1",
+        "duration_days": 1,
+        "dependencies": "模型API配置"
+      },
+      {
+        "task_name_cn": "简易监控部署",
+        "task_name_en": "Sentry Deployment",
+        "category": "Venue",
+        "priority": "P2",
+        "duration_days": 2,
+        "dependencies": "调用限额设置"
+      },
+      {
+        "task_name_cn": "项目提交系统",
+        "task_name_en": "Project Submission System Deployment",
+        "category": "Venue",
+        "priority": "P1",
+        "duration_days": 2,
+        "dependencies": "API/SDK环境准备"
+      },
+      {
+        "task_name_cn": "技术论坛预热",
+        "task_name_en": "AI Tech Forum Countdown Promotion",
+        "category": "Marketing",
+        "priority": "P2",
+        "duration_days": 4,
+        "dependencies": "AI开发者社群推广"
+      },
+      {
+        "task_name_cn": "签到与指引布置",
+        "task_name_en": "Check-in Area & Wayfinding Setup",
+        "category": "Venue",
+        "priority": "P2",
+        "duration_days": 1,
+        "dependencies": "开发者工位规划"
+      },
+      {
+        "task_name_cn": "API备份方案",
+        "task_name_en": "API Backup Plan",
+        "category": "Venue",
+        "priority": "P2",
+        "duration_days": 1,
+        "dependencies": "模型API配置"
+      },
+      {
+        "task_name_cn": "快速彩排",
+        "task_name_en": "On-site Rehearsal",
+        "category": "Venue",
+        "priority": "P3",
+        "duration_days": 1,
+        "dependencies": "演示舞台简易搭建, 签到与指引布置, 评审流程确认, 项目提交系统"
+      }
+    ]
+  },
+  "other": {
+    "large": [
+      {"task_name_cn": "黑客松策划方案制定", "task_name_en": "Hackathon Proposal", "category": "Commercial", "priority": "P0", "duration_days": 20, "dependencies": "-"},
+      {"task_name_cn": "活动预算制定", "task_name_en": "Event Budget Plan", "category": "Commercial", "priority": "P0", "duration_days": 8, "dependencies": "黑客松策划方案制定"},
+      {"task_name_cn": "赛道主题设计", "task_name_en": "Hackathon Theme Design", "category": "Commercial", "priority": "P0", "duration_days": 10, "dependencies": "黑客松策划方案制定"},
+      {"task_name_cn": "评审标准制定", "task_name_en": "Quality Standard Setup", "category": "Commercial", "priority": "P0", "duration_days": 6, "dependencies": "赛道主题设计"},
+      {"task_name_cn": "评委团队邀请", "task_name_en": "Expert Judge Invitation", "category": "Commercial", "priority": "P0", "duration_days": 18, "dependencies": "评审标准制定"},
+      {"task_name_cn": "评审流程确认", "task_name_en": "Judging Process Setup", "category": "Commercial", "priority": "P1", "duration_days": 4, "dependencies": "评委团队邀请"},
+      {"task_name_cn": "活动品牌视觉设计", "task_name_en": "Hackathon Key Visual Design", "category": "Marketing", "priority": "P0", "duration_days": 14, "dependencies": "黑客松策划方案制定"},
+      {"task_name_cn": "场地初步筛选", "task_name_en": "Venue Sourcing", "category": "Venue", "priority": "P0", "duration_days": 8, "dependencies": "黑客松策划方案制定"},
+      {"task_name_cn": "参赛者招募", "task_name_en": "Participant Recruitment", "category": "Marketing", "priority": "P0", "duration_days": 25, "dependencies": "黑客松策划方案制定"},
+      {"task_name_cn": "参赛者筛选", "task_name_en": "Participant List", "category": "Commercial", "priority": "P1", "duration_days": 10, "dependencies": "参赛者招募"},
+      {"task_name_cn": "组队配对系统", "task_name_en": "Team Matchmaking", "category": "Marketing", "priority": "P2", "duration_days": 8, "dependencies": "参赛者筛选"},
+      {"task_name_cn": "参赛确认", "task_name_en": "Participation List Confirmation", "category": "Commercial", "priority": "P1", "duration_days": 5, "dependencies": "组队配对系统"},
+      {"task_name_cn": "技术文档整理", "task_name_en": "Technical Documentation", "category": "Marketing", "priority": "P0", "duration_days": 12, "dependencies": "赛道主题设计"},
+      {"task_name_cn": "技术导师团队组建", "task_name_en": "Team Mentor Recruitment", "category": "Commercial", "priority": "P0", "duration_days": 14, "dependencies": "赛道主题设计"},
+      {"task_name_cn": "答疑机制部署", "task_name_en": "Q&A Setup", "category": "General", "priority": "P2", "duration_days": 4, "dependencies": "技术导师团队组建"},
+      {"task_name_cn": "活动落地页搭建", "task_name_en": "Event Landing Page Setup", "category": "Marketing", "priority": "P1", "duration_days": 35, "dependencies": "活动品牌视觉设计"},
+      {"task_name_cn": "社交媒体宣发策略", "task_name_en": "Social Media Promotion", "category": "Marketing", "priority": "P0", "duration_days": 60, "dependencies": "活动落地页搭建"},
+      {"task_name_cn": "开发者社区运营", "task_name_en": "Developer Community Promotion", "category": "Marketing", "priority": "P1", "duration_days": 55, "dependencies": "活动落地页搭建"},
+      {"task_name_cn": "KOL合作邀请", "task_name_en": "KOL Outreach", "category": "Marketing", "priority": "P1", "duration_days": 20, "dependencies": "活动落地页搭建"},
+      {"task_name_cn": "合作伙伴洽谈", "task_name_en": "Event Partner Outreach", "category": "Commercial", "priority": "P0", "duration_days": 20, "dependencies": "活动落地页搭建"},
+      {"task_name_cn": "技术赞助商招募", "task_name_en": "Technical Sponsor Outreach", "category": "Commercial", "priority": "P1", "duration_days": 25, "dependencies": "活动落地页搭建"},
+      {"task_name_cn": "资源赞助洽谈", "task_name_en": "Resource Sponsor Outreach", "category": "Commercial", "priority": "P1", "duration_days": 18, "dependencies": "活动落地页搭建"},
+      {"task_name_cn": "成就徽章设计", "task_name_en": "Event Memerial Gift Design", "category": "Marketing", "priority": "P2", "duration_days": 8, "dependencies": "活动落地页搭建"},
+      {"task_name_cn": "技术工作坊组织", "task_name_en": "Mentor Team Training", "category": "Marketing", "priority": "P2", "duration_days": 14, "dependencies": "技术导师团队组建"},
+      {"task_name_cn": "身份验证系统", "task_name_en": "Identity Verification System", "category": "Marketing", "priority": "P2", "duration_days": 10, "dependencies": "活动落地页搭建"},
+      {"task_name_cn": "场地实地考察", "task_name_en": "Venue Site Visit", "category": "Venue", "priority": "P0", "duration_days": 5, "dependencies": "场地初步筛选"},
+      {"task_name_cn": "活动场地确认", "task_name_en": "Venue Confirmation", "category": "Venue", "priority": "P0", "duration_days": 5, "dependencies": "场地实地考察"},
+      {"task_name_cn": "场地合同签订", "task_name_en": "Venue Contract Signing", "category": "Venue", "priority": "P1", "duration_days": 5, "dependencies": "场地实地考察, 活动预算制定"},
+      {"task_name_cn": "开发者工位规划", "task_name_en": "Developer Seating Plan", "category": "Venue", "priority": "P1", "duration_days": 6, "dependencies": "场地合同签订"},
+      {"task_name_cn": "高速网络部署", "task_name_en": "Internet Setup", "category": "Venue", "priority": "P0", "duration_days": 6, "dependencies": "场地合同签订"},
+      {"task_name_cn": "技术支持区搭建", "task_name_en": "Technical Support Session Setup", "category": "Venue", "priority": "P0", "duration_days": 8, "dependencies": "开发者工位规划"},
+      {"task_name_cn": "演示舞台搭建", "task_name_en": "Demonstration Stage Setup", "category": "Venue", "priority": "P1", "duration_days": 8, "dependencies": "开发者工位规划"},
+      {"task_name_cn": "休息区布置", "task_name_en": "Developer Lounge Setup", "category": "Venue", "priority": "P2", "duration_days": 4, "dependencies": "开发者工位规划"},
+      {"task_name_cn": "餐饮服务安排", "task_name_en": "Catering Vendor Sourcing", "category": "Venue", "priority": "P2", "duration_days": 6, "dependencies": "场地合同签订"},
+      {"task_name_cn": "现场工作人员安排", "task_name_en": "On-site Staff Management", "category": "General", "priority": "P2", "duration_days": 6, "dependencies": "开发者工位规划"},
+      {"task_name_cn": "志愿者招募与培训", "task_name_en": "Volunteer Recruitment and Training", "category": "General", "priority": "P2", "duration_days": 12, "dependencies": "现场工作人员安排"},
+      {"task_name_cn": "工作人员证件制作", "task_name_en": "Staff Badge Production", "category": "General", "priority": "P3", "duration_days": 4, "dependencies": "志愿者招募与培训"},
+      {"task_name_cn": "评审流程培训", "task_name_en": "Judging Process Training", "category": "General", "priority": "P2", "duration_days": 3, "dependencies": "评审流程确认"},
+      {"task_name_cn": "风险预案制定", "task_name_en": "Risk Management Plan", "category": "General", "priority": "P2", "duration_days": 5, "dependencies": "活动预算制定"},
+      {"task_name_cn": "开发环境准备", "task_name_en": "Development Environment Setup", "category": "Venue", "priority": "P0", "duration_days": 12, "dependencies": "场地合同签订, 赛道主题设计"},
+      {"task_name_cn": "开发工具配置", "task_name_en": "Development Tools Setup", "category": "Venue", "priority": "P0", "duration_days": 10, "dependencies": "开发环境准备"},
+      {"task_name_cn": "技术资源分配", "task_name_en": "Technical Resource Allocation", "category": "Venue", "priority": "P0", "duration_days": 8, "dependencies": "开发工具配置"},
+      {"task_name_cn": "资源配额设置", "task_name_en": "Quota Setting", "category": "Venue", "priority": "P1", "duration_days": 3, "dependencies": "技术资源分配"},
+      {"task_name_cn": "监控系统部署", "task_name_en": "Sentry Deployment", "category": "Venue", "priority": "P1", "duration_days": 5, "dependencies": "资源配额设置"},
+      {"task_name_cn": "数据库配置", "task_name_en": "Database Setup", "category": "Venue", "priority": "P2", "duration_days": 6, "dependencies": "开发环境准备"},
+      {"task_name_cn": "项目提交系统部署", "task_name_en": "Product Submission System Deployment", "category": "Venue", "priority": "P1", "duration_days": 5, "dependencies": "开发环境准备"},
+      {"task_name_cn": "在线协作平台部署", "task_name_en": "Online Collaboration Platform Setup", "category": "Venue", "priority": "P2", "duration_days": 8, "dependencies": "开发环境准备"},
+      {"task_name_cn": "直播系统部署", "task_name_en": "Live Streaming Setup", "category": "Venue", "priority": "P2", "duration_days": 8, "dependencies": "高速网络部署"},
+      {"task_name_cn": "线上预热活动", "task_name_en": "Online Countdown Promotion", "category": "Marketing", "priority": "P2", "duration_days": 14, "dependencies": "开发者社区运营"},
+      {"task_name_cn": "媒体通稿撰写", "task_name_en": "Press Article Confirmation", "category": "Marketing", "priority": "P2", "duration_days": 5, "dependencies": "合作伙伴洽谈"},
+      {"task_name_cn": "音视频设备租赁", "task_name_en": "AV Equipment Rental", "category": "Venue", "priority": "P2", "duration_days": 6, "dependencies": "演示舞台搭建"},
+      {"task_name_cn": "签到区与指引布置", "task_name_en": "Check-in Area & Wayfinding Setup", "category": "Venue", "priority": "P2", "duration_days": 4, "dependencies": "开发者工位规划"},
+      {"task_name_cn": "技术备份方案准备", "task_name_en": "Technical Backup Plan", "category": "Venue", "priority": "P1", "duration_days": 4, "dependencies": "开发工具配置"},
+      {"task_name_cn": "内容审核机制", "task_name_en": "Content Review", "category": "General", "priority": "P1", "duration_days": 5, "dependencies": "开发工具配置"},
+      {"task_name_cn": "项目孵化对接准备", "task_name_en": "Product Incubation Matchmaking", "category": "Commercial", "priority": "P2", "duration_days": 10, "dependencies": "合作伙伴洽谈"},
+      {"task_name_cn": "现场彩排", "task_name_en": "Full Rehearsal", "category": "Venue", "priority": "P2", "duration_days": 2, "dependencies": "音视频设备租赁, 签到区与指引布置, 评审流程培训, 项目提交系统部署, 技术支持区搭建"}
+    ],
+    "medium": [
+      {"task_name_cn": "黑客松策划方案制定", "task_name_en": "Hackathon Proposal", "category": "Commercial", "priority": "P0", "duration_days": 12, "dependencies": "-"},
+      {"task_name_cn": "活动预算制定", "task_name_en": "Event Budget Plan", "category": "Commercial", "priority": "P0", "duration_days": 5, "dependencies": "黑客松策划方案制定"},
+      {"task_name_cn": "赛道主题设计", "task_name_en": "Hackathon Theme Design", "category": "Commercial", "priority": "P0", "duration_days": 6, "dependencies": "黑客松策划方案制定"},
+      {"task_name_cn": "评审标准制定", "task_name_en": "Quality Standard Setup", "category": "Commercial", "priority": "P0", "duration_days": 4, "dependencies": "赛道主题设计"},
+      {"task_name_cn": "评委团队邀请", "task_name_en": "Expert Judge Invitation", "category": "Commercial", "priority": "P0", "duration_days": 12, "dependencies": "评审标准制定"},
+      {"task_name_cn": "评审流程确认", "task_name_en": "Judging Process Setup", "category": "Commercial", "priority": "P1", "duration_days": 2, "dependencies": "评委团队邀请"},
+      {"task_name_cn": "活动品牌视觉设计", "task_name_en": "Hackathon Key Visual Design", "category": "Marketing", "priority": "P0", "duration_days": 10, "dependencies": "黑客松策划方案制定"},
+      {"task_name_cn": "场地初步筛选", "task_name_en": "Venue Sourcing", "category": "Venue", "priority": "P0", "duration_days": 5, "dependencies": "黑客松策划方案制定"},
+      {"task_name_cn": "参赛者招募", "task_name_en": "Participant Recruitment", "category": "Marketing", "priority": "P0", "duration_days": 16, "dependencies": "黑客松策划方案制定"},
+      {"task_name_cn": "参赛者筛选", "task_name_en": "Participant List", "category": "Commercial", "priority": "P1", "duration_days": 6, "dependencies": "参赛者招募"},
+      {"task_name_cn": "组队配对", "task_name_en": "Team Matching", "category": "Marketing", "priority": "P2", "duration_days": 4, "dependencies": "参赛者筛选"},
+      {"task_name_cn": "参赛确认", "task_name_en": "Participation List Confirmation", "category": "Commercial", "priority": "P1", "duration_days": 3, "dependencies": "组队配对"},
+      {"task_name_cn": "技术文档整理", "task_name_en": "Technical Documentation", "category": "Marketing", "priority": "P0", "duration_days": 8, "dependencies": "赛道主题设计"},
+      {"task_name_cn": "技术导师团队组建", "task_name_en": "Team Mentor Recruitment", "category": "Commercial", "priority": "P0", "duration_days": 10, "dependencies": "赛道主题设计"},
+      {"task_name_cn": "答疑机制部署", "task_name_en": "Q&A Setup", "category": "General", "priority": "P2", "duration_days": 2, "dependencies": "技术导师团队组建"},
+      {"task_name_cn": "活动落地页搭建", "task_name_en": "Event Landing Page Setup", "category": "Marketing", "priority": "P1", "duration_days": 20, "dependencies": "活动品牌视觉设计"},
+      {"task_name_cn": "社交媒体宣发", "task_name_en": "Social Media Promotion", "category": "Marketing", "priority": "P0", "duration_days": 40, "dependencies": "活动落地页搭建"},
+      {"task_name_cn": "开发者社区运营", "task_name_en": "Developer Community Promotion", "category": "Marketing", "priority": "P1", "duration_days": 35, "dependencies": "活动落地页搭建"},
+      {"task_name_cn": "KOL合作邀请", "task_name_en": "KOL Outreach", "category": "Marketing", "priority": "P2", "duration_days": 12, "dependencies": "活动落地页搭建"},
+      {"task_name_cn": "合作伙伴洽谈", "task_name_en": "Event Partner Outreach", "category": "Commercial", "priority": "P1", "duration_days": 14, "dependencies": "活动落地页搭建"},
+      {"task_name_cn": "技术赞助商招募", "task_name_en": "Technical Sponsor Outreach", "category": "Commercial", "priority": "P1", "duration_days": 18, "dependencies": "活动落地页搭建"},
+      {"task_name_cn": "积分系统", "task_name_en": "Points System", "category": "Marketing", "priority": "P2", "duration_days": 8, "dependencies": "活动品牌视觉设计"},
+      {"task_name_cn": "场地实地考察", "task_name_en": "Venue Site Visit", "category": "Venue", "priority": "P1", "duration_days": 3, "dependencies": "场地初步筛选"},
+      {"task_name_cn": "活动场地确认", "task_name_en": "Venue Confirmation", "category": "Venue", "priority": "P1", "duration_days": 3, "dependencies": "场地实地考察"},
+      {"task_name_cn": "场地合同签订", "task_name_en": "Venue Contract Signing", "category": "Venue", "priority": "P1", "duration_days": 3, "dependencies": "场地实地考察, 活动预算制定"},
+      {"task_name_cn": "开发者工位规划", "task_name_en": "Developer Seating Plan", "category": "Venue", "priority": "P1", "duration_days": 4, "dependencies": "场地合同签订"},
+      {"task_name_cn": "网络基础设施部署", "task_name_en": "Network Infrastructure Deployment", "category": "Venue", "priority": "P0", "duration_days": 4, "dependencies": "场地合同签订"},
+      {"task_name_cn": "技术支持区搭建", "task_name_en": "Technical Support Session Setup", "category": "Venue", "priority": "P2", "duration_days": 3, "dependencies": "开发者工位规划"},
+      {"task_name_cn": "演示舞台搭建", "task_name_en": "Demonstration Stage Setup", "category": "Venue", "priority": "P1", "duration_days": 5, "dependencies": "开发者工位规划"},
+      {"task_name_cn": "休息区布置", "task_name_en": "Developer Lounge Setup", "category": "Venue", "priority": "P3", "duration_days": 2, "dependencies": "开发者工位规划"},
+      {"task_name_cn": "餐饮茶歇安排", "task_name_en": "Catering and Refreshment Arrangement", "category": "Venue", "priority": "P2", "duration_days": 4, "dependencies": "场地合同签订"},
+      {"task_name_cn": "现场工作人员安排", "task_name_en": "On-site Staff Management", "category": "General", "priority": "P2", "duration_days": 4, "dependencies": "开发者工位规划"},
+      {"task_name_cn": "工作人员证件制作", "task_name_en": "Staff Badge Production", "category": "General", "priority": "P3", "duration_days": 3, "dependencies": "现场工作人员安排"},
+      {"task_name_cn": "评审流程培训", "task_name_en": "Judging Process Training", "category": "General", "priority": "P2", "duration_days": 2, "dependencies": "评审流程确认"},
+      {"task_name_cn": "风险预案制定", "task_name_en": "Risk Management Plan", "category": "General", "priority": "P3", "duration_days": 3, "dependencies": "活动预算制定"},
+      {"task_name_cn": "开发环境准备", "task_name_en": "Development Environment Setup", "category": "Venue", "priority": "P0", "duration_days": 8, "dependencies": "场地合同签订, 赛道主题设计"},
+      {"task_name_cn": "开发工具配置", "task_name_en": "Development Tools Setup", "category": "Venue", "priority": "P0", "duration_days": 6, "dependencies": "开发环境准备"},
+      {"task_name_cn": "技术资源分配", "task_name_en": "Technical Resource Allocation", "category": "Venue", "priority": "P0", "duration_days": 5, "dependencies": "开发工具配置"},
+      {"task_name_cn": "资源配额设置", "task_name_en": "Quota Setting", "category": "Venue", "priority": "P1", "duration_days": 2, "dependencies": "技术资源分配"},
+      {"task_name_cn": "监控系统部署", "task_name_en": "Sentry Deployment", "category": "Venue", "priority": "P1", "duration_days": 3, "dependencies": "资源配额设置"},
+      {"task_name_cn": "项目提交系统", "task_name_en": "Product Submission System", "category": "Venue", "priority": "P1", "duration_days": 4, "dependencies": "开发环境准备"},
+      {"task_name_cn": "直播系统部署", "task_name_en": "Live Streaming Setup", "category": "Venue", "priority": "P2", "duration_days": 5, "dependencies": "网络基础设施部署"},
+      {"task_name_cn": "线上预热活动", "task_name_en": "Online Countdown Promotion", "category": "Marketing", "priority": "P2", "duration_days": 8, "dependencies": "开发者社区运营"},
+      {"task_name_cn": "音视频设备租赁", "task_name_en": "AV Equipment Rental", "category": "Venue", "priority": "P2", "duration_days": 4, "dependencies": "演示舞台搭建"},
+      {"task_name_cn": "签到区与指引布置", "task_name_en": "Check-in Area & Wayfinding Setup", "category": "Venue", "priority": "P2", "duration_days": 3, "dependencies": "开发者工位规划"},
+      {"task_name_cn": "技术备份方案", "task_name_en": "Technical Backup Plan", "category": "Venue", "priority": "P2", "duration_days": 2, "dependencies": "开发工具配置"},
+      {"task_name_cn": "内容审核机制", "task_name_en": "Content Review", "category": "General", "priority": "P1", "duration_days": 3, "dependencies": "开发工具配置"},
+      {"task_name_cn": "项目孵化对接", "task_name_en": "Product Incubation Matchmaking", "category": "Commercial", "priority": "P2", "duration_days": 6, "dependencies": "合作伙伴洽谈"},
+      {"task_name_cn": "现场彩排", "task_name_en": "Full Rehearsal", "category": "Venue", "priority": "P2", "duration_days": 2, "dependencies": "音视频设备租赁, 签到区与指引布置, 评审流程培训, 项目提交系统"}
+    ],
+    "small": [
+      {
+        "task_name_cn": "黑客松策划方案制定",
+        "task_name_en": "Hackathon Proposal",
+        "category": "Commercial",
+        "priority": "P0",
+        "duration_days": 5,
+        "dependencies": "-"
+      },
+      {
+        "task_name_cn": "活动预算制定",
+        "task_name_en": "Event Budget Plan",
+        "category": "Commercial",
+        "priority": "P0",
+        "duration_days": 2,
+        "dependencies": "黑客松策划方案制定"
+      },
+      {
+        "task_name_cn": "赛道主题设计",
+        "task_name_en": "Hackathon Theme Design",
+        "category": "Commercial",
+        "priority": "P0",
+        "duration_days": 3,
+        "dependencies": "黑客松策划方案制定"
+      },
+      {
+        "task_name_cn": "评审标准制定",
+        "task_name_en": "Quality Standard Setup",
+        "category": "Commercial",
+        "priority": "P0",
+        "duration_days": 2,
+        "dependencies": "赛道主题设计"
+      },
+      {
+        "task_name_cn": "评委邀请",
+        "task_name_en": "Judge Invitation",
+        "category": "Commercial",
+        "priority": "P0",
+        "duration_days": 7,
+        "dependencies": "评审标准制定"
+      },
+      {
+        "task_name_cn": "评审流程确认",
+        "task_name_en": "Judging Process Setup",
+        "category": "Commercial",
+        "priority": "P1",
+        "duration_days": 1,
+        "dependencies": "评委邀请"
+      },
+      {
+        "task_name_cn": "简易视觉设计",
+        "task_name_en": "Simple Visual Design",
+        "category": "Marketing",
+        "priority": "P0",
+        "duration_days": 4,
+        "dependencies": "黑客松策划方案制定"
+      },
+      {
+        "task_name_cn": "场地选定签约",
+        "task_name_en": "Venue Selection and Contract",
+        "category": "Venue",
+        "priority": "P0",
+        "duration_days": 3,
+        "dependencies": "黑客松策划方案制定, 活动预算制定"
+      },
+      {
+        "task_name_cn": "活动落地页",
+        "task_name_en": "Event Landing Page",
+        "category": "Marketing",
+        "priority": "P1",
+        "duration_days": 13,
+        "dependencies": "简易视觉设计"
+      },
+      {
+        "task_name_cn": "定向开发者邀请",
+        "task_name_en": "Targeted Developer Invitation",
+        "category": "Marketing",
+        "priority": "P0",
+        "duration_days": 10,
+        "dependencies": "活动落地页"
+      },
+      {
+        "task_name_cn": "参赛者筛选确认",
+        "task_name_en": "Participant Screening and Confirmation",
+        "category": "Commercial",
+        "priority": "P1",
+        "duration_days": 4,
+        "dependencies": "定向开发者邀请"
+      },
+      {
+        "task_name_cn": "组队配对",
+        "task_name_en": "Team Matching",
+        "category": "Marketing",
+        "priority": "P2",
+        "duration_days": 2,
+        "dependencies": "参赛者筛选确认"
+      },
+      {
+        "task_name_cn": "技术文档整理",
+        "task_name_en": "Technical Documentation",
+        "category": "Marketing",
+        "priority": "P1",
+        "duration_days": 4,
+        "dependencies": "赛道主题设计"
+      },
+      {
+        "task_name_cn": "技术导师确认",
+        "task_name_en": "Technical Mentor Confirmation",
+        "category": "Commercial",
+        "priority": "P1",
+        "duration_days": 6,
+        "dependencies": "赛道主题设计"
+      },
+      {
+        "task_name_cn": "答疑机制部署",
+        "task_name_en": "Q&A Setup",
+        "category": "General",
+        "priority": "P2",
+        "duration_days": 1,
+        "dependencies": "技术导师确认"
+      },
+      {
+        "task_name_cn": "社交媒体定向宣发",
+        "task_name_en": "Social Media Targeted Promotion",
+        "category": "Marketing",
+        "priority": "P1",
+        "duration_days": 12,
+        "dependencies": "活动落地页"
+      },
+      {
+        "task_name_cn": "开发者社群推广",
+        "task_name_en": "Developer Community Promotion",
+        "category": "Marketing",
+        "priority": "P2",
+        "duration_days": 10,
+        "dependencies": "活动落地页"
+      },
+      {
+        "task_name_cn": "小型赞助洽谈",
+        "task_name_en": "Small Sponsorship Negotiation",
+        "category": "Commercial",
+        "priority": "P1",
+        "duration_days": 6,
+        "dependencies": "活动落地页"
+      },
+      {
+        "task_name_cn": "纪念品设计制作",
+        "task_name_en": "Collectible Design and Production",
+        "category": "Marketing",
+        "priority": "P2",
+        "duration_days": 4,
+        "dependencies": "简易视觉设计"
+      },
+      {
+        "task_name_cn": "开发者工位规划",
+        "task_name_en": "Developer Seating Plan",
+        "category": "Venue",
+        "priority": "P1",
+        "duration_days": 2,
+        "dependencies": "场地选定签约"
+      },
+      {
+        "task_name_cn": "网络设备检查",
+        "task_name_en": "Network Equipment Check",
+        "category": "Venue",
+        "priority": "P1",
+        "duration_days": 1,
+        "dependencies": "场地选定签约"
+      },
+      {
+        "task_name_cn": "演示舞台简易搭建",
+        "task_name_en": "Simple Demo Stage Setup",
+        "category": "Venue",
+        "priority": "P1",
+        "duration_days": 2,
+        "dependencies": "开发者工位规划"
+      },
+      {
+        "task_name_cn": "茶歇餐饮确认",
+        "task_name_en": "Refreshment Confirmation",
+        "category": "Venue",
+        "priority": "P3",
+        "duration_days": 2,
+        "dependencies": "场地选定签约"
+      },
+      {
+        "task_name_cn": "现场人员安排",
+        "task_name_en": "On-site Staff Arrangement",
+        "category": "General",
+        "priority": "P2",
+        "duration_days": 2,
+        "dependencies": "开发者工位规划"
+      },
+      {
+        "task_name_cn": "工作人员证件制作",
+        "task_name_en": "Staff Badge Production",
+        "category": "General",
+        "priority": "P3",
+        "duration_days": 2,
+        "dependencies": "现场人员安排"
+      },
+      {
+        "task_name_cn": "开发环境准备",
+        "task_name_en": "Development Environment Setup",
+        "category": "Venue",
+        "priority": "P0",
+        "duration_days": 4,
+        "dependencies": "场地选定签约, 赛道主题设计"
+      },
+      {
+        "task_name_cn": "开发工具配置",
+        "task_name_en": "Development Tools Setup",
+        "category": "Venue",
+        "priority": "P0",
+        "duration_days": 3,
+        "dependencies": "开发环境准备"
+      },
+      {
+        "task_name_cn": "资源配额设置",
+        "task_name_en": "Quota Setting",
+        "category": "Venue",
+        "priority": "P1",
+        "duration_days": 1,
+        "dependencies": "开发工具配置"
+      },
+      {
+        "task_name_cn": "简易监控部署",
+        "task_name_en": "Simple Monitoring Deployment",
+        "category": "Venue",
+        "priority": "P2",
+        "duration_days": 2,
+        "dependencies": "资源配额设置"
+      },
+      {
+        "task_name_cn": "项目提交系统",
+        "task_name_en": "Product Submission System",
+        "category": "Venue",
+        "priority": "P1",
+        "duration_days": 2,
+        "dependencies": "开发环境准备"
+      },
+      {
+        "task_name_cn": "线上预热活动",
+        "task_name_en": "Online Countdown Promotion",
+        "category": "Marketing",
+        "priority": "P2",
+        "duration_days": 4,
+        "dependencies": "开发者社群推广"
+      },
+      {
+        "task_name_cn": "签到与指引布置",
+        "task_name_en": "Check-in and Signage Setup",
+        "category": "Venue",
+        "priority": "P2",
+        "duration_days": 1,
+        "dependencies": "开发者工位规划"
+      },
+      {
+        "task_name_cn": "技术备份方案",
+        "task_name_en": "Technical Backup Plan",
+        "category": "Venue",
+        "priority": "P2",
+        "duration_days": 1,
+        "dependencies": "开发工具配置"
+      },
+      {
+        "task_name_cn": "快速彩排",
+        "task_name_en": "Quick Rehearsal",
+        "category": "Venue",
+        "priority": "P3",
+        "duration_days": 1,
+        "dependencies": "演示舞台简易搭建, 签到与指引布置, 评审流程确认, 项目提交系统"
+      }
+    ]
+  }
+}

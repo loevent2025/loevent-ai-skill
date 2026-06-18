@@ -1,0 +1,15 @@
+# LoEvent AI Skill bundle —— 瘦身后的最小依赖(对比后端去掉了 motor/firebase/redis/stripe…)
+google-genai>=1.56.0
+pydantic>=2.0          # 结构化输出用 BaseModel(eventplanner 节点契约);genai 也依赖它,显式声明
+PyYAML>=6.0.2
+Jinja2>=3.1.6
+python-dotenv>=1.0.1
+# skill-guests:基于活动 time_start 倒推"近半年"时间窗(relativedelta)
+python-dateutil>=2.8.2
+# poster 生成:纯生成(组 prompt + 出图)不需要额外依赖;
+# 仅在用「参考图」(--reference 本地图片)时才需要 Pillow:
+#   Pillow>=10.0.0
+# skill-budget:仅当要解析 plan 里的 HTML 议程时才需要(懒加载,缺则跳过该段):
+#   beautifulsoup4>=4.12.0
+# OCR 海报精修(单机版 v1 不做,需 Google Cloud Vision service-account):
+#   google-cloud-vision>=3.11.0

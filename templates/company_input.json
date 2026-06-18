@@ -1,0 +1,9 @@
+{
+  "max_competitors": 2,
+  "event_goal": "product",
+  "prompt_objective": "建立 AI 开发者社区心智，沉淀主办方品牌资产",
+  "GTMmatrix": {
+    "growth_mode": {"label": "获取", "value": 40},
+    "lifecycle": {"label": "早期", "value": 30}
+  }
+}

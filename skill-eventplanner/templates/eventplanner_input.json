@@ -1,0 +1,12 @@
+{
+  "selected_vibe": "competitor",
+  "event_goal": "product",
+  "prompt_objective": "拉新一批 AI 应用开发者并转化为框架试用",
+  "GTMmatrix": {
+    "growth_mode": {"label": "获取", "value": 40},
+    "lifecycle": {"label": "早期", "value": 30}
+  },
+  "preparation_start_date": "2026-07-01",
+  "user_input": "",
+  "content": ""
+}

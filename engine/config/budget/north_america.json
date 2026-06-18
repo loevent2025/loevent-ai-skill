@@ -1,0 +1,1134 @@
+{
+  "items": [
+    {
+      "name_cn": "外部嘉宾-行业专家出场费",
+      "name_en": "Guest Speaker - Industry Expert",
+      "main_cat": "event_operations",
+      "sub_cat": "personnel",
+      "industry": "general",
+      "low": 21600,
+      "high": 72000
+    },
+    {
+      "name_cn": "外部嘉宾-知名KOL出场费",
+      "name_en": "Guest Speaker - Notable KOL",
+      "main_cat": "event_operations",
+      "sub_cat": "personnel",
+      "industry": "general",
+      "low": 72000,
+      "high": 180000
+    },
+    {
+      "name_cn": "外部嘉宾-头部大咖出场费",
+      "name_en": "Guest Speaker - Top Tier",
+      "main_cat": "event_operations",
+      "sub_cat": "personnel",
+      "industry": "general",
+      "low": 180000,
+      "high": 720000
+    },
+    {
+      "name_cn": "主持人-专业司仪",
+      "name_en": "MC - Professional Host",
+      "main_cat": "event_operations",
+      "sub_cat": "personnel",
+      "industry": "general",
+      "low": 14400,
+      "high": 43200
+    },
+    {
+      "name_cn": "主持人-科技媒体人",
+      "name_en": "MC - Tech Media Person",
+      "main_cat": "event_operations",
+      "sub_cat": "personnel",
+      "industry": "tech",
+      "low": 36000,
+      "high": 108000
+    },
+    {
+      "name_cn": "主持人-知名主持人",
+      "name_en": "MC - Celebrity Host",
+      "main_cat": "event_operations",
+      "sub_cat": "personnel",
+      "industry": "general",
+      "low": 108000,
+      "high": 432000
+    },
+    {
+      "name_cn": "摄影师（全天）",
+      "name_en": "Photographer (Full Day)",
+      "main_cat": "event_operations",
+      "sub_cat": "personnel",
+      "industry": "general",
+      "low": 8600,
+      "high": 25200
+    },
+    {
+      "name_cn": "摄像师（全天）",
+      "name_en": "Videographer (Full Day)",
+      "main_cat": "event_operations",
+      "sub_cat": "personnel",
+      "industry": "general",
+      "low": 10800,
+      "high": 36000
+    },
+    {
+      "name_cn": "摄影摄像套餐",
+      "name_en": "Photo+Video Package",
+      "main_cat": "event_operations",
+      "sub_cat": "personnel",
+      "industry": "general",
+      "low": 21600,
+      "high": 57500
+    },
+    {
+      "name_cn": "技术助理-自由职业",
+      "name_en": "Tech Assistant - Freelance",
+      "main_cat": "event_operations",
+      "sub_cat": "personnel",
+      "industry": "tech",
+      "low": 2900,
+      "high": 7200
+    },
+    {
+      "name_cn": "技术助理-志愿者",
+      "name_en": "Tech Assistant - Volunteer",
+      "main_cat": "event_operations",
+      "sub_cat": "personnel",
+      "industry": "tech",
+      "low": 700,
+      "high": 2150
+    },
+    {
+      "name_cn": "现场执行人员（每人/天）",
+      "name_en": "On-site Staff (per person/day)",
+      "main_cat": "event_operations",
+      "sub_cat": "personnel",
+      "industry": "general",
+      "low": 2150,
+      "high": 4300
+    },
+    {
+      "name_cn": "注册接待人员",
+      "name_en": "Registration / Front-of-House Staff",
+      "main_cat": "event_operations",
+      "sub_cat": "personnel",
+      "industry": "general",
+      "low": 2150,
+      "high": 5000
+    },
+    {
+      "name_cn": "活动策划执行（现场导演）",
+      "name_en": "Event Coordinator / Stage Manager",
+      "main_cat": "event_operations",
+      "sub_cat": "personnel",
+      "industry": "general",
+      "low": 10800,
+      "high": 28800
+    },
+    {
+      "name_cn": "签到咖啡-标准",
+      "name_en": "Welcome Coffee - Standard",
+      "main_cat": "event_operations",
+      "sub_cat": "catering",
+      "industry": "general",
+      "low": 35,
+      "high": 90,
+      "unit": "per_person"
+    },
+    {
+      "name_cn": "签到咖啡-含特色体验（Barista）",
+      "name_en": "Welcome Coffee - Barista Experience",
+      "main_cat": "event_operations",
+      "sub_cat": "catering",
+      "industry": "general",
+      "low": 90,
+      "high": 220,
+      "unit": "per_person"
+    },
+    {
+      "name_cn": "茶歇-标准",
+      "name_en": "Coffee Break - Standard",
+      "main_cat": "event_operations",
+      "sub_cat": "catering",
+      "industry": "general",
+      "low": 60,
+      "high": 140,
+      "unit": "per_person"
+    },
+    {
+      "name_cn": "全天茶歇-不含正餐",
+      "name_en": "Full Day Coffee Break (no meal)",
+      "main_cat": "event_operations",
+      "sub_cat": "catering",
+      "industry": "general",
+      "low": 130,
+      "high": 250,
+      "unit": "per_person"
+    },
+    {
+      "name_cn": "工作午餐-简餐/三明治",
+      "name_en": "Working Lunch - Sandwich/Light",
+      "main_cat": "event_operations",
+      "sub_cat": "catering",
+      "industry": "general",
+      "low": 90,
+      "high": 180,
+      "unit": "per_person"
+    },
+    {
+      "name_cn": "工作午餐-热食套餐",
+      "name_en": "Working Lunch - Hot Meal",
+      "main_cat": "event_operations",
+      "sub_cat": "catering",
+      "industry": "general",
+      "low": 180,
+      "high": 400,
+      "unit": "per_person"
+    },
+    {
+      "name_cn": "自助午餐-标准",
+      "name_en": "Buffet Lunch - Standard",
+      "main_cat": "event_operations",
+      "sub_cat": "catering",
+      "industry": "general",
+      "low": 250,
+      "high": 500,
+      "unit": "per_person"
+    },
+    {
+      "name_cn": "自助午餐-高端",
+      "name_en": "Buffet Lunch - Premium",
+      "main_cat": "event_operations",
+      "sub_cat": "catering",
+      "industry": "general",
+      "low": 500,
+      "high": 1000,
+      "unit": "per_person"
+    },
+    {
+      "name_cn": "鸡尾酒会",
+      "name_en": "Cocktail Reception",
+      "main_cat": "event_operations",
+      "sub_cat": "catering",
+      "industry": "general",
+      "low": 320,
+      "high": 700,
+      "unit": "per_person"
+    },
+    {
+      "name_cn": "社交晚宴-坐席",
+      "name_en": "Social Dinner - Seated",
+      "main_cat": "event_operations",
+      "sub_cat": "catering",
+      "industry": "general",
+      "low": 550,
+      "high": 1300,
+      "unit": "per_person"
+    },
+    {
+      "name_cn": "瓶装水/基础饮品",
+      "name_en": "Bottled Water / Basic Beverages",
+      "main_cat": "event_operations",
+      "sub_cat": "catering",
+      "industry": "general",
+      "low": 20,
+      "high": 70,
+      "unit": "per_person"
+    },
+    {
+      "name_cn": "外部餐饮配送",
+      "name_en": "External Catering Delivery",
+      "main_cat": "event_operations",
+      "sub_cat": "catering",
+      "industry": "general",
+      "low": 180,
+      "high": 430,
+      "unit": "per_person"
+    },
+    {
+      "name_cn": "Food Truck餐车",
+      "name_en": "Food Truck Catering",
+      "main_cat": "event_operations",
+      "sub_cat": "catering",
+      "industry": "general",
+      "low": 140,
+      "high": 320,
+      "unit": "per_person"
+    },
+    {
+      "name_cn": "素食/特殊饮食加价",
+      "name_en": "Vegan/Dietary Supplement",
+      "main_cat": "event_operations",
+      "sub_cat": "catering",
+      "industry": "general",
+      "low": 35,
+      "high": 110,
+      "unit": "per_person"
+    },
+    {
+      "name_cn": "KV主视觉设计",
+      "name_en": "Key Visual Design",
+      "main_cat": "event_operations",
+      "sub_cat": "materials_digital",
+      "industry": "general",
+      "low": 14400,
+      "high": 43200
+    },
+    {
+      "name_cn": "宣传视频-30秒以内",
+      "name_en": "Promo Video - Under 30s",
+      "main_cat": "event_operations",
+      "sub_cat": "materials_digital",
+      "industry": "general",
+      "low": 18000,
+      "high": 57500
+    },
+    {
+      "name_cn": "宣传视频-1至3分钟",
+      "name_en": "Promo Video - 1-3 min",
+      "main_cat": "event_operations",
+      "sub_cat": "materials_digital",
+      "industry": "general",
+      "low": 43200,
+      "high": 144000
+    },
+    {
+      "name_cn": "数字邀请函",
+      "name_en": "Digital Invitation",
+      "main_cat": "event_operations",
+      "sub_cat": "materials_digital",
+      "industry": "general",
+      "low": 2150,
+      "high": 8600
+    },
+    {
+      "name_cn": "活动回顾视频-快剪",
+      "name_en": "Event Recap Video - Quick Cut",
+      "main_cat": "event_operations",
+      "sub_cat": "materials_digital",
+      "industry": "general",
+      "low": 8600,
+      "high": 28800
+    },
+    {
+      "name_cn": "活动回顾视频-精剪",
+      "name_en": "Event Recap Video - Full Edit",
+      "main_cat": "event_operations",
+      "sub_cat": "materials_digital",
+      "industry": "general",
+      "low": 28800,
+      "high": 86500
+    },
+    {
+      "name_cn": "电子签到系统",
+      "name_en": "Digital Check-in System (Eventbrite/Luma Pro)",
+      "main_cat": "event_operations",
+      "sub_cat": "materials_digital",
+      "industry": "general",
+      "low": 700,
+      "high": 5800
+    },
+    {
+      "name_cn": "互动大屏-投票/问答墙",
+      "name_en": "Interactive Screen - Slido/Mentimeter",
+      "main_cat": "event_operations",
+      "sub_cat": "materials_digital",
+      "industry": "general",
+      "low": 1450,
+      "high": 7200
+    },
+    {
+      "name_cn": "活动网站/着陆页",
+      "name_en": "Event Landing Page / Microsite",
+      "main_cat": "event_operations",
+      "sub_cat": "materials_digital",
+      "industry": "general",
+      "low": 10800,
+      "high": 43200
+    },
+    {
+      "name_cn": "活动App定制",
+      "name_en": "Custom Event App (Whova/Hopin)",
+      "main_cat": "event_operations",
+      "sub_cat": "materials_digital",
+      "industry": "general",
+      "low": 18000,
+      "high": 72000
+    },
+    {
+      "name_cn": "纸质邀请函",
+      "name_en": "Printed Invitation",
+      "main_cat": "event_operations",
+      "sub_cat": "materials_print",
+      "industry": "general",
+      "low": 20,
+      "high": 70,
+      "unit": "per_piece"
+    },
+    {
+      "name_cn": "名牌Badge-标准",
+      "name_en": "Name Badge - Standard",
+      "main_cat": "event_operations",
+      "sub_cat": "materials_print",
+      "industry": "general",
+      "low": 15,
+      "high": 45,
+      "unit": "per_piece"
+    },
+    {
+      "name_cn": "名牌Badge-创意定制",
+      "name_en": "Name Badge - Custom Creative",
+      "main_cat": "event_operations",
+      "sub_cat": "materials_print",
+      "industry": "general",
+      "low": 45,
+      "high": 130,
+      "unit": "per_piece"
+    },
+    {
+      "name_cn": "易拉宝/展架",
+      "name_en": "Roll-up Banner / Retractable Stand",
+      "main_cat": "event_operations",
+      "sub_cat": "materials_print",
+      "industry": "general",
+      "low": 700,
+      "high": 2150,
+      "unit": "per_piece"
+    },
+    {
+      "name_cn": "背景板-喷绘",
+      "name_en": "Backdrop - Print (Step & Repeat)",
+      "main_cat": "event_operations",
+      "sub_cat": "materials_print",
+      "industry": "general",
+      "low": 5000,
+      "high": 18000
+    },
+    {
+      "name_cn": "背景板-桁架搭建",
+      "name_en": "Backdrop - Truss Setup",
+      "main_cat": "event_operations",
+      "sub_cat": "materials_print",
+      "industry": "general",
+      "low": 14400,
+      "high": 43200
+    },
+    {
+      "name_cn": "手提袋-纸质品牌",
+      "name_en": "Paper Bag - Branded",
+      "main_cat": "event_operations",
+      "sub_cat": "materials_print",
+      "industry": "general",
+      "low": 15,
+      "high": 50,
+      "unit": "per_piece"
+    },
+    {
+      "name_cn": "宣传册/画册",
+      "name_en": "Brochure / Booklet",
+      "main_cat": "event_operations",
+      "sub_cat": "materials_print",
+      "industry": "general",
+      "low": 20,
+      "high": 90,
+      "unit": "per_piece"
+    },
+    {
+      "name_cn": "指引标识牌",
+      "name_en": "Wayfinding Signage",
+      "main_cat": "event_operations",
+      "sub_cat": "materials_print",
+      "industry": "general",
+      "low": 290,
+      "high": 1100,
+      "unit": "per_piece"
+    },
+    {
+      "name_cn": "横幅/条幅",
+      "name_en": "Banner / Vinyl",
+      "main_cat": "event_operations",
+      "sub_cat": "materials_print",
+      "industry": "general",
+      "low": 850,
+      "high": 3600
+    },
+    {
+      "name_cn": "桌签/桌牌",
+      "name_en": "Table Name Card",
+      "main_cat": "event_operations",
+      "sub_cat": "materials_print",
+      "industry": "general",
+      "low": 15,
+      "high": 60,
+      "unit": "per_piece"
+    },
+    {
+      "name_cn": "证书/奖状",
+      "name_en": "Certificate / Award",
+      "main_cat": "event_operations",
+      "sub_cat": "materials_print",
+      "industry": "general",
+      "low": 35,
+      "high": 130,
+      "unit": "per_piece"
+    },
+    {
+      "name_cn": "定制T恤",
+      "name_en": "Custom T-shirt",
+      "main_cat": "event_operations",
+      "sub_cat": "merchandise",
+      "industry": "general",
+      "low": 60,
+      "high": 160,
+      "unit": "per_piece"
+    },
+    {
+      "name_cn": "定制卫衣",
+      "name_en": "Custom Hoodie",
+      "main_cat": "event_operations",
+      "sub_cat": "merchandise",
+      "industry": "general",
+      "low": 180,
+      "high": 430,
+      "unit": "per_piece"
+    },
+    {
+      "name_cn": "定制帆布袋",
+      "name_en": "Custom Tote Bag",
+      "main_cat": "event_operations",
+      "sub_cat": "merchandise",
+      "industry": "general",
+      "low": 20,
+      "high": 90,
+      "unit": "per_piece"
+    },
+    {
+      "name_cn": "定制马克杯",
+      "name_en": "Custom Mug",
+      "main_cat": "event_operations",
+      "sub_cat": "merchandise",
+      "industry": "general",
+      "low": 45,
+      "high": 130,
+      "unit": "per_piece"
+    },
+    {
+      "name_cn": "定制贴纸套装",
+      "name_en": "Custom Sticker Set",
+      "main_cat": "event_operations",
+      "sub_cat": "merchandise",
+      "industry": "general",
+      "low": 5,
+      "high": 35,
+      "unit": "per_piece"
+    },
+    {
+      "name_cn": "定制笔记本",
+      "name_en": "Custom Notebook",
+      "main_cat": "event_operations",
+      "sub_cat": "merchandise",
+      "industry": "general",
+      "low": 35,
+      "high": 130,
+      "unit": "per_piece"
+    },
+    {
+      "name_cn": "定制咖啡豆/挂耳包",
+      "name_en": "Custom Coffee Beans / Drip Bag",
+      "main_cat": "event_operations",
+      "sub_cat": "merchandise",
+      "industry": "general",
+      "low": 35,
+      "high": 110,
+      "unit": "per_piece"
+    },
+    {
+      "name_cn": "定制零食礼盒",
+      "name_en": "Custom Snack Gift Box",
+      "main_cat": "event_operations",
+      "sub_cat": "merchandise",
+      "industry": "general",
+      "low": 110,
+      "high": 320,
+      "unit": "per_piece"
+    },
+    {
+      "name_cn": "数码小礼品",
+      "name_en": "Digital Giveaway (USB/Power Bank)",
+      "main_cat": "event_operations",
+      "sub_cat": "merchandise",
+      "industry": "general",
+      "low": 60,
+      "high": 220,
+      "unit": "per_piece"
+    },
+    {
+      "name_cn": "可持续环保周边",
+      "name_en": "Sustainable/Eco Merch (Bamboo/Recycled)",
+      "main_cat": "event_operations",
+      "sub_cat": "merchandise",
+      "industry": "general",
+      "low": 60,
+      "high": 180,
+      "unit": "per_piece"
+    },
+    {
+      "name_cn": "LED拼接屏/视频墙",
+      "name_en": "LED Video Wall",
+      "main_cat": "event_operations",
+      "sub_cat": "av_equipment",
+      "industry": "general",
+      "low": 18000,
+      "high": 72000
+    },
+    {
+      "name_cn": "电视/显示器租赁-65寸以内",
+      "name_en": "TV Monitor Rental - Under 65\"",
+      "main_cat": "event_operations",
+      "sub_cat": "av_equipment",
+      "industry": "general",
+      "low": 2500,
+      "high": 7200
+    },
+    {
+      "name_cn": "电视/显示器租赁-75至85寸",
+      "name_en": "TV Monitor Rental - 75-85\"",
+      "main_cat": "event_operations",
+      "sub_cat": "av_equipment",
+      "industry": "general",
+      "low": 5000,
+      "high": 14400
+    },
+    {
+      "name_cn": "笔记本电脑租赁",
+      "name_en": "Laptop Rental",
+      "main_cat": "event_operations",
+      "sub_cat": "av_equipment",
+      "industry": "general",
+      "low": 700,
+      "high": 2150,
+      "unit": "per_unit"
+    },
+    {
+      "name_cn": "投影仪-高清",
+      "name_en": "Projector - HD",
+      "main_cat": "event_operations",
+      "sub_cat": "av_equipment",
+      "industry": "general",
+      "low": 3600,
+      "high": 13000
+    },
+    {
+      "name_cn": "音响系统-小型",
+      "name_en": "Sound System - Small",
+      "main_cat": "event_operations",
+      "sub_cat": "av_equipment",
+      "industry": "general",
+      "low": 5800,
+      "high": 18000
+    },
+    {
+      "name_cn": "音响系统-中型",
+      "name_en": "Sound System - Medium",
+      "main_cat": "event_operations",
+      "sub_cat": "av_equipment",
+      "industry": "general",
+      "low": 14400,
+      "high": 36000
+    },
+    {
+      "name_cn": "音响系统-大型",
+      "name_en": "Sound System - Large",
+      "main_cat": "event_operations",
+      "sub_cat": "av_equipment",
+      "industry": "general",
+      "low": 36000,
+      "high": 108000
+    },
+    {
+      "name_cn": "无线麦克风",
+      "name_en": "Wireless Microphone",
+      "main_cat": "event_operations",
+      "sub_cat": "av_equipment",
+      "industry": "general",
+      "low": 700,
+      "high": 2500,
+      "unit": "per_unit"
+    },
+    {
+      "name_cn": "舞台搭建-小型",
+      "name_en": "Stage Setup - Small",
+      "main_cat": "event_operations",
+      "sub_cat": "av_equipment",
+      "industry": "general",
+      "low": 14400,
+      "high": 36000
+    },
+    {
+      "name_cn": "舞台搭建-中型",
+      "name_en": "Stage Setup - Medium",
+      "main_cat": "event_operations",
+      "sub_cat": "av_equipment",
+      "industry": "general",
+      "low": 36000,
+      "high": 108000
+    },
+    {
+      "name_cn": "灯光系统-基础",
+      "name_en": "Lighting - Basic",
+      "main_cat": "event_operations",
+      "sub_cat": "av_equipment",
+      "industry": "general",
+      "low": 8600,
+      "high": 25200
+    },
+    {
+      "name_cn": "灯光系统-专业",
+      "name_en": "Lighting - Professional",
+      "main_cat": "event_operations",
+      "sub_cat": "av_equipment",
+      "industry": "general",
+      "low": 36000,
+      "high": 108000
+    },
+    {
+      "name_cn": "直播设备-全套",
+      "name_en": "Live Streaming Equipment - Full",
+      "main_cat": "event_operations",
+      "sub_cat": "av_equipment",
+      "industry": "general",
+      "low": 21600,
+      "high": 57500
+    },
+    {
+      "name_cn": "翻页笔/演示遥控器",
+      "name_en": "Presentation Remote",
+      "main_cat": "event_operations",
+      "sub_cat": "av_equipment",
+      "industry": "general",
+      "low": 140,
+      "high": 600
+    },
+    {
+      "name_cn": "活动直播-技术支持",
+      "name_en": "Live Streaming - Tech Support",
+      "main_cat": "event_operations",
+      "sub_cat": "tech_infra",
+      "industry": "general",
+      "low": 14400,
+      "high": 43200
+    },
+    {
+      "name_cn": "电源排插布线",
+      "name_en": "Power Strip Wiring",
+      "main_cat": "event_operations",
+      "sub_cat": "tech_infra",
+      "industry": "general",
+      "low": 2900,
+      "high": 10800
+    },
+    {
+      "name_cn": "进场搭建-基础",
+      "name_en": "Setup & Strike - Basic",
+      "main_cat": "event_operations",
+      "sub_cat": "logistics",
+      "industry": "general",
+      "low": 14400,
+      "high": 36000
+    },
+    {
+      "name_cn": "进场搭建-含展位",
+      "name_en": "Setup & Strike - With Booths",
+      "main_cat": "event_operations",
+      "sub_cat": "logistics",
+      "industry": "general",
+      "low": 28800,
+      "high": 86500
+    },
+    {
+      "name_cn": "物料运输",
+      "name_en": "Material Transport / Freight",
+      "main_cat": "event_operations",
+      "sub_cat": "logistics",
+      "industry": "general",
+      "low": 3600,
+      "high": 14400
+    },
+    {
+      "name_cn": "场地布置-花艺绿植",
+      "name_en": "Venue Decor - Floral",
+      "main_cat": "event_operations",
+      "sub_cat": "logistics",
+      "industry": "general",
+      "low": 4300,
+      "high": 25200
+    },
+    {
+      "name_cn": "场地清洁-活动后",
+      "name_en": "Post-event Cleaning",
+      "main_cat": "event_operations",
+      "sub_cat": "logistics",
+      "industry": "general",
+      "low": 2900,
+      "high": 8600
+    },
+    {
+      "name_cn": "嘉宾机票-美国国内",
+      "name_en": "Speaker Flight - Domestic US",
+      "main_cat": "event_operations",
+      "sub_cat": "travel",
+      "industry": "general",
+      "low": 1450,
+      "high": 5800
+    },
+    {
+      "name_cn": "嘉宾机票-跨洲际",
+      "name_en": "Speaker Flight - Intercontinental",
+      "main_cat": "event_operations",
+      "sub_cat": "travel",
+      "industry": "general",
+      "low": 14400,
+      "high": 43200
+    },
+    {
+      "name_cn": "嘉宾住宿-标准（3-4星）",
+      "name_en": "Speaker Hotel - Standard (3-4 Star)",
+      "main_cat": "event_operations",
+      "sub_cat": "travel",
+      "industry": "general",
+      "low": 1100,
+      "high": 2150,
+      "unit": "per_night"
+    },
+    {
+      "name_cn": "嘉宾住宿-高端（5星）",
+      "name_en": "Speaker Hotel - Premium (5 Star)",
+      "main_cat": "event_operations",
+      "sub_cat": "travel",
+      "industry": "general",
+      "low": 2500,
+      "high": 5800,
+      "unit": "per_night"
+    },
+    {
+      "name_cn": "商务用车-接送（Uber Black等）",
+      "name_en": "VIP Car Service / Black Car",
+      "main_cat": "event_operations",
+      "sub_cat": "travel",
+      "industry": "general",
+      "low": 700,
+      "high": 2900
+    },
+    {
+      "name_cn": "咖啡设备-专业咖啡机",
+      "name_en": "Coffee Equipment - Pro Machine",
+      "main_cat": "event_operations",
+      "sub_cat": "special_equipment",
+      "industry": "general",
+      "low": 7200,
+      "high": 21600
+    },
+    {
+      "name_cn": "AI拉花机-租赁",
+      "name_en": "AI Latte Art Machine - Rental",
+      "main_cat": "event_operations",
+      "sub_cat": "special_equipment",
+      "industry": "tech",
+      "low": 14400,
+      "high": 36000
+    },
+    {
+      "name_cn": "3D打印机-展示用",
+      "name_en": "3D Printer - Display",
+      "main_cat": "event_operations",
+      "sub_cat": "special_equipment",
+      "industry": "tech",
+      "low": 4300,
+      "high": 18000
+    },
+    {
+      "name_cn": "VR设备-体验区",
+      "name_en": "VR Equipment - Experience Zone",
+      "main_cat": "event_operations",
+      "sub_cat": "special_equipment",
+      "industry": "tech",
+      "low": 7200,
+      "high": 36000
+    },
+    {
+      "name_cn": "签到屏-触控大屏",
+      "name_en": "Check-in Touchscreen / iPad Kiosk",
+      "main_cat": "event_operations",
+      "sub_cat": "special_equipment",
+      "industry": "general",
+      "low": 3600,
+      "high": 14400
+    },
+    {
+      "name_cn": "静音耳机-分组讨论",
+      "name_en": "Silent Disco / Headphones",
+      "main_cat": "event_operations",
+      "sub_cat": "special_equipment",
+      "industry": "general",
+      "low": 35,
+      "high": 110,
+      "unit": "per_unit"
+    },
+    {
+      "name_cn": "AI Demo工作站",
+      "name_en": "AI Demo Workstation Setup",
+      "main_cat": "event_operations",
+      "sub_cat": "special_equipment",
+      "industry": "tech",
+      "low": 4300,
+      "high": 18000
+    },
+    {
+      "name_cn": "Photo Booth（互动拍照区）",
+      "name_en": "Photo Booth - Interactive",
+      "main_cat": "event_operations",
+      "sub_cat": "special_equipment",
+      "industry": "general",
+      "low": 5800,
+      "high": 18000
+    },
+    {
+      "name_cn": "LED Neon标牌定制",
+      "name_en": "LED Neon Sign - Custom",
+      "main_cat": "event_operations",
+      "sub_cat": "special_equipment",
+      "industry": "general",
+      "low": 1450,
+      "high": 5800
+    },
+    {
+      "name_cn": "联合办公空间-半天（WeWork等）",
+      "name_en": "Co-working Space - Half Day (WeWork etc.)",
+      "main_cat": "venue",
+      "sub_cat": "rental",
+      "industry": "general",
+      "low": 3600,
+      "high": 14400
+    },
+    {
+      "name_cn": "联合办公空间-全天",
+      "name_en": "Co-working Space - Full Day",
+      "main_cat": "venue",
+      "sub_cat": "rental",
+      "industry": "general",
+      "low": 8600,
+      "high": 28800
+    },
+    {
+      "name_cn": "科技园区/孵化器活动厅-全天",
+      "name_en": "Tech Hub / Incubator Event Hall - Full Day",
+      "main_cat": "venue",
+      "sub_cat": "rental",
+      "industry": "tech",
+      "low": 14400,
+      "high": 43200
+    },
+    {
+      "name_cn": "创意仓库/Loft空间-全天",
+      "name_en": "Creative Warehouse / Loft - Full Day (Arts District)",
+      "main_cat": "venue",
+      "sub_cat": "rental",
+      "industry": "general",
+      "low": 18000,
+      "high": 72000
+    },
+    {
+      "name_cn": "酒店会议室-小型（~30人）",
+      "name_en": "Hotel Meeting Room - Small (~30 pax)",
+      "main_cat": "venue",
+      "sub_cat": "rental",
+      "industry": "general",
+      "low": 5800,
+      "high": 21600
+    },
+    {
+      "name_cn": "酒店会议室-中型（~100人）",
+      "name_en": "Hotel Meeting Room - Medium (~100 pax)",
+      "main_cat": "venue",
+      "sub_cat": "rental",
+      "industry": "general",
+      "low": 21600,
+      "high": 72000
+    },
+    {
+      "name_cn": "酒店宴会厅-大型（200+人）",
+      "name_en": "Hotel Ballroom - Large (200+ pax)",
+      "main_cat": "venue",
+      "sub_cat": "rental",
+      "industry": "general",
+      "low": 43200,
+      "high": 216000
+    },
+    {
+      "name_cn": "五星酒店大型宴会厅",
+      "name_en": "5-Star Hotel Grand Ballroom (Beverly Hills etc.)",
+      "main_cat": "venue",
+      "sub_cat": "rental",
+      "industry": "general",
+      "low": 72000,
+      "high": 360000
+    },
+    {
+      "name_cn": "会展中心标准展厅",
+      "name_en": "Convention Center - Standard Hall (LACC etc.)",
+      "main_cat": "venue",
+      "sub_cat": "rental",
+      "industry": "general",
+      "low": 57500,
+      "high": 252000
+    },
+    {
+      "name_cn": "艺术场馆/画廊",
+      "name_en": "Art Gallery / Museum Venue",
+      "main_cat": "venue",
+      "sub_cat": "rental",
+      "industry": "general",
+      "low": 21600,
+      "high": 144000
+    },
+    {
+      "name_cn": "户外场地-花园/庭院",
+      "name_en": "Outdoor Venue - Garden / Patio",
+      "main_cat": "venue",
+      "sub_cat": "rental",
+      "industry": "general",
+      "low": 14400,
+      "high": 72000
+    },
+    {
+      "name_cn": "剧院/小剧场",
+      "name_en": "Theatre / Small Auditorium",
+      "main_cat": "venue",
+      "sub_cat": "rental",
+      "industry": "general",
+      "low": 18000,
+      "high": 86500
+    },
+    {
+      "name_cn": "影视制片厂/摄影棚",
+      "name_en": "Film Studio / Sound Stage",
+      "main_cat": "venue",
+      "sub_cat": "rental",
+      "industry": "general",
+      "low": 21600,
+      "high": 108000
+    },
+    {
+      "name_cn": "屋顶露台",
+      "name_en": "Rooftop Venue (Downtown/Hollywood)",
+      "main_cat": "venue",
+      "sub_cat": "rental",
+      "industry": "general",
+      "low": 21600,
+      "high": 108000
+    },
+    {
+      "name_cn": "酒庄/红酒庄园",
+      "name_en": "Winery / Vineyard Venue (Napa/Malibu)",
+      "main_cat": "venue",
+      "sub_cat": "rental",
+      "industry": "general",
+      "low": 36000,
+      "high": 180000
+    },
+    {
+      "name_cn": "大学/学术场地",
+      "name_en": "University / Academic Venue (UCLA/USC)",
+      "main_cat": "venue",
+      "sub_cat": "rental",
+      "industry": "general",
+      "low": 5800,
+      "high": 21600
+    },
+    {
+      "name_cn": "海滩/海边活动场地",
+      "name_en": "Beach / Oceanfront Venue",
+      "main_cat": "venue",
+      "sub_cat": "rental",
+      "industry": "general",
+      "low": 21600,
+      "high": 144000
+    },
+    {
+      "name_cn": "私人庄园/别墅",
+      "name_en": "Private Estate / Villa",
+      "main_cat": "venue",
+      "sub_cat": "rental",
+      "industry": "general",
+      "low": 36000,
+      "high": 216000
+    },
+    {
+      "name_cn": "场地空调/暖气-延时",
+      "name_en": "Venue HVAC - Extended Hours",
+      "main_cat": "venue",
+      "sub_cat": "venue_facilities",
+      "industry": "general",
+      "low": 1450,
+      "high": 5800
+    },
+    {
+      "name_cn": "停车场-Valet代客泊车",
+      "name_en": "Valet Parking Service",
+      "main_cat": "venue",
+      "sub_cat": "venue_facilities",
+      "industry": "general",
+      "low": 110,
+      "high": 290,
+      "unit": "per_car"
+    },
+    {
+      "name_cn": "停车场-预留车位",
+      "name_en": "Parking - Reserved Spots",
+      "main_cat": "venue",
+      "sub_cat": "venue_facilities",
+      "industry": "general",
+      "low": 140,
+      "high": 430,
+      "unit": "per_spot"
+    },
+    {
+      "name_cn": "货梯/装卸区使用",
+      "name_en": "Freight Elevator / Loading Dock",
+      "main_cat": "venue",
+      "sub_cat": "venue_facilities",
+      "industry": "general",
+      "low": 1450,
+      "high": 4300
+    },
+    {
+      "name_cn": "超时使用费",
+      "name_en": "Overtime Fee",
+      "main_cat": "venue",
+      "sub_cat": "venue_facilities",
+      "industry": "general",
+      "low": 2150,
+      "high": 10800,
+      "unit": "per_hour"
+    },
+    {
+      "name_cn": "活动许可证（Permit）",
+      "name_en": "Event Permit (City/County)",
+      "main_cat": "venue",
+      "sub_cat": "venue_facilities",
+      "industry": "general",
+      "low": 700,
+      "high": 5800
+    },
+    {
+      "name_cn": "无障碍设施补充",
+      "name_en": "ADA Accessibility Supplement",
+      "main_cat": "venue",
+      "sub_cat": "venue_facilities",
+      "industry": "general",
+      "low": 1450,
+      "high": 7200
+    }
+  ]
+}

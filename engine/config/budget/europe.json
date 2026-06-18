@@ -1,0 +1,1585 @@
+{
+  "items": [
+    {
+      "name_cn": "外部嘉宾-行业专家出场费",
+      "name_en": "Guest Speaker - Industry Expert",
+      "main_cat": "event_operations",
+      "sub_cat": "personnel",
+      "industry": "general",
+      "low": 23400,
+      "high": 62500,
+      "currency": "CNY"
+    },
+    {
+      "name_cn": "外部嘉宾-知名KOL出场费",
+      "name_en": "Guest Speaker - Notable KOL",
+      "main_cat": "event_operations",
+      "sub_cat": "personnel",
+      "industry": "general",
+      "low": 62500,
+      "high": 156000,
+      "currency": "CNY"
+    },
+    {
+      "name_cn": "外部嘉宾-头部大咖出场费",
+      "name_en": "Guest Speaker - Top Tier",
+      "main_cat": "event_operations",
+      "sub_cat": "personnel",
+      "industry": "general",
+      "low": 156000,
+      "high": 624000,
+      "currency": "CNY"
+    },
+    {
+      "name_cn": "主持人-专业司仪",
+      "name_en": "MC - Professional Host",
+      "main_cat": "event_operations",
+      "sub_cat": "personnel",
+      "industry": "general",
+      "low": 15600,
+      "high": 39000,
+      "currency": "CNY"
+    },
+    {
+      "name_cn": "主持人-科技媒体人",
+      "name_en": "MC - Tech Media Person",
+      "main_cat": "event_operations",
+      "sub_cat": "personnel",
+      "industry": "tech",
+      "low": 31200,
+      "high": 93500,
+      "currency": "CNY"
+    },
+    {
+      "name_cn": "主持人-知名主持人",
+      "name_en": "MC - Celebrity Host",
+      "main_cat": "event_operations",
+      "sub_cat": "personnel",
+      "industry": "general",
+      "low": 93500,
+      "high": 390000,
+      "currency": "CNY"
+    },
+    {
+      "name_cn": "摄影师（全天）",
+      "name_en": "Photographer (Full Day)",
+      "main_cat": "event_operations",
+      "sub_cat": "personnel",
+      "industry": "general",
+      "low": 6200,
+      "high": 23400,
+      "currency": "CNY"
+    },
+    {
+      "name_cn": "摄像师（全天）",
+      "name_en": "Videographer (Full Day)",
+      "main_cat": "event_operations",
+      "sub_cat": "personnel",
+      "industry": "general",
+      "low": 7800,
+      "high": 27300,
+      "currency": "CNY"
+    },
+    {
+      "name_cn": "摄影摄像套餐",
+      "name_en": "Photo+Video Package",
+      "main_cat": "event_operations",
+      "sub_cat": "personnel",
+      "industry": "general",
+      "low": 19500,
+      "high": 46800,
+      "currency": "CNY"
+    },
+    {
+      "name_cn": "技术助理-自由职业",
+      "name_en": "Tech Assistant - Freelance",
+      "main_cat": "event_operations",
+      "sub_cat": "personnel",
+      "industry": "tech",
+      "low": 2350,
+      "high": 6200,
+      "currency": "CNY"
+    },
+    {
+      "name_cn": "技术助理-志愿者",
+      "name_en": "Tech Assistant - Volunteer",
+      "main_cat": "event_operations",
+      "sub_cat": "personnel",
+      "industry": "tech",
+      "low": 800,
+      "high": 2350,
+      "currency": "CNY"
+    },
+    {
+      "name_cn": "现场执行人员",
+      "name_en": "On-site Staff (per person/day)",
+      "main_cat": "event_operations",
+      "sub_cat": "personnel",
+      "industry": "general",
+      "low": 1950,
+      "high": 3900,
+      "currency": "CNY"
+    },
+    {
+      "name_cn": "注册接待人员",
+      "name_en": "Registration / Front-of-House Staff",
+      "main_cat": "event_operations",
+      "sub_cat": "personnel",
+      "industry": "general",
+      "low": 1950,
+      "high": 4700,
+      "currency": "CNY"
+    },
+    {
+      "name_cn": "签到咖啡-标准",
+      "name_en": "Welcome Coffee - Standard",
+      "main_cat": "event_operations",
+      "sub_cat": "catering",
+      "industry": "general",
+      "low": 40,
+      "high": 90,
+      "currency": "CNY",
+      "unit": "per_person"
+    },
+    {
+      "name_cn": "签到咖啡-含特色体验（Barista）",
+      "name_en": "Welcome Coffee - Barista Experience",
+      "main_cat": "event_operations",
+      "sub_cat": "catering",
+      "industry": "general",
+      "low": 80,
+      "high": 200,
+      "currency": "CNY",
+      "unit": "per_person"
+    },
+    {
+      "name_cn": "茶歇-标准",
+      "name_en": "Tea/Coffee Break - Standard",
+      "main_cat": "event_operations",
+      "sub_cat": "catering",
+      "industry": "general",
+      "low": 60,
+      "high": 140,
+      "currency": "CNY",
+      "unit": "per_person"
+    },
+    {
+      "name_cn": "全天茶歇-不含正餐",
+      "name_en": "Full Day Tea Break (no meal)",
+      "main_cat": "event_operations",
+      "sub_cat": "catering",
+      "industry": "general",
+      "low": 120,
+      "high": 230,
+      "currency": "CNY",
+      "unit": "per_person"
+    },
+    {
+      "name_cn": "工作午餐-简餐/三明治",
+      "name_en": "Working Lunch - Sandwich/Light",
+      "main_cat": "event_operations",
+      "sub_cat": "catering",
+      "industry": "general",
+      "low": 80,
+      "high": 200,
+      "currency": "CNY",
+      "unit": "per_person"
+    },
+    {
+      "name_cn": "工作午餐-热食套餐",
+      "name_en": "Working Lunch - Hot Meal",
+      "main_cat": "event_operations",
+      "sub_cat": "catering",
+      "industry": "general",
+      "low": 200,
+      "high": 390,
+      "currency": "CNY",
+      "unit": "per_person"
+    },
+    {
+      "name_cn": "自助午餐-标准",
+      "name_en": "Buffet Lunch - Standard",
+      "main_cat": "event_operations",
+      "sub_cat": "catering",
+      "industry": "general",
+      "low": 200,
+      "high": 500,
+      "currency": "CNY",
+      "unit": "per_person"
+    },
+    {
+      "name_cn": "自助午餐-高端",
+      "name_en": "Buffet Lunch - Premium",
+      "main_cat": "event_operations",
+      "sub_cat": "catering",
+      "industry": "general",
+      "low": 500,
+      "high": 950,
+      "currency": "CNY",
+      "unit": "per_person"
+    },
+    {
+      "name_cn": "鸡尾酒会",
+      "name_en": "Cocktail Reception",
+      "main_cat": "event_operations",
+      "sub_cat": "catering",
+      "industry": "general",
+      "low": 310,
+      "high": 650,
+      "currency": "CNY",
+      "unit": "per_person"
+    },
+    {
+      "name_cn": "社交晚宴-坐席",
+      "name_en": "Social Dinner - Seated",
+      "main_cat": "event_operations",
+      "sub_cat": "catering",
+      "industry": "general",
+      "low": 470,
+      "high": 1150,
+      "currency": "CNY",
+      "unit": "per_person"
+    },
+    {
+      "name_cn": "瓶装水/基础饮品",
+      "name_en": "Bottled Water / Basic Beverages",
+      "main_cat": "event_operations",
+      "sub_cat": "catering",
+      "industry": "general",
+      "low": 25,
+      "high": 60,
+      "currency": "CNY",
+      "unit": "per_person"
+    },
+    {
+      "name_cn": "外部餐饮配送",
+      "name_en": "External Catering Delivery",
+      "main_cat": "event_operations",
+      "sub_cat": "catering",
+      "industry": "general",
+      "low": 200,
+      "high": 430,
+      "currency": "CNY",
+      "unit": "per_person"
+    },
+    {
+      "name_cn": "素食/特殊饮食加价",
+      "name_en": "Vegan/Dietary Supplement",
+      "main_cat": "event_operations",
+      "sub_cat": "catering",
+      "industry": "general",
+      "low": 40,
+      "high": 120,
+      "currency": "CNY",
+      "unit": "per_person"
+    },
+    {
+      "name_cn": "KV主视觉设计",
+      "name_en": "Key Visual Design",
+      "main_cat": "event_operations",
+      "sub_cat": "materials_digital",
+      "industry": "general",
+      "low": 11700,
+      "high": 39000,
+      "currency": "CNY"
+    },
+    {
+      "name_cn": "宣传视频-30秒以内",
+      "name_en": "Promo Video - Under 30s",
+      "main_cat": "event_operations",
+      "sub_cat": "materials_digital",
+      "industry": "general",
+      "low": 15600,
+      "high": 46800,
+      "currency": "CNY"
+    },
+    {
+      "name_cn": "宣传视频-1至3分钟",
+      "name_en": "Promo Video - 1-3 min",
+      "main_cat": "event_operations",
+      "sub_cat": "materials_digital",
+      "industry": "general",
+      "low": 39000,
+      "high": 140500,
+      "currency": "CNY"
+    },
+    {
+      "name_cn": "数字邀请函",
+      "name_en": "Digital Invitation",
+      "main_cat": "event_operations",
+      "sub_cat": "materials_digital",
+      "industry": "general",
+      "low": 2350,
+      "high": 9400,
+      "currency": "CNY"
+    },
+    {
+      "name_cn": "活动回顾视频-快剪",
+      "name_en": "Event Recap Video - Quick Cut",
+      "main_cat": "event_operations",
+      "sub_cat": "materials_digital",
+      "industry": "general",
+      "low": 7800,
+      "high": 27300,
+      "currency": "CNY"
+    },
+    {
+      "name_cn": "活动回顾视频-精剪",
+      "name_en": "Event Recap Video - Full Edit",
+      "main_cat": "event_operations",
+      "sub_cat": "materials_digital",
+      "industry": "general",
+      "low": 27300,
+      "high": 78000,
+      "currency": "CNY"
+    },
+    {
+      "name_cn": "电子签到系统",
+      "name_en": "Digital Check-in System (Eventbrite/Luma Pro)",
+      "main_cat": "event_operations",
+      "sub_cat": "materials_digital",
+      "industry": "general",
+      "low": 800,
+      "high": 6200,
+      "currency": "CNY"
+    },
+    {
+      "name_cn": "互动大屏-弹幕/投票墙",
+      "name_en": "Interactive Screen - Slido/Mentimeter",
+      "main_cat": "event_operations",
+      "sub_cat": "materials_digital",
+      "industry": "general",
+      "low": 1550,
+      "high": 7800,
+      "currency": "CNY"
+    },
+    {
+      "name_cn": "活动网站/着陆页",
+      "name_en": "Event Landing Page / Microsite",
+      "main_cat": "event_operations",
+      "sub_cat": "materials_digital",
+      "industry": "general",
+      "low": 11700,
+      "high": 39000,
+      "currency": "CNY"
+    },
+    {
+      "name_cn": "活动App定制",
+      "name_en": "Custom Event App (Whova/Hopin)",
+      "main_cat": "event_operations",
+      "sub_cat": "materials_digital",
+      "industry": "general",
+      "low": 15600,
+      "high": 62500,
+      "currency": "CNY"
+    },
+    {
+      "name_cn": "纸质邀请函",
+      "name_en": "Printed Invitation",
+      "main_cat": "event_operations",
+      "sub_cat": "materials_print",
+      "industry": "general",
+      "low": 25,
+      "high": 60,
+      "currency": "CNY",
+      "unit": "per_piece"
+    },
+    {
+      "name_cn": "名牌Badge-标准",
+      "name_en": "Name Badge - Standard",
+      "main_cat": "event_operations",
+      "sub_cat": "materials_print",
+      "industry": "general",
+      "low": 15,
+      "high": 40,
+      "currency": "CNY",
+      "unit": "per_piece"
+    },
+    {
+      "name_cn": "名牌Badge-创意定制",
+      "name_en": "Name Badge - Custom Creative",
+      "main_cat": "event_operations",
+      "sub_cat": "materials_print",
+      "industry": "general",
+      "low": 40,
+      "high": 120,
+      "currency": "CNY",
+      "unit": "per_piece"
+    },
+    {
+      "name_cn": "易拉宝/展架",
+      "name_en": "Roll-up Banner",
+      "main_cat": "event_operations",
+      "sub_cat": "materials_print",
+      "industry": "general",
+      "low": 600,
+      "high": 1950,
+      "currency": "CNY",
+      "unit": "per_piece"
+    },
+    {
+      "name_cn": "背景板-喷绘",
+      "name_en": "Backdrop - Print",
+      "main_cat": "event_operations",
+      "sub_cat": "materials_print",
+      "industry": "general",
+      "low": 4700,
+      "high": 15600,
+      "currency": "CNY"
+    },
+    {
+      "name_cn": "背景板-桁架搭建",
+      "name_en": "Backdrop - Truss Setup",
+      "main_cat": "event_operations",
+      "sub_cat": "materials_print",
+      "industry": "general",
+      "low": 11700,
+      "high": 39000,
+      "currency": "CNY"
+    },
+    {
+      "name_cn": "手提袋-纸质品牌",
+      "name_en": "Paper Bag - Branded",
+      "main_cat": "event_operations",
+      "sub_cat": "materials_print",
+      "industry": "general",
+      "low": 15,
+      "high": 45,
+      "currency": "CNY",
+      "unit": "per_piece"
+    },
+    {
+      "name_cn": "宣传册/画册",
+      "name_en": "Brochure / Booklet",
+      "main_cat": "event_operations",
+      "sub_cat": "materials_print",
+      "industry": "general",
+      "low": 25,
+      "high": 80,
+      "currency": "CNY",
+      "unit": "per_piece"
+    },
+    {
+      "name_cn": "指引标识牌",
+      "name_en": "Wayfinding Signage",
+      "main_cat": "event_operations",
+      "sub_cat": "materials_print",
+      "industry": "general",
+      "low": 230,
+      "high": 950,
+      "currency": "CNY",
+      "unit": "per_piece"
+    },
+    {
+      "name_cn": "横幅/条幅",
+      "name_en": "Banner / Streamer",
+      "main_cat": "event_operations",
+      "sub_cat": "materials_print",
+      "industry": "general",
+      "low": 800,
+      "high": 3100,
+      "currency": "CNY"
+    },
+    {
+      "name_cn": "桌签/桌牌",
+      "name_en": "Table Name Card",
+      "main_cat": "event_operations",
+      "sub_cat": "materials_print",
+      "industry": "general",
+      "low": 15,
+      "high": 60,
+      "currency": "CNY",
+      "unit": "per_piece"
+    },
+    {
+      "name_cn": "证书/奖状",
+      "name_en": "Certificate / Award",
+      "main_cat": "event_operations",
+      "sub_cat": "materials_print",
+      "industry": "general",
+      "low": 40,
+      "high": 120,
+      "currency": "CNY",
+      "unit": "per_piece"
+    },
+    {
+      "name_cn": "定制T恤",
+      "name_en": "Custom T-shirt",
+      "main_cat": "event_operations",
+      "sub_cat": "merchandise",
+      "industry": "general",
+      "low": 60,
+      "high": 160,
+      "currency": "CNY",
+      "unit": "per_piece"
+    },
+    {
+      "name_cn": "定制卫衣",
+      "name_en": "Custom Hoodie",
+      "main_cat": "event_operations",
+      "sub_cat": "merchandise",
+      "industry": "general",
+      "low": 200,
+      "high": 430,
+      "currency": "CNY",
+      "unit": "per_piece"
+    },
+    {
+      "name_cn": "定制帆布袋",
+      "name_en": "Custom Tote Bag",
+      "main_cat": "event_operations",
+      "sub_cat": "merchandise",
+      "industry": "general",
+      "low": 25,
+      "high": 80,
+      "currency": "CNY",
+      "unit": "per_piece"
+    },
+    {
+      "name_cn": "定制马克杯",
+      "name_en": "Custom Mug",
+      "main_cat": "event_operations",
+      "sub_cat": "merchandise",
+      "industry": "general",
+      "low": 40,
+      "high": 120,
+      "currency": "CNY",
+      "unit": "per_piece"
+    },
+    {
+      "name_cn": "定制贴纸套装",
+      "name_en": "Custom Sticker Set",
+      "main_cat": "event_operations",
+      "sub_cat": "merchandise",
+      "industry": "general",
+      "low": 10,
+      "high": 30,
+      "currency": "CNY",
+      "unit": "per_piece"
+    },
+    {
+      "name_cn": "定制笔记本",
+      "name_en": "Custom Notebook",
+      "main_cat": "event_operations",
+      "sub_cat": "merchandise",
+      "industry": "general",
+      "low": 40,
+      "high": 120,
+      "currency": "CNY",
+      "unit": "per_piece"
+    },
+    {
+      "name_cn": "定制咖啡豆/挂耳包",
+      "name_en": "Custom Coffee Beans / Drip Bag",
+      "main_cat": "event_operations",
+      "sub_cat": "merchandise",
+      "industry": "general",
+      "low": 30,
+      "high": 90,
+      "currency": "CNY",
+      "unit": "per_piece"
+    },
+    {
+      "name_cn": "定制零食礼盒",
+      "name_en": "Custom Snack Gift Box",
+      "main_cat": "event_operations",
+      "sub_cat": "merchandise",
+      "industry": "general",
+      "low": 120,
+      "high": 310,
+      "currency": "CNY",
+      "unit": "per_piece"
+    },
+    {
+      "name_cn": "数码小礼品",
+      "name_en": "Digital Giveaway (USB/Power Bank)",
+      "main_cat": "event_operations",
+      "sub_cat": "merchandise",
+      "industry": "general",
+      "low": 60,
+      "high": 200,
+      "currency": "CNY",
+      "unit": "per_piece"
+    },
+    {
+      "name_cn": "可持续环保周边",
+      "name_en": "Sustainable/Eco Merch (Bamboo/Recycled)",
+      "main_cat": "event_operations",
+      "sub_cat": "merchandise",
+      "industry": "general",
+      "low": 45,
+      "high": 160,
+      "currency": "CNY",
+      "unit": "per_piece"
+    },
+    {
+      "name_cn": "LED拼接屏/视频墙",
+      "name_en": "LED Video Wall",
+      "main_cat": "event_operations",
+      "sub_cat": "av_equipment",
+      "industry": "general",
+      "low": 15600,
+      "high": 62500,
+      "currency": "CNY"
+    },
+    {
+      "name_cn": "电视/显示器租赁-65寸以内",
+      "name_en": "TV Monitor Rental - Under 65\"",
+      "main_cat": "event_operations",
+      "sub_cat": "av_equipment",
+      "industry": "general",
+      "low": 2350,
+      "high": 6200,
+      "currency": "CNY"
+    },
+    {
+      "name_cn": "电视/显示器租赁-75至85寸",
+      "name_en": "TV Monitor Rental - 75-85\"",
+      "main_cat": "event_operations",
+      "sub_cat": "av_equipment",
+      "industry": "general",
+      "low": 4700,
+      "high": 11700,
+      "currency": "CNY"
+    },
+    {
+      "name_cn": "笔记本电脑租赁",
+      "name_en": "Laptop Rental",
+      "main_cat": "event_operations",
+      "sub_cat": "av_equipment",
+      "industry": "general",
+      "low": 600,
+      "high": 1950,
+      "currency": "CNY",
+      "unit": "per_unit"
+    },
+    {
+      "name_cn": "投影仪-高清",
+      "name_en": "Projector - HD",
+      "main_cat": "event_operations",
+      "sub_cat": "av_equipment",
+      "industry": "general",
+      "low": 3900,
+      "high": 11700,
+      "currency": "CNY"
+    },
+    {
+      "name_cn": "音响系统-小型",
+      "name_en": "Sound System - Small",
+      "main_cat": "event_operations",
+      "sub_cat": "av_equipment",
+      "industry": "general",
+      "low": 6200,
+      "high": 15600,
+      "currency": "CNY"
+    },
+    {
+      "name_cn": "音响系统-中型",
+      "name_en": "Sound System - Medium",
+      "main_cat": "event_operations",
+      "sub_cat": "av_equipment",
+      "industry": "general",
+      "low": 11700,
+      "high": 31200,
+      "currency": "CNY"
+    },
+    {
+      "name_cn": "音响系统-大型",
+      "name_en": "Sound System - Large",
+      "main_cat": "event_operations",
+      "sub_cat": "av_equipment",
+      "industry": "general",
+      "low": 31200,
+      "high": 93500,
+      "currency": "CNY"
+    },
+    {
+      "name_cn": "无线麦克风",
+      "name_en": "Wireless Microphone",
+      "main_cat": "event_operations",
+      "sub_cat": "av_equipment",
+      "industry": "general",
+      "low": 800,
+      "high": 2350,
+      "currency": "CNY",
+      "unit": "per_unit"
+    },
+    {
+      "name_cn": "舞台搭建-小型",
+      "name_en": "Stage Setup - Small",
+      "main_cat": "event_operations",
+      "sub_cat": "av_equipment",
+      "industry": "general",
+      "low": 11700,
+      "high": 31200,
+      "currency": "CNY"
+    },
+    {
+      "name_cn": "舞台搭建-中型",
+      "name_en": "Stage Setup - Medium",
+      "main_cat": "event_operations",
+      "sub_cat": "av_equipment",
+      "industry": "general",
+      "low": 31200,
+      "high": 93500,
+      "currency": "CNY"
+    },
+    {
+      "name_cn": "灯光系统-基础",
+      "name_en": "Lighting - Basic",
+      "main_cat": "event_operations",
+      "sub_cat": "av_equipment",
+      "industry": "general",
+      "low": 7800,
+      "high": 23400,
+      "currency": "CNY"
+    },
+    {
+      "name_cn": "灯光系统-专业",
+      "name_en": "Lighting - Professional",
+      "main_cat": "event_operations",
+      "sub_cat": "av_equipment",
+      "industry": "general",
+      "low": 31200,
+      "high": 93500,
+      "currency": "CNY"
+    },
+    {
+      "name_cn": "直播设备-全套",
+      "name_en": "Live Streaming Equipment - Full",
+      "main_cat": "event_operations",
+      "sub_cat": "av_equipment",
+      "industry": "general",
+      "low": 19500,
+      "high": 54500,
+      "currency": "CNY"
+    },
+    {
+      "name_cn": "翻页笔/演示遥控器",
+      "name_en": "Presentation Remote",
+      "main_cat": "event_operations",
+      "sub_cat": "av_equipment",
+      "industry": "general",
+      "low": 160,
+      "high": 600,
+      "currency": "CNY"
+    },
+    {
+      "name_cn": "活动直播-技术支持",
+      "name_en": "Live Streaming - Tech Support",
+      "main_cat": "event_operations",
+      "sub_cat": "tech_infra",
+      "industry": "general",
+      "low": 11700,
+      "high": 39000,
+      "currency": "CNY"
+    },
+    {
+      "name_cn": "电源排插布线",
+      "name_en": "Power Strip Wiring",
+      "main_cat": "event_operations",
+      "sub_cat": "tech_infra",
+      "industry": "general",
+      "low": 2350,
+      "high": 9400,
+      "currency": "CNY"
+    },
+    {
+      "name_cn": "进场搭建-基础",
+      "name_en": "Setup - Basic",
+      "main_cat": "event_operations",
+      "sub_cat": "logistics",
+      "industry": "general",
+      "low": 11700,
+      "high": 31200,
+      "currency": "CNY"
+    },
+    {
+      "name_cn": "进场搭建-含展位",
+      "name_en": "Setup - With Booths",
+      "main_cat": "event_operations",
+      "sub_cat": "logistics",
+      "industry": "general",
+      "low": 23400,
+      "high": 78000,
+      "currency": "CNY"
+    },
+    {
+      "name_cn": "物料运输",
+      "name_en": "Material Transport",
+      "main_cat": "event_operations",
+      "sub_cat": "logistics",
+      "industry": "general",
+      "low": 3100,
+      "high": 11700,
+      "currency": "CNY"
+    },
+    {
+      "name_cn": "场地布置-花艺绿植",
+      "name_en": "Venue Decor - Floral",
+      "main_cat": "event_operations",
+      "sub_cat": "logistics",
+      "industry": "general",
+      "low": 3900,
+      "high": 23400,
+      "currency": "CNY"
+    },
+    {
+      "name_cn": "场地清洁-活动后",
+      "name_en": "Post-event Cleaning",
+      "main_cat": "event_operations",
+      "sub_cat": "logistics",
+      "industry": "general",
+      "low": 2350,
+      "high": 7800,
+      "currency": "CNY"
+    },
+    {
+      "name_cn": "嘉宾机票-欧洲境内",
+      "name_en": "Speaker Flight - Intra-Europe",
+      "main_cat": "event_operations",
+      "sub_cat": "travel",
+      "industry": "general",
+      "low": 1150,
+      "high": 4700,
+      "currency": "CNY"
+    },
+    {
+      "name_cn": "嘉宾机票-跨洲际",
+      "name_en": "Speaker Flight - Intercontinental",
+      "main_cat": "event_operations",
+      "sub_cat": "travel",
+      "industry": "general",
+      "low": 11700,
+      "high": 39000,
+      "currency": "CNY"
+    },
+    {
+      "name_cn": "嘉宾住宿-标准（3-4星）",
+      "name_en": "Speaker Hotel - Standard (3-4 Star)",
+      "main_cat": "event_operations",
+      "sub_cat": "travel",
+      "industry": "general",
+      "low": 1050,
+      "high": 1950,
+      "currency": "CNY",
+      "unit": "per_night"
+    },
+    {
+      "name_cn": "嘉宾住宿-高端（5星）",
+      "name_en": "Speaker Hotel - Premium (5 Star)",
+      "main_cat": "event_operations",
+      "sub_cat": "travel",
+      "industry": "general",
+      "low": 1950,
+      "high": 4700,
+      "currency": "CNY",
+      "unit": "per_night"
+    },
+    {
+      "name_cn": "商务用车-接送",
+      "name_en": "VIP Car Service / Transfer",
+      "main_cat": "event_operations",
+      "sub_cat": "travel",
+      "industry": "general",
+      "low": 600,
+      "high": 2350,
+      "currency": "CNY"
+    },
+    {
+      "name_cn": "欧洲城际火车（Eurostar等）",
+      "name_en": "Inter-city Train (Eurostar etc.)",
+      "main_cat": "event_operations",
+      "sub_cat": "travel",
+      "industry": "general",
+      "low": 600,
+      "high": 2750,
+      "currency": "CNY"
+    },
+    {
+      "name_cn": "咖啡设备-专业咖啡机",
+      "name_en": "Coffee Equipment - Pro Machine",
+      "main_cat": "event_operations",
+      "sub_cat": "special_equipment",
+      "industry": "general",
+      "low": 6200,
+      "high": 19500,
+      "currency": "CNY"
+    },
+    {
+      "name_cn": "AI拉花机-租赁",
+      "name_en": "AI Latte Art Machine - Rental",
+      "main_cat": "event_operations",
+      "sub_cat": "special_equipment",
+      "industry": "tech",
+      "low": 11700,
+      "high": 31200,
+      "currency": "CNY"
+    },
+    {
+      "name_cn": "3D打印机-展示用",
+      "name_en": "3D Printer - Display",
+      "main_cat": "event_operations",
+      "sub_cat": "special_equipment",
+      "industry": "tech",
+      "low": 3900,
+      "high": 15600,
+      "currency": "CNY"
+    },
+    {
+      "name_cn": "VR设备-体验区",
+      "name_en": "VR Equipment - Experience Zone",
+      "main_cat": "event_operations",
+      "sub_cat": "special_equipment",
+      "industry": "tech",
+      "low": 6200,
+      "high": 31200,
+      "currency": "CNY"
+    },
+    {
+      "name_cn": "签到屏-触控大屏",
+      "name_en": "Check-in Touchscreen",
+      "main_cat": "event_operations",
+      "sub_cat": "special_equipment",
+      "industry": "general",
+      "low": 4700,
+      "high": 15600,
+      "currency": "CNY"
+    },
+    {
+      "name_cn": "静音耳机-分组讨论",
+      "name_en": "Silent Disco / Headphones",
+      "main_cat": "event_operations",
+      "sub_cat": "special_equipment",
+      "industry": "general",
+      "low": 40,
+      "high": 120,
+      "currency": "CNY",
+      "unit": "per_unit"
+    },
+    {
+      "name_cn": "AI Demo工作站",
+      "name_en": "AI Demo Workstation Setup",
+      "main_cat": "event_operations",
+      "sub_cat": "special_equipment",
+      "industry": "tech",
+      "low": 3900,
+      "high": 15600,
+      "currency": "CNY"
+    },
+    {
+      "name_cn": "联合办公空间-半天",
+      "name_en": "Co-working Space - Half Day (WeWork etc.)",
+      "main_cat": "venue",
+      "sub_cat": "rental",
+      "industry": "general",
+      "low": 3900,
+      "high": 15600,
+      "currency": "CNY"
+    },
+    {
+      "name_cn": "联合办公空间-全天",
+      "name_en": "Co-working Space - Full Day",
+      "main_cat": "venue",
+      "sub_cat": "rental",
+      "industry": "general",
+      "low": 7800,
+      "high": 31200,
+      "currency": "CNY"
+    },
+    {
+      "name_cn": "科技园区/孵化器活动厅-全天",
+      "name_en": "Tech Hub / Incubator Event Hall - Full Day",
+      "main_cat": "venue",
+      "sub_cat": "rental",
+      "industry": "tech",
+      "low": 11700,
+      "high": 39000,
+      "currency": "CNY"
+    },
+    {
+      "name_cn": "创意仓库/Loft空间-全天",
+      "name_en": "Creative Warehouse / Loft - Full Day",
+      "main_cat": "venue",
+      "sub_cat": "rental",
+      "industry": "general",
+      "low": 15600,
+      "high": 62500,
+      "currency": "CNY"
+    },
+    {
+      "name_cn": "酒店会议室-小型（~30人）",
+      "name_en": "Hotel Meeting Room - Small (~30 pax)",
+      "main_cat": "venue",
+      "sub_cat": "rental",
+      "industry": "general",
+      "low": 4700,
+      "high": 23400,
+      "currency": "CNY"
+    },
+    {
+      "name_cn": "酒店会议室-中型（~100人）",
+      "name_en": "Hotel Meeting Room - Medium (~100 pax)",
+      "main_cat": "venue",
+      "sub_cat": "rental",
+      "industry": "general",
+      "low": 19500,
+      "high": 62500,
+      "currency": "CNY"
+    },
+    {
+      "name_cn": "酒店宴会厅-大型（200+人）",
+      "name_en": "Hotel Ballroom - Large (200+ pax)",
+      "main_cat": "venue",
+      "sub_cat": "rental",
+      "industry": "general",
+      "low": 39000,
+      "high": 195000,
+      "currency": "CNY"
+    },
+    {
+      "name_cn": "五星酒店大型宴会厅",
+      "name_en": "5-Star Hotel Grand Ballroom",
+      "main_cat": "venue",
+      "sub_cat": "rental",
+      "industry": "general",
+      "low": 62500,
+      "high": 273000,
+      "currency": "CNY"
+    },
+    {
+      "name_cn": "会展中心标准展厅",
+      "name_en": "Convention Centre - Standard Hall (ExCeL etc.)",
+      "main_cat": "venue",
+      "sub_cat": "rental",
+      "industry": "general",
+      "low": 62500,
+      "high": 234000,
+      "currency": "CNY"
+    },
+    {
+      "name_cn": "艺术场馆/画廊",
+      "name_en": "Art Gallery / Museum Venue",
+      "main_cat": "venue",
+      "sub_cat": "rental",
+      "industry": "general",
+      "low": 23400,
+      "high": 156000,
+      "currency": "CNY"
+    },
+    {
+      "name_cn": "户外场地-花园/庭院",
+      "name_en": "Outdoor Venue - Garden / Courtyard",
+      "main_cat": "venue",
+      "sub_cat": "rental",
+      "industry": "general",
+      "low": 11700,
+      "high": 62500,
+      "currency": "CNY"
+    },
+    {
+      "name_cn": "剧院/小剧场",
+      "name_en": "Theatre / Small Auditorium",
+      "main_cat": "venue",
+      "sub_cat": "rental",
+      "industry": "general",
+      "low": 15600,
+      "high": 78000,
+      "currency": "CNY"
+    },
+    {
+      "name_cn": "历史建筑/城堡场地",
+      "name_en": "Historic Venue / Listed Building",
+      "main_cat": "venue",
+      "sub_cat": "rental",
+      "industry": "general",
+      "low": 39000,
+      "high": 235000,
+      "currency": "CNY"
+    },
+    {
+      "name_cn": "屋顶露台",
+      "name_en": "Rooftop Terrace Venue",
+      "main_cat": "venue",
+      "sub_cat": "rental",
+      "industry": "general",
+      "low": 15600,
+      "high": 78000,
+      "currency": "CNY"
+    },
+    {
+      "name_cn": "大学/学术场地",
+      "name_en": "University / Academic Venue",
+      "main_cat": "venue",
+      "sub_cat": "rental",
+      "industry": "general",
+      "low": 3900,
+      "high": 15600,
+      "currency": "CNY"
+    },
+    {
+      "name_cn": "场地空调-延时",
+      "name_en": "Venue AC/Heating - Extended Hours",
+      "main_cat": "venue",
+      "sub_cat": "venue_facilities",
+      "industry": "general",
+      "low": 1550,
+      "high": 6200,
+      "currency": "CNY"
+    },
+    {
+      "name_cn": "停车场-预留车位",
+      "name_en": "Parking - Reserved Spots",
+      "main_cat": "venue",
+      "sub_cat": "venue_facilities",
+      "industry": "general",
+      "low": 120,
+      "high": 390,
+      "currency": "CNY",
+      "unit": "per_spot"
+    },
+    {
+      "name_cn": "货梯使用-搭建搬运",
+      "name_en": "Freight Elevator / Loading Bay",
+      "main_cat": "venue",
+      "sub_cat": "venue_facilities",
+      "industry": "general",
+      "low": 1150,
+      "high": 3900,
+      "currency": "CNY"
+    },
+    {
+      "name_cn": "超时使用费",
+      "name_en": "Overtime Fee",
+      "main_cat": "venue",
+      "sub_cat": "venue_facilities",
+      "industry": "general",
+      "low": 2350,
+      "high": 11700,
+      "currency": "CNY",
+      "unit": "per_hour"
+    },
+    {
+      "name_cn": "场地保险",
+      "name_en": "Venue Insurance / Public Liability",
+      "main_cat": "venue",
+      "sub_cat": "venue_facilities",
+      "industry": "general",
+      "low": 1550,
+      "high": 6200,
+      "currency": "CNY"
+    },
+    {
+      "name_cn": "无障碍设施补充",
+      "name_en": "Accessibility Supplement",
+      "main_cat": "venue",
+      "sub_cat": "venue_facilities",
+      "industry": "general",
+      "low": 1550,
+      "high": 7800,
+      "currency": "CNY"
+    },
+    {
+      "name_cn": "增值税VAT（欧洲各国19-25%不等）",
+      "name_en": "VAT / Sales Tax (varies 19-25% across EU/UK)",
+      "main_cat": "eu_compliance",
+      "sub_cat": "uk_tax",
+      "low": 19600,
+      "high": 98000
+    },
+    {
+      "name_cn": "场地服务费/行政费（12.5-20%）",
+      "name_en": "Venue Service Charge (12.5-20%)",
+      "main_cat": "eu_compliance",
+      "sub_cat": "uk_tax",
+      "low": 9800,
+      "high": 49000
+    },
+    {
+      "name_cn": "酒店增值税/城市税",
+      "name_en": "Hotel VAT / City Tax",
+      "main_cat": "eu_compliance",
+      "sub_cat": "uk_tax",
+      "low": 200,
+      "high": 800,
+      "unit": "per_room_per_night"
+    },
+    {
+      "name_cn": "餐饮服务费/小费（10-15%）",
+      "name_en": "F&B Service Charge / Gratuity (10-15%)",
+      "main_cat": "eu_compliance",
+      "sub_cat": "uk_tax",
+      "low": 4900,
+      "high": 29400
+    },
+    {
+      "name_cn": "临时活动/售酒许可证",
+      "name_en": "Temporary Event / Alcohol Licence (varies by country)",
+      "main_cat": "eu_compliance",
+      "sub_cat": "permits",
+      "low": 210,
+      "high": 210
+    },
+    {
+      "name_cn": "场地酒牌/经营许可费分摊",
+      "name_en": "Venue Alcohol / Operating Licence Fee",
+      "main_cat": "eu_compliance",
+      "sub_cat": "permits",
+      "low": 1000,
+      "high": 4900
+    },
+    {
+      "name_cn": "音乐版权许可费（PRS/GEMA/SACEM等）",
+      "name_en": "Music Copyright Licence (GEMA/SACEM/PRS etc.)",
+      "main_cat": "eu_compliance",
+      "sub_cat": "permits",
+      "low": 1000,
+      "high": 7800
+    },
+    {
+      "name_cn": "市政活动许可证（户外/大型活动）",
+      "name_en": "Municipal Event Licence (outdoor/large events)",
+      "main_cat": "eu_compliance",
+      "sub_cat": "permits",
+      "low": 1950,
+      "high": 19600
+    },
+    {
+      "name_cn": "噪音管理方案（Noise Management Plan）",
+      "name_en": "Noise Management Plan & Monitoring",
+      "main_cat": "eu_compliance",
+      "sub_cat": "permits",
+      "low": 2950,
+      "high": 14700
+    },
+    {
+      "name_cn": "深夜活动许可（22:00/23:00后）",
+      "name_en": "Late Night Event Licence (past 22:00-23:00)",
+      "main_cat": "eu_compliance",
+      "sub_cat": "permits",
+      "low": 1000,
+      "high": 4900
+    },
+    {
+      "name_cn": "历史保护建筑特殊使用许可",
+      "name_en": "Heritage / Listed Building Special Use Permit",
+      "main_cat": "eu_compliance",
+      "sub_cat": "permits",
+      "low": 1950,
+      "high": 9800
+    },
+    {
+      "name_cn": "食品卫生/安全注册（户外餐饮）",
+      "name_en": "Food Hygiene / Safety Registration (outdoor catering)",
+      "main_cat": "eu_compliance",
+      "sub_cat": "permits",
+      "low": 5,
+      "high": 1450
+    },
+    {
+      "name_cn": "公共责任险（€5-10M / £5-10M）",
+      "name_en": "Public Liability Insurance (€5-10M / £5-10M required)",
+      "main_cat": "eu_compliance",
+      "sub_cat": "insurance",
+      "low": 1950,
+      "high": 7800
+    },
+    {
+      "name_cn": "雇主责任险（雇用临时人员时强制）",
+      "name_en": "Employers Liability Insurance (mandatory if hiring staff)",
+      "main_cat": "eu_compliance",
+      "sub_cat": "insurance",
+      "low": 1000,
+      "high": 4900
+    },
+    {
+      "name_cn": "活动取消险",
+      "name_en": "Event Cancellation Insurance",
+      "main_cat": "eu_compliance",
+      "sub_cat": "insurance",
+      "low": 2950,
+      "high": 19600
+    },
+    {
+      "name_cn": "风险评估报告（Risk Assessment，欧洲强制）",
+      "name_en": "Health & Safety Risk Assessment (EU/UK mandatory)",
+      "main_cat": "eu_compliance",
+      "sub_cat": "health_safety",
+      "low": 2950,
+      "high": 14700
+    },
+    {
+      "name_cn": "急救人员驻场（First Aider）",
+      "name_en": "First Aider On-site (regulatory requirement)",
+      "main_cat": "eu_compliance",
+      "sub_cat": "health_safety",
+      "low": 1950,
+      "high": 5900,
+      "unit": "per_person_per_day"
+    },
+    {
+      "name_cn": "人员背景检查（涉及儿童/弱势群体活动）",
+      "name_en": "Background Check (events involving children/vulnerable)",
+      "main_cat": "eu_compliance",
+      "sub_cat": "health_safety",
+      "low": 230,
+      "high": 600,
+      "unit": "per_person"
+    },
+    {
+      "name_cn": "活动安全方案（Event Safety Plan）",
+      "name_en": "Event Safety Plan / Method Statement",
+      "main_cat": "eu_compliance",
+      "sub_cat": "health_safety",
+      "low": 4900,
+      "high": 24500
+    },
+    {
+      "name_cn": "城市中心拥堵费/低排放区费（各城市不同）",
+      "name_en": "City Centre Congestion / LEZ Charge (varies by city)",
+      "main_cat": "eu_compliance",
+      "sub_cat": "transport",
+      "low": 150,
+      "high": 150,
+      "unit": "per_vehicle_per_day"
+    },
+    {
+      "name_cn": "低排放区费用（伦敦/巴黎/柏林/阿姆斯特丹等）",
+      "name_en": "Low Emission Zone Charge (London/Paris/Berlin/Amsterdam)",
+      "main_cat": "eu_compliance",
+      "sub_cat": "transport",
+      "low": 120,
+      "high": 120,
+      "unit": "per_non_compliant_vehicle"
+    },
+    {
+      "name_cn": "卡车进城时段限制附加费",
+      "name_en": "HGV / Truck Delivery Time Restriction Surcharge",
+      "main_cat": "eu_compliance",
+      "sub_cat": "transport",
+      "low": 1000,
+      "high": 4900
+    },
+    {
+      "name_cn": "市中心停车费",
+      "name_en": "City Centre Parking",
+      "main_cat": "eu_compliance",
+      "sub_cat": "transport",
+      "low": 290,
+      "high": 800,
+      "unit": "per_vehicle_per_day"
+    },
+    {
+      "name_cn": "城市交通管理部门协调费（封路等）",
+      "name_en": "City Transport Authority Coordination (road closures)",
+      "main_cat": "eu_compliance",
+      "sub_cat": "transport",
+      "low": 4900,
+      "high": 49000
+    },
+    {
+      "name_cn": "搬运Loading Bay预约/时段费",
+      "name_en": "Loading Bay Booking / Time Slot Fee",
+      "main_cat": "eu_compliance",
+      "sub_cat": "transport",
+      "low": 1000,
+      "high": 4900
+    },
+    {
+      "name_cn": "国际嘉宾签证办理/邀请函",
+      "name_en": "International Speaker Visa Support / Invitation Letter",
+      "main_cat": "eu_compliance",
+      "sub_cat": "visa_employment",
+      "low": 5,
+      "high": 2950
+    },
+    {
+      "name_cn": "嘉宾工作许可/签证费（申根或UK）",
+      "name_en": "Speaker Work Permit / Visa Fee (Schengen or UK)",
+      "main_cat": "eu_compliance",
+      "sub_cat": "visa_employment",
+      "low": 1000,
+      "high": 2900
+    },
+    {
+      "name_cn": "用工合规检查（Right to Work）",
+      "name_en": "Right to Work / Employment Compliance Check",
+      "main_cat": "eu_compliance",
+      "sub_cat": "visa_employment",
+      "low": 5,
+      "high": 1000
+    },
+    {
+      "name_cn": "临时工最低工资合规（各国/城市标准不同）",
+      "name_en": "Local Minimum Wage Compliance (varies by city/country)",
+      "main_cat": "eu_compliance",
+      "sub_cat": "visa_employment",
+      "low": 130,
+      "high": 180,
+      "unit": "per_person_per_hour"
+    },
+    {
+      "name_cn": "Dry Hire场地空租（自带餐饮许可费）",
+      "name_en": "Dry Hire - External Catering Permission Fee",
+      "main_cat": "eu_compliance",
+      "sub_cat": "venue_surcharge",
+      "low": 1950,
+      "high": 9800
+    },
+    {
+      "name_cn": "自带酒水开瓶费（Corkage Fee）",
+      "name_en": "Corkage Fee (BYO wine/spirits)",
+      "main_cat": "eu_compliance",
+      "sub_cat": "venue_surcharge",
+      "low": 100,
+      "high": 290,
+      "unit": "per_bottle"
+    },
+    {
+      "name_cn": "公共假日/周末场地溢价",
+      "name_en": "Public Holiday / Weekend Venue Surcharge",
+      "main_cat": "eu_compliance",
+      "sub_cat": "venue_surcharge",
+      "low": 4900,
+      "high": 29400
+    },
+    {
+      "name_cn": "场地最低消费要求（Minimum Spend）",
+      "name_en": "Venue Minimum Spend Requirement",
+      "main_cat": "eu_compliance",
+      "sub_cat": "venue_surcharge",
+      "low": 9800,
+      "high": 147000
+    },
+    {
+      "name_cn": "场地清洁押金/损坏保证金",
+      "name_en": "Venue Damage Deposit / Cleaning Deposit",
+      "main_cat": "eu_compliance",
+      "sub_cat": "venue_surcharge",
+      "low": 4900,
+      "high": 29400
+    },
+    {
+      "name_cn": "延时使用费（22:00/23:00后）",
+      "name_en": "Late Finish Fee (past 22:00/23:00)",
+      "main_cat": "eu_compliance",
+      "sub_cat": "venue_surcharge",
+      "low": 2950,
+      "high": 14700,
+      "unit": "per_hour"
+    },
+    {
+      "name_cn": "门卫/Door Supervisor（售酒活动强制）",
+      "name_en": "Door Supervisor (mandatory if alcohol served)",
+      "main_cat": "eu_compliance",
+      "sub_cat": "security",
+      "low": 1950,
+      "high": 3900,
+      "unit": "per_person_per_shift"
+    },
+    {
+      "name_cn": "警力协调费（特大型活动）",
+      "name_en": "Police Coordination (very large events)",
+      "main_cat": "eu_compliance",
+      "sub_cat": "security",
+      "low": 9800,
+      "high": 49000
+    },
+    {
+      "name_cn": "河上游船活动（泰晤士/塞纳/施普雷等）",
+      "name_en": "River Cruise / Boat Event (Thames/Seine/Spree etc.)",
+      "main_cat": "eu_venue_special",
+      "sub_cat": "unique",
+      "low": 29400,
+      "high": 147000
+    },
+    {
+      "name_cn": "创意区空间（Shoreditch/Marais/Kreuzberg等）",
+      "name_en": "Creative District Space (Shoreditch/Marais/Kreuzberg etc.)",
+      "main_cat": "eu_venue_special",
+      "sub_cat": "unique",
+      "low": 19600,
+      "high": 78500
+    },
+    {
+      "name_cn": "文化滨水区场地（South Bank/Rive Gauche等）",
+      "name_en": "Cultural Waterfront Venue (South Bank/Rive Gauche etc.)",
+      "main_cat": "eu_venue_special",
+      "sub_cat": "unique",
+      "low": 29400,
+      "high": 147000
+    },
+    {
+      "name_cn": "核心区顶级场地（Mayfair/8区/Mitte等）",
+      "name_en": "Premium City Centre Venue (Mayfair/8e Arr./Mitte etc.)",
+      "main_cat": "eu_venue_special",
+      "sub_cat": "premium",
+      "low": 49000,
+      "high": 245000
+    },
+    {
+      "name_cn": "皇家宫殿/国家级历史场地",
+      "name_en": "Historic Palace / State Venue",
+      "main_cat": "eu_venue_special",
+      "sub_cat": "premium",
+      "low": 98000,
+      "high": 294000
+    },
+    {
+      "name_cn": "大型博物馆包场（V&A/卢浮宫/佩加蒙等）",
+      "name_en": "Major Museum Buyout (V&A/Louvre/Pergamon etc.)",
+      "main_cat": "eu_venue_special",
+      "sub_cat": "premium",
+      "low": 98000,
+      "high": 490000
+    },
+    {
+      "name_cn": "剧院区场地（West End/Boulevard等）",
+      "name_en": "Theatre District Venue (West End/Boulevard etc.)",
+      "main_cat": "eu_venue_special",
+      "sub_cat": "premium",
+      "low": 49000,
+      "high": 245000
+    },
+    {
+      "name_cn": "金融区活动空间（Canary Wharf/La Défense等）",
+      "name_en": "Financial District Event Space (Canary Wharf/La Défense etc.)",
+      "main_cat": "eu_venue_special",
+      "sub_cat": "unique",
+      "low": 19600,
+      "high": 98000
+    },
+    {
+      "name_cn": "城市更新区创意场地",
+      "name_en": "Urban Regeneration District Venue",
+      "main_cat": "eu_venue_special",
+      "sub_cat": "unique",
+      "low": 24500,
+      "high": 117500
+    },
+    {
+      "name_cn": "宫殿花园/Orangery场地",
+      "name_en": "Palace Garden / Orangery Venue",
+      "main_cat": "eu_venue_special",
+      "sub_cat": "premium",
+      "low": 78500,
+      "high": 245000
+    },
+    {
+      "name_cn": "大型展览中心（ExCeL/Messe/Expo Porte等）",
+      "name_en": "Major Exhibition Centre (ExCeL/Messe/Expo Porte etc.)",
+      "main_cat": "eu_venue_special",
+      "sub_cat": "convention",
+      "low": 49000,
+      "high": 294000
+    },
+    {
+      "name_cn": "次级展览馆",
+      "name_en": "Secondary Exhibition Hall",
+      "main_cat": "eu_venue_special",
+      "sub_cat": "convention",
+      "low": 49000,
+      "high": 245000
+    }
+  ]
+}

@@ -117,6 +117,21 @@ async def _analyze_reference_style(reference_image, module) -> str:
     return parse_structured(resp, ReferenceStyleOut).style_guide
 
 
+def _strip_placeholder_midnight(time_start):
+    """活动没给具体钟点时,抽取常把时间补成 00:00;海报别把这个假午夜印上去,只留日期。"""
+    if not time_start:
+        return time_start
+    text = str(time_start).strip()
+    for separator in (" ", "T"):
+        if separator in text:
+            date_part, _, time_part = text.partition(separator)
+            # 00:00 / 00:00:00 全是 0 → 占位午夜,丢掉只留日期;真实钟点(如 00:30)保留
+            if time_part.strip() and time_part.replace(":", "").strip("0") == "":
+                return date_part.strip()
+            break
+    return text
+
+
 async def _build_generation_prompt(*, event, host, user_prompt, language,
                                    poster_style, event_color, module, reference_image=None) -> str:
     prompt_data = load_yaml("system_tool.yaml")
@@ -129,7 +144,7 @@ async def _build_generation_prompt(*, event, host, user_prompt, language,
         prompt_data[POSTER_TOOL], where="poster_tool",
         event_name=event.get("event_name"),
         theme=event.get("theme"),
-        startDate=event.get("time_start"),
+        startDate=_strip_placeholder_midnight(event.get("time_start")),
         location=event.get("location"),
         attendees=event.get("attendees"),
         prompt=user_prompt,

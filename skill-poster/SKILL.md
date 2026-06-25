@@ -27,8 +27,9 @@ required_environment_variables:
    **先跑 `python engine/doctor.py`** 看图像档是否可用。
 2. **若图像档不可用,本工具会自动降级**:仍然产出并保存「生成指令(generation_prompt)」,只是不出图。
    这不是报错——你(Claude)要把 prompt 给用户,让他拿去任何能生图的工具用。
-3. 单机版**不含**海报精修(去文字 / OCR 版面分析)——那条链路依赖 Google Cloud Vision 服务账号,
-   不是一个 api-key 能搞定的,v1 不做。
+3. **文字可编辑(可选)**:出图后可把文字做成可改的——GCV OCR 取精确文字框、`gemini-2.5-flash-image`
+   消字、再用系统字体把文字渲染回去(见下文「文字可编辑」)。**需要 GCV 服务账号**
+   (`GOOGLE_APPLICATION_CREDENTIALS` 指向其 JSON,独立于 `GEMINI_API_KEY`);没有它**不影响普通出图**,只是用不了这条可编辑流程。
 
 ## 缺东西先弹窗问,别报错也别瞎填(AskUserQuestion)
 本 skill 在 Claude Code 里靠**你(Claude)调用 `AskUserQuestion` 工具**弹窗收集缺失信息——
@@ -37,6 +38,9 @@ required_environment_variables:
 
 - **缺 `GEMINI_API_KEY`**:处理见 [`references/API-KEY.md`](../references/API-KEY.md)——先检测、已配置别再弹;缺了才弹,给「自己改 .env / 直接粘贴」两条路,key 写进**项目根** `.env`(不是沙箱),别甩报错。(出图还需**计费档** Key。)
 - **缺风格/规格**:用下面步骤 2 的 AskUserQuestion 弹窗问,别默认、别瞎填。
+**海报会印在对外成品上的字段,出图前按 [`references/PREFLIGHT.md`](../references/PREFLIGHT.md) 先 preflight:**
+- **活动开始时间 —— 必问**(无安全默认、会印上对外海报):海报底部会印 `event.time_start`。若它**只有日期、没有具体钟点**(抽取时常被补成 `00:00`),**别让海报印出 `… 00:00` 这种半夜占位**——出图前用 AskUserQuestion 问用户具体开始时间;用户暂时没定 → **只印日期**。(脚本已会自动剥掉占位的 `00:00`,这里再问一道是给用户补真实时间的机会。)
+- **主标题 / 副标题 —— 必确认(建议默认·可改)**:海报主视觉文字默认从 `event_name` / `theme` 衍生。出图前把这个草稿**摊给用户瞄一眼、"要改才改"**再出——避免主/副标题重复、过长或不达意就直接印上对外海报。
 
 ## 步骤(Procedure)
 1. **确认上下文**:有没有 `event.json`/`host.json`?没有先跑 loevent-init。
@@ -89,6 +93,54 @@ required_environment_variables:
 > (然后把 generation_poster_prompt 贴出来给用户,并附一句中文说明它描述了什么。)
 
 要点:成功就给**文件路径 + 一句话设计概括**;降级就**讲清原因 + 把 prompt 交付给用户**,绝不报错式甩 traceback。
+
+## 文字可编辑(可选,出图后)—— 把"烤进像素的字"变成可改的
+
+图像模型把文字烤进像素,容易错字、混语言、不可改。需要文字可控/可改时,出图后走这条
+(脚本 `skill-poster/scripts/poster_text.py`;中文渲染走**系统字体**,不打包不下载):
+
+**前置**:**GCV 服务账号**——把 **`GOOGLE_APPLICATION_CREDENTIALS`** 指向 Vision 服务账号 JSON 的路径
+(service account,**独立于 `GEMINI_API_KEY`**;该 JSON 是密钥,**放仓库外、别提交**)。缺它这条流程跑不了,但普通出图不受影响。
+
+1. **OCR 取精确文字框**(GCV):
+   ```bash
+   python skill-poster/scripts/poster_text.py ocr --image poster_1.png
+   # → poster_ocr.json:[{text, box:{x,y,w,h} 归一化}, ...]
+   ```
+2. **消字**得到干净底图(需计费档 image key):
+   ```bash
+   python skill-poster/scripts/poster_text.py erase --image poster_1.png   # → poster_1_clean.png
+   ```
+3. **你(Claude)把 OCR 框 + event.json 合成文字图层**:读 `poster_ocr.json`(**精确位置**)+ 看 `poster_1.png`
+   (取颜色/判角色)+ `event.json`(**校正文字内容、纠模型错字**),写出 `poster_text_layers.json`:
+   ```json
+   { "layers": [
+     {"text": "AI 开发者大会 2026", "x": 0.5, "y": 0.06, "font_scale": 0.05, "color": "#FFFFFF", "bold": true, "align": "center"}
+   ] }
+   ```
+   位置从 OCR 框换算:`align=center` 时 `x`=框中心、`y`=框顶、`font_scale`=框高/图高;颜色取原图对应处;**内容以 event.json 为准**。
+4. **渲染**(纯本地,不需 key):
+   ```bash
+   python skill-poster/scripts/poster_text.py render --image poster_1_clean.png   # 读 poster_text_layers.json → poster_1_final.png
+   ```
+5. **改字两种方式**(都不用重新 OCR/消字,改完只重跑 **render**):
+   - **对话式**:用户说"标题改成 X / 日期上移 / 换个色",你直接改 `poster_text_layers.json` 再 render;
+   - **可视化(可选)**:生成一个浏览器里能**改字/拖位**的预览页让用户自己调:
+     ```bash
+     python skill-poster/scripts/poster_text.py preview --image poster_1_clean.png
+     # → poster_1_edit.html(自包含单文件,底图已内嵌,双击用浏览器打开)
+     ```
+     用户在页面里改字/拖位 → 点「导出图层 JSON」复制 → 发回给你 → 你写进 `poster_text_layers.json` → 重跑 render 出**高清成品 PNG**。
+
+> 说明:本包**没有持续运行的前端**。`poster_1_final.png` 是**扁平成品图**;`preview` 那个 HTML 是个
+> **一次性的本地编辑器**(底图 base64 内嵌、不依赖相对路径,所以不会"图找不到/显示空白"),用完导出图层即可。
+> "可编辑"的本质是:**改图层 JSON → 重渲**,而不是一个常驻的可编辑画布。
+
+要点:
+- **位置来自 OCR(准)、内容以 event.json 为准(对)**——别照抄模型可能拼错的字;
+- 中文字体自动探测系统字体,探不到会提示"装一个 / 放进 assets/fonts/ / 设 `LOEVENT_POSTER_FONT`";
+- 渲染会**自动缩字防溢出**;字体观感可能和原图烤的字有差(这是用"可控正确"换"字体完全一致"的预期取舍);
+- **成品约 1K 清晰度**:消字用的 `gemini-2.5-flash-image` 原生 ~1024px、不支持 2K/4K,所以可编辑流程的最终图被这步限到 ~1K(社媒/预览够用;要更高清得改用 `gemini-3-pro-image` 消字,但它去字效果较差,是另一个取舍)。
 
 ## 易错点(Pitfalls)
 - 缺 `event.json`/`host.json` → 先 loevent-init。

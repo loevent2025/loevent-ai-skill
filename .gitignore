@@ -3,6 +3,13 @@
 .env.*
 !.env.example
 
+# Google 服务账号 / 凭据 JSON(GCV 文字可编辑用;是密钥,绝不入库)
+*AccountKey*.json
+*ServiceAccount*.json
+*service-account*.json
+*-credentials.json
+*googlevision*.json
+
 # 运行产物(含真实活动/主办方/受众等私密业务数据,默认落工作目录)
 event.json
 host.json
@@ -16,6 +23,8 @@ host_bio.json
 luma.json
 company.json
 guests.json
+poster_ocr.json
+poster_text_layers.json
 poster_*.png
 work/
 .loevent/

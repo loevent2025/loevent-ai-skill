@@ -6,10 +6,10 @@ Jinja2>=3.1.6
 python-dotenv>=1.0.1
 # skill-guests:基于活动 time_start 倒推"近半年"时间窗(relativedelta)
 python-dateutil>=2.8.2
-# poster 生成:纯生成(组 prompt + 出图)不需要额外依赖;
-# 仅在用「参考图」(--reference 本地图片)时才需要 Pillow:
-#   Pillow>=10.0.0
+# poster 文字可编辑:消字底图 + Pillow 渲染文字图层(中文走系统字体)与参考图都需要 Pillow:
+Pillow>=10.0.0
+# poster 文字可编辑的 OCR 取精确文字框,走 Google Cloud Vision(service account 认证,
+# GOOGLE_APPLICATION_CREDENTIALS 指向其 JSON;仅这条流程需要,不影响普通出图):
+google-cloud-vision>=3.7.0
 # skill-budget:仅当要解析 plan 里的 HTML 议程时才需要(懒加载,缺则跳过该段):
 #   beautifulsoup4>=4.12.0
-# OCR 海报精修(单机版 v1 不做,需 Google Cloud Vision service-account):
-#   google-cloud-vision>=3.11.0

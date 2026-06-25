@@ -24,7 +24,7 @@ required_environment_variables:
 
 ## 缺东西先弹窗问,别报错也别瞎填(AskUserQuestion)
 **缺 `GEMINI_API_KEY` 的处理见 [`references/API-KEY.md`](../references/API-KEY.md)**:先检测、已配置就别再弹;确实缺才弹一次,给「自己改 .env / 直接粘贴」两条路,key 写进**项目根** `.env`(不是沙箱),别甩报错。
-(本工具的 `event_goal` / `objective` / `GTMmatrix` 等都能从 `event.json`/`plan.json` 取值或走默认,不必弹窗硬问;只有用户想覆盖时才问。)
+**参数 preflight 见 [`references/PREFLIGHT.md`](../references/PREFLIGHT.md)**:`event_goal` / `objective` / `GTMmatrix` 影响产出,属**必确认(建议默认·可改)**——从 `event.json`/`plan.json` 推出草稿默认值后**摊给用户瞄一眼**(一次问完、"要改才改"),别静默填、也别硬逼他填。
 
 ## 步骤(Procedure)
 1. **先确认上下文**:工作目录有没有 `event.json`/`host.json`?没有 → 先用 loevent-init 生成。

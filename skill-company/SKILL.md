@@ -36,7 +36,7 @@ required_environment_variables:
 
 ## 缺东西先弹窗问,别报错也别瞎填(AskUserQuestion)
 **缺 `GEMINI_API_KEY` 的处理见 [`references/API-KEY.md`](../references/API-KEY.md)**:先检测、已配置就别再弹;确实缺才弹一次,给「自己改 .env / 直接粘贴」两条路,key 写进**项目根** `.env`(不是沙箱),别甩报错。
-(`max_competitors` / `event_goal` 等均有默认或仅留档,不必弹窗硬问;受众画像缺失走"先跑 loevent-audience"的串接,不在此弹窗。)
+**参数 preflight 见 [`references/PREFLIGHT.md`](../references/PREFLIGHT.md)**:`max_competitors`(竞品数)影响调研范围与产出,属**必确认**——把默认值(2)摊给用户、"要改才改"再跑(越多越慢)。`event_goal` / `GTMmatrix` 在本工具**仅留档、调研逻辑不消费 → 沉默**,别问。(受众画像缺失走"先跑 loevent-audience"的串接,不在此弹窗。)
 
 ## 步骤(Procedure)
 1. **确认上下文**：

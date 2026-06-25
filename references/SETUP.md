@@ -13,7 +13,7 @@
    ```bash
    python engine/doctor.py
    ```
-   它会:验 Key → 探文本模型(grounding 也走它)→ 探图像档权限 → 提示 OCR/地图需另配。
+   它会:验 Key → 探文本模型 → 探 Google Search grounding(走 gemini-3.5-flash)→ 探图像档权限 → 提示 OCR/地图需另配。
 4. **缺权限自动降级**:doctor 报图像档/Vision 不可用时,海报类步骤标「跳过/降级」,**文本类 skill 照常跑**。
 5. **工作目录**:同一个活动的所有 skill 共用一个目录(用 `LOEVENT_WORKDIR` 指定,缺省当前目录)。
    - 先跑 `skill-init` 把活动描述抽成 `event/host/plan.json`;

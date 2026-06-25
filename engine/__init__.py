@@ -29,7 +29,9 @@ from .llm_client import get_llm_client, LLMResponse
 from .config_loader import load_yaml, safe_render
 from .runtime import parse_structured, run_skill_main
 from . import model_config
-from . import context_local
+# context_local 故意不在此 eager 导入:它带 __main__ CLI(python -m engine.context_local --clear),
+# 包初始化时若先导入它,runpy 再以 __main__ 执行会报 RuntimeWarning(模块已在 sys.modules)。
+# 各 skill 用 `from engine import context_local` 仍能正常拿到(子模块按需导入)。
 
 __all__ = [
     "get_llm_client",
@@ -39,5 +41,4 @@ __all__ = [
     "parse_structured",
     "run_skill_main",
     "model_config",
-    "context_local",
 ]

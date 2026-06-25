@@ -4,14 +4,17 @@
 与后端 services/ai_tools/ai_utils/ai_config.py 顶部常量逐字一致。
 模型升级 / doctor 探测降级,只改这一个文件。
 
-注:grounding(Google Search)与所有纯文本调用一样,走默认文本模型
-MODEL_GEMINI_TEXT —— 后端从未对带搜索的调用做 per-call 模型覆盖,
-此处保持一致(全仓不存在 gemini-3.5)。
+注:Google Search grounding 走**专用模型** MODEL_GEMINI_GROUNDING(gemini-3.5-flash);
+纯文本/非搜索调用走 MODEL_GEMINI_TEXT。这是单机版对后端的**有意偏离**——
+后端不对带搜索的调用做 per-call 模型覆盖,此处特意为 grounding 指定 3.5-flash。
 """
 
-# ── Gemini 文本(AI Studio);grounding 也走这个默认模型 ──────────
+# ── Gemini 文本(AI Studio);纯文本/非搜索调用走这个默认模型 ──────────
 MODEL_GEMINI_TEXT           = "gemini-3-flash-preview"
 MODEL_GEMINI_TEXT_FALLBACK  = "gemini-2.5-flash"
+
+# ── Google Search grounding 专用模型(单机版有意偏离后端:带搜索的调用固定走它)──
+MODEL_GEMINI_GROUNDING      = "gemini-3.5-flash"
 
 # ── Gemini 图像(AI Studio)──────────────────────────────────
 MODEL_GEMINI_IMAGE          = "gemini-3-pro-image"        # GA endpoint (preview retires 2026-07-17)
@@ -64,4 +67,7 @@ def get_fallback_model(model: str):
         return MODEL_GEMINI_IMAGE_FALLBACK
     if model == MODEL_GEMINI_TEXT:
         return MODEL_GEMINI_TEXT_FALLBACK
+    if model == MODEL_GEMINI_GROUNDING:
+        # grounding 模型失败 → 回落到默认文本模型(它同样支持 Google Search)
+        return MODEL_GEMINI_TEXT
     return None

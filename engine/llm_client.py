@@ -28,6 +28,7 @@ from google.genai.types import GoogleSearch, Tool, UrlContext
 
 from .model_config import (
     MODEL_GEMINI_TEXT,
+    MODEL_GEMINI_GROUNDING,
     MODEL_GEMINI_IMAGE,
     get_fallback_model,
 )
@@ -138,8 +139,10 @@ class GeminiSingleKeyClient:
             enable_thinking=enable_thinking,
             max_output_tokens=max_output_tokens,
         )
+        # 带 Google Search grounding 的调用固定走专用模型;纯文本/url_context 走默认
+        model = MODEL_GEMINI_GROUNDING if use_google_search else self._model
         raw = await self._call_with_fallback(
-            model=self._model, prompt=prompt, config=config,
+            model=model, prompt=prompt, config=config,
             history=history, module=module,
         )
         return self._wrap_text_response(raw, module=module, thinking_requested=enable_thinking)

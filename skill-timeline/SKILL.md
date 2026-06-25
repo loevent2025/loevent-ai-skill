@@ -40,25 +40,25 @@ required_environment_variables:
 
 ## 缺东西先弹窗问,别报错也别瞎填(AskUserQuestion)
 **缺 `GEMINI_API_KEY` 的处理见 [`references/API-KEY.md`](../references/API-KEY.md)**:先检测、已配置就别再弹;确实缺才弹一次,给「自己改 .env / 直接粘贴」两条路,key 写进**项目根** `.env`(不是沙箱),别甩报错。
-(`preparation_start_date` 有默认、`prompt` 可选,均不必弹窗硬问;活动日期 `time_start` 缺失属上游 `event.json` 问题,走"先跑 loevent-init"的串接。)
+**`preparation_start_date`(筹备开始日)= 必问**(见 [`references/PREFLIGHT.md`](../references/PREFLIGHT.md)):它定整条倒排期的起点、且**没有安全默认**(写死的日期会过期变成过去日,把排期算坏),所以**跑之前用 `AskUserQuestion` 让用户选或填**——header `筹备开始日`,选项给「从今天开始」/「我指定日期」(用 Other 填 `YYYY-MM-DD`),**默认建议「今天」**。(`prompt` 可选不必问;活动日期 `time_start` 缺失属上游 `event.json` 问题,走"先跑 loevent-init"的串接。)
 
 ## 步骤(Procedure)
 1. **确认上下文**:有没有 `event.json`/`host.json`?没有先跑 **loevent-init**。
    确认 `event.json` 里有 `time_start`(活动日期,`YYYY-MM-DD`)——日期数学全靠它。
 2. **采集少量输入(向用户问清,别瞎填)**,写进工作目录的 `timeline_input.json`:
-   - `preparation_start_date`:筹备开始日 `YYYY-MM-DD`(默认 `2026-01-21`);
+   - `preparation_start_date`:筹备开始日 `YYYY-MM-DD`——**按上面 preflight 用 AskUserQuestion 让用户选/填**(默认今天),别用写死的日期;
    - `user_tasks`:用户**必须保留、不可删**的自定义任务(可选,数组);
    - `prompt`:额外说明(如"嘉宾以 VC 为主,提前锁场地")。
    ```json
    {
-     "preparation_start_date": "2026-01-21",
+     "preparation_start_date": "2026-08-01",
      "user_tasks": [
-       {"task_name": "CEO 主题演讲彩排", "tag": "General", "startDate": "2026-03-10", "endDate": "2026-03-11", "priority": "P0"}
+       {"task_name": "CEO 主题演讲彩排", "tag": "General", "startDate": "2026-09-10", "endDate": "2026-09-11", "priority": "P0"}
      ],
      "prompt": "嘉宾以一线 VC 为主,场地需尽早锁定"
    }
    ```
-   (也可用命令行:`--start 2026-01-21 --prompt "…"`。)
+   (也可用命令行:`--start 2026-08-01 --prompt "…"`。)
 3. 运行:
    ```bash
    python skill-timeline/scripts/run.py

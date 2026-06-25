@@ -109,8 +109,9 @@ def _build_prompt_vars(plan: dict, host: dict) -> tuple:
 
     if isinstance(ai_extracted, dict) and ai_extracted:
         # —— ai_extracted 路径 ——
-        scene_type = ai_extracted.get("scene_type", "business_conferences").lower()
-        event_scale = ai_extracted.get("event_scale", "medium")
+        # init 把 scene_type/event_scale 写在 plan 顶层(不在 ai_extracted 里),故顶层优先,ai_extracted 兜底
+        scene_type = (plan.get("scene_type") or ai_extracted.get("scene_type") or "business_conferences").lower()
+        event_scale = plan.get("event_scale") or ai_extracted.get("event_scale") or "medium"
 
         # 嘉宾数组转文本(confirmed 优先,其次 recommended)
         guests_raw = ai_extracted.get("guests") or {}

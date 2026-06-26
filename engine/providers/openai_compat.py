@@ -53,6 +53,21 @@ def _prompt_to_text(prompt: Any) -> str:
     return str(prompt)
 
 
+def _native_search_extra_body(native_search: str):
+    """该供应商的「原生联网搜索」怎么并进 chat 请求(走 openai SDK 的 extra_body,直达请求体)。
+
+    返回 None = 没有可自动用的原生搜索(Kimi 的 $web_search 是多步、豆包要控制台开插件、DeepSeek 无)
+    → 调用方回落到外部搜索。理论兼容、真机未验证,换真实 key 再核实各家参数。
+    """
+    if native_search == "enable_search":      # 通义 Qwen / DashScope
+        return {"enable_search": True}
+    if native_search == "web_search_tool":    # 智谱 GLM
+        return {"tools": [{"type": "web_search", "web_search": {"enable": True, "search_engine": "search_pro"}}]}
+    if native_search == "web_search_top":     # 百度文心 ERNIE
+        return {"web_search": {"enable": True}}
+    return None
+
+
 class OpenAICompatClient:
     def __init__(self, cfg: TextProviderConfig):
         self._cfg = cfg
@@ -73,12 +88,22 @@ class OpenAICompatClient:
                        max_output_tokens: Optional[int] = None,
                        history: Optional[List[Dict[str, Any]]] = None) -> LLMResponse:
         grounding_source = None
+        native_search_body = None
         if use_google_search or enable_url_context:
-            # P2:别家没有「边搜边答」,改走外部搜索两步——提议查询→搜索→把结果拼进 prompt→综述
-            prompt, grounding_source = await self._apply_grounding(prompt, module)
+            # 混合:有原生搜索的家(且没显式配外部)→ 走原生(一次调用,模型自己搜+答);
+            #       没原生 / 显式配了外部 → 走外部两步(Bocha/Tavily)。
+            search_env = os.environ.get("LOEVENT_SEARCH_PROVIDER", "").strip().lower()
+            explicit_external = search_env not in ("", "none")
+            native_search_body = None if explicit_external else _native_search_extra_body(self._cfg.native_search)
+            if native_search_body is not None:
+                grounding_source = f"{self._cfg.name}_native"
+            else:
+                prompt, grounding_source = await self._apply_grounding(prompt, module)
 
         messages = self._build_messages(system_prompt, prompt, response_schema, history)
         request = self._build_request(messages, response_schema, max_output_tokens)
+        if native_search_body is not None:
+            request.setdefault("extra_body", {}).update(native_search_body)
         resp = await self._call(request, module)
         text = self._content_of(resp)
 

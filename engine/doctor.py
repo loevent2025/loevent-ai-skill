@@ -76,10 +76,12 @@ async def main() -> int:
         print(f"⚠ 搜索供应商配置有误(LOEVENT_SEARCH_*): {e}")
     if text_cfg is not None:
         if search is not None:
-            print(f"✓ 外部搜索已配({search.name})→ 联网调研类 skill 有 grounding")
+            print(f"✓ 外部搜索已配({search.name})→ 联网调研走外部(显式覆盖原生)")
+        elif text_cfg.native_search:
+            print(f"✓ {text_cfg.name} 有原生联网搜索 → 联网调研默认走它的原生(没配外部也行)")
         else:
-            print("⚠ 未配 LOEVENT_SEARCH_PROVIDER → 多供应商下联网调研类 skill 默认会**报错中止**(避免无来源编造);"
-                  "请配 bocha/tavily(+LOEVENT_SEARCH_API_KEY),或设 LOEVENT_ALLOW_UNGROUNDED=1 接受无 grounding。")
+            print(f"⚠ {text_cfg.name} 无原生搜索、也未配 LOEVENT_SEARCH_PROVIDER → 联网调研类 skill 默认**报错中止**"
+                  "(避免无来源编造);请配 bocha/tavily(+LOEVENT_SEARCH_API_KEY),或设 LOEVENT_ALLOW_UNGROUNDED=1。")
     elif has_gemini:
         print(f"· 探测 Gemini grounding {MODEL_GEMINI_GROUNDING} …")
         if await _probe_text(MODEL_GEMINI_GROUNDING, use_google_search=True):

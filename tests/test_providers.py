@@ -610,3 +610,74 @@ def test_ocr_messages_are_multimodal():
     from engine.providers.ocr import MultimodalOcrProvider
     content = MultimodalOcrProvider("http://x", "m", "k", "t")._build_messages("data:image/png;base64,AAA")[0]["content"]
     assert any(c["type"] == "image_url" for c in content) and any(c["type"] == "text" for c in content)
+
+
+# ── 混合 grounding:有原生走原生、没原生走外部 ──
+def _client_native(native_search="enable_search"):
+    cfg = TextProviderConfig(name="qwen", base_url="http://x/v1", model="m", api_key="k",
+                             structured_tier="json_object", needs_json_keyword=True,
+                             native_search=native_search, supported=False)
+    return OpenAICompatClient(cfg)
+
+
+def test_native_search_extra_body_mapping():
+    from engine.providers.openai_compat import _native_search_extra_body
+    assert _native_search_extra_body("enable_search") == {"enable_search": True}
+    assert "tools" in _native_search_extra_body("web_search_tool")          # GLM
+    assert _native_search_extra_body("builtin_web_search") is None          # Kimi 多步 → 回落外部
+    assert _native_search_extra_body("") is None                            # DeepSeek 无原生
+
+
+def test_grounding_uses_native_when_available(monkeypatch):
+    # 有原生(Qwen enable_search)+ 没配外部 → 走原生:extra_body 进请求、不走外部两步
+    _clear_env(monkeypatch)
+    client = _client_native("enable_search")
+    captured = {}
+
+    async def _fake_call(request, module):
+        captured["request"] = request
+        return _FakeResp("答案")
+    monkeypatch.setattr(client, "_call", _fake_call)
+
+    resp = asyncio.run(client.generate(module="x", prompt="研究X", use_google_search=True))
+    assert resp.grounding_source == "qwen_native" and resp.used_google_search is True
+    assert captured["request"].get("extra_body", {}).get("enable_search") is True
+
+
+def test_explicit_external_overrides_native(monkeypatch):
+    # 即使有原生,显式配了 LOEVENT_SEARCH_PROVIDER=bocha → 强制走外部两步,不走原生
+    _clear_env(monkeypatch)
+    monkeypatch.setenv("LOEVENT_SEARCH_PROVIDER", "bocha")
+    monkeypatch.setenv("LOEVENT_SEARCH_API_KEY", "k")
+    client = _client_native("enable_search")
+
+    from engine.providers.grounding import SearchResult
+
+    class _FakeSearch:
+        name = "bocha"
+        async def search(self, query, top_k=8):
+            return [SearchResult("t", "http://u", "s", "")]
+    monkeypatch.setattr("engine.providers.grounding.resolve_grounding_provider", lambda: _FakeSearch())
+
+    async def _fake_propose(prompt, module):
+        return ["q"]
+    monkeypatch.setattr(client, "_propose_queries", _fake_propose)
+
+    captured = {}
+
+    async def _fake_call(request, module):
+        captured["request"] = request
+        return _FakeResp("答案")
+    monkeypatch.setattr(client, "_call", _fake_call)
+
+    resp = asyncio.run(client.generate(module="x", prompt="研究X", use_google_search=True))
+    assert resp.grounding_source == "bocha"                # 外部,不是 qwen_native
+    assert "extra_body" not in captured["request"]         # 没走原生
+
+
+def test_no_native_no_external_strict(monkeypatch):
+    # 没原生(native_search="")+ 没配外部 → 严格报错(回落外部但外部没配)
+    _clear_env(monkeypatch)
+    client = _client_native("")
+    with pytest.raises(RuntimeError):
+        asyncio.run(client.generate(module="x", prompt="t", use_google_search=True))

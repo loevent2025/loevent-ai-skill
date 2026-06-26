@@ -37,36 +37,76 @@ async def main() -> int:
     print("== LoEvent AI Skill · 环境自检 ==")
     ok = True
 
-    # 1) Key
-    if not os.environ.get("GEMINI_API_KEY", "").strip():
-        print("✗ 未检测到 GEMINI_API_KEY。请在 .env 设置或 export。")
-        return 1
-    print("✓ GEMINI_API_KEY 已设置")
-
-    # 2) 文本模型可达(纯文本/非搜索调用走这个)
-    print(f"· 探测文本模型 {MODEL_GEMINI_TEXT} …")
-    if await _probe_text(MODEL_GEMINI_TEXT):
-        print(f"✓ 文本管线可用(默认 {MODEL_GEMINI_TEXT},fallback {MODEL_GEMINI_TEXT_FALLBACK})")
-    else:
-        print("✗ 文本模型不可达 —— 所有文本类 skill 无法运行,请检查 Key/配额。")
-        ok = False
-
-    # 3) grounding 模型可达(联网调研类 skill 用;Google Search 调用走它,失败回落默认文本模型)
-    print(f"· 探测 Google Search grounding 模型 {MODEL_GEMINI_GROUNDING} …")
-    if await _probe_text(MODEL_GEMINI_GROUNDING, use_google_search=True):
-        print(f"✓ grounding 可用(trends/company/guests/budget 走 {MODEL_GEMINI_GROUNDING})")
-    else:
-        print("⚠ grounding 不可达 → 联网调研类 skill(trends/company/guests/budget)可能降级或失败;"
-              "纯文本类 skill 不受影响。")
-
-    # 4) 图像档(海报类需要;免费 Key 大概率不行 → 降级)
-    print(f"· 探测图像档权限 {MODEL_GEMINI_IMAGE} …")
+    # 先判活动路径:配了多供应商(LOEVENT_TEXT_*)就探它,否则回落 Gemini(GEMINI_API_KEY)
+    from engine.providers.config import resolve_text_provider, resolve_image_provider
+    from engine.providers.grounding import resolve_grounding_provider
     try:
-        llm = get_llm_client()
-        await llm.generate_image(module="doctor", prompt="a tiny gray dot on white", image_size="1K")
-        print("✓ 图像档可用(skill-poster 可生图)")
+        text_cfg = resolve_text_provider()
     except Exception as e:
-        print(f"⚠ 图像档不可用 → skill-poster 降级/跳过生图(文本类 skill 不受影响)。原因: {type(e).__name__}")
+        print(f"✗ 文本供应商配置有误(LOEVENT_TEXT_*): {e}")
+        return 1
+    has_gemini = bool(os.environ.get("GEMINI_API_KEY", "").strip())
+
+    # 1) 文本路径
+    if text_cfg is not None:
+        tag = "官方实测背书" if text_cfg.supported else "理论兼容,自行验证"
+        print(f"· 文本走多供应商: {text_cfg.name}({text_cfg.base_url};{tag})…")
+        if await _probe_text(text_cfg.name):
+            print(f"✓ 文本管线可用(provider={text_cfg.name},结构化档 {text_cfg.structured_tier})")
+        else:
+            print("✗ 文本供应商不可达 —— 检查 LOEVENT_TEXT_BASE_URL/MODEL/API_KEY 与网络。")
+            ok = False
+    elif has_gemini:
+        print(f"· 文本走 Gemini {MODEL_GEMINI_TEXT} …")
+        if await _probe_text(MODEL_GEMINI_TEXT):
+            print(f"✓ 文本管线可用(Gemini {MODEL_GEMINI_TEXT},fallback {MODEL_GEMINI_TEXT_FALLBACK})")
+        else:
+            print("✗ 文本模型不可达 —— 检查 GEMINI_API_KEY/配额。")
+            ok = False
+    else:
+        print("✗ 既未配 LOEVENT_TEXT_PROVIDER,也没有 GEMINI_API_KEY —— 无法运行任何文本 skill。")
+        print("   国内示例: export LOEVENT_TEXT_PROVIDER=glm LOEVENT_TEXT_MODEL=… LOEVENT_TEXT_API_KEY=…")
+        return 1
+
+    # 2) grounding(联网调研:trends/company/guests/budget)
+    try:
+        search = resolve_grounding_provider()
+    except Exception as e:
+        search = None
+        print(f"⚠ 搜索供应商配置有误(LOEVENT_SEARCH_*): {e}")
+    if text_cfg is not None:
+        if search is not None:
+            print(f"✓ 外部搜索已配({search.name})→ 联网调研类 skill 有 grounding")
+        else:
+            print("⚠ 未配 LOEVENT_SEARCH_PROVIDER → 多供应商下联网调研类 skill 默认会**报错中止**(避免无来源编造);"
+                  "请配 bocha/tavily(+LOEVENT_SEARCH_API_KEY),或设 LOEVENT_ALLOW_UNGROUNDED=1 接受无 grounding。")
+    elif has_gemini:
+        print(f"· 探测 Gemini grounding {MODEL_GEMINI_GROUNDING} …")
+        if await _probe_text(MODEL_GEMINI_GROUNDING, use_google_search=True):
+            print(f"✓ Gemini grounding 可用(trends/company/guests/budget 走 {MODEL_GEMINI_GROUNDING})")
+        else:
+            print("⚠ Gemini grounding 不可达 → 联网调研类 skill 可能降级/失败;纯文本类不受影响。")
+
+    # 3) 图像档(海报生图)
+    try:
+        image_cfg = resolve_image_provider()
+    except Exception as e:
+        image_cfg = None
+        print(f"⚠ 图像供应商配置有误(LOEVENT_IMAGE_*): {e}")
+    if image_cfg is not None:
+        tag = "官方实测背书" if image_cfg.supported else "理论兼容,自行验证"
+        print(f"✓ 文生图走多供应商: {image_cfg.name}({tag})——真实可用性请跑一次海报验证;"
+              "编辑/消字仍需 Gemini 或 poster_text 本地 erase。")
+    elif has_gemini:
+        print(f"· 探测 Gemini 图像档 {MODEL_GEMINI_IMAGE} …")
+        try:
+            llm = get_llm_client()
+            await llm.generate_image(module="doctor", prompt="a tiny gray dot on white", image_size="1K")
+            print("✓ 图像档可用(skill-poster 可生图)")
+        except Exception as e:
+            print(f"⚠ 图像档不可用 → skill-poster 降级/跳过生图(文本类 skill 不受影响)。原因: {type(e).__name__}")
+    else:
+        print("⚠ 既未配 LOEVENT_IMAGE_PROVIDER 也无 GEMINI_API_KEY → 海报生图不可用(文本类 skill 不受影响)。")
 
     # 5) 海报「文字可编辑」(GCV OCR,service account)—— 可选能力,仅提示
     if os.environ.get("GOOGLE_APPLICATION_CREDENTIALS", "").strip():

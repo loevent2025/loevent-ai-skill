@@ -45,6 +45,7 @@ class LLMResponse:
     finish_reason: Optional[str] = None
     output_tokens: Optional[int] = None
     raw: Any = None
+    grounding_source: Optional[str] = None   # 多供应商可观测:本次 grounding 来源(gemini_native/bocha/tavily/none)
 
 
 @dataclass
@@ -280,6 +281,7 @@ class GeminiSingleKeyClient:
             finish_reason=finish_reason,
             output_tokens=output_tokens,
             raw=raw,
+            grounding_source="gemini_native" if used_google_search else None,
         )
 
     @staticmethod
@@ -305,7 +307,13 @@ _default_client: Optional[GeminiSingleKeyClient] = None
 _custom_clients: Dict[tuple, GeminiSingleKeyClient] = {}
 
 
-def get_llm_client(*, text_model: Optional[str] = None, image_model: Optional[str] = None) -> GeminiSingleKeyClient:
+def get_llm_client(*, text_model: Optional[str] = None, image_model: Optional[str] = None):
+    # 配了多供应商(LOEVENT_TEXT_PROVIDER/BASE_URL)就走 OpenAI 兼容路由;没配则原样走下面的 Gemini 默认。
+    from .providers import build_client   # 懒导入避免与 providers 的循环引用
+    routed = build_client(text_model=text_model, image_model=image_model)
+    if routed is not None:
+        return routed
+
     global _default_client
     if text_model is None and image_model is None:
         if _default_client is None:

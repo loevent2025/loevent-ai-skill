@@ -1,5 +1,10 @@
 # LoEvent AI Skill bundle —— 瘦身后的最小依赖(对比后端去掉了 motor/firebase/redis/stripe…)
 google-genai>=1.56.0
+# 多供应商文本层(LOEVENT_TEXT_PROVIDER=glm/deepseek/qwen/… 直连或经网关):OpenAI 兼容客户端
+openai>=1.40.0
+# 多供应商的外部搜索(Bocha/Tavily)与文生图取回(下载图片 URL)直接用 httpx;
+# 它本是 openai/google-genai 的强制依赖,这里显式声明(与显式声明 pydantic 同理)
+httpx>=0.27
 pydantic>=2.0          # 结构化输出用 BaseModel(eventplanner 节点契约);genai 也依赖它,显式声明
 PyYAML>=6.0.2
 Jinja2>=3.1.6

@@ -26,12 +26,14 @@ guests.json
 poster_ocr.json
 poster_text_layers.json
 poster_*.png
+poster_*_edit.html
 work/
 .loevent/
 
 # Python / 虚拟环境
 __pycache__/
 *.pyc
+.pytest_cache/
 .DS_Store
 .venv/
 venv/

@@ -15,7 +15,7 @@
    ```
    它会:验 Key → 探文本模型 → 探 Google Search grounding(走 gemini-3.5-flash)→ 探图像档权限 → 提示 OCR/地图需另配。
 4. **缺权限自动降级**:doctor 报图像档/Vision 不可用时,海报类步骤标「跳过/降级」,**文本类 skill 照常跑**。
-5. **工作目录**:同一个活动的所有 skill 共用一个目录(用 `LOEVENT_WORKDIR` 指定,缺省当前目录)。
+5. **工作目录**:同一个活动的所有 skill 共用一个目录——**缺省落系统临时沙箱**(`tempfile` 临时区下 `loevent-workspace/`,用完即清),`LOEVENT_WORKDIR` 可指定固定目录留存。
    - 先跑 `skill-init` 把活动描述抽成 `event/host/plan.json`;
    - 其它 skill 从这几个文件读上下文、把自己的结果写回工作目录(如 `audience.json` 并 merge 进 `plan.json`)。
    - 没有真实活动时,可把 `templates/` 下的样本档复制进工作目录先试跑。

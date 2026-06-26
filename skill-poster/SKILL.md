@@ -27,9 +27,8 @@ required_environment_variables:
    **先跑 `python engine/doctor.py`** 看图像档是否可用。
 2. **若图像档不可用,本工具会自动降级**:仍然产出并保存「生成指令(generation_prompt)」,只是不出图。
    这不是报错——你(Claude)要把 prompt 给用户,让他拿去任何能生图的工具用。
-3. **文字可编辑(可选)**:出图后可把文字做成可改的——GCV OCR 取精确文字框、`gemini-2.5-flash-image`
-   消字、再用系统字体把文字渲染回去(见下文「文字可编辑」)。**需要 GCV 服务账号**
-   (`GOOGLE_APPLICATION_CREDENTIALS` 指向其 JSON,独立于 `GEMINI_API_KEY`);没有它**不影响普通出图**,只是用不了这条可编辑流程。
+3. **文字可编辑(可选)**:出图后可把文字做成可改的——定位文字 → `gemini-2.5-flash-image` 消字 → 系统字体渲染回去(见下文「文字可编辑」)。
+   **定位有两档,自动择优**:配了 GCV 服务账号(`GOOGLE_APPLICATION_CREDENTIALS`,独立于 `GEMINI_API_KEY`)→ 用它**精确**取框;**没配也能用**→ 降级到"看图估位置 + HTML 编辑器里微调"。两种都不影响普通出图。
 
 ## 缺东西先弹窗问,别报错也别瞎填(AskUserQuestion)
 本 skill 在 Claude Code 里靠**你(Claude)调用 `AskUserQuestion` 工具**弹窗收集缺失信息——
@@ -99,26 +98,25 @@ required_environment_variables:
 图像模型把文字烤进像素,容易错字、混语言、不可改。需要文字可控/可改时,出图后走这条
 (脚本 `skill-poster/scripts/poster_text.py`;中文渲染走**系统字体**,不打包不下载):
 
-**前置**:**GCV 服务账号**——把 **`GOOGLE_APPLICATION_CREDENTIALS`** 指向 Vision 服务账号 JSON 的路径
-(service account,**独立于 `GEMINI_API_KEY`**;该 JSON 是密钥,**放仓库外、别提交**)。缺它这条流程跑不了,但普通出图不受影响。
+**定位文字有两档,自动择优**(消字/渲染两档通用):
+- **优先·精确(GCV)**:配了 `GOOGLE_APPLICATION_CREDENTIALS`(指向 Vision 服务账号 JSON,**独立于 `GEMINI_API_KEY`**;**是密钥,放仓库外、别提交**)→ 用 GCV OCR 取**精确框**,几乎不用手调。
+- **降级·够用(无 GCV)**:没配 → 你(agent)**直接看 `poster_1.png` 估文字位置**,粗一点没关系,后面在 HTML 编辑器里拖准。
 
-1. **OCR 取精确文字框**(GCV):
-   ```bash
-   python skill-poster/scripts/poster_text.py ocr --image poster_1.png
-   # → poster_ocr.json:[{text, box:{x,y,w,h} 归一化}, ...]
-   ```
+1. **定位文字**:
+   - 配了 GCV → `python skill-poster/scripts/poster_text.py ocr --image poster_1.png`(→ `poster_ocr.json`:精确归一化框);
+   - 没配 GCV → **跳过 ocr**,你看 `poster_1.png` 自己估每块文字的位置(下一步直接写进 layers)。
 2. **消字**得到干净底图(需计费档 image key):
    ```bash
    python skill-poster/scripts/poster_text.py erase --image poster_1.png   # → poster_1_clean.png
    ```
-3. **你(Claude)把 OCR 框 + event.json 合成文字图层**:读 `poster_ocr.json`(**精确位置**)+ 看 `poster_1.png`
-   (取颜色/判角色)+ `event.json`(**校正文字内容、纠模型错字**),写出 `poster_text_layers.json`:
+3. **写出文字图层 `poster_text_layers.json`**(内容一律以 `event.json` 为准、纠模型错字;颜色看 `poster_1.png` 取):
+   - **有 `poster_ocr.json`(GCV)** → 用精确框换算:`align=center` 时 `x`=框中心、`y`=框顶、`font_scale`=框高/图高;
+   - **没有(降级)** → 你看 `poster_1.png` **估** `x`/`y`/`font_scale`(粗估即可,编辑器里再拖准)。
    ```json
    { "layers": [
      {"text": "AI 开发者大会 2026", "x": 0.5, "y": 0.06, "font_scale": 0.05, "color": "#FFFFFF", "bold": true, "align": "center"}
    ] }
    ```
-   位置从 OCR 框换算:`align=center` 时 `x`=框中心、`y`=框顶、`font_scale`=框高/图高;颜色取原图对应处;**内容以 event.json 为准**。
 4. **渲染**(纯本地,不需 key):
    ```bash
    python skill-poster/scripts/poster_text.py render --image poster_1_clean.png   # 读 poster_text_layers.json → poster_1_final.png
@@ -137,7 +135,8 @@ required_environment_variables:
 > "可编辑"的本质是:**改图层 JSON → 重渲**,而不是一个常驻的可编辑画布。
 
 要点:
-- **位置来自 OCR(准)、内容以 event.json 为准(对)**——别照抄模型可能拼错的字;
+- **内容一律以 event.json 为准**——别照抄模型可能拼错的字;位置:有 GCV 走精确框,无 GCV 走估算;
+- **降级(无 GCV)位置是估的 → 一定生成 HTML 编辑器(`preview`)让用户拖准,并告诉他"位置是估的、拖一下"**,别把粗定位当成品直接交付;
 - 中文字体自动探测系统字体,探不到会提示"装一个 / 放进 assets/fonts/ / 设 `LOEVENT_POSTER_FONT`";
 - 渲染会**自动缩字防溢出**;字体观感可能和原图烤的字有差(这是用"可控正确"换"字体完全一致"的预期取舍);
 - **成品约 1K 清晰度**:消字用的 `gemini-2.5-flash-image` 原生 ~1024px、不支持 2K/4K,所以可编辑流程的最终图被这步限到 ~1K(社媒/预览够用;要更高清得改用 `gemini-3-pro-image` 消字,但它去字效果较差,是另一个取舍)。

@@ -5,7 +5,9 @@
 
 ## 核心:跑之前先 preflight 一次,别逐个追问
 
-拿到需求、真正跑脚本**前**,你(Claude)先把这个 skill 的参数过一遍,**把"必问 + 必确认"合并进尽量少的 AskUserQuestion**(能一次问完就别分多次)。已经在 `event.json`/`host.json`/`plan.json` 里有的值直接用,别重复问。
+拿到需求、真正跑脚本**前**,agent 先把这个 skill 的参数过一遍,**把"必问 + 必确认"合并进尽量少的几次提问**(能一次问完就别分多次;Claude Code 用 `AskUserQuestion`,其它 agent 用文本)。已经在 `event.json`/`host.json`/`plan.json` 里有的值直接用,别重复问。
+
+**越贵越慢的 skill,preflight 越重要**:像 `company`(单次 20+ 次联网、几分钟)、`eventplanner`、`poster`(出图计费),先确认方向再跑,能避免白烧 Key / 白等。
 
 ## 三级分级
 
@@ -29,3 +31,13 @@
 - **Q4 它是用户的偏好/业务判断,还是纯机械细节 / 本工具压根不消费?** → 判断 → 必问/必确认;纯技术或不消费 → 沉默
 
 **注意:同一个字段在不同 skill 可能不同级。** 例:活动开始时间对 `init` 可空(沉默),对 `poster` 是必问;`event_goal` 在 `audience`/`eventplanner` 里被消费(必确认),在 `company` 里只留档(沉默)。每个 SKILL.md 列出本工具自己的分级。
+
+## 这对应 MCP 的 Elicitation(命名对齐)
+
+本 preflight 就是 MCP 标准里的 **Elicitation**——"向用户请求结构化输入"(对照:**sampling 问 LLM,elicitation 问人**)。命名/语义对齐它,以后真要接 MCP elicitation 时能平滑迁移。
+
+按 elicitation 的三种结果处理用户的回应:
+
+- **accept(给了值 / 确认默认)** → 用它跑。
+- **decline(不想填 / 说"你看着办" / 跳过)** → **必确认**项:走建议默认继续;**必问**项**不能 decline**(没安全默认)——继续引导给出,或用户明确放弃这个 skill。
+- **cancel(喊停 / 反悔)** → **中止该 skill**,不跑、不留半成品。

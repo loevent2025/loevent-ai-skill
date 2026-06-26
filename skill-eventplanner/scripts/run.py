@@ -621,14 +621,18 @@ async def _main() -> int:
     try:
         event = context_local.load_json("event", required=True)
         host = context_local.load_json("host", required=True)
+        plan = context_local.load_json("plan") or {}
+        user_inputs = _resolve_inputs(args)
     except FileNotFoundError as e:
         print(json.dumps({"ok": False, "error": "MissingContext", "message": str(e),
                           "hint": "请先在当前工作目录跑 loevent-init,生成 event.json/host.json/plan.json。"},
                          ensure_ascii=False, indent=2))
         return 2
-
-    plan = context_local.load_json("plan") or {}
-    user_inputs = _resolve_inputs(args)
+    except ValueError as e:
+        print(json.dumps({"ok": False, "error": "BadContext", "message": str(e),
+                          "hint": "上下文 JSON 损坏(event/host/plan/eventplanner_input);修正或删除后重跑 loevent-init。"},
+                         ensure_ascii=False, indent=2))
+        return 2
 
     try:
         result = await run_eventplan(event=event, host=host, plan=plan, user_inputs=user_inputs)
@@ -661,4 +665,7 @@ async def _main() -> int:
 
 
 if __name__ == "__main__":
-    raise SystemExit(asyncio.run(_main()))
+    try:
+        raise SystemExit(asyncio.run(_main()))
+    except KeyboardInterrupt:
+        raise SystemExit(130)

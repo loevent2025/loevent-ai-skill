@@ -192,7 +192,9 @@ def render_text_layers(clean_image_path: Path, layers: list, output_path: Path) 
         if text_width > max_text_width:
             font_size = max(8, int(font_size * max_text_width / text_width))
             font = ImageFont.truetype(font_path, font_size, index=font_index)
-        position = (float(layer.get("x", 0.5)) * width, float(layer.get("y", 0.5)) * height)
+        # y 补 +font_size*0.05:对齐 HTML/canvas 里 line-height 1.1 的半行距,保证"编辑器拖好位置→render"竖直一致
+        position = (float(layer.get("x", 0.5)) * width,
+                    float(layer.get("y", 0.5)) * height + font_size * 0.05)
         align = layer.get("align", "center")
         anchor = anchor_by_align.get(align, "ma")
         color = layer.get("color", "#FFFFFF")
@@ -304,7 +306,9 @@ def render_edit_html(clean_image_path: Path, layers: list, output_path: Path) ->
             .replace("__W__", str(width))
             .replace("__H__", str(height))
             .replace("__IMG__", image_b64)
-            .replace("__LAYERS__", json.dumps(layers, ensure_ascii=False)))
+            # 注入 <script> 前转义 < > &:防文字含 </script> 闭合脚本块/XSS(< 在 JS 里仍解析回 <,JSON 合法)
+            .replace("__LAYERS__", json.dumps(layers, ensure_ascii=False)
+                     .replace("<", "\\u003c").replace(">", "\\u003e").replace("&", "\\u0026")))
     output_path.write_text(html, encoding="utf-8")
     return output_path
 
@@ -387,4 +391,18 @@ def main() -> int:
 
 
 if __name__ == "__main__":
-    raise SystemExit(main())
+    # 顶层兜底:别甩 traceback,缺凭据/字体/依赖给人话 + 规范退出码(对齐 AGENTS 协议与其它脚本的 run_skill_main)
+    try:
+        raise SystemExit(main())
+    except KeyboardInterrupt:
+        raise SystemExit(130)
+    except RuntimeError as missing:
+        print(json.dumps({"ok": False, "error": "MissingInput", "message": str(missing),
+                          "hint": "按 message 补齐(GCV 凭据 / 计费档 image Key / 中文字体)再重试。"},
+                         ensure_ascii=False))
+        raise SystemExit(2)
+    except Exception as failure:
+        print(json.dumps({"ok": False, "error": type(failure).__name__, "message": str(failure),
+                          "hint": "可能是 Key 权限/配额或网络;先跑 python engine/doctor.py 自检。"},
+                         ensure_ascii=False))
+        raise SystemExit(1)

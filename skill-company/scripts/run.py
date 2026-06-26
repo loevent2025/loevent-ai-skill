@@ -41,7 +41,7 @@ import logging
 import os
 import sys
 from dataclasses import dataclass, field
-from datetime import datetime
+from datetime import datetime, timezone
 from typing import Any, Dict, List, Optional
 
 _BUNDLE_ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.realpath(__file__))))
@@ -54,6 +54,7 @@ from engine import (  # noqa: E402
     context_local,
     parse_structured,
     run_skill_main,
+    is_no_issues,
 )
 from engine.model_config import industry_map  # noqa: E402
 from engine.schemas.company_models import (  # noqa: E402
@@ -164,7 +165,7 @@ async def _step2_fix_one(*, field_val: Any, value: str, tool: str, context: str 
 async def verify_and_fix(*, data: Any, tool: str, context: str = "") -> Dict[str, Any]:
     """两步核查:先 CHECK 出问题文本,无问题(NO_ISSUES)直接返回,否则 FIX 一次。"""
     issues_text = await _step1_check(data=data, tool=tool, context=context)
-    if issues_text.strip("`").strip() == "NO_ISSUES":
+    if is_no_issues(issues_text):
         return {"data": data, "corrected": False}
     fixed_data = await _step2_fix_one(field_val=data, value=issues_text, tool=tool, context=context)
     return {"data": fixed_data, "corrected": True}
@@ -1009,7 +1010,7 @@ async def company_info_search(*, event: dict, host: dict, audience_data: dict,
         "activate_type": response_module.get("activate_type"),
     }
     # 后端写 eventplanner_key.update_one → 改 merge 进 plan
-    context_local.merge_into("plan", {**selection_doc, "updatedAt": datetime.utcnow().isoformat()})
+    context_local.merge_into("plan", {**selection_doc, "updatedAt": datetime.now(timezone.utc).isoformat()})
 
     ctx = CompanySearchContext(
         event_name=event.get("event_name"),

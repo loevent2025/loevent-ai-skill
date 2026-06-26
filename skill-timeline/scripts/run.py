@@ -34,7 +34,7 @@ import json
 import math
 import os
 import sys
-from datetime import datetime
+from datetime import date, datetime
 
 _BUNDLE_ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.realpath(__file__))))
 sys.path.insert(0, _BUNDLE_ROOT)
@@ -63,7 +63,9 @@ EVENT_SCALE_CONFIG = {
     "large": 240,   # 基准时长 8个月
 }
 
-DEFAULT_START_DATE = "2026-01-21"
+# 筹备开始日的兜底默认 = 运行时「今天」(用户没选/没填时用);绝不写死日期(会过期成过去日把排期算坏)。
+# 注:正路是 SKILL.md 让 agent 用 AskUserQuestion 让用户选/填,这里只是漏问时的安全兜底。
+DEFAULT_START_DATE = date.today().isoformat()
 TIMELINE_MODULE = "timeline_tool"  # 后端 tool=模块名;engine 单 Key,仅用于日志/标识
 
 
@@ -291,7 +293,7 @@ def _resolve_inputs(args) -> dict:
     """优先读 timeline_input.json,CLI 覆盖;给合理缺省。"""
     data = context_local.load_json("timeline_input") or {}
     return {
-        "start_date": args.start or data.get("preparation_start_date", DEFAULT_START_DATE),
+        "start_date": args.start or data.get("preparation_start_date") or DEFAULT_START_DATE,
         "user_tasks": data.get("user_tasks", []),
         "prompt": args.prompt or data.get("prompt", ""),
     }

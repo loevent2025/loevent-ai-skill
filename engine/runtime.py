@@ -69,3 +69,16 @@ def run_skill_main(main_coro_factory) -> int:
              "hint": "可能是 Key 无权限/配额或网络问题;先跑 python engine/doctor.py 自检后重试。"},
             ensure_ascii=False, indent=2))
         return 1
+
+
+def is_no_issues(text: str) -> bool:
+    """grounding 二次核查 step1 的「无问题」判定(trends/guests/company 共用)。
+
+    后端契约是返回固定串 "NO_ISSUES",但 grounding 模型偶发会包 ```围栏```、成对引号、
+    前后空白甚至句末标点,直接 == 比对会把「无问题」误判成「有问题」、白触发一次 FIX。
+    这里统一剥掉围栏/引号/空白/标点再大小写无关比对。
+    """
+    t = (text or "").strip().strip("`").strip()
+    t = t.strip("\"'“”‘’").strip()
+    t = t.rstrip("。.!！").strip()
+    return t.upper() == "NO_ISSUES"

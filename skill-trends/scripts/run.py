@@ -34,7 +34,7 @@ import logging
 import os
 import sys
 from dataclasses import dataclass
-from datetime import datetime
+from datetime import datetime, timezone
 from typing import Any, Dict, List, Optional
 
 from dateutil.relativedelta import relativedelta
@@ -49,6 +49,7 @@ from engine import (  # noqa: E402
     context_local,
     parse_structured,
     run_skill_main,
+    is_no_issues,
 )
 from engine.model_config import industry_map  # noqa: E402
 from engine.schemas.trends_models import (  # noqa: E402
@@ -107,16 +108,8 @@ async def _step2_fix_one(field: Any, value: str, module: str, context: str = "")
 
 
 def _is_no_issues(issues_text: str) -> bool:
-    """step1 是否判定"无问题"。
-
-    后端契约是返回固定串 "NO_ISSUES",但 grounding 模型偶发会包 ```围栏```、
-    成对引号、前后空白甚至句末标点,直接 == 比对不稳健会把"无问题"误判成"有问题"
-    从而触发一次没必要的 FIX。这里统一剥掉围栏/引号/空白/标点再大小写无关比对。
-    """
-    t = (issues_text or "").strip().strip("`").strip()
-    t = t.strip("\"'“”‘’").strip()
-    t = t.rstrip("。.!！").strip()
-    return t.upper() == "NO_ISSUES"
+    """委托 engine.runtime.is_no_issues(trends/guests/company 共用,避免各自漂移)。"""
+    return is_no_issues(issues_text)
 
 
 async def verify_and_fix(
@@ -728,7 +721,7 @@ async def _main() -> int:
     # search_time 用于行业趋势/话题引爆点的近 N 月时间窗;缺了就退化为"近期"
     if not search_time:
         logger.warning("event 缺 time_start/time_end,行业趋势/话题引爆点时间窗退化为'近期'。")
-        search_time = datetime.utcnow().strftime("%Y-%m-%d")
+        search_time = datetime.now(timezone.utc).strftime("%Y-%m-%d")
 
     run_trends = dimension in ("trends", "all")
     run_catalyst = dimension in ("catalyst", "all")
@@ -758,7 +751,7 @@ async def _main() -> int:
 
     # 组装产物:每张卡 {summary, url, results_text(原始搜索文本,供下游 trend_forward 复用)}
     inspiration: Dict[str, Any] = {
-        "generated_at": datetime.utcnow().isoformat() + "Z",
+        "generated_at": datetime.now(timezone.utc).isoformat(),
         "topic": theme,
         "industry": industry,
         "language": language,

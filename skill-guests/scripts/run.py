@@ -44,6 +44,7 @@ from engine import (  # noqa: E402
     context_local,
     parse_structured,
     run_skill_main,
+    is_no_issues,
 )
 from engine.schemas.guests_models import GuestProfileOut  # noqa: E402
 
@@ -84,7 +85,7 @@ async def _step2_fix_one(*, field, value, tool, context=""):
 async def _verify_and_fix(*, data, tool, context=""):
     """二次 grounding 校验:CHECK 找出确凿错误,有错则 FIX 定点修正,否则原样返回。"""
     issues_text = await _step1_check(data=data, tool=tool, context=context)
-    if issues_text.strip("`").strip() == "NO_ISSUES":
+    if is_no_issues(issues_text):
         return {"data": data, "corrected": False}
     fixed_data = await _step2_fix_one(field=data, value=issues_text, tool=tool, context=context)
     return {"data": fixed_data, "corrected": True}

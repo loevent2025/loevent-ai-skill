@@ -156,6 +156,10 @@ def handle_guest(fullplan_data: dict = None, stage: str = "active", **_) -> str:
     if not fullplan_data:
         return ""
     guests = fullplan_data.get("guests", []) if isinstance(fullplan_data, dict) else []
+    # guests 形态兼容:list[dict] / list[str] / skill-guests 写进 plan 的 dict{name:{...}} → 统一成 list[dict]
+    if isinstance(guests, dict):
+        guests = [{"name": n, **(v if isinstance(v, dict) else {})} for n, v in guests.items()]
+    guests = [g if isinstance(g, dict) else {"name": str(g)} for g in guests]
 
     if stage == "warmup":
         return "\n".join(
@@ -170,7 +174,8 @@ def handle_guest(fullplan_data: dict = None, stage: str = "active", **_) -> str:
     elif stage == "lastcall":
         return ", ".join(g.get("name", "") for g in guests)
     else:
-        return fullplan_data
+        # active(默认正式期):逐位列全嘉宾 name(position)
+        return "\n".join(f"- {g.get('name', '')}({g.get('position', '')})" for g in guests)
 
 
 @FocusRegistry.register("event_agenda")
@@ -189,7 +194,11 @@ def handle_agenda(eventplanner_data: dict = None, stage: str = "active", **_) ->
         return ""
     else:
         if isinstance(flow, list):
-            return "\n".join(f"- {item}" for item in flow)
+            # 议程项可能是 dict(如 {time, activity}),拼成可读文本而非 dict 字面量
+            return "\n".join(
+                f"- {' '.join(str(v) for v in item.values() if v)}" if isinstance(item, dict) else f"- {item}"
+                for item in flow
+            )
         return str(flow) if flow else ""
 
 

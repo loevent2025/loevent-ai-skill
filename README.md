@@ -45,6 +45,32 @@ pip install -r requirements.txt
 cp .env.example .env        # 然后编辑 .env，填入你的 GEMINI_API_KEY
 ```
 
+## 用国内模型（不用 Gemini）
+
+国内用不了 Gemini？这套技能可以跑在**任意 OpenAI 兼容的模型 API** 上（GLM / DeepSeek / Kimi / 豆包…），换 `.env` 里几个变量即可，技能本身零改动：
+
+```bash
+# 文本（所有纯文本技能）——以智谱 GLM 为例
+LOEVENT_TEXT_PROVIDER=glm
+LOEVENT_TEXT_MODEL=glm-4.6              # 按你账号实际模型名
+LOEVENT_TEXT_API_KEY=你的智谱key
+
+# 联网调研（趋势/嘉宾/主办方/预算需要）——非 Gemini 没内置搜索，需配外部搜索
+LOEVENT_SEARCH_PROVIDER=bocha          # 博查（国内，免费 1000 次）/ tavily（海外）
+LOEVENT_SEARCH_API_KEY=你的搜索key
+
+# 海报出图（只想做海报才需要）
+LOEVENT_IMAGE_PROVIDER=doubao          # 豆包（4K）/ cogview（cogview-3-flash 免费）
+LOEVENT_IMAGE_MODEL=你的文生图模型名
+LOEVENT_IMAGE_API_KEY=你的图像key
+```
+
+- **官方实测背书**：Gemini、GLM；其余各家是「理论兼容，自行验证」。
+- 不配上面这些就默认走 Gemini。完整字段与说明见 [`.env.example`](./.env.example)。
+- 在 Claude Code 里，你也可以直接说**“我想用国内模型”**，它会引导你填这几项。
+- 说明：联网调研类技能在非 Gemini 下**必须**配外部搜索，否则会提示需要配置（避免无来源编造）。
+- 海报「文字可编辑」的消字也可走国产（可选）：`LOEVENT_IMAGE_EDIT_PROVIDER=qwen` + `LOEVENT_IMAGE_EDIT_MODEL=qwen-image-edit` + `LOEVENT_IMAGE_EDIT_API_KEY`（DashScope）；不配则退到 Gemini 或本地消字兜底——全链路国内时建议配上。
+
 ## 使用
 
 在这个项目文件夹里打开 Claude Code，然后**像跟人说话一样**告诉它你的活动：

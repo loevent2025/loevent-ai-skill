@@ -587,11 +587,23 @@ def test_ocr_missing_key_raises(monkeypatch):
         resolve_ocr_provider()
 
 
-def test_ocr_parse_clamps_boxes():
+def test_ocr_parse_pixel_bbox_normalized():
+    # 像素角点 bbox → 按图片尺寸归一化(Qwen2.5-VL 实测返绝对像素)
     from engine.providers.ocr import MultimodalOcrProvider
-    blocks = MultimodalOcrProvider._parse('{"blocks":[{"text":"标题","box":{"x":0.1,"y":0.2,"w":1.5,"h":-0.3}}]}')
-    assert blocks[0]["text"] == "标题"
-    assert blocks[0]["box"]["w"] == 1.0 and blocks[0]["box"]["h"] == 0.0   # 钳到 [0,1]
+    blocks = MultimodalOcrProvider._parse('[{"text":"AI大会","bbox":[100,50,500,130]}]', 1000, 500)
+    box = blocks[0]["box"]
+    assert blocks[0]["text"] == "AI大会"
+    assert abs(box["x"] - 0.1) < 1e-6 and abs(box["y"] - 0.1) < 1e-6
+    assert abs(box["w"] - 0.4) < 1e-6 and abs(box["h"] - 0.16) < 1e-6
+
+
+def test_ocr_parse_accepts_normalized_xywh():
+    # 模型听话返 0~1 的 {x,y,w,h} 时直接用,不二次缩放
+    from engine.providers.ocr import MultimodalOcrProvider
+    blocks = MultimodalOcrProvider._parse(
+        '{"blocks":[{"text":"t","box":{"x":0.2,"y":0.3,"w":0.5,"h":0.1}}]}', 1000, 1000)
+    box = blocks[0]["box"]
+    assert abs(box["x"] - 0.2) < 1e-6 and abs(box["w"] - 0.5) < 1e-6
 
 
 def test_ocr_messages_are_multimodal():

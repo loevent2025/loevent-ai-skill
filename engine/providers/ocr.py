@@ -23,9 +23,9 @@ _OCR_PRESETS = {
 }
 
 _OCR_PROMPT = (
-    "识别这张图里所有的文字块。只输出 JSON:"
-    '{"blocks":[{"text":"该块文字","box":{"x":0,"y":0,"w":0,"h":0}}]}。'
-    "box 为相对图片宽高的归一化值(0~1):x/y 是文字块左上角,w/h 是宽高。不要任何多余文字。"
+    "识别图中所有文字块,只输出 JSON 数组(不要任何多余文字、不要 markdown 围栏):\n"
+    '[{"text":"该块文字","bbox":[x1,y1,x2,y2]}]\n'
+    "bbox = 文字块左上角(x1,y1)与右下角(x2,y2),用图片的实际像素坐标。"
 )
 
 
@@ -35,6 +35,44 @@ def _clamp01(value: Any) -> float:
     except (TypeError, ValueError):
         return 0.0
     return max(0.0, min(1.0, number))
+
+
+def _norm(value: Any, dim: int) -> float:
+    """把一个坐标归一化到 0~1。容错三种约定:已是 0~1 直接用;否则按像素 / 0-1000 除以维度。
+
+    (VL 模型实测:Qwen2.5-VL 返绝对像素、Qwen3-VL 返 0-1000、有的听话返 0-1——这里都吃下。)
+    """
+    try:
+        v = float(value)
+    except (TypeError, ValueError):
+        return 0.0
+    if -1.0 <= v <= 1.0:
+        return v
+    return v / dim if dim else 0.0
+
+
+def _coords_to_box(item: dict, width: int, height: int):
+    """从一条结果里取坐标,统一成归一化 {x,y,w,h};取不到返回 None。
+
+    兼容:bbox/bbox_2d/box_2d = [x1,y1,x2,y2] 角点;box = {x,y,w,h} 或 {x1,y1,x2,y2}。
+    """
+    corners = item.get("bbox") or item.get("bbox_2d") or item.get("box_2d")
+    if isinstance(corners, (list, tuple)) and len(corners) >= 4:
+        nx1, ny1 = _norm(corners[0], width), _norm(corners[1], height)
+        nx2, ny2 = _norm(corners[2], width), _norm(corners[3], height)
+        return {"x": _clamp01(min(nx1, nx2)), "y": _clamp01(min(ny1, ny2)),
+                "w": _clamp01(abs(nx2 - nx1)), "h": _clamp01(abs(ny2 - ny1))}
+    box = item.get("box")
+    if isinstance(box, dict):
+        if "w" in box or "h" in box:
+            return {"x": _clamp01(_norm(box.get("x"), width)), "y": _clamp01(_norm(box.get("y"), height)),
+                    "w": _clamp01(_norm(box.get("w"), width)), "h": _clamp01(_norm(box.get("h"), height))}
+        if "x2" in box:
+            nx1, ny1 = _norm(box.get("x1"), width), _norm(box.get("y1"), height)
+            nx2, ny2 = _norm(box.get("x2"), width), _norm(box.get("y2"), height)
+            return {"x": _clamp01(min(nx1, nx2)), "y": _clamp01(min(ny1, ny2)),
+                    "w": _clamp01(abs(nx2 - nx1)), "h": _clamp01(abs(ny2 - ny1))}
+    return None
 
 
 class MultimodalOcrProvider:
@@ -66,29 +104,33 @@ class MultimodalOcrProvider:
         ]}]
 
     @staticmethod
-    def _parse(text: str) -> List[dict]:
+    def _parse(text: str, width: int, height: int) -> List[dict]:
         import json
         data = json.loads(_strip_fence(text))
-        raw_blocks = data.get("blocks", data) if isinstance(data, dict) else data
+        if isinstance(data, dict):
+            raw_blocks = data.get("blocks") or data.get("results") or data.get("data") or []
+        else:
+            raw_blocks = data
         blocks = []
         for item in raw_blocks or []:
             if not isinstance(item, dict):
                 continue
-            box = item.get("box") or {}
-            blocks.append({
-                "text": str(item.get("text", "")),
-                "box": {"x": _clamp01(box.get("x")), "y": _clamp01(box.get("y")),
-                        "w": _clamp01(box.get("w")), "h": _clamp01(box.get("h"))},
-            })
+            box = _coords_to_box(item, width, height)
+            if box is None:
+                continue
+            blocks.append({"text": str(item.get("text", "") or item.get("label", "")), "box": box})
         return blocks
 
     async def locate(self, image_path) -> List[dict]:
+        from PIL import Image
+        with Image.open(image_path) as image:
+            width, height = image.size
         client = self._get_client()
         messages = self._build_messages(self._image_data_uri(image_path))
+        # 不强制 response_format:VL 模型对它支持不一,靠 prompt + 容错解析(_strip_fence)更稳
         async with _get_sem():
-            resp = await client.chat.completions.create(
-                model=self._model, messages=messages, response_format={"type": "json_object"})
-        return self._parse(resp.choices[0].message.content or "")
+            resp = await client.chat.completions.create(model=self._model, messages=messages)
+        return self._parse(resp.choices[0].message.content or "", width, height)
 
 
 def resolve_ocr_provider() -> Optional[MultimodalOcrProvider]:

@@ -70,6 +70,7 @@ LOEVENT_IMAGE_API_KEY=你的图像key
 - 在 Claude Code 里，你也可以直接说**“我想用国内模型”**，它会引导你填这几项。
 - 说明：联网调研类技能在非 Gemini 下**必须**配外部搜索，否则会提示需要配置（避免无来源编造）。
 - 海报「文字可编辑」的消字也可走国产（可选）：`LOEVENT_IMAGE_EDIT_PROVIDER=qwen` + `LOEVENT_IMAGE_EDIT_MODEL=qwen-image-edit` + `LOEVENT_IMAGE_EDIT_API_KEY`（DashScope）；不配则退到 Gemini 或本地消字兜底——全链路国内时建议配上。
+- 文字定位（OCR）也可走国产多模态（可选）：`LOEVENT_OCR_PROVIDER=qwen-vl`（或 `glm-4v`）+ `LOEVENT_OCR_MODEL` + `LOEVENT_OCR_API_KEY`；用不了 Google OCR 时用它估文字框（精度不及 GCV，编辑器里拖准）。这样**全链路（文本/调研/出图/消字/定位）都不碰 Google**。
 
 ## 使用
 

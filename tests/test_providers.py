@@ -18,7 +18,9 @@ _ENV_KEYS = ("LOEVENT_TEXT_PROVIDER", "LOEVENT_TEXT_BASE_URL", "LOEVENT_TEXT_MOD
              "LOEVENT_IMAGE_PROVIDER", "LOEVENT_IMAGE_BASE_URL", "LOEVENT_IMAGE_MODEL",
              "LOEVENT_IMAGE_API_KEY", "LOEVENT_IMAGE_SIZE",
              "LOEVENT_IMAGE_EDIT_PROVIDER", "LOEVENT_IMAGE_EDIT_BASE_URL",
-             "LOEVENT_IMAGE_EDIT_MODEL", "LOEVENT_IMAGE_EDIT_API_KEY")
+             "LOEVENT_IMAGE_EDIT_MODEL", "LOEVENT_IMAGE_EDIT_API_KEY",
+             "LOEVENT_OCR_PROVIDER", "LOEVENT_OCR_BASE_URL",
+             "LOEVENT_OCR_MODEL", "LOEVENT_OCR_API_KEY")
 
 
 class _FakeResp:
@@ -550,3 +552,49 @@ def test_image_edit_falls_back_to_gemini_when_unconfigured():
     mpc = MultiProviderClient(text_client=None, image_t2i=None,
                               image_fallback=_FakeGemini(), image_edit=None)
     assert asyncio.run(mpc.generate_image(module="x", prompt=["抹掉文字", b"img"])) == "gemini"
+
+
+# ── P3.6 OCR / 文字定位多供应商 ──
+def test_ocr_unconfigured_returns_none(monkeypatch):
+    from engine.providers.ocr import resolve_ocr_provider
+    _clear_env(monkeypatch)
+    assert resolve_ocr_provider() is None
+
+
+def test_ocr_gcv_returns_none(monkeypatch):
+    from engine.providers.ocr import resolve_ocr_provider
+    _clear_env(monkeypatch)
+    monkeypatch.setenv("LOEVENT_OCR_PROVIDER", "gcv")
+    assert resolve_ocr_provider() is None           # 显式 GCV → poster_text 走原 GCV
+
+
+def test_ocr_qwen_vl_resolves(monkeypatch):
+    from engine.providers.ocr import resolve_ocr_provider, MultimodalOcrProvider
+    _clear_env(monkeypatch)
+    monkeypatch.setenv("LOEVENT_OCR_PROVIDER", "qwen-vl")
+    monkeypatch.setenv("LOEVENT_OCR_MODEL", "qwen-vl-max")
+    monkeypatch.setenv("LOEVENT_OCR_API_KEY", "k")
+    provider = resolve_ocr_provider()
+    assert isinstance(provider, MultimodalOcrProvider) and "dashscope" in provider._base_url
+
+
+def test_ocr_missing_key_raises(monkeypatch):
+    from engine.providers.ocr import resolve_ocr_provider
+    _clear_env(monkeypatch)
+    monkeypatch.setenv("LOEVENT_OCR_PROVIDER", "glm-4v")
+    monkeypatch.setenv("LOEVENT_OCR_MODEL", "glm-4v")
+    with pytest.raises(RuntimeError):
+        resolve_ocr_provider()
+
+
+def test_ocr_parse_clamps_boxes():
+    from engine.providers.ocr import MultimodalOcrProvider
+    blocks = MultimodalOcrProvider._parse('{"blocks":[{"text":"标题","box":{"x":0.1,"y":0.2,"w":1.5,"h":-0.3}}]}')
+    assert blocks[0]["text"] == "标题"
+    assert blocks[0]["box"]["w"] == 1.0 and blocks[0]["box"]["h"] == 0.0   # 钳到 [0,1]
+
+
+def test_ocr_messages_are_multimodal():
+    from engine.providers.ocr import MultimodalOcrProvider
+    content = MultimodalOcrProvider("http://x", "m", "k", "t")._build_messages("data:image/png;base64,AAA")[0]["content"]
+    assert any(c["type"] == "image_url" for c in content) and any(c["type"] == "text" for c in content)

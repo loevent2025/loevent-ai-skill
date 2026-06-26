@@ -351,7 +351,13 @@ def main() -> int:
     args = parser.parse_args()
 
     if args.command == "ocr":
-        blocks = ocr_text_blocks(Path(args.image))
+        # 配了国产多模态 VL(LOEVENT_OCR_PROVIDER)就走它定位,否则走 GCV;两者输出同格式
+        from engine.providers import resolve_ocr_provider
+        ocr_provider = resolve_ocr_provider()
+        if ocr_provider is not None:
+            blocks = asyncio.run(ocr_provider.locate(Path(args.image)))
+        else:
+            blocks = ocr_text_blocks(Path(args.image))
         context_local.save_json("poster_ocr", {"blocks": blocks})
         print(json.dumps({"ok": True, "blocks": blocks, "count": len(blocks)}, ensure_ascii=False))
         return 0

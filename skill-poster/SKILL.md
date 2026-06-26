@@ -28,7 +28,7 @@ required_environment_variables:
 2. **若图像档不可用,本工具会自动降级**:仍然产出并保存「生成指令(generation_prompt)」,只是不出图。
    这不是报错——你(Claude)要把 prompt 给用户,让他拿去任何能生图的工具用。
 3. **文字可编辑(可选)**:出图后可把文字做成可改的——定位文字 → `gemini-2.5-flash-image` 消字 → 系统字体渲染回去(见下文「文字可编辑」)。
-   **定位有两档,自动择优**:配了 GCV 服务账号(`GOOGLE_APPLICATION_CREDENTIALS`,独立于 `GEMINI_API_KEY`)→ 用它**精确**取框;**没配也能用**→ 降级到"看图估位置 + HTML 编辑器里微调"。两种都不影响普通出图。
+   **定位分三档,自动择优**:① GCV 服务账号(`GOOGLE_APPLICATION_CREDENTIALS`,独立于 `GEMINI_API_KEY`)→ **精确**取框;② 国产多模态 VL(`LOEVENT_OCR_PROVIDER=qwen-vl`/`glm-4v`)→ 模型**估框**(国内用不了 GCV 时用);③ 都没配 → "看图估位 + HTML 编辑器微调"。消字同理:配 `LOEVENT_IMAGE_EDIT_PROVIDER=qwen` 走国产、否则 Gemini、再否则本地 erase。都不影响普通出图。
 
 ## 缺东西先弹窗问,别报错也别瞎填(AskUserQuestion)
 本 skill 在 Claude Code 里靠**你(Claude)调用 `AskUserQuestion` 工具**弹窗收集缺失信息——
@@ -98,13 +98,14 @@ required_environment_variables:
 图像模型把文字烤进像素,容易错字、混语言、不可改。需要文字可控/可改时,出图后走这条
 (脚本 `skill-poster/scripts/poster_text.py`;中文渲染走**系统字体**,不打包不下载):
 
-**定位文字有两档,自动择优**(消字/渲染两档通用):
-- **优先·精确(GCV)**:配了 `GOOGLE_APPLICATION_CREDENTIALS`(指向 Vision 服务账号 JSON,**独立于 `GEMINI_API_KEY`**;**是密钥,放仓库外、别提交**)→ 用 GCV OCR 取**精确框**,几乎不用手调。
-- **降级·够用(无 GCV)**:没配 → 你(agent)**直接看 `poster_1.png` 估文字位置**,粗一点没关系,后面在 HTML 编辑器里拖准。
+**定位文字有三档,自动择优**:
+- **精确(GCV)**:配了 `GOOGLE_APPLICATION_CREDENTIALS`(指向 Vision 服务账号 JSON,**独立于 `GEMINI_API_KEY`**;**是密钥,放仓库外、别提交**)→ GCV OCR 取**精确框**,几乎不用手调。
+- **够用(国产 VL)**:配了 `LOEVENT_OCR_PROVIDER=qwen-vl`/`glm-4v`(+ MODEL + API_KEY)→ 多模态模型**估框**,国内用不了 GCV 时用;精度不及 GCV,编辑器里拖准。
+- **兜底(都没配)**:你(agent)**直接看 `poster_1.png` 估文字位置**,粗一点没关系,后面在 HTML 编辑器里拖准。
 
 1. **定位文字**:
-   - 配了 GCV → `python skill-poster/scripts/poster_text.py ocr --image poster_1.png`(→ `poster_ocr.json`:精确归一化框);
-   - 没配 GCV → **跳过 ocr**,你看 `poster_1.png` 自己估每块文字的位置(下一步直接写进 layers)。
+   - 配了 GCV 或国产 VL → `python skill-poster/scripts/poster_text.py ocr --image poster_1.png`(→ `poster_ocr.json`:归一化框;**ocr 命令会自动按配置走 GCV 或 VL**);
+   - 都没配 → **跳过 ocr**,你看 `poster_1.png` 自己估每块文字的位置(下一步直接写进 layers)。
 2. **消字**得到干净底图(需计费档 image key):
    ```bash
    python skill-poster/scripts/poster_text.py erase --image poster_1.png   # → poster_1_clean.png

@@ -17,9 +17,10 @@ from .config import resolve_text_provider, resolve_image_provider, resolve_image
 from .openai_compat import OpenAICompatClient
 from .image_openai import OpenAICompatImageProvider
 from .image_edit import DashScopeImageEditProvider
+from .ocr import resolve_ocr_provider
 
-__all__ = ["build_client", "MultiProviderClient",
-           "resolve_text_provider", "resolve_image_provider", "resolve_image_edit_provider"]
+__all__ = ["build_client", "MultiProviderClient", "resolve_text_provider",
+           "resolve_image_provider", "resolve_image_edit_provider", "resolve_ocr_provider"]
 
 
 def _has_image_object(prompt: Any) -> bool:

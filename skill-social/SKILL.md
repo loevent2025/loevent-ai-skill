@@ -37,17 +37,19 @@ required_environment_variables:
 - `content_focus`:主焦点,`guest_profile`(嘉宾)/ `event_agenda`(议程)/ `event_purpose`(活动目的)/ `basic_information`。
 - `content`:次焦点(可多个),取值同上。
 - `inspiration_source`:`industry_trend` / `hot_topic` / `painpoint`(需要 `inspiration.json` 里有对应字段才生效)。
-- `ticket` + `ticket_price`、`registration_method`(报名方式)、`detail_location_*`(国/市/街/楼层)。
+- **落地信息(CTA 用)**:`registration_method`(报名方式)、`detail_location_*`(国/市/街/楼层)、`ticket` + `ticket_price`(是否售票 + 票价)。文案的行动号召(CTA)靠这几项才写得出"在哪、怎么报名、多少钱";缺了只能泛喊"快来"。
 
 ## 缺东西先弹窗问,别报错也别瞎填(AskUserQuestion)
 在 Claude Code 里,frontmatter 的 `required_environment_variables` **不会**触发原生填 key 弹窗(那是 Hermes/claude.ai 运行时的能力),脚本也弹不出窗。需要时由你(Claude)调用 `AskUserQuestion`:
 - **缺 `GEMINI_API_KEY`**:处理见 [`references/API-KEY.md`](../references/API-KEY.md)——先检测、已配置别再弹;缺了才弹,给「自己改 .env / 直接粘贴」两条路,key 写进**项目根** `.env`(不是沙箱),别甩报错。
 - **缺 `platform`**(必填,且"猜哪个平台"必错,无安全默认):调 AskUserQuestion,header `平台`,选项 `小红书 xiaohongshu` / `X(推特)` / `社群 community` 让用户单选。`length`(默认 medium)/ `tone`(默认 professional)有合理默认,**不必弹窗硬问**——可一并放进同一次 AskUserQuestion 让用户"要改才改",不改就走默认,别因为它们打断。
+- **落地信息**(`registration_method` / `detail_location_*` / `ticket` + `ticket_price`):当 `stage` 是 `active` / `countdown` / `lastcall` 这类带行动号召的阶段时,**主动**用 AskUserQuestion 问一次"怎么报名 / 详细地址 / 是否售票 + 票价"(可合进同一次弹窗,header 如 `报名方式`、`详细地址`、`票价`)——问到 CTA 才落得了地。用户说"没有 / 暂不公开"就留空,文案走"私信 / 扫码了解"之类兜底,别瞎编地址票价。`warmup`(纯预热)阶段不必问,留空即可。
 
 ## 步骤(Procedure)
 1. **确认上下文**:工作目录有没有 `event.json` / `host.json`?没有 → 先跑 loevent-init。
    有没有 `plan.json` / `inspiration.json`?没有也能跑,但提醒用户文案会更"泛"。
-2. **和用户敲定三个必填项**(platform / length / tone),再问要不要带 stage / 焦点 / 灵感来源 / 票务地点。
+2. **和用户敲定三个必填项**(platform / length / tone),再问要不要带 stage / 焦点 / 灵感来源。
+   **若是 `active` / `countdown` / `lastcall` 等带 CTA 的阶段**,顺带把落地信息(报名方式 / 详细地址 / 是否售票 + 票价)问齐,否则 CTA 落不了地。
    把它们写进工作目录的 `social_input.json`:
    ```json
    {
@@ -57,7 +59,12 @@ required_environment_variables:
      "stage": "active",
      "content_focus": "guest_profile",
      "content": ["event_agenda"],
-     "inspiration_source": ["industry_trend", "painpoint"]
+     "inspiration_source": ["industry_trend", "painpoint"],
+     "registration_method": ["官网报名", "扫码进群"],
+     "detail_location_city": "上海",
+     "detail_location_street": "徐汇西岸",
+     "ticket": false,
+     "ticket_price": ""
    }
    ```
    (也可用命令行:`--platform xiaohongshu --length medium --tone professional_tone --stage active --content-focus guest_profile --content event_agenda --inspiration-source industry_trend`;`--content` / `--inspiration-source` / `--registration-method` 可重复。)
@@ -94,6 +101,7 @@ required_environment_variables:
 - 缺 `event.json` / `host.json` → 脚本会报错提示先跑 loevent-init,照做即可。
 - `platform` / `length` / `tone` 是必填,缺了会落到默认(xiaohongshu / medium / professional_tone)——
   **先跟用户确认再跑**,别默认。
+- **CTA 落不了地**:`active` / `countdown` / `lastcall` 阶段若没给 `registration_method` / `detail_location_*` / 票价,行动号召只能泛喊"快来报名",发出去用户不知道在哪、怎么报名。这几项虽非必填,但带 CTA 的阶段强烈建议先问齐(见上「落地信息」);用户确实没有再留空走兜底。
 - `inspiration_source` 选了但工作目录没有 `inspiration.json`(或里面没对应字段)→ 该来源会被静默忽略,文案照常出,只是少了那层钩子。
 - 知识库只覆盖 `web3` / `ai_commercial` 两类行业;`host.industry` 落到 `other` 时不注入领域知识库(文案仍会生成,只是更通用)。
 - 缺 `GEMINI_API_KEY` 或网络/grounding 异常 → 脚本会降级返回 `ok: false` + hint,先 `python engine/doctor.py`。

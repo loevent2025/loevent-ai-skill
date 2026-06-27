@@ -1,0 +1,11 @@
+{
+  "source": "ai_extracted",
+  "ai_extracted": {
+    "content": "Day1 主论坛+workshop;Day2 黑客松+颁奖晚宴",
+    "marketing": "社媒预热 + 1 位 KOL + 宣传短视频",
+    "venues": {"confirmed": null, "recommended": "市中心联合办公空间,含基础 AV"},
+    "partners": "1 家云厂商赞助算力,1 家媒体分发"
+  },
+  "html_content": "",
+  "regeneration_prompt": ""
+}

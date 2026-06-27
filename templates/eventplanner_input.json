@@ -1,0 +1,12 @@
+{
+  "selected_vibe": "brand_dna",
+  "event_goal": "product",
+  "prompt_objective": "让到场开发者亲手用上新发布的 Agent SDK,并沉淀一批早期社区种子用户",
+  "GTMmatrix": {
+    "growth_mode": {"label": "获取", "value": 30},
+    "lifecycle": {"label": "早期", "value": 30}
+  },
+  "preparation_start_date": "2026-07-01",
+  "user_input": "(可选)额外硬约束或特别要求,如必须包含一场闭门圆桌、预算上限等;留空即可。",
+  "content": "(可选)已有的参考资料/草稿,会作为生成方案的素材。留空则全由上游 plan.json 取材。"
+}

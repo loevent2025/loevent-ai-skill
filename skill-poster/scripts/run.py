@@ -174,7 +174,7 @@ def _load_reference(path):
 
 def _resolve_inputs(args) -> dict:
     data = context_local.load_json("poster_input") or {}
-    styles = args.style or data.get("poster_style") or ["minimalist"]
+    styles = args.style or data.get("poster_style")
     if isinstance(styles, str):
         styles = [styles]
     return {
@@ -200,6 +200,14 @@ async def _main() -> int:
     event = context_local.load_json("event", required=True)
     host = context_local.load_json("host", required=True)
     inp = _resolve_inputs(args)
+    if not inp["poster_style"]:
+        print(json.dumps({
+            "ok": False,
+            "error": "缺少必填字段:海报风格 style(会刻进成品图,无安全默认)。"
+                     "请用 --style 传入(见 SKILL.md 风格清单),或写进 poster_input.json;"
+                     "建议先用 AskUserQuestion 让用户选风格再出图。",
+        }, ensure_ascii=False, indent=2))
+        return 2
     language = event.get("language", "中文")
     module = f"poster_tool_{'_'.join(inp['poster_style'])}_{inp['resolution']}"
     reference_image = _load_reference(inp["reference_image_path"])

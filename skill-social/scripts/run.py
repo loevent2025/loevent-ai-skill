@@ -544,7 +544,7 @@ def _resolve_inputs(args) -> dict:
         content = [content]
 
     return {
-        "platform": pick(args.platform, "platform", "xiaohongshu"),
+        "platform": pick(args.platform, "platform"),
         "length": pick(args.length, "length", "medium"),
         "tone": pick(args.tone, "tone", "professional_tone"),
         "prompt": pick(args.prompt, "prompt"),
@@ -594,6 +594,14 @@ async def _main() -> int:
 
     inputs = _resolve_inputs(args)
     platform = inputs.pop("platform")
+    if not platform:
+        print(json.dumps({
+            "ok": False,
+            "error": f"缺少必填字段:platform(平台无安全默认,猜哪个平台必错)。"
+                     f"请用 --platform 传入 {list(PLATFORM_CONFIG.keys())} 之一,或写进 social_input.json;"
+                     f"建议先用 AskUserQuestion 问用户要发哪个平台再跑。",
+        }, ensure_ascii=False, indent=2))
+        return 2
     if platform not in PLATFORM_CONFIG:
         print(json.dumps({
             "ok": False,

@@ -293,7 +293,7 @@ def _resolve_inputs(args) -> dict:
     """优先读 timeline_input.json,CLI 覆盖;给合理缺省。"""
     data = context_local.load_json("timeline_input") or {}
     return {
-        "start_date": args.start or data.get("preparation_start_date") or DEFAULT_START_DATE,
+        "start_date": args.start or data.get("preparation_start_date"),
         "user_tasks": data.get("user_tasks", []),
         "prompt": args.prompt or data.get("prompt", ""),
     }
@@ -311,6 +311,14 @@ async def _main() -> int:
     # 缺 plan 不致命:走全缺省(scene_type=business_conferences / scale=medium),仍能出基线时间线。
     plan = context_local.load_json("plan") or {}
     inputs = _resolve_inputs(args)
+    if not inputs["start_date"]:
+        print(json.dumps({
+            "ok": False,
+            "error": f"缺少必填字段:筹备开始日 preparation_start_date(无安全默认,写死会过期)。"
+                     f"请用 --start YYYY-MM-DD 传入,或写进 timeline_input.json;"
+                     f"建议先用 AskUserQuestion 问用户筹备何时启动(可建议默认今天 {DEFAULT_START_DATE})。",
+        }, ensure_ascii=False, indent=2))
+        return 2
 
     result = await build_timeline(event=event, host=host, plan=plan, **inputs)
 

@@ -634,6 +634,20 @@ async def _main() -> int:
                          ensure_ascii=False, indent=2))
         return 2
 
+    # 人机门:company 已出 vibe 卡但用户没选/选错 → 硬挡,让 agent 用 AskUserQuestion 让用户明确选一张,
+    # 别静默替用户取第一张卡出整份方案。卡完全没有(没跑 company)是另一回事,走 run_eventplan 内的占位降级。
+    company = (plan or {}).get("company") or {}
+    available_vibes = [k for k in ("brand_dna", "competitor", "trend_forward") if company.get(k)]
+    selected_vibe = user_inputs.get("selected_vibe")
+    if available_vibes and _VIBE_MAP.get(selected_vibe) not in available_vibes:
+        print(json.dumps({
+            "ok": False,
+            "error": f"缺少必选字段:selected_vibe(策略 vibe 卡,人机门,无安全默认)。"
+                     f"company 已生成可选卡 {available_vibes},请让用户从中明确选一张,"
+                     f"用 --selected-vibe 传入或写进 eventplanner_input.json;别替用户默认选第一张。",
+        }, ensure_ascii=False, indent=2))
+        return 2
+
     try:
         result = await run_eventplan(event=event, host=host, plan=plan, user_inputs=user_inputs)
     except Exception as e:

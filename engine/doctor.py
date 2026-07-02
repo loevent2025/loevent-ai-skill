@@ -34,7 +34,7 @@ async def _probe_text(model_label: str, *, use_google_search: bool = False) -> b
 
 
 async def main() -> int:
-    print("== LoEvent AI Skill · 环境自检 ==")
+    print("== LoEvent Pro · 环境自检 ==")
     ok = True
 
     # 先判活动路径:配了多供应商(LOEVENT_TEXT_*)就探它,否则回落 Gemini(GEMINI_API_KEY)
@@ -65,10 +65,10 @@ async def main() -> int:
             ok = False
     else:
         print("✗ 既未配 LOEVENT_TEXT_PROVIDER,也没有 GEMINI_API_KEY —— 无法运行任何文本 skill。")
-        print("   国内示例: export LOEVENT_TEXT_PROVIDER=glm LOEVENT_TEXT_MODEL=… LOEVENT_TEXT_API_KEY=…")
+        print("   其它模型示例: export LOEVENT_TEXT_PROVIDER=glm LOEVENT_TEXT_MODEL=… LOEVENT_TEXT_API_KEY=…")
         return 1
 
-    # 2) grounding(联网调研:trends/company/guests/budget)
+    # 2) grounding(联网调研:trends/event-strategy/guests/budget)
     try:
         search = resolve_grounding_provider()
     except Exception as e:
@@ -85,7 +85,7 @@ async def main() -> int:
     elif has_gemini:
         print(f"· 探测 Gemini grounding {MODEL_GEMINI_GROUNDING} …")
         if await _probe_text(MODEL_GEMINI_GROUNDING, use_google_search=True):
-            print(f"✓ Gemini grounding 可用(trends/company/guests/budget 走 {MODEL_GEMINI_GROUNDING})")
+            print(f"✓ Gemini grounding 可用(trends/event-strategy/guests/budget 走 {MODEL_GEMINI_GROUNDING})")
         else:
             print("⚠ Gemini grounding 不可达 → 联网调研类 skill 可能降级/失败;纯文本类不受影响。")
 
@@ -98,7 +98,7 @@ async def main() -> int:
     if image_cfg is not None:
         tag = "官方实测背书" if image_cfg.supported else "理论兼容,自行验证"
         print(f"✓ 文生图走多供应商: {image_cfg.name}({tag})——真实可用性请跑一次海报验证;"
-              "编辑/消字仍需 Gemini 或 poster_text 本地 erase。")
+              "编辑/消字仍需图像 API(Gemini 或 qwen-image-edit),无则抹字不可用。")
     elif has_gemini:
         print(f"· 探测 Gemini 图像档 {MODEL_GEMINI_IMAGE} …")
         try:

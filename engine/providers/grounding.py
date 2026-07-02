@@ -33,7 +33,7 @@ class GroundingProvider:
 
 
 class BochaSearch(GroundingProvider):
-    """博查(国内默认):境内合规直连,返回带网页摘要,中文优。"""
+    """博查 Bocha:返回带网页摘要,中文内容优;合规直连,无需代理。"""
     name = "bocha"
     endpoint = "https://api.bochaai.com/v1/web-search"
 

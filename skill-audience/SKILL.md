@@ -24,7 +24,10 @@ required_environment_variables:
 
 ## 缺东西先弹窗问,别报错也别瞎填(AskUserQuestion)
 **缺 `GEMINI_API_KEY` 的处理见 [`references/API-KEY.md`](../references/API-KEY.md)**:先检测、已配置就别再弹;确实缺才弹一次,给「自己改 .env / 直接粘贴」两条路,key 写进**项目根** `.env`(不是沙箱),别甩报错。
-**参数 preflight 见 [`references/PREFLIGHT.md`](../references/PREFLIGHT.md)**:`event_goal` / `objective` / `GTMmatrix` 影响产出,属**必确认(建议默认·可改)**——从 `event.json`/`plan.json` 推出草稿默认值后**摊给用户瞄一眼**(一次问完、"要改才改"),别静默填、也别硬逼他填。
+**参数 preflight 见 [`references/PREFLIGHT.md`](../references/PREFLIGHT.md)**:`event_goal` / `objective` 影响产出,属**必确认(建议默认·可改)**——从 `event.json`/`plan.json` 推出草稿默认值后**摊给用户瞄一眼**(一次问完、"要改才改"),别静默填、也别硬逼他填。
+**`GTMmatrix` = 前置 2×2 GTM 象限(audience 是主线上它的第一个消费者)**:见 [`references/GTM-MATRIX.md`](../references/GTM-MATRIX.md)。
+- **`plan.gtm` 已有**(用户之前选过)→ **沉默复用,别重复问**;
+- **没有** → 用 `AskUserQuestion`(header `GTM象限`)把「早期·获取 / 早期·留存 / 成熟·获取 / 成熟·留存」四格作为选项让用户选一格(想微调强度就 Other 填 value)。选定后本工具会写进 `plan.gtm`,eventplanner 复用。
 
 ## 步骤(Procedure)
 1. **先确认上下文**:工作目录有没有 `event.json`/`host.json`?没有 → 先用 loevent-init 生成。

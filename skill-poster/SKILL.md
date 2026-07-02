@@ -28,7 +28,7 @@ required_environment_variables:
 2. **若图像档不可用,本工具会自动降级**:仍然产出并保存「生成指令(generation_prompt)」,只是不出图。
    这不是报错——你(Claude)要把 prompt 给用户,让他拿去任何能生图的工具用。
 3. **文字可编辑(可选)**:出图后可把文字做成可改的——定位文字 → `gemini-2.5-flash-image` 消字 → 系统字体渲染回去(见下文「文字可编辑」)。
-   **定位分三档,自动择优**:① GCV 服务账号(`GOOGLE_APPLICATION_CREDENTIALS`,独立于 `GEMINI_API_KEY`)→ **精确**取框;② 国产多模态 VL(`LOEVENT_OCR_PROVIDER=qwen-vl`/`glm-4v`)→ 模型**估框**(国内用不了 GCV 时用);③ 都没配 → "看图估位 + HTML 编辑器微调"。消字同理:配 `LOEVENT_IMAGE_EDIT_PROVIDER=qwen` 走国产、否则 Gemini、再否则本地 erase。都不影响普通出图。
+   **定位分三档,自动择优**:① GCV 服务账号(`GOOGLE_APPLICATION_CREDENTIALS`,独立于 `GEMINI_API_KEY`)→ **精确**取框;② 多模态 VL(`LOEVENT_OCR_PROVIDER=qwen-vl`/`glm-4v`)→ 模型**估框**(用不了 GCV 时的替代);③ 都没配 → "看图估位 + HTML 编辑器微调"。消字:配 `LOEVENT_IMAGE_EDIT_PROVIDER=qwen` 走该供应商、否则 Gemini;**抹字必须有图像 API,没有本地抹字兜底**——两者都无则「文字可编辑」的抹字这步做不了(普通出图不受影响)。
 
 ## 缺东西先弹窗问,别报错也别瞎填(AskUserQuestion)
 本 skill 在 Claude Code 里靠**你(Claude)调用 `AskUserQuestion` 工具**弹窗收集缺失信息——
@@ -48,8 +48,9 @@ required_environment_variables:
      (如 `minimalist`/`cyberpunk`/`techgradient`/`glassmorphism` …),设 `multiSelect: true` 让用户可多选叠加 1~2 个;
    - `ratio`:再来一题,选项 `1:1` / `9:16`(竖屏故事) / `16:9`(横屏);
    - `resolution`:选项 `1K` / `2K` / `4K`;
-   - 可选 `prompt`(额外方向,如"突出开发者社区氛围")、`color`(主色 hex)——让用户在 Other 里填,不填就略过。
-   (ratio/resolution/style 可合并在一次 AskUserQuestion 的多道题里问完,减少打断。)
+   - `color`(主色):**必确认**——主色一出就刻进成品图,和 ratio/resolution 同级。给一题:「跟随品牌/活动主色(默认,让 AI 配)」/「我指定」(Other 填 hex),别静默略过;
+   - 可选 `prompt`(额外方向,如"突出开发者社区氛围")——让用户在 Other 里填,不填就略过。
+   (style/ratio/resolution/color **合并在一次 AskUserQuestion 的多道题里一次问完**,别只问 style 就默认其余;把必确认项一次摊清、减少打断。)
    收齐后写进工作目录的 `poster_input.json`:
    ```json
    {
@@ -100,19 +101,19 @@ required_environment_variables:
 
 **定位文字有三档,自动择优**:
 - **精确(GCV)**:配了 `GOOGLE_APPLICATION_CREDENTIALS`(指向 Vision 服务账号 JSON,**独立于 `GEMINI_API_KEY`**;**是密钥,放仓库外、别提交**)→ GCV OCR 取**精确框**,几乎不用手调。
-- **够用(国产 VL)**:配了 `LOEVENT_OCR_PROVIDER=qwen-vl`/`glm-4v`(+ MODEL + API_KEY)→ 多模态模型**估框**,国内用不了 GCV 时用;精度不及 GCV,编辑器里拖准。
-- **兜底(都没配)**:你(agent)**直接看 `poster_1.png` 估文字位置**,粗一点没关系,后面在 HTML 编辑器里拖准。
+- **够用(多模态 VL)**:配了 `LOEVENT_OCR_PROVIDER=qwen-vl`/`glm-4v`(+ MODEL + API_KEY)→ 多模态模型**估框**,用不了 GCV 时的替代;精度不及 GCV,编辑器里拖准。
+- **代劳(都没配 / GCV·VL 失败)**:跑 `ocr` 会**自动降到 coding agent 估框**——不报错,它按 `event.json`/`host.json` 预填文字、写好 `poster_text_layers.json` 模板并返回 `mode:agent_estimate`;你(agent)**看 `poster_1.png` 把模板里的坐标填准**即可(粗一点没关系,后面 HTML 编辑器里拖准)。
 
-1. **定位文字**:
-   - 配了 GCV 或国产 VL → `python skill-poster/scripts/poster_text.py ocr --image poster_1.png`(→ `poster_ocr.json`:归一化框;**ocr 命令会自动按配置走 GCV 或 VL**);
-   - 都没配 → **跳过 ocr**,你看 `poster_1.png` 自己估每块文字的位置(下一步直接写进 layers)。
+1. **定位文字**:`python skill-poster/scripts/poster_text.py ocr --image poster_1.png` —— **一律先跑它**,它按环境自动择档,**永远不报错**:
+   - 配了 GCV/VL → `mode:precise`,出 `poster_ocr.json`(精确归一化框);
+   - 都没配或失败(含 GCV Invalid JWT) → `mode:agent_estimate`,已按 `event.json` 预填文字 + 写出 `poster_text_layers.json` 模板,你只需看图把坐标填准(输出里的 `ocr_unavailable_reason` 说明为何没走精确档)。
 2. **消字**得到干净底图(需计费档 image key):
    ```bash
    python skill-poster/scripts/poster_text.py erase --image poster_1.png   # → poster_1_clean.png
    ```
 3. **写出文字图层 `poster_text_layers.json`**(内容一律以 `event.json` 为准、纠模型错字;颜色看 `poster_1.png` 取):
-   - **有 `poster_ocr.json`(GCV)** → 用精确框换算:`align=center` 时 `x`=框中心、`y`=框顶、`font_scale`=框高/图高;
-   - **没有(降级)** → 你看 `poster_1.png` **估** `x`/`y`/`font_scale`(粗估即可,编辑器里再拖准)。
+   - **`mode:precise`(有 `poster_ocr.json`)** → 用精确框换算:`align=center` 时 `x`=框中心、`y`=框顶、`font_scale`=框高/图高;
+   - **`mode:agent_estimate`(GCV/VL 不可用)** → `ocr` 已把文字预填进 `poster_text_layers.json`,你看 `poster_1.png` **把每条的 `x`/`y`/`font_scale` 填准**(粗估即可,编辑器里再拖准)。
    ```json
    { "layers": [
      {"text": "AI 开发者大会 2026", "x": 0.5, "y": 0.06, "font_scale": 0.05, "color": "#FFFFFF", "bold": true, "align": "center"}

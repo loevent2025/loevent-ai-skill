@@ -63,6 +63,13 @@ def run_skill_main(main_coro_factory) -> int:
         return 2
     except KeyboardInterrupt:
         return 130
+    except (ModuleNotFoundError, ImportError) as e:
+        # 缺依赖是环境错,别甩「Key/配额/网络」误导排查方向
+        print(json.dumps(
+            {"ok": False, "error": type(e).__name__, "message": str(e),
+             "hint": "缺依赖:先 pip install -r requirements.txt(旧 venv 可能少 Pillow / google-cloud-vision 等新增依赖)。"},
+            ensure_ascii=False, indent=2))
+        return 1
     except Exception as e:
         print(json.dumps(
             {"ok": False, "error": type(e).__name__, "message": str(e),
@@ -72,7 +79,7 @@ def run_skill_main(main_coro_factory) -> int:
 
 
 def is_no_issues(text: str) -> bool:
-    """grounding 二次核查 step1 的「无问题」判定(trends/guests/company 共用)。
+    """grounding 二次核查 step1 的「无问题」判定(trends/guests/event-strategy 共用)。
 
     后端契约是返回固定串 "NO_ISSUES",但 grounding 模型偶发会包 ```围栏```、成对引号、
     前后空白甚至句末标点,直接 == 比对会把「无问题」误判成「有问题」、白触发一次 FIX。

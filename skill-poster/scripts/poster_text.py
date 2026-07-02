@@ -328,6 +328,55 @@ def _resolve_layers(args) -> list:
     return data.get("layers", data if isinstance(data, list) else [])
 
 
+def build_estimate_scaffold(image_path: Path) -> dict:
+    """GCV/VL 都不可用时,给 coding agent 搭「看图估框」的脚手架(不报错)。
+
+    从 event/host 预填已知上墙文字,坐标匀排留待 agent 看图填准;顺手把模板写进
+    工作目录 poster_text_layers.json(agent 就地改),再 render 即可。这把「今天靠 agent
+    手工估框」的路径固化成脚本支持的第三档——GCV/VL 只是把这步自动化,没有它 agent 手工也能出。
+    """
+    from PIL import Image
+    with Image.open(image_path) as poster:
+        width, height = poster.size
+
+    event = context_local.load_json("event") or {}
+    host = context_local.load_json("host") or {}
+    known = []
+    if event.get("event_name"):
+        known.append(str(event["event_name"]))
+    if event.get("time_start"):
+        known.append(str(event["time_start"]).replace("T", " "))  # 保留日期(可能含钟点)
+    if event.get("location"):
+        known.append(str(event["location"]))
+    if host.get("host_name"):
+        known.append(str(host["host_name"]))
+
+    span = max(len(known), 1)
+    layers = [{
+        "text": text,
+        "x": 0.5,
+        "y": round(0.1 + i * (0.8 / span), 3),
+        "font_scale": 0.07 if i == 0 else 0.04,
+        "color": "#FFFFFF",
+        "bold": i == 0,
+        "align": "center",
+    } for i, text in enumerate(known)]
+    template = {"layers": layers}
+    context_local.save_json("poster_text_layers", template)
+
+    return {
+        "ok": True,
+        "mode": "agent_estimate",
+        "image_size": [width, height],
+        "known_texts": known,
+        "template": template,
+        "hint": (f"GCV/VL 均不可用,已按 event/host 预填文字并写出 poster_text_layers.json。"
+                 f"请看图 {image_path},把每条文字的归一化坐标 x/y 与 font_scale 填准"
+                 f"(x/y 是 0~1 相对宽/高,y 为文字顶端,align 决定锚点),再跑 "
+                 f"`poster_text.py render --image <clean>.png`;或 `preview` 在浏览器里拖准。"),
+    }
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description="海报消字 + 文字图层渲染")
     sub = parser.add_subparsers(dest="command", required=True)
@@ -351,15 +400,34 @@ def main() -> int:
     args = parser.parse_args()
 
     if args.command == "ocr":
-        # 配了国产多模态 VL(LOEVENT_OCR_PROVIDER)就走它定位,否则走 GCV;两者输出同格式
+        # 定位三档:VL(LOEVENT_OCR_PROVIDER)→ GCV(GOOGLE_APPLICATION_CREDENTIALS)→ coding agent 代劳估框。
+        # 前两档任一成功走「精确档」;两者都没配或都失败(含 GCV Invalid JWT 这类)→ 不报错,给 agent 估框脚手架。
         from engine.providers import resolve_ocr_provider
+        image_path = Path(args.image)
+        blocks, reason = None, None
         ocr_provider = resolve_ocr_provider()
         if ocr_provider is not None:
-            blocks = asyncio.run(ocr_provider.locate(Path(args.image)))
+            try:
+                blocks = asyncio.run(ocr_provider.locate(image_path))
+            except Exception as e:
+                reason = f"VL OCR '{getattr(ocr_provider, 'name', '?')}' 失败: {type(e).__name__}: {e}"
+        elif os.environ.get("GOOGLE_APPLICATION_CREDENTIALS", "").strip():
+            try:
+                blocks = ocr_text_blocks(image_path)
+            except Exception as e:
+                reason = f"GCV OCR 失败: {type(e).__name__}: {e}"
         else:
-            blocks = ocr_text_blocks(Path(args.image))
-        context_local.save_json("poster_ocr", {"blocks": blocks})
-        print(json.dumps({"ok": True, "blocks": blocks, "count": len(blocks)}, ensure_ascii=False))
+            reason = "未配 LOEVENT_OCR_PROVIDER(VL),也未设 GOOGLE_APPLICATION_CREDENTIALS(GCV)"
+
+        if blocks:  # 精确档
+            context_local.save_json("poster_ocr", {"blocks": blocks})
+            print(json.dumps({"ok": True, "mode": "precise", "blocks": blocks, "count": len(blocks)},
+                             ensure_ascii=False))
+            return 0
+        # 精确档不可用 → coding agent 代劳估框(脚手架,不报错)
+        scaffold = build_estimate_scaffold(image_path)
+        scaffold["ocr_unavailable_reason"] = reason
+        print(json.dumps(scaffold, ensure_ascii=False))
         return 0
 
     if args.command == "erase":
@@ -402,6 +470,12 @@ if __name__ == "__main__":
         raise SystemExit(main())
     except KeyboardInterrupt:
         raise SystemExit(130)
+    except (ModuleNotFoundError, ImportError) as dep:
+        # 缺依赖是环境错,别甩「Key/配额/网络」把人带偏(海报文字可编辑需 Pillow;GCV 取框需 google-cloud-vision)
+        print(json.dumps({"ok": False, "error": type(dep).__name__, "message": str(dep),
+                          "hint": "缺依赖:先 pip install -r requirements.txt(海报文字可编辑需 Pillow;GCV 取框需 google-cloud-vision)。"},
+                         ensure_ascii=False))
+        raise SystemExit(1)
     except RuntimeError as missing:
         print(json.dumps({"ok": False, "error": "MissingInput", "message": str(missing),
                           "hint": "按 message 补齐(GCV 凭据 / 计费档 image Key / 中文字体)再重试。"},

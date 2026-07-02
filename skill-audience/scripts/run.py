@@ -89,17 +89,18 @@ def _axis(raw: dict, key: str, default_label: str, default_value: int) -> dict:
     }
 
 
-def _resolve_inputs(args) -> dict:
-    """优先读 audience_input.json,CLI 参数覆盖;给出合理缺省。"""
+def _resolve_inputs(args, plan: dict = None) -> dict:
+    """GTM 读取链:CLI > audience_input.json > plan.gtm > 默认。其余优先读 audience_input.json,CLI 覆盖。"""
     data = context_local.load_json("audience_input")
     if data is None:
         logger.info(
-            "未找到 audience_input.json(在 %s),使用 CLI 参数 / 缺省值推断受众。",
+            "未找到 audience_input.json(在 %s),使用 CLI 参数 / plan.gtm / 缺省值推断受众。",
             context_local.workdir(),
         )
         data = {}
 
-    raw_gtm = data.get("GTMmatrix")
+    # 前置 2×2 GTM 象限:audience_input 没填就回落到 plan.gtm(用户前置选过的单一真源)
+    raw_gtm = data.get("GTMmatrix") or (plan or {}).get("gtm")
     if not isinstance(raw_gtm, dict):
         raw_gtm = {}
 
@@ -138,12 +139,14 @@ async def _main() -> int:
 
     event = context_local.load_json("event", required=True)
     host = context_local.load_json("host", required=True)
-    inputs = _resolve_inputs(args)
+    plan = context_local.load_json("plan") or {}
+    inputs = _resolve_inputs(args, plan)
 
     audience = await infer_audience(event=event, host=host, **inputs)
 
     context_local.save_json("audience", audience)
-    context_local.merge_into("plan", {"audience": audience})
+    # 受众 + 前置采集的 GTM 象限一起写回 plan(plan.gtm 是单一真源,供 eventplanner 复用)
+    context_local.merge_into("plan", {"audience": audience, "gtm": inputs["GTMmatrix"]})
 
     out = {"ok": True, "workdir": str(context_local.workdir()),
            "written": ["audience.json", "plan.json(merged)"], "audience": audience}

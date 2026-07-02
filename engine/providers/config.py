@@ -135,7 +135,7 @@ class ImageEditConfig:
 
 
 def resolve_image_edit_provider() -> Optional["ImageEditConfig"]:
-    """读 LOEVENT_IMAGE_EDIT_* 决定消字/图像编辑供应商;没配 / 选 gemini → None(由 Gemini 或本地 erase 兜底)。"""
+    """读 LOEVENT_IMAGE_EDIT_* 决定消字/图像编辑供应商;没配 / 选 gemini → None(由 Gemini 兜底;无图像 API 则抹字不可用)。"""
     name = os.environ.get("LOEVENT_IMAGE_EDIT_PROVIDER", "").strip().lower()
     base_url = os.environ.get("LOEVENT_IMAGE_EDIT_BASE_URL", "").strip()
     model = os.environ.get("LOEVENT_IMAGE_EDIT_MODEL", "").strip()

@@ -1,5 +1,5 @@
 """
-LoEvent AI Skill —— 共享内核(engine)
+LoEvent Pro —— 共享内核(engine)
 
 所有 skill 都依赖这一份内核。它把 AI 能力做成「单机化」形态:
 - 用单个 GEMINI_API_KEY 直连(无多项目 Key 池 / 无按用户路由);

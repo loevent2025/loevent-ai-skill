@@ -142,7 +142,7 @@ class OpenAICompatClient:
                                "本次无实时 grounding,结果可能过时/编造,请人工核实。", module)
                 return prompt, "none"
             raise RuntimeError(
-                "联网调研需要搜索能力,但未配 LOEVENT_SEARCH_PROVIDER —— trends/guests/company 这类 skill "
+                "联网调研需要搜索能力,但未配 LOEVENT_SEARCH_PROVIDER —— trends/guests/event-strategy 这类 skill "
                 "不应无来源编造。请配 LOEVENT_SEARCH_PROVIDER=bocha|tavily + LOEVENT_SEARCH_API_KEY;"
                 "若确实接受无实时来源,设 LOEVENT_ALLOW_UNGROUNDED=1。")
         queries = await self._propose_queries(prompt, module)

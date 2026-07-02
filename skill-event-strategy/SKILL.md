@@ -1,6 +1,6 @@
 ---
-name: loevent-company
-description: 对主办方做深度调研——挖掘其历史活动 DNA、对标 1~2 个竞品、扫描行业趋势/话题热点/受众痛点，并据此产出三套差异化活动策略方案（品牌传承 / 市场差异化 / 趋势前瞻，各带预算估算）。当用户说"帮我研究这个主办方/分析竞品怎么办活动/给几套活动策略方向/做行业趋势调研"时用。需要先有活动档案与受众画像（先跑 loevent-init，再跑 loevent-audience）。
+name: loevent-event-strategy
+description: 活动策略（Event Strategy）——对主办方做深度调研：挖掘其历史活动 DNA、对标 1~2 个竞品、扫描行业趋势/话题热点/受众痛点，并据此产出三套差异化活动策略方案（品牌传承 / 市场差异化 / 趋势前瞻，各带预算估算）。当用户说"帮我研究这个主办方/分析竞品怎么办活动/给几套活动策略方向/做行业趋势调研/出活动策略"时用。需要先有活动档案与受众画像（先跑 loevent-init，再跑 loevent-audience）。
 version: 0.1.0
 metadata:
   hermes:
@@ -14,7 +14,7 @@ required_environment_variables:
     required_for: 全部功能（含 Google Search 联网调研）
 ---
 
-# LoEvent · 主办方/竞品/趋势深度调研 + 三套策略方案（company）
+# LoEvent · Event Strategy 活动策略：主办方/竞品/趋势深度调研 + 三套策略方案
 
 这是售货机里**最重的一个调研工具**：一次运行会发起约 20+ 次联网 LLM 调用（多组 `asyncio` 并行），
 围绕「主办方过往 → 竞品对标 → 行业趋势/话题/痛点 → 三套可落地策略」做一轮完整调研。**请提前告诉用户它会跑几分钟。**
@@ -59,7 +59,7 @@ required_environment_variables:
    （也可用命令行：`--max-competitors 2 --goal product --objective "…"`。）
 3. 运行（会跑几分钟，耐心等）：
    ```bash
-   python skill-company/scripts/run.py
+   python skill-event-strategy/scripts/run.py
    ```
 4. 产物：`company.json` 写入工作目录，核心结论 merge 进 `plan.json`（含 `event_scale`/`scene_type`/`activate_type`，供下游 timeline/poster/social 复用）；结构化结果打印到 stdout。
 
@@ -71,41 +71,36 @@ required_environment_variables:
 - `industry_trends` / `topic_catalyst` / `pain_points`：三段趋势/话题/痛点总结（纯文本）。
 
 ## 结果呈现(Presenting Results)— 必读
-**绝不要把 `company.json` 的原始 JSON 甩给用户。** 这份输出很大且嵌套很深，你(Claude)要**择重整理成可读小结**，例如：
+**绝不要把 `company.json` 的原始 JSON 甩给用户**（但也**不要把调研压成摘要**——用户要靠完整信息做 informed 决策）。
+脚本已把完整调研 + 三卡综述落成工作目录里的 **`event_strategy_full.md`**（见输出 JSON 的 `written`）——先把它**指给用户**（"完整版已存 `event_strategy_full.md`"），再在对话里给一份**完整可读版**（Markdown，不是原始 JSON、不删节）。
 
-> **🏛️ 主办方调研 · 三套活动策略**
+**呈现顺序（先调研、再三卡、后选卡）：**
+
+> **🏛️ Event Strategy · 主办方调研 + 三套活动策略**
+> 📄 完整版：`event_strategy_full.md`
 >
-> **战略总结**
-> 〈把 strategic_summary 用 1~2 句人话点出来〉
+> ### 一、全量调研（选卡依据，完整放出，别只给一两句）
+> **主办方底色（过往 DNA）**：互动偏好〈host_insight.interaction 逐条〉· 场地〈location〉· 合作方〈cohost〉
+> **竞品对标**（〈competitors 数量〉个，逐个完整给）：
+> - **〈竞品 title〉**：互动「〈interaction〉」· 场地「〈location〉」· 嘉宾构成「〈guest_composition〉」· 来源〈url〉
+> **行业趋势**：〈industry_trends **整段**〉
+> **话题引爆点**：〈topic_catalyst **整段**〉
+> **受众痛点**：〈pain_points **整段**〉
 >
-> **主办方底色（过往 DNA）**
-> - 互动偏好：〈host_insight.interaction 逐条，取要点〉
-> - 场地偏好：〈host_insight.location〉
-> - 常见合作方：〈host_insight.cohost〉
->
-> **竞品对标**（〈competitors 数量〉个）
-> - **〈竞品 title〉**：互动「〈interaction〉」· 场地「〈location〉」· 嘉宾「〈guest_composition〉」
-> - （字段为 null 的省略，不显示 null）
->
-> **三套策略方向**（让用户选一个深化）
+> ### 二、三套策略方向（三张卡各自完整综述，并列对比）
 > 1. **品牌传承型** ·「〈brand_dna.title〉」— 〈slogan〉
->    场地：〈location〉 · 互动：〈interaction〉 · 嘉宾方向：〈cohost_guest〉 · 预算量级：〈budget 摘一句〉
-> 2. **市场差异化型** ·「〈competitor.title〉」— 〈slogan〉 …（同上结构）
-> 3. **趋势前瞻型** ·「〈trend_forward.title〉」— 〈slogan〉 …（同上结构）
+>    场地：〈location〉· 互动：〈interaction〉· 嘉宾方向：〈cohost_guest〉· **预算：〈budget 完整给，不摘句〉**
+> 2. **市场差异化型** ·「〈competitor.title〉」—〈slogan〉…（同上结构，完整）
+> 3. **趋势前瞻型** ·「〈trend_forward.title〉」—〈slogan〉…（含 `url` 来源，完整）
 >
-> **行业风向**（调研摘要）
-> - 行业趋势：〈industry_trends，一两句〉
-> - 话题热点：〈topic_catalyst，一两句〉
-> - 受众痛点：〈pain_points，一两句〉
->
-> 想深化哪一套？我可以据此排时间线 / 出海报 / 写社媒文案。
+> ### 三、informed 选卡
+> 〈把 strategic_summary（含 AI 推荐及理由）念给用户〉。**用 `AskUserQuestion` 让用户从三套里明确选一张**（selected_vibe）——别替他默认第一张；选定后可据此跑 eventplanner / timeline / poster / social。
 
 要点：
-- **先给结论**（战略总结 + 三套方案标题/slogan），再给支撑细节；
-- 三套方案**并列、各自一段**，每段点出场地/互动/嘉宾/预算，方便用户对比着选；
-- **空字段一律省略**，不要显示 `null`；`budget` 是一段联网估算文本，摘一句量级即可，别整段贴；
-- `results_text`/`url` 这类原始检索过程**不用展示**；
-- 末尾给一句**可执行的下一步建议**（顺势引到 timeline/poster/social）。
+- **先全量调研、再三卡、后选卡**：调研是选卡依据，必须完整放出（趋势/话题/痛点**整段给**，竞品**逐个给**），不得压成摘要；
+- 三套方案**并列、各自一段完整综述**，`budget` **完整给**（不再"摘一句量级"）；
+- **空字段一律省略**，不显示 `null`；`results_text` 这类原始检索文本可不展示（已在 `.md` 里）；
+- 结尾用 **AskUserQuestion** 收 `selected_vibe`，衔接 eventplanner 人机门（**这是必问级人机门，无安全默认**）。
 
 ## 易错点(Pitfalls)
 - 缺 `event.json`/`host.json` → 脚本会报错提示先跑 loevent-init。

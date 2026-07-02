@@ -1,6 +1,6 @@
 ---
 name: loevent-eventplanner
-description: 把一场活动写成一份完整的活动策划方案——目标/背景/商业价值、内容设计(受众画像/流程/嘉宾)、场地推荐、合作赞助、营销推广共 6 个章节。当用户说"帮我写活动方案/出一份完整策划/把这场活动落成方案"时用。前置:先跑 loevent-init → loevent-audience → loevent-company,并让用户从三套策略里选一张 vibe 卡(selected_vibe)。时间线另用 loevent-timeline。
+description: 把一场活动写成一份完整的活动策划方案——目标/背景/商业价值、内容设计(受众画像/流程/嘉宾)、场地推荐、合作赞助、营销推广共 6 个章节。当用户说"帮我写活动方案/出一份完整策划/把这场活动落成方案"时用。前置:先跑 loevent-init → loevent-audience → loevent-event-strategy,并让用户从三套策略里选一张 vibe 卡(selected_vibe)。时间线另用 loevent-timeline。
 version: 0.1.0
 metadata:
   hermes:
@@ -37,7 +37,8 @@ required_environment_variables:
 在 Claude Code 里,frontmatter 的 `required_environment_variables` **不会**触发原生填 key 弹窗(那是 Hermes/claude.ai 运行时的能力),脚本也弹不出窗。需要时由你(Claude)调用 `AskUserQuestion`:
 - **缺 `GEMINI_API_KEY`**:处理见 [`references/API-KEY.md`](../references/API-KEY.md)——先检测、已配置别再弹;缺了才弹,给「自己改 .env / 直接粘贴」两条路,key 写进**项目根** `.env`(不是沙箱),别甩报错。
 - **缺 `selected_vibe`**(必须三选一,见下方「人机门」):用 AskUserQuestion 把三套策略卡作为选项让用户单选,**别默认替他选**。这属**必问**(无安全默认)。
-- **参数 preflight 见 [`references/PREFLIGHT.md`](../references/PREFLIGHT.md)**:`goal` / `objective` / `GTMmatrix` 进方案正文、影响产出,属**必确认(建议默认·可改)**——推出草稿默认值摊给用户、"要改才改"再跑;`prep_date` / `user_input` 属**沉默/可选**,有默认就别问。
+- **参数 preflight 见 [`references/PREFLIGHT.md`](../references/PREFLIGHT.md)**:`goal` / `objective` 进方案正文、影响产出,属**必确认(建议默认·可改)**——推出草稿默认值摊给用户、"要改才改"再跑;`prep_date` / `user_input` 属**沉默/可选**,有默认就别问。
+  - **`GTMmatrix`**:优先复用 audience 前置采集写进 `plan.gtm` 的 2×2 象限——**`plan.gtm` 已有就沉默复用,别重复问**(读取链 CLI > eventplanner_input.json > `plan.gtm` > 默认);只有 audience 没跑过、`plan.gtm` 也没有时,才按 [`references/GTM-MATRIX.md`](../references/GTM-MATRIX.md) 补问一次象限。
 
 ## 前置(Procedure)—— 这是一条流水线,缺上游要先补
 
@@ -45,10 +46,10 @@ required_environment_variables:
 
 1. **`event.json` + `host.json`** —— 活动与主办方档案。没有 → 先跑 **loevent-init**。
 2. **`plan.audience`** —— 受众画像(主/次/延伸 + 痛点)。没有 → 先跑 **loevent-audience**。
-3. **`plan.company`** —— 主办方调研产出的**三套策略 vibe 卡**(`brand_dna` / `competitor` /
+3. **`plan.company`** —— 活动策略(event-strategy)产出的**三套策略 vibe 卡**(`brand_dna` / `competitor` /
    `trend_forward`,每张含 slogan / 互动方式 / co-host 嘉宾方向 / 建议场地)。
-   没有 → 先跑 **loevent-company**。
-4. **`plan.event_scale` / `plan.scene_type`** —— 规模与场景分类(通常 loevent-init / loevent-company 写)。
+   没有 → 先跑 **loevent-event-strategy**。
+4. **`plan.event_scale` / `plan.scene_type`** —— 规模与场景分类(通常 loevent-init / loevent-event-strategy 写)。
    缺失时降级:`event_scale` 默认 `medium`,行业知识库按 `other` 退化跳过。
 
 ### 人机门:让用户选一张 vibe 卡(关键)
@@ -82,8 +83,9 @@ python skill-eventplanner/scripts/run.py \
 
 ## 结果呈现(给用户的样子)—— 不要甩 JSON
 
-工具 stdout 是结构化 JSON,**给用户前要重新组织成一份可读方案**。把 6 个 `node_*.section`
-按章节拼起来(每个 `section` 已是 Markdown 正文),组成一份完整文档:
+工具已把 6 章节拼成完整方案落地到工作目录的 **`eventplan_full.md`**(见输出 JSON 的 `written`)——
+先把它**指给用户**("完整方案已存 `eventplan_full.md`"),再在对话里**逐章完整呈现**(每个 `section` 已是 Markdown 正文)。
+**6 章节须全文给出,不得删节/压缩成摘要**(方案是最终交付物);只有用户主动说"给我简版"才摘要。组织成:
 
 > # 《活动名》活动策划方案
 >
@@ -132,9 +134,9 @@ python skill-eventplanner/scripts/run.py \
 
 ## 坑(Pitfalls)
 - **缺 vibe 卡(plan.company)**:工具用占位卡降级生成,slogan/互动/嘉宾方向会偏空。
-  正确做法:先跑 loevent-company,再让用户选卡。`notes` 会标这条。
+  正确做法:先跑 loevent-event-strategy,再让用户选卡。`notes` 会标这条。
 - **缺 selected_vibe**:默认取第一张可用卡。建议你先收集用户选择(人机门),别让它默认。
 - **缺受众(plan.audience)**:受众相关字段会偏空。先跑 loevent-audience。
 - **缺 scene_type/event_scale**:`event_scale` 退化为 `medium`,知识库退化跳过(按 `other`)。
-  方案能出,但少了行业/场景化的基准与话术。先跑 loevent-init/loevent-company 可补齐。
+  方案能出,但少了行业/场景化的基准与话术。先跑 loevent-init/loevent-event-strategy 可补齐。
 - **industry='other'**:行业知识库整体跳过(退化),只用通用 system prompt;节点 6 额外拼平台本地化补强。

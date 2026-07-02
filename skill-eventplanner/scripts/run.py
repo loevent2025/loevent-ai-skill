@@ -20,9 +20,9 @@ skill-eventplanner —— 把一场活动写成一份完整的活动策划方案
 上下文来源(pre 阶段已被现有 skill 覆盖,这里只读本地 JSON):
   event.json  —— skill-init:event_name/theme/time_start/time_end/location/attendees/language
   host.json   —— skill-init:host_name(organization)/industry/host_profile(self_description)
-  plan.json   —— skill-init/company 写 scene_type/event_scale;
+  plan.json   —— skill-init/event-strategy 写 scene_type/event_scale;
                  skill-audience 写 audience(primary/secondary/extended.{audience,painpoint});
-                 skill-company 写 company.{brand_dna,competitor,trend_forward}(三张 vibe 卡)。
+                 skill-event-strategy 写 company.{brand_dna,competitor,trend_forward}(三张 vibe 卡)。
   用户输入    —— eventplanner_input.json 或 CLI:selected_vibe / event_goal /
                  prompt_objective / GTMmatrix / preparation_start_date / user_input。
 
@@ -458,7 +458,7 @@ def _gtm_part(gtm: dict, key: str):
 # vibe 卡解析 + 降级:缺 plan.company 的三张卡 → 占位卡,不崩
 # ─────────────────────────────────────────────────────────────
 _PLACEHOLDER_VIBE = {
-    "title": "（未跑 loevent-company）",
+    "title": "（未跑 loevent-event-strategy）",
     "slogan": "",
     "location": "",
     "interaction": "",
@@ -474,7 +474,7 @@ def _resolve_vibe(plan: dict, selected_vibe) -> tuple:
     if not have:
         return dict(_PLACEHOLDER_VIBE), (
             "缺少 company vibe 卡(plan.company 没有 brand_dna/competitor/trend_forward)。"
-            "建议先跑 loevent-company 生成三套策略卡并让用户选一张;本次用占位卡降级生成,"
+            "建议先跑 loevent-event-strategy 生成三套策略卡并让用户选一张;本次用占位卡降级生成,"
             "slogan/互动/嘉宾方向等会偏空。"
         )
     key = _VIBE_MAP.get(selected_vibe)
@@ -491,7 +491,7 @@ def _resolve_vibe(plan: dict, selected_vibe) -> tuple:
 # ─────────────────────────────────────────────────────────────
 # 输入解析:eventplanner_input.json + CLI 覆盖
 # ─────────────────────────────────────────────────────────────
-def _resolve_inputs(args) -> dict:
+def _resolve_inputs(args, plan: dict = None) -> dict:
     data = context_local.load_json("eventplanner_input") or {}
     gtm = data.get("GTMmatrix")
     if (args.growth_value is not None or args.lifecycle_value is not None) and gtm is None:
@@ -504,7 +504,7 @@ def _resolve_inputs(args) -> dict:
         "selected_vibe": args.selected_vibe or data.get("selected_vibe"),
         "event_goal": args.goal or data.get("event_goal", "product"),
         "prompt_objective": args.objective or data.get("prompt_objective", ""),
-        "GTMmatrix": gtm or data.get("GTMmatrix"),
+        "GTMmatrix": gtm or data.get("GTMmatrix") or (plan or {}).get("gtm"),  # 复用 audience 前置写入的 plan.gtm
         "preparation_start_date": args.prep_date or data.get("preparation_start_date"),
         "user_input": args.user_input or data.get("user_input"),
         # content:可选的"用户提供参考资料"(对齐后端 user_prompt 的 {{content}});默认空。
@@ -537,7 +537,7 @@ async def run_eventplan(*, event: dict, host: dict, plan: dict, user_inputs: dic
         )
     if not plan.get("scene_type"):
         notes.append(
-            "plan 缺 scene_type/event_scale(通常由 loevent-init/loevent-company 写)。"
+            "plan 缺 scene_type/event_scale(通常由 loevent-init/loevent-event-strategy 写)。"
             "已用默认 event_scale='medium',知识库按行业/场景退化跳过。"
         )
 
@@ -602,6 +602,38 @@ async def run_eventplan(*, event: dict, host: dict, plan: dict, user_inputs: dic
     }
 
 
+_NODE_TITLES_MD = {
+    "node_1": "一、活动目标与背景",
+    "node_2": "二、内容设计(受众 / 流程 / 嘉宾)",
+    "node_3": "三、场地推荐",
+    "node_4": "四、关键任务时间线",
+    "node_5": "五、合作与赞助",
+    "node_6": "六、营销推广",
+}
+
+
+def _assemble_full_md(event: dict, result: dict) -> str:
+    """把 6 章节的 section 拼成一份完整 Markdown 方案(落地成文件,不依赖 agent 自觉完整呈现)。"""
+    nodes = result.get("nodes") or {}
+    name = (event or {}).get("event_name") or "活动"
+    parts = [f"# 《{name}》活动策划方案\n"]
+    for key in ("node_1", "node_2", "node_3", "node_4", "node_5", "node_6"):
+        parts.append(f"\n## {_NODE_TITLES_MD[key]}\n")
+        node = nodes.get(key)
+        section = node.get("section") if isinstance(node, dict) else None
+        if section:
+            # 个别节点的 section 里换行是字面 \n(如 node_1),统一还原成真换行
+            parts.append(section.replace("\\n", "\n") if isinstance(section, str) else str(section))
+        elif key == "node_4":
+            parts.append("> 时间线未随方案生成,请用 loevent-timeline 单独生成完整倒排期。")
+        else:
+            parts.append("> (本章未生成)")
+    notes = result.get("notes") or []
+    if notes:
+        parts.append("\n\n---\n**说明**\n" + "\n".join(f"- {n}" for n in notes))
+    return "\n".join(parts)
+
+
 async def _main() -> int:
     logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
 
@@ -622,7 +654,7 @@ async def _main() -> int:
         event = context_local.load_json("event", required=True)
         host = context_local.load_json("host", required=True)
         plan = context_local.load_json("plan") or {}
-        user_inputs = _resolve_inputs(args)
+        user_inputs = _resolve_inputs(args, plan)
     except FileNotFoundError as e:
         print(json.dumps({"ok": False, "error": "MissingContext", "message": str(e),
                           "hint": "请先在当前工作目录跑 loevent-init,生成 event.json/host.json/plan.json。"},
@@ -634,8 +666,8 @@ async def _main() -> int:
                          ensure_ascii=False, indent=2))
         return 2
 
-    # 人机门:company 已出 vibe 卡但用户没选/选错 → 硬挡,让 agent 用 AskUserQuestion 让用户明确选一张,
-    # 别静默替用户取第一张卡出整份方案。卡完全没有(没跑 company)是另一回事,走 run_eventplan 内的占位降级。
+    # 人机门:event-strategy 已出 vibe 卡但用户没选/选错 → 硬挡,让 agent 用 AskUserQuestion 让用户明确选一张,
+    # 别静默替用户取第一张卡出整份方案。卡完全没有(没跑 event-strategy)是另一回事,走 run_eventplan 内的占位降级。
     company = (plan or {}).get("company") or {}
     available_vibes = [k for k in ("brand_dna", "competitor", "trend_forward") if company.get(k)]
     selected_vibe = user_inputs.get("selected_vibe")
@@ -643,7 +675,7 @@ async def _main() -> int:
         print(json.dumps({
             "ok": False,
             "error": f"缺少必选字段:selected_vibe(策略 vibe 卡,人机门,无安全默认)。"
-                     f"company 已生成可选卡 {available_vibes},请让用户从中明确选一张,"
+                     f"event-strategy 已生成可选卡 {available_vibes},请让用户从中明确选一张,"
                      f"用 --selected-vibe 传入或写进 eventplanner_input.json;别替用户默认选第一张。",
         }, ensure_ascii=False, indent=2))
         return 2
@@ -660,6 +692,13 @@ async def _main() -> int:
     written = ["eventplan.json"]
     ok_count = result.get("ok_count", 0)
     if ok_count > 0:
+        # 落地完整方案 .md(完整呈现的硬底,见 SKILL.md「结果呈现」)
+        try:
+            md_path = context_local.workdir() / "eventplan_full.md"
+            md_path.write_text(_assemble_full_md(event, result), encoding="utf-8")
+            written.append("eventplan_full.md")
+        except Exception as e:
+            logging.warning("落地 eventplan_full.md 失败(不影响主产物): %s", e)
         # 至少一章成功才 merge,避免全失败的空壳污染 plan.json 误导下游
         context_local.merge_into("plan", {"eventplan": result})
         written.append("plan.json(merged)")

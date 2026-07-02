@@ -1,4 +1,4 @@
-# AGENTS.md — LoEvent AI Skills 的 agent 公约
+# AGENTS.md — LoEvent Pro 的 agent 公约
 
 > 给**任何** AI coding agent(Claude Code / Codex / Cursor / Gemini·Antigravity / Aider …)看的统一说明:
 > 怎么配环境、怎么挑并调用 skill、怎么处理失败、别碰什么。engine 与 skill 脚本是受测内核,不要改。
@@ -31,6 +31,8 @@ Claude Code 会自动按 `SKILL.md` 的 frontmatter 触发;**其它 agent 自己
 2. **先决条件**:工作目录没有 `event.json`/`host.json`/`plan.json` 时,**先跑 `loevent-init`** 把活动描述抽成档案,再跑别的。
 3. 按那条 `SKILL.md` 的「步骤」执行,并按「结果呈现」把结构化 JSON 整理成可读中文给用户(**别直接甩 JSON**)。
 
+**完整呈现原则(必守)**:长文档类产出(活动方案、主办方调研+三套策略、社媒/口播长文等)**必须逐段完整呈现,或指向脚本落地的 `.md` 文件(如 `eventplan_full.md` / `event_strategy_full.md`)**;**不得把长文档压缩成摘要/精简版**。摘要**只在用户主动说"给我简版/挑重点"时才做**。判断标准:产出是"最终交付物"就完整给;是"过程数据/检索原文"才可略。
+
 ## 怎么调用一个 skill
 
 ```bash
@@ -41,14 +43,15 @@ python skill-<name>/scripts/run.py [参数]
 - `skill-init` 的入口是 `init_event.py`(不是 run.py):`python skill-init/scripts/init_event.py --text "活动描述…"`
 - `skill-poster` 有两个:`run.py`(出图)+ `poster_text.py`(海报文字可编辑:`ocr`/`erase`/`render`/`preview` 子命令,见其 SKILL.md)
 
-13 个 skill:start(导览)/ init / audience / trends / host-bio / budget / timeline / company / guests / luma / social / poster / eventplanner。
-**主线**:`init → audience → company →(让用户选一张策略 vibe 卡)→ eventplanner`;其余按需穿插。
+13 个 skill:start(导览)/ init / audience / trends / host-bio / budget / timeline / event-strategy / guests / luma / social / poster / eventplanner。
+**主线**:`init →(选 GTM 象限)→ audience → event-strategy →(让用户选一张策略 vibe 卡)→ eventplanner`;其余按需穿插。
+(GTM 象限:audience 首跑时用 AskUserQuestion 让用户选一格 2×2 增长象限,见 [`references/GTM-MATRIX.md`](references/GTM-MATRIX.md);选定后写进 `plan.gtm`,audience 与 eventplanner 复用。)
 
 ## 主动导览 / 推进(别假设用户已懂流程)
 
 冷启动的用户/agent 不知道有哪些 skill、什么顺序。所以:
 
-- **用户问"怎么用 / 这是什么 / 介绍一下 / help",或明显没头绪** → 调 **`loevent-start`** 给主线地图(或直接给:`init 建档 → audience 受众 → company 主办方调研·出 3 套策略方向 → 选一套 → eventplanner 完整方案`;支线 预算/时间线/海报/社媒/嘉宾 随时点)。
+- **用户问"怎么用 / 这是什么 / 介绍一下 / help",或明显没头绪** → 调 **`loevent-start`** 给主线地图(或直接给:`init 建档 → audience 受众 → event-strategy 主办方调研·出 3 套策略方向 → 选一套 → eventplanner 完整方案`;支线 预算/时间线/海报/社媒/嘉宾 随时点)。
 - **每跑完一个 skill** → 主动报一句"当前在主线哪一步 + 建议的下一步",别让用户自己猜。
 - **分寸**:冷启动/迷路时给完整地图;之后只给轻量"下一步建议"一句话,别每次念整张图(同 preflight 的"该出现时出现")。
 
@@ -69,6 +72,7 @@ python skill-<name>/scripts/run.py [参数]
 
 - **缺 `GEMINI_API_KEY`**:见 [`references/API-KEY.md`](references/API-KEY.md)(先检测、已配置别再弹;写进项目根 `.env`)。
 - **参数该问/该确认/该沉默**:见 [`references/PREFLIGHT.md`](references/PREFLIGHT.md)(必问 / 必确认·建议默认可改 / 沉默 三级;对应 MCP 的 **Elicitation**,按 accept/decline/cancel 处理回应)。
+  **别只问有硬门槛(exit 2)的「必问」参数**:「必确认」参数(如海报 `ratio`/`resolution`/主色、`GTMmatrix`、竞品数)**同样要主动把推出的默认值摊给用户**(一次问清、"要改才改"),不得因为脚本不拦就静默默认。跑贵/出图/落对外产出前尤其如此。
 - **海报文字可编辑**额外需 `GOOGLE_APPLICATION_CREDENTIALS`(GCV 服务账号 JSON,独立于 Gemini Key;**绝不提交进仓库**)。
 
 ## do-not-touch(边界)

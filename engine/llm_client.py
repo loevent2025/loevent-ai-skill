@@ -85,7 +85,7 @@ def set_token_callback(cb: Optional[OnTokens]) -> None:
     _on_tokens = cb
 
 
-# 并发上限(对齐后端 nano_semaphore):像 skill-company 那种一次并发打 ~22 个
+# 并发上限(对齐后端 nano_semaphore):像 skill-event-strategy 那种一次并发打 ~22 个
 # grounding 请求,不限流会打爆连接池 / 触发 SSL EOF。默认 5,可用环境变量覆盖。
 # 懒创建:避免在无事件循环时构造 Semaphore 绑错 loop。
 _sem: Optional[asyncio.Semaphore] = None

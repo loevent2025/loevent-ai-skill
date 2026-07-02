@@ -108,7 +108,7 @@ async def _step2_fix_one(field: Any, value: str, module: str, context: str = "")
 
 
 def _is_no_issues(issues_text: str) -> bool:
-    """委托 engine.runtime.is_no_issues(trends/guests/company 共用,避免各自漂移)。"""
+    """委托 engine.runtime.is_no_issues(trends/guests/event-strategy 共用,避免各自漂移)。"""
     return is_no_issues(issues_text)
 
 

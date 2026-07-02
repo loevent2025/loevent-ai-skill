@@ -2,7 +2,7 @@
 
 对接 poster_text 的消字调用:generate_image(prompt=[ERASE_PROMPT, PIL.Image]) —— 指令式、无 mask,
 正好对应 DashScope 多模态生成端点(同步、接受 base64 输入图、返回图片 URL)。
-没配本供应商时,MultiProviderClient 会退到 Gemini 或 poster_text 的本地 erase,流程不断。
+没配本供应商时,MultiProviderClient 会退到 Gemini;两者都没有则抹字无法进行(无本地抹字实现)。
 
 真机未验证(理论兼容):DashScope 私有格式,逻辑已 no-key 测,换真实 key 再验证消字效果。
 """

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-skill-company —— 主办方/竞品/趋势深度调研 + 三套策略方案(company)
+skill-event-strategy —— 活动策略(Event Strategy):主办方/竞品/趋势深度调研 + 三套策略方案
 
 对齐后端 company_info_search.company_info_search 的【完整调研管线】(去 Mongo/项目路由/track_timing):
   selection(场景分类,补 plan.event_scale/scene_type/activate_type)
@@ -26,8 +26,8 @@ asyncio.gather(return_exceptions=True),单步异常被降级为 None/空/跳过,
 缺 GEMINI_API_KEY/网络全断才整体失败,由 run_skill_main 收口成结构化 {ok:false}。
 
 用法:
-    python skill-company/scripts/run.py                    # 读 event/host/audience(.json) + company_input.json
-    python skill-company/scripts/run.py --max-competitors 2 \
+    python skill-event-strategy/scripts/run.py                    # 读 event/host/audience(.json) + company_input.json
+    python skill-event-strategy/scripts/run.py --max-competitors 2 \
         --goal product --objective "建立开发者心智"
 
 产物:company.json 写入工作目录,并把核心结论 merge 进 plan.json;结构化结果打印到 stdout。
@@ -1133,6 +1133,61 @@ def _resolve_inputs(args) -> dict:
     }
 
 
+def _card_md(label: str, card: Any) -> str:
+    """把一张策略 vibe 卡渲染成完整 Markdown(所有字段全给,不摘句)。"""
+    if not isinstance(card, dict):
+        return f"### {label}\n(未生成)\n"
+    lines = [f"### {label}:{card.get('title', '') or ''}"]
+    for key, cn in (("slogan", "Slogan"), ("location", "场地"),
+                    ("interaction", "互动"), ("cohost_guest", "嘉宾方向"), ("budget", "预算")):
+        if card.get(key):
+            lines.append(f"- **{cn}**:{card[key]}")
+    url = card.get("url")
+    if url:
+        urls = url if isinstance(url, list) else [url]
+        joined = " · ".join(str(u) for u in urls if u)
+        if joined:
+            lines.append(f"- **来源**:{joined}")
+    return "\n".join(lines) + "\n"
+
+
+def _assemble_strategy_md(event: dict, host: dict, company: dict) -> str:
+    """全量调研 + 三卡完整综述拼成一份 Markdown(完整呈现硬底,见 SKILL.md「结果呈现」)。"""
+    name = (event or {}).get("event_name") or "活动"
+    hostname = (host or {}).get("host_name") or ""
+    details = company.get("strategic_details") or {}
+    hi = details.get("host_insight") or {}
+    competitors = details.get("competitors") or []
+    parts = [f"# 《{name}》活动策略调研(Event Strategy)\n主办方:{hostname}\n",
+             "\n## 一、全量调研(选卡依据)\n", "### 主办方底色(过往 DNA)"]
+    for key, cn in (("interaction", "互动偏好"), ("location", "场地偏好"), ("cohost", "常见合作方")):
+        if hi.get(key):
+            parts.append(f"- {cn}:{hi[key]}")
+    parts.append(f"\n### 竞品对标({len(competitors)} 个)")
+    for c in competitors:
+        if not isinstance(c, dict) or not c.get("title"):
+            continue
+        parts.append(f"- **{c.get('title')}**")
+        for key, cn in (("interaction", "互动"), ("location", "场地"), ("guest_composition", "嘉宾构成")):
+            if c.get(key):
+                parts.append(f"  - {cn}:{c[key]}")
+        url = c.get("url")
+        if url:
+            urls = url if isinstance(url, list) else [url]
+            joined = " · ".join(str(u) for u in urls if u)
+            if joined:
+                parts.append(f"  - 来源:{joined}")
+    parts.append("\n### 行业趋势\n" + (company.get("industry_trends") or "(未生成)"))
+    parts.append("\n### 话题引爆点\n" + (company.get("topic_catalyst") or "(未生成)"))
+    parts.append("\n### 受众痛点\n" + (company.get("pain_points") or "(未生成)"))
+    parts.append("\n## 二、三套策略方向(informed 选卡)\n")
+    parts.append(_card_md("① 品牌传承型 brand_dna", company.get("brand_dna")))
+    parts.append(_card_md("② 市场差异化型 competitor", company.get("competitor")))
+    parts.append(_card_md("③ 趋势前瞻型 trend_forward", company.get("trend_forward")))
+    parts.append("\n## 三、战略总结 / 推荐\n" + (company.get("strategic_summary") or ""))
+    return "\n".join(parts)
+
+
 async def _main() -> int:
     logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
     p = argparse.ArgumentParser(description="主办方/竞品/趋势深度调研 + 三套策略方案")
@@ -1161,6 +1216,14 @@ async def _main() -> int:
     }
 
     context_local.save_json("company", company)
+    written = ["company.json", "plan.json(merged)"]
+    # 落地完整调研+三卡 .md(完整呈现硬底,见 SKILL.md「结果呈现」)
+    try:
+        md_path = context_local.workdir() / "event_strategy_full.md"
+        md_path.write_text(_assemble_strategy_md(event, host, company), encoding="utf-8")
+        written.insert(1, "event_strategy_full.md")
+    except Exception as e:
+        logging.warning("落地 event_strategy_full.md 失败(不影响主产物): %s", e)
     # 把核心结论 merge 进 plan(供下游 timeline/poster/socialpost 复用)
     context_local.merge_into("plan", {
         "company": {
@@ -1178,7 +1241,7 @@ async def _main() -> int:
     out = {
         "ok": True,
         "workdir": str(context_local.workdir()),
-        "written": ["company.json", "plan.json(merged)"],
+        "written": written,
         "company": company,
     }
     print(json.dumps(out, ensure_ascii=False, indent=2))

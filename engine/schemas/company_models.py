@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-"""skill-company 各结构化输出模型(pydantic v2)。
+"""skill-event-strategy(原 skill-company;模块名/数据 key 沿用 company 保契约)各结构化输出模型(pydantic v2)。
 
-把 engine/schemas/company_info_schema.py 里 skill-company 用到的 8 个 dict
+把 engine/schemas/company_info_schema.py 里 skill-event-strategy 用到的 8 个 dict
 response_schema 一对一改成 Pydantic BaseModel,直接作为
 `llm.generate(response_schema=ModelCls)` 传入(genai 原生吃 BaseModel),
 返回用 `parse_structured(resp, ModelCls)` 解析。
